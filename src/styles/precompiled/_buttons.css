@@ -1,0 +1,127 @@
+.simplebtn {
+	box-sizing: border-box;
+	font-size: .9em;
+	background-color: var(--sb-background);
+	border: 2px solid var(--sb-border);
+	color: var(--sb-color);
+	cursor: pointer !important;
+	display: inline-flex;
+	flex-flow: column nowrap;
+	margin: 0 0 0 .4em;
+	padding: 0.4em 0.75em;
+	text-decoration: none;
+	transition: background 0.15s linear;
+
+	text-align: center;
+	border-image: none;
+
+	outline: none;
+	position: relative;
+
+	flex-flow: row nowrap;
+	align-items: center;
+}
+.simplebtn:first-of-type {
+	margin-left: 0;
+}
+
+.simplebtn:focus, .simplebtn.active {
+	outline: 0 !important;
+	border-image: none;
+	background-color: var(--sb-fbackground);
+	color: var(--sb-fcolor);
+	margin-top: 0;
+	border-color: var(--sb-fborder);
+	text-decoration: underline;
+	box-shadow: 0 -1px 1px var(--sb-background), 0 1px 1px var(--sb-background), 1px 0 1px var(--sb-background), -1px 0 1px var(--sb-background);
+}
+
+.simplebtn:focus[disabled] {
+	box-shadow: none;
+	opacity: .8;
+}
+
+.simplebtn:-moz-focusring {
+	outline: none;
+}
+
+.simplebtn::-moz-focus-inner {
+	outline: none;
+	border: 0;
+}
+
+.simplebtn:disabled {
+	cursor: default !important;
+	pointer-events: none;
+	background: var(--app-background-darken);
+	border-color: var(--app-background-darken-tint1);
+	color: var(--app-color-remark);
+	opacity: 0.7;
+}
+
+.simplebtn:hover:not(:disabled) {
+	background-color: var(--sb-hover)
+}
+
+.simplebtn:active:not(:disabled) {
+	background-color: var(--sb-active)
+}
+
+.simplebtn-sm {
+	font-size: 0.8em
+}
+
+.simplebtn-primary {
+	--sb-border: var(--app-primary-color-darken);
+	--sb-background: var(--app-primary-color);
+	--sb-color: var(--app-primary-text-color);
+	--sb-hover: var(--app-primary-color-darken);
+	--sb-active: var(--app-primary-color-lighten);
+	--sb-fcolor: var(--app-primary-text-color);
+	--sb-fbackground: var(--app-primary-color-darken);
+	--sb-fborder: var(--app-primary-color-lighten);
+}
+
+.simplebtn-default {
+	--sb-border: var(--app-background-darken);
+	--sb-background: transparent;
+	--sb-color: var(--app-color);
+	--sb-hover: var(--app-background-lighten);
+	--sb-active: var(--app-background-lighten);
+	--sb-fcolor: var(--app-color);
+	--sb-fbackground: var(--app-background-lighten);
+	--sb-fborder: var(--app-background-darken-tint4);
+}
+
+.simplebtn-danger {
+	--sb-border: var(--app-danger-color-darken);
+	--sb-background: var(--app-danger-color);
+	--sb-color: var(--app-danger-text-color);
+	--sb-hover: var(--app-danger-color-lighten);
+	--sb-active: var(--app-danger-color-lighten);
+	--sb-fcolor: var(--app-danger-text-color);
+	--sb-fbackground: var(--app-danger-color-lighten);
+	--sb-fborder: var(--app-danger-color-darken);
+}
+
+.simplebtn-success {
+	--sb-border: var(--app-success-color-darken);
+	--sb-background: var(--app-success-color);
+	--sb-color: var(--app-success-text-color);
+	--sb-hover: var(--app-success-color-lighten);
+	--sb-active: var(--app-success-color-lighten);
+	--sb-fcolor: var(--app-success-text-color);
+	--sb-fbackground: var(--app-success-color-lighten);
+	--sb-fborder: var(--app-success-color-darken);
+}
+
+.simplebtn-link {
+	--sb-border: transparent;
+	--sb-background: transparent;
+	--sb-color: var(--app-link-color);
+	--sb-hover: var(--app-background-lighten);
+	--sb-active: var(--app-background-lighten);
+	--sb-fcolor: var(--app-link-color-active);
+	--sb-fbackground: transparent;
+	--sb-fborder: transparent;
+}

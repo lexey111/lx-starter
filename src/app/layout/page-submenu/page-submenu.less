@@ -1,0 +1,29 @@
+.page-submenu {
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100%;
+	background-color: var(--app-menu-background);
+	border-bottom: 2px solid var(--app-menu-separator);
+	margin-bottom: 2em;
+	font-size: var(--app-small-font-size);
+
+	.page-submenu-item {
+		display: inline-flex;
+		cursor: pointer;
+		white-space: nowrap;
+		margin-right: 1em;
+		padding: 8px 16px;
+		color: var(--app-menu-color);
+		transition: all .2s ease;
+
+		&:hover, &:active, &:focus {
+			color: var(--app-menu-hover-color);
+		}
+
+		&.active {
+			pointer-events: none;
+			background-color: var(--app-menu-selected-background);
+			color: var(--app-menu-selected-color);
+		}
+	}
+}

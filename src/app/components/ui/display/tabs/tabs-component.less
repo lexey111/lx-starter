@@ -1,0 +1,149 @@
+
+.tabs-container {
+	--tabs-background: var(--app-background-darken-tint1);
+	--tabs-background-current: var(--app-background-lighten);
+	--tabs-background-active-tab: var(--app-background-lighten-tint1);
+	--tabs-background-current-content: var(--app-background-lighten-tint2);
+
+	position: relative;
+	display: block;
+	clear: both;
+	float: none;
+	width: 100%;
+	background-color: var(--tabs-background);
+	box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+	margin: 1em 0;
+
+	.tabs-container-title {
+		display: flex;
+		flex-flow: row nowrap;
+		clear: both;
+		float: none;
+		width: 100%;
+		height: 32px;
+		color: var(--app-color);
+
+		.tab-title {
+			background-color: var(--tabs-background);
+			position: relative;
+			display: inline-flex;
+			height: 100%;
+			line-height: 1em;
+			align-items: center;
+			align-content: center;
+			padding: 0 16px;
+			cursor: pointer;
+			color: var(--app-link-color);
+			transition: background-color .2s ease;
+			font-size: .9em;
+
+			span {
+				line-height: 1em;
+				display: inline-flex;
+				align-items: center;
+				align-content: center;
+			}
+
+			svg {
+				fill: var(--app-link-color);
+				margin-right: .4em;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 2px;
+				background-color: var(--app-accent-color);
+				opacity: 0;
+				transition: opacity .2s ease;
+			}
+
+			&:focus, &:active {
+				border: none;
+				outline: none;
+				background-color: var(--tabs-background-active-tab);
+
+				&:before {
+					opacity: .5;
+				}
+			}
+
+			&.current {
+				background-color: var(--tabs-background-current);
+				cursor: default;
+				pointer-events: none;
+				color: var(--app-color);
+				position: relative;
+
+				&:before {
+					opacity: 1;
+				}
+			}
+
+			&:hover {
+				color: var(--app-link-color-active);
+			}
+		}
+	}
+
+	.tab-content {
+		display: flex;
+		flex-flow: row nowrap;
+		float: none;
+		width: 100%;
+		overflow: hidden;
+		max-height: 0;
+		background-color: var(--tabs-background-current);
+		transform-origin: top left;
+
+		&.current {
+			max-height: 2000px;
+			min-height: 100%;
+			opacity: 1;
+
+			&.no-paddings {
+				padding: 0;
+
+				.tab-content-inner {
+					padding: 0;
+				}
+			}
+
+			.tab-content-inner {
+				padding: 8px 16px;
+				min-height: 32px;
+				width: 100%;
+				display: block;
+				float: none;
+				clear: both;
+				animation-name: app-tab-animation;
+				animation-timing-function: ease-in;
+				animation-duration: .1s;
+				animation-direction: normal;
+				animation-play-state: running;
+				animation-fill-mode: forwards;
+			}
+		}
+
+		.tab-content-inner {
+			background-color: var(--tabs-background-current-content);
+			height: 100%;
+			padding: 8px;
+		}
+	}
+}
+
+@keyframes app-tab-animation {
+	0% {
+		opacity: .1;
+		transform: translateY(-5px);
+	}
+	100% {
+		max-height: 2000px;
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

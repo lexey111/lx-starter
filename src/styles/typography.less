@@ -1,0 +1,124 @@
+body {
+	// keep it synced with critical-path in index.html
+	font-family: system-ui;
+	font-display: optional;
+	min-height: 100vh;
+	min-width: 200px;
+	overflow-x: hidden;
+	font-size: var(--app-font-size);
+	color: var(--app-color);
+	background-color: var(--app-background);
+}
+
+.app-page {
+	p {
+		line-height: 1.5715;
+		box-sizing: border-box;
+		margin-top: 0;
+		margin-bottom: 1em;
+		color: var(--app-color);
+		font-size: var(--app-font-size);
+	}
+
+	ul, ol {
+		li {
+			line-height: 1.8em;
+		}
+	}
+
+	code {
+		background-color: var(--app-code-color);
+		color: var(--app-code-text-color);
+		padding: 2px 6px;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		line-height: 1.5715;
+		box-sizing: border-box;
+		margin: 0.5em 0 1em 0;
+		font-weight: 500;
+		color: var(--app-header-color);
+
+		svg {
+			fill: var(--app-header-color);
+		}
+
+		padding: 0;
+		display: flex;
+		flex-flow: row wrap;
+		align-content: center;
+		align-items: center;
+	}
+
+	h1 {
+		font-size: 2.1em;
+	}
+
+	h2 {
+		font-size: 1.8em;
+	}
+
+	h3 {
+		font-size: 1.7em;
+	}
+
+	h4 {
+		font-size: 1.5em;
+	}
+
+	h5 {
+		font-size: 1.25em;
+	}
+
+	h6 {
+		font-size: 1em;
+	}
+}
+
+hr {
+	border: none;
+	border-bottom: 1px solid var(--app-background-darken-tint3);
+	margin: 1em 0;
+}
+
+a {
+	color: var(--app-link-color);
+	text-decoration: none;
+
+	&:hover, &:active {
+		color: var(--app-link-color-active);
+		border: none;
+		outline: none;
+	}
+
+	&:focus {
+		border: none;
+		outline: none;
+	}
+}
+
+.app-icon {
+	color: var(--app-color);
+	width: 1em;
+	height: 1em;
+
+	&.spinner {
+		padding: 0;
+		animation-name: app-spin-animation;
+		animation-timing-function: linear;
+		animation-duration: 1s;
+		animation-direction: normal;
+		animation-play-state: running;
+		animation-fill-mode: forwards;
+		animation-iteration-count: infinite;
+	}
+}
+
+@keyframes app-spin-animation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(359deg);
+	}
+}

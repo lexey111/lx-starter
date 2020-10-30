@@ -1,0 +1,125 @@
+.radiogroup-container {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	width: auto;
+	margin-bottom: 2em;
+
+	.radiogroup-content {
+		display: flex;
+		flex-flow: column nowrap;
+	}
+
+	&.inline {
+		flex-flow: row nowrap;
+
+		.radiogroup-content {
+			flex-flow: row nowrap;
+		}
+
+		.radiogroup-item {
+			margin-right: 2em;
+			min-height: auto;
+		}
+
+	}
+
+	&.reversed {
+		.radiogroup-item {
+			flex-direction: row-reverse;
+
+			.radiogroup-item-selector {
+				margin-right: 0;
+				margin-left: .4em;
+			}
+
+			.radiogroup-item-title {
+				margin-right: auto;
+			}
+		}
+	}
+
+	.radiogroup-item {
+		width: auto;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		margin-right: 1em;
+		cursor: pointer;
+		min-height: 2.2em;
+
+		.radiogroup-item-selector {
+			display: inline-flex;
+			flex-grow: 0;
+			flex-shrink: 0;
+			width: 14px;
+			height: 14px;
+			border: 2px solid var(--app-primary-color);
+			background-color: var(--app-background-lighten);
+			border-radius: 100%;
+			margin-right: .4em;
+			position: relative;
+			transition: all .2s ease;
+		}
+
+		.radiogroup-item-title {
+			display: inline-flex;
+			color: var(--app-link-color);
+			transition: all .2s ease;
+		}
+
+		&.checked {
+			.radiogroup-item-selector {
+				background-color: var(--app-primary-color);
+
+				span {
+					position: absolute;
+					top: 3px;
+					right: 3px;
+					left: 3px;
+					bottom: 3px;
+					background-color: #fff;
+					border-radius: 100%;
+					box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+				}
+			}
+		}
+
+		&:hover, &:active, &:focus {
+			border: none;
+			outline: none;
+
+			.radiogroup-item-selector {
+				background-color: var(--app-primary-color-lighten);
+				border-color: var(--app-primary-color-darken);
+			}
+
+			.radiogroup-item-title {
+				color: var(--app-link-color-active);
+			}
+		}
+
+		&:focus {
+			text-decoration: underline;
+		}
+
+		&.disabled {
+			pointer-events: none;
+			cursor: pointer;
+			opacity: .8;
+
+			.radiogroup-item-selector {
+				background-color: var(--app-background-darken);
+				border-color: var(--app-background-darken-tint4);
+
+				span {
+					background-color: var(--app-background-lighten-tint1);
+				}
+			}
+
+			.radiogroup-item-title {
+				color: var(--app-color-remark);
+			}
+		}
+	}
+}

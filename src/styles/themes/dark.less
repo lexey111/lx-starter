@@ -1,0 +1,78 @@
+@app-theme-dark-background: #42454b;
+@app-theme-dark-color: #ecf2f5;
+@app-theme-dark-color-headers: #419db9;
+@app-theme-dark-color-remark: #c2c8cb;
+
+@app-theme-dark-code-color: #2d3034;
+@app-theme-dark-code-text-color: #d0c5ab;
+
+@app-theme-dark-link-color: #fab419;
+@app-theme-dark-link-color-active: lighten(@app-theme-dark-link-color, 15);
+
+@app-theme-dark-border-color: #696c6d;
+
+@app-theme-dark-primary-color: #64b5f6;
+@app-theme-dark-primary-complimentary-color: #ffffff;
+
+@app-theme-dark-accent-color: #bfcbd7;
+@app-theme-dark-accent-background: #63636d;
+
+@app-theme-dark-menu-separator: lighten(@app-theme-dark-background, 20%);
+@app-theme-dark-menu-separator-complimentary: #ccc;
+@app-theme-dark-menu-selected-color: @app-theme-dark-menu-separator-complimentary;
+@app-theme-dark-menu-hover-color: @app-theme-dark-primary-color;
+@app-theme-dark-menu-hover-background: @app-theme-dark-background;
+@app-theme-dark-menu-color: lighten(@app-theme-dark-background, 40%);
+@app-theme-dark-menu-background: @app-theme-dark-background;
+
+.theme-dark {
+	--app-background: @app-theme-dark-background;
+
+	--app-background-lighten: lighten(@app-theme-dark-background, 10);
+	--app-background-lighten-tint1: lighten(@app-theme-dark-background, 3);
+	--app-background-lighten-tint2: lighten(@app-theme-dark-background, 5);
+	--app-background-lighten-tint3: lighten(@app-theme-dark-background, 10);
+	--app-background-lighten-tint4: lighten(@app-theme-dark-background, 15);
+	--app-background-lighten-tint5: lighten(@app-theme-dark-background, 25);
+	--app-background-lighten-tint6: lighten(@app-theme-dark-background, 45);
+
+	--app-background-darken: darken(@app-theme-dark-background, 5);
+
+	--app-background-darken-tint1: darken(@app-theme-dark-background, 3);
+	--app-background-darken-tint2: darken(@app-theme-dark-background, 5);
+	--app-background-darken-tint3: darken(@app-theme-dark-background, 10);
+	--app-background-darken-tint4: darken(@app-theme-dark-background, 15);
+	--app-background-darken-tint5: darken(@app-theme-dark-background, 25);
+	--app-background-darken-tint6: darken(@app-theme-dark-background, 45);
+
+	--app-color: @app-theme-dark-color;
+
+	--app-code-color: @app-theme-dark-code-color;
+	--app-code-text-color: @app-theme-dark-code-text-color;
+
+	--app-menu-color: @app-theme-dark-menu-color;
+	--app-menu-background: @app-theme-dark-menu-background;
+	--app-menu-separator: @app-theme-dark-menu-separator;
+	--app-menu-separator-darken: darken(@app-theme-dark-menu-separator, 10);
+	--app-menu-separator-complimentary: @app-theme-dark-menu-separator-complimentary;
+	--app-menu-selected-color: @app-theme-dark-menu-selected-color;
+	--app-menu-selected-background: @app-theme-dark-menu-separator;
+	--app-menu-hover-color: @app-theme-dark-menu-hover-color;
+	--app-menu-hover-background: @app-theme-dark-menu-hover-background;
+
+	--app-accent-color: @app-theme-dark-accent-color;
+	--app-accent-color-hover: lighten(@app-theme-dark-accent-color, 10%);
+	--app-accent-background: @app-theme-dark-accent-background;
+	--app-accent-border: lighten(@app-theme-dark-accent-background, 10%);
+
+	--app-label-color: lighten(@app-theme-dark-background, 40%);
+	--app-header-color: @app-theme-dark-color-headers;
+	--app-primary-color: @app-theme-dark-primary-color;
+	--app-primary-complimentary-color: @app-theme-dark-primary-complimentary-color;
+	--app-color-remark: @app-theme-dark-color-remark;
+
+	--app-link-color: @app-theme-dark-link-color;
+	--app-link-color-active: @app-theme-dark-link-color-active;
+
+	--app-border-color: @app-theme-dark-border-color;
+}

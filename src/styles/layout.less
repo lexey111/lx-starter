@@ -1,0 +1,58 @@
+@import "variables.less";
+
+body {
+	display: flex;
+	flex-flow: column nowrap;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: var(--app-background);
+	color: var(--app-color);
+}
+
+#app-mount-point {
+	display: block;
+	min-height: 100vh;
+	position: relative;
+	overflow: visible;
+}
+
+.app-container {
+	max-width: @app-page-width;
+	margin: 0 auto;
+	position: relative;
+	z-index: 100;
+}
+
+.app-content {
+	margin-left: @app-menu-width + 16px;
+	background-color: var(--app-background);
+	color: var(--app-color);
+}
+
+.app-page, .app-wait-page {
+	padding: @app-breadcrumbs-height 32px 16px 32px;
+	min-width: 100%;
+}
+
+.no-breadcrumbs {
+	.app-page, .app-wait-page {
+		padding: 16px 32px 16px 32px;
+	}
+}
+
+.app-vertical-centered {
+	position: absolute;
+	top: 0;
+	left: @app-menu-width;
+	max-width: none;
+	min-width: auto;
+	right: 0;
+	bottom: 32px;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}

@@ -1,0 +1,35 @@
+table {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+
+	thead {
+		tr {
+			background-color: var(--app-primary-color);
+
+			th {
+				text-align: left;
+				padding: 12px 8px;
+				color: var(--app-primary-text-color);
+				border: 1px solid var(--app-background-lighten);
+				font-weight: normal;
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			td {
+				padding: 8px;
+				border: 1px solid var(--app-background-darken);
+				background-color: var(--app-background-darken-tint1);
+			}
+		}
+
+		tr:nth-child(even) {
+			td {
+				background-color: var(--app-background-lighten-tint1);
+			}
+		}
+	}
+}
