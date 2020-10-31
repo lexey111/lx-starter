@@ -1,7 +1,7 @@
 {
-	"name": "tech-site-boilerplate",
+	"name": "lx-starter",
 	"version": "1.0.0",
-	"description": "Boilerplate: site structure",
+	"description": "Boilerplate: site with navigation",
 	"main": "index.js",
 	"scripts": {
 		"build": "npm run clean && webpack --config build/webpack.config.js --mode production --progress",

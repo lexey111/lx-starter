@@ -1,8 +1,8 @@
 import {LoremIpsum} from 'lorem-ipsum';
 import React, {useMemo} from 'react';
 
-const DEFAULT_WORDS = 20;
-const DEFAULT_PARAGRAPHS = 1;
+const DEFAULT_WORDS = 40;
+const DEFAULT_PARAGRAPHS = 2;
 
 function getLipsumParaRecords(words: number = DEFAULT_WORDS, paragraphs: number = DEFAULT_PARAGRAPHS): Array<string> {
 	const generator: { generateParagraphs: (number) => string } = new LoremIpsum({

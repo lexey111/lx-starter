@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {LipsumPara} from '../../../../components/ui/example-related/lipsum';
+import {IconArrowLeft} from '../../../../components/ui/general/icons/icon-arrow-left-component';
 import {IconUser} from '../../../../components/ui/general/icons/icon-user-component';
 import {Title} from '../../../../components/ui/general/typography/title-component';
 import useLocationParams from '../../../../hooks/use-location-params';
@@ -21,7 +23,7 @@ export const RoutingArticleAuthor: React.FC = () => {
 		return <>
 			<Title>Article not found</Title>
 			<p>
-				<Link to={listOfArticlesUrl}>Return to list</Link>
+				<Link to={listOfArticlesUrl}><IconArrowLeft/>&nbsp; Return to list</Link>
 			</p>
 		</>;
 	}
@@ -30,23 +32,29 @@ export const RoutingArticleAuthor: React.FC = () => {
 		return <>
 			<Title>Author not found</Title>
 			<p>
-				<Link to={listOfArticlesUrl}>Return to list</Link>
+				<Link to={listOfArticlesUrl}><IconArrowLeft/>&nbsp; Return to list</Link>
 			</p>
 			<p>
-				<Link to={listOfArticlesUrl + '/' + article.id.toString()}>Return to article</Link>
+				<Link to={listOfArticlesUrl + '/' + article.id.toString()}><IconArrowLeft/>&nbsp; Return to article</Link>
 			</p>
 		</>;
 	}
 
 	return <>
-		<Title><IconUser/> &nbsp; {author}</Title>
-		<Title level={5}>Author of {article.title}</Title>
+		<div className={'example-avatar'}>
+			<IconUser/>
+			<div>{author}</div>
+		</div>
+
+		<Title level={5}>Author of &nbsp; <i>{article.title}</i></Title>
+
+		<LipsumPara/>
 
 		<p>
-			<Link to={listOfArticlesUrl}>Return to list</Link>
+			<Link to={listOfArticlesUrl}><IconArrowLeft/>&nbsp; Return to list</Link>
 		</p>
 		<p>
-			<Link to={listOfArticlesUrl + '/' + article.id.toString()}>Return to article</Link>
+			<Link to={listOfArticlesUrl + '/' + article.id.toString()}><IconArrowLeft/>&nbsp; Return to article</Link>
 		</p>
 
 		<hr/>

@@ -1,5 +1,8 @@
 import React from 'react';
+import {IconArrowLeft} from '../../../components/ui/general/icons/icon-arrow-left-component';
+import {IconArrowRight} from '../../../components/ui/general/icons/icon-arrow-right-component';
 import {IconExpander} from '../../../components/ui/general/icons/icon-expander-component';
+import {IconFile} from '../../../components/ui/general/icons/icon-file-component';
 import {IconHome} from '../../../components/ui/general/icons/icon-home-component';
 import {IconSpinner} from '../../../components/ui/general/icons/icon-spinner-component';
 import {IconStar} from '../../../components/ui/general/icons/icon-star-component';
@@ -11,6 +14,9 @@ const Markup = `<IconUser/>
 <IconHome/>
 <IconSpinner/>
 <IconExpander/>
+<IconArrowLeft/>
+<IconArrowRight/>
+<IconFile/>
 `;
 
 const JSX = <>
@@ -19,6 +25,9 @@ const JSX = <>
 	<IconHome/>
 	<IconSpinner/>
 	<IconExpander/>
+	<IconArrowLeft/>
+	<IconArrowRight/>
+	<IconFile/>
 </>;
 
 const Code = `import {IconHome} from '../../../components/ui/general/icons/icon-home-component';

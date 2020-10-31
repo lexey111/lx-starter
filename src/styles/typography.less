@@ -89,16 +89,32 @@ a {
 		color: var(--app-link-color-active);
 		border: none;
 		outline: none;
+
+		.app-icon {
+			fill: var(--app-link-color-active);
+		}
 	}
 
 	&:focus {
 		border: none;
 		outline: none;
 	}
+
+	.app-icon {
+		fill: var(--app-link-color);
+		display: inline-flex;
+		justify-content: center;
+		box-sizing: border-box;
+	}
+
+	display: inline-flex;
+	align-content: center;
+	align-items: center;
+	box-sizing: border-box;
 }
 
 .app-icon {
-	color: var(--app-color);
+	fill: var(--app-color);
 	width: 1em;
 	height: 1em;
 
