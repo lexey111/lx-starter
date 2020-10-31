@@ -58,7 +58,7 @@ export const SyntaxHighlight = (
 	if (!content && typeof children === 'object') {
 		language = 'json';
 		try {
-			text = JSON.stringify(children);
+			text = JSON.stringify(children, null, 2);
 		} catch (e) {
 			text = 'Invalid JSON';
 		}

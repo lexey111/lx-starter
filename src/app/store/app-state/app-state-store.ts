@@ -8,8 +8,8 @@ export type TAppStateStoreData = {
 
 	serverError?: string // just to pass to global error page
 
-	pageActions?: JSX.Element | null // optional action(s) that will be displayed in the breadcrumbs on scroll
-	yScrollPos?: number // technical one, needed to show breadcrumbs panel after scroll distance reached > 32px
+	_pageActions?: JSX.Element | null // optional action(s) that will be displayed in the breadcrumbs on scroll
+	_yScrollPos?: number // technical one, needed to show breadcrumbs panel after scroll distance reached > 32px
 
 	isAuthorized: boolean
 	isAuthorizationInProgress: boolean
@@ -25,9 +25,8 @@ export default class CAppStateStore implements TAppStateStoreData {
 	public currentParams: Record<any, any> = {};
 	public currentLocation = '';
 
-	public serverError = '';
-	public pageActions: JSX.Element | null = null;
-	public yScrollPos = 0;
+	public _pageActions: JSX.Element | null = null;
+	public _yScrollPos = 0;
 
 	public theme = 'light';
 
@@ -47,9 +46,8 @@ export default class CAppStateStore implements TAppStateStoreData {
 			// currentParams: observable,
 			currentLocation: observable,
 
-			serverError: observable,
-			pageActions: observable,
-			yScrollPos: observable,
+			_pageActions: observable,
+			_yScrollPos: observable,
 
 			theme: observable,
 
@@ -75,7 +73,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 	}
 
 	get hasActions(): boolean {
-		return Boolean(this.pageActions);
+		return Boolean(this._pageActions);
 	}
 
 	setAuthInProgress = (state: boolean): void => {
@@ -103,7 +101,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 	};
 
 	setPageAction = (content: JSX.Element): void => {
-		this.pageActions = content;
+		this._pageActions = content;
 	};
 
 	setCurrentRoute = (
@@ -115,7 +113,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 	};
 
 	setYScrollPos = (pos: number): void => {
-		this.yScrollPos = pos;
+		this._yScrollPos = pos;
 	};
 
 	setLocation = (location: string): void => {
@@ -123,7 +121,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 	};
 
 	resetPageAction = (): void => {
-		this.pageActions = null;
+		this._pageActions = null;
 	};
 
 	setTheme = (value: string): void => {

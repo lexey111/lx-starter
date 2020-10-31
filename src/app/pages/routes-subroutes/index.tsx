@@ -134,8 +134,8 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 
 		<p>
 			First step is required for navigation-related things, like breadcrumbs or menus. Please pay attention:
-			changed params (<code>item: TRouteMappingItem</code> and <code>props.match.params</code>) are not
-			<b>observable</b>, so no re-rendering or events will be fired. It just setting up the data: activated
+			changed params (<code>item: TRouteMappingItem</code> and <code>props.match.params</code>) are
+			not <b>observable</b>, so no re-rendering or events will be fired. It just setting up the data: activated
 			item of <SourceFile src={routeConfigFilename} inline/> and url params.
 		</p>
 

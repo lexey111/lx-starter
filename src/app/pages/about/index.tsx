@@ -32,6 +32,8 @@ export const AboutPage: React.FC = () => {
 					<li>State management: app</li>
 					<li>Auth state, login/logout/guards</li>
 					<li>State management: data example</li>
+					<li>Server error</li>
+					<li>Breadcrumbs actions</li>
 				</ul>
 			</li>
 			<li><s>Delay one render on route switching</s></li>

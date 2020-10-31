@@ -50,7 +50,7 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 		return null;
 	}
 
-	return <div className={'app-breadcrumbs' + (AppStateStore.yScrollPos > 32 ? ' page-scrolled' : '')}>
+	return <div className={'app-breadcrumbs' + (AppStateStore._yScrollPos > 32 ? ' page-scrolled' : '')}>
 		<div className={'app-breadcrumbs-content'}>
 			<div className={'app-breadcrumbs-panel'}>
 				{breadcrumbs.map((item, idx) => {
@@ -71,7 +71,7 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 					</div>;
 				})}
 			</div>
-			{AppStateStore.hasActions && <div className={'app-breadcrumbs-actions'}>{AppStateStore.pageActions}</div>}
+			{AppStateStore.hasActions && <div className={'app-breadcrumbs-actions'}>{AppStateStore._pageActions}</div>}
 		</div>
 	</div>;
 });

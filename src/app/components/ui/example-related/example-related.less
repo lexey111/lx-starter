@@ -137,3 +137,51 @@
 		align-items: center;
 	}
 }
+
+pre.example-filestructure {
+	padding: 1em;
+	background-color: var(--app-background-darken);
+	color: var(--app-header-color);
+	white-space: pre;
+	word-break: normal;
+	tab-size: 2em;
+	line-height: 2em;
+	vertical-align: middle;
+
+	.app-icon {
+		fill: var(--app-primary-color);
+		margin-right: .4em;
+		vertical-align: middle;
+	}
+}
+
+.example-store-container {
+	.completed {
+		td {
+			color: var(--app-success-color);
+
+			.app-icon {
+				fill: var(--app-success-color);
+			}
+		}
+	}
+
+	.not-completed {
+		td {
+			color: var(--app-danger-color);
+
+			.app-icon {
+				fill: var(--app-danger-color);
+			}
+		}
+	}
+
+	.example-todo-status-column {
+		text-align: center;
+
+		.app-icon {
+			width: 1.5em;
+			height: 1.5em;
+		}
+	}
+}
