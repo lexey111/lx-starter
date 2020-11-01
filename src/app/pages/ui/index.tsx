@@ -37,7 +37,7 @@ export const UiPage: React.FC = () => {
 			</li>
 
 			<li>
-				<Link to={'ui/display'}>Display (5)</Link> &mdash; Tabs, different <i>wait-something</i> components.
+				<Link to={'ui/display'}>Display (6)</Link> &mdash; Tabs, different <i>wait-something</i> components, simple modals.
 			</li>
 
 			<li>

@@ -2,18 +2,30 @@ import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import {IconSpinner} from '../../general/icons/icon-spinner-component';
 
+type TWaitFullscreenComponentModalProps = {
+	_allowClose?: boolean
+	_onClose?: () => void
+	_closeOnESC?: boolean
+	_closeOnClickOutside?: boolean
+};
+
 type TWaitFullscreenComponentProps = {
 	message?: string | JSX.Element
 	className?: string
 	hideSpinner?: boolean
-};
+} & TWaitFullscreenComponentModalProps;
 
-const waitDiv = document.querySelector('#app-full-screen-message');
+const waitDiv = document.querySelector('#app-full-screen-message') as HTMLDivElement;
 
-function prepareSuperModal(): ((e: KeyboardEvent) => void) | null {
+function prepareSuperModal(
+	onClose?: () => void,
+	closeOnEsc?: boolean,
+	closeOnClick?: boolean): ((e: KeyboardEvent) => void) | null {
+
 	if (!waitDiv) {
 		return null;
 	}
+
 	const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 	const modal = waitDiv;
 
@@ -21,14 +33,29 @@ function prepareSuperModal(): ((e: KeyboardEvent) => void) | null {
 	const focusableContent = modal.querySelectorAll(focusableElements);
 	const lastFocusableElement = focusableContent[focusableContent.length - 1] as HTMLElement;
 
-	if (!firstFocusableElement || !lastFocusableElement) {
-		return null;
+	if (onClose && closeOnClick) {
+		waitDiv.onclick = () => {
+			setTimeout(() => {
+				if (waitDiv.onclick) { // could be detached already by close handler
+					onClose();
+				}
+			}, 100);
+		};
 	}
 
 	const trapFocus = (e: KeyboardEvent): void => {
 		const isTabPressed = e.key === 'Tab';
+		const isEscPressed = e.key === 'Escape';
+
+		if (isEscPressed && onClose && closeOnEsc) {
+			onClose();
+		}
 
 		if (!isTabPressed) {
+			return;
+		}
+
+		if (!firstFocusableElement || !lastFocusableElement) {
 			return;
 		}
 
@@ -61,9 +88,16 @@ export const WaitFullscreen: React.FC<TWaitFullscreenComponentProps> = (props: T
 		document.body.classList.add('no-scroll');
 
 		// remove focus from main page and put it to the trap or first focusable item
-		const handler = prepareSuperModal();
+		const handler = prepareSuperModal(
+			props._allowClose && props._onClose
+				? props._onClose
+				: void 0,
+			props._closeOnESC,
+			props._closeOnClickOutside
+		);
 
 		return () => {
+			waitDiv.onclick = null;
 			waitDiv.className = '';
 			document.body.classList.remove('no-scroll');
 

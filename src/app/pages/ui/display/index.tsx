@@ -1,7 +1,9 @@
 import React from 'react';
 import {SourceFile} from '../../../components/ui/example-related/source-file-component';
+import {Tag} from '../../../components/ui/example-related/tag-component';
 import {Title} from '../../../components/ui/general/typography/title-component';
 import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
+import {UiSimpleModalExample} from './ui-simple-modal';
 import {UiTabsExample} from './ui-tabs-example';
 import {UiWaitBlockExample} from './ui-wait-block';
 import {UiWaitFullscreenExample} from './ui-wait-fullscreen';
@@ -77,5 +79,14 @@ export const UiDisplayPage: React.FC = () => {
 		</p>
 
 		<UiWaitFullscreenExample/>
+
+		<Title level={3}>Simple modal</Title>
+		<SourceFile src={'src/app/components/ui/display/wait/simple-modal-component.tsx'}/>
+
+		<p>
+			Just a wrapper that adds a bit o convenience in usage of <Tag>WaitFullscreen</Tag> as a pseudo-modal dialog mode.
+		</p>
+
+		<UiSimpleModalExample/>
 	</>;
 };
