@@ -1,7 +1,8 @@
 import React from 'react';
-import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
 import {SourceFile} from '../../../components/ui/example-related/source-file-component';
 import {Title} from '../../../components/ui/general/typography/title-component';
+import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
+import {UiCheckboxExample} from './ui-checkbox-example';
 import {UiRadioExample} from './ui-radio-example';
 
 export const UiDataEntryPage: React.FC = () => {
@@ -20,5 +21,14 @@ export const UiDataEntryPage: React.FC = () => {
 		</p>
 
 		<UiRadioExample/>
+
+		<Title level={2}>Checkbox</Title>
+		<SourceFile src={'src/app/components/ui/data-entry/checkbox/checkbox-component.tsx'}/>
+
+		<p>
+			Basic checkbox implementation. Supports keyboard navigation and disabled items, as well as inline and reversed layouts.
+		</p>
+
+		<UiCheckboxExample/>
 	</>;
 };

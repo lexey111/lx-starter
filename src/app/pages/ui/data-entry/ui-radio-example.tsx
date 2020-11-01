@@ -73,11 +73,7 @@ const [g2, setG2] = useState('D');
 `}
 		syntax={Syntax}
 		result={<div>
-			<Title>Getting started</Title>
-			<Title level={2}>Basic principles</Title>
-			<p>Radio</p>
-
-			<Title level={4}>Vertical</Title>
+			<Title level={4}>Default</Title>
 			<RadioGroup value={g1} onChange={(v) => setG1(v)}>
 				<Radio value={'A'}>String A</Radio>
 				<Radio value={'B'}>String B</Radio>
@@ -96,14 +92,14 @@ const [g2, setG2] = useState('D');
 
 			<p>&nbsp;</p>
 
-			<Title level={4}>Horizontal</Title>
+			<Title level={4}>Inline</Title>
 			<RadioGroup value={g2} inline onChange={(v) => setG2(v)}>
 				<Radio value={'C'}>Some value</Radio>
 				<Radio value={'D'}>Another value</Radio>
 				<Radio value={'E'}>May be value</Radio>
 			</RadioGroup>
 
-			<Title level={5}>Reversed</Title>
+			<Title level={5}>Reversed inline</Title>
 
 			<RadioGroup value={g2} inline reversed onChange={(v) => setG2(v)}>
 				<Radio value={'C'}>Some value</Radio>

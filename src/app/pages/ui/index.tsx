@@ -41,7 +41,7 @@ export const UiPage: React.FC = () => {
 			</li>
 
 			<li>
-				<Link to={'ui/data-entry'}>Data entry (1)</Link> &mdash; Radio button.
+				<Link to={'ui/data-entry'}>Data entry (2)</Link> &mdash; Radio button, Checkbox.
 			</li>
 
 			<li>
