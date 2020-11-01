@@ -6,7 +6,7 @@ type TSimpleModalComponentProps = {
 	children: JSX.Element | Array<JSX.Element>
 	onCancel?: () => void
 	allowClose?: boolean // default: true
-	closeOnCancel?: boolean // default: true
+	closeOnEsc?: boolean // default: true
 	closeOnClickOutside?: boolean // default: true
 };
 
@@ -34,7 +34,7 @@ export const SimpleModal: React.FC<TSimpleModalComponentProps> = (props: TSimple
 
 		_allowClose={allowClose}
 		_onClose={props.onCancel}
-		_closeOnESC={props.closeOnCancel}
+		_closeOnESC={props.closeOnEsc}
 		_closeOnClickOutside={props.closeOnClickOutside}
 
 		message={<div className={'modal-like-content'} onClick={handleClick}>

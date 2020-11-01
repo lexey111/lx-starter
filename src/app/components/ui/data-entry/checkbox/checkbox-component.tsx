@@ -54,7 +54,8 @@ const Checkbox: React.FC<TCheckboxProps> = (props: TCheckboxProps) => {
 		className={'checkbox-container'
 		+ (disabled ? ' disabled' : '')
 		+ (props.inline ? ' inline' : '')
-		+ (props.reversed ? ' reversed' : '')}
+		+ (props.reversed ? ' reversed' : '')
+		+ (props.checked ? ' checked' : '')}
 		onKeyDownCapture={handleKey}
 		onClick={handleTitleClick}
 		tabIndex={disabled ? -1 : 1}

@@ -7,6 +7,12 @@
 	transition: all .2s ease;
 	min-height: 2.2em;
 
+	&.checked {
+		.checkbox-tickmark {
+			background-color: var(--app-primary-color);
+		}
+	}
+
 	&.disabled {
 		pointer-events: none;
 		cursor: pointer;
@@ -19,6 +25,9 @@
 
 			svg {
 				fill: var(--app-color-remark);
+				&:first-child {
+					display: none;
+				}
 			}
 		}
 	}
@@ -47,7 +56,6 @@
 		align-items: center;
 		justify-items: center;
 		overflow: hidden;
-		background-color: var(--app-primary-color);
 		margin-right: .4em;
 		position: relative;
 		flex-grow: 0;
@@ -55,6 +63,7 @@
 		width: 14px;
 		height: 14px;
 		line-height: 14px;
+		transition: all .2s ease;
 
 		svg {
 			fill: var(--app-primary-text-color);
@@ -102,7 +111,7 @@
 		text-decoration: underline;
 
 		.checkbox-tickmark {
-			backgroundr-color: var(--app-primary-color-darken);
+			border-color: var(--app-primary-color-darken);
 		}
 	}
 }

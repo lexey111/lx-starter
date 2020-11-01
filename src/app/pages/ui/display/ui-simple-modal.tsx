@@ -1,19 +1,83 @@
 import React, {useCallback, useState} from 'react';
+import {Checkbox} from '../../../components/ui/data-entry/checkbox/checkbox-component';
 import {SimpleModal} from '../../../components/ui/display/wait/simple-modal-component';
 import {SyntaxExampleTabs} from '../../../components/ui/example-related/syntax-example-tabs';
 import {Tag} from '../../../components/ui/example-related/tag-component';
 import {Button} from '../../../components/ui/general/button/button-component';
 
-const Markup = `
+const Markup = `<Button type={'success'} onClick={doShowSimpleModal}>Show simple modal</Button>
+<hr/>
+<Checkbox checked={allowClose} inline={true} onChange={setAllowClose}>Allow close dialog:</Checkbox>
+<Checkbox checked={allowCloseByEsc} inline={true} onChange={setAllowCloseByEsc}>by ESC key</Checkbox>
+<Checkbox checked={allowCloseByClick} inline={true} onChange={setAllowCloseByClick}>by click outside</Checkbox>
+
+<SimpleModal
+	onCancel={cancelSuperModal}
+	allowClose={allowClose}
+	closeOnEsc={allowCloseByEsc}
+	closeOnClickOutside={allowCloseByClick}
+	show={showSimpleModal}>
+
+	<div className={'modal-header'}>Simple modal dialog</div>
+	<p>
+		The very simple and straightforward implementation of it which uses <Tag>WaitFullscreen</Tag> component
+		to mimic the modal behavior.
+	</p>
+	<p>
+		I can't recommend to use this as a replacement of modal dialogs subsystem, but why not if
+		you have just a couple of them and don't need full-scaled version features, like multi-modal
+		windows management or predefined types.
+	</p>
+
+	<div className={'modal-footer'}>
+		<Button type={'primary'} onClick={confirmSuperModal}>Confirm</Button>
+		<Button type={'default'} onClick={cancelSuperModal}>Cancel</Button>
+	</div>
+</SimpleModal>
 `;
 
-const Syntax = `
+const Syntax = `type TSimpleModalComponentProps = {
+	show: boolean
+	children: JSX.Element | Array<JSX.Element>
+	onCancel?: () => void
+	allowClose?: boolean // default: true
+	closeOnEsc?: boolean // default: true
+	closeOnClickOutside?: boolean // default: true
+};
+
+export const SimpleModal: React.FC<TSimpleModalComponentProps> = (props: TSimpleModalComponentProps) => {...
 `;
 
-const Code = `
+const Code = `const [allowClose, setAllowClose] = useState(true);
+const [allowCloseByEsc, setAllowCloseByEsc] = useState(true);
+const [allowCloseByClick, setAllowCloseByClick] = useState(true);
+
+const [showSimpleModal, setShowSimpleModal] = useState(false);
+
+const doShowSimpleModal = useCallback(() => {
+	setShowSimpleModal(true);
+}, [setShowSimpleModal]);
+
+const cancelSuperModal = useCallback(() => {
+	setShowSimpleModal(false);
+	setTimeout(() => {
+		alert('Cancelled!');
+	}, 200);
+}, [setShowSimpleModal]);
+
+const confirmSuperModal = useCallback(() => {
+	setShowSimpleModal(false);
+	setTimeout(() => {
+		alert('Confirmed!');
+	}, 200);
+}, [setShowSimpleModal]);
 `;
 
 export const UiSimpleModalExample: React.FC = () => {
+	const [allowClose, setAllowClose] = useState(true);
+	const [allowCloseByEsc, setAllowCloseByEsc] = useState(true);
+	const [allowCloseByClick, setAllowCloseByClick] = useState(true);
+
 	const [showSimpleModal, setShowSimpleModal] = useState(false);
 
 	const doShowSimpleModal = useCallback(() => {
@@ -21,15 +85,19 @@ export const UiSimpleModalExample: React.FC = () => {
 	}, [setShowSimpleModal]);
 
 	const cancelSuperModal = useCallback(() => {
-		// eslint-disable-next-line no-alert
-		alert('Cancelled!');
 		setShowSimpleModal(false);
+		setTimeout(() => {
+			// eslint-disable-next-line no-alert
+			alert('Cancelled!');
+		}, 200);
 	}, [setShowSimpleModal]);
 
 	const confirmSuperModal = useCallback(() => {
 		setShowSimpleModal(false);
-		// eslint-disable-next-line no-alert
-		alert('Confirmed!');
+		setTimeout(() => {
+			// eslint-disable-next-line no-alert
+			alert('Confirmed!');
+		}, 200);
 	}, [setShowSimpleModal]);
 
 	return <SyntaxExampleTabs
@@ -39,12 +107,16 @@ export const UiSimpleModalExample: React.FC = () => {
 		code={Code}
 		result={<div className={'example-tab'}>
 			<Button type={'success'} onClick={doShowSimpleModal}>Show simple modal</Button>
+			<hr/>
+			<Checkbox checked={allowClose} inline={true} onChange={setAllowClose}>Allow close dialog:</Checkbox>
+			<Checkbox checked={allowCloseByEsc} inline={true} onChange={setAllowCloseByEsc}>by ESC key</Checkbox>
+			<Checkbox checked={allowCloseByClick} inline={true} onChange={setAllowCloseByClick}>by click outside</Checkbox>
 
 			<SimpleModal
 				onCancel={cancelSuperModal}
-				allowClose={true}
-				closeOnCancel={true}
-				closeOnClickOutside={true}
+				allowClose={allowClose}
+				closeOnEsc={allowCloseByEsc}
+				closeOnClickOutside={allowCloseByClick}
 				show={showSimpleModal}>
 
 				<div className={'modal-header'}>Simple modal dialog</div>

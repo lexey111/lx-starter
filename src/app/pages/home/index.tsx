@@ -2,7 +2,6 @@ import {observer} from 'mobx-react';
 import React, {useCallback} from 'react';
 import {Link} from 'react-router-dom';
 import {AppRoutes} from '../../../config/app-routes';
-import {Checkbox} from '../../components/ui/data-entry/checkbox/checkbox-component';
 import {ThemeSwitcher} from '../../components/ui/example-related/theme-switcher-component';
 import {Button} from '../../components/ui/general/button/button-component';
 import {Title} from '../../components/ui/general/typography/title-component';
@@ -41,26 +40,6 @@ export const HomePage: React.FC = observer(() => {
 		<Title level={3}>UI variants</Title>
 
 		<ThemeSwitcher/>
-
-		<Checkbox checked={true}>Value 1</Checkbox>
-		<Checkbox checked={false} title={'Value2'}/>
-		<Checkbox checked={true} disabled={true}>Disabled value</Checkbox>
-		<Checkbox checked={false} disabled={true}>Disabled unchecked value</Checkbox>
-
-		<div>
-			<Checkbox checked={true} inline>Value 1</Checkbox>
-			<Checkbox checked={false} inline title={'Value2'}/>
-		</div>
-
-		<div>
-			<Checkbox checked={true} inline reversed>Value 1</Checkbox>
-			<Checkbox checked={false} inline reversed title={'Value2'}/>
-		</div>
-
-		<div>
-			<Checkbox checked={true} reversed>Value 1</Checkbox>
-			<Checkbox checked={false} reversed title={'Value2'}/>
-		</div>
 
 		<Title level={3}>Site tree</Title>
 

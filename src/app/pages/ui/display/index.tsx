@@ -84,7 +84,11 @@ export const UiDisplayPage: React.FC = () => {
 		<SourceFile src={'src/app/components/ui/display/wait/simple-modal-component.tsx'}/>
 
 		<p>
-			Just a wrapper that adds a bit o convenience in usage of <Tag>WaitFullscreen</Tag> as a pseudo-modal dialog mode.
+			Just a wrapper which adds a little bit of convenience to usage of <Tag>WaitFullscreen</Tag> in a pseudo-modal dialog mode.
+		</p>
+
+		<p>
+			It supports different 'close' permissions: none, button at top right corner, ESC key, clicking outside.
 		</p>
 
 		<UiSimpleModalExample/>

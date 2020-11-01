@@ -12,7 +12,7 @@ const Markup = `<Title level={4}>Default</Title>
 	<>I have read and understood the &nbsp;<IconStar/>&nbsp; documentation</>
 </Checkbox>
 <Checkbox checked={true} disabled={true}>No way to change</Checkbox>
-<Checkbox checked={true} disabled={true}>And to change this one as well</Checkbox>
+<Checkbox checked={false} disabled={true}>And to change this one as well</Checkbox>
 
 <Title level={5}>Reversed</Title>
 
@@ -23,7 +23,7 @@ const Markup = `<Title level={4}>Default</Title>
 		<>I have read and understood the &nbsp;<IconStar/>&nbsp; documentation</>
 	</Checkbox>
 	<Checkbox checked={true} reversed={true} disabled={true}>No way to change</Checkbox>
-	<Checkbox checked={true} reversed={true} disabled={true}>And to change this one as well</Checkbox>
+	<Checkbox checked={false} reversed={true} disabled={true}>And to change this one as well</Checkbox>
 </div>
 
 <Title level={4}>Inline</Title>
@@ -33,7 +33,7 @@ const Markup = `<Title level={4}>Default</Title>
 	<>I have read and understood the &nbsp;<IconStar/>&nbsp; documentation</>
 </Checkbox>
 <Checkbox checked={true} inline={true} disabled={true}>No way to change</Checkbox>
-<Checkbox checked={true} inline={true} disabled={true}>And to change this one as well</Checkbox>
+<Checkbox checked={false} inline={true} disabled={true}>And to change this one as well</Checkbox>
 
 <Title level={5}>Reversed inline</Title>
 
@@ -43,7 +43,7 @@ const Markup = `<Title level={4}>Default</Title>
 	<>I have read and understood the &nbsp;<IconStar/>&nbsp; documentation</>
 </Checkbox>
 <Checkbox checked={true} inline={true} reversed={true} disabled={true}>No way to change</Checkbox>
-<Checkbox checked={true} inline={true} reversed={true} disabled={true}>And to change this one as well</Checkbox>
+<Checkbox checked={false} inline={true} reversed={true} disabled={true}>And to change this one as well</Checkbox>
 `;
 
 
@@ -89,7 +89,7 @@ const [value3, setValue3] = useState(false);
 				<>I have read and understood the &nbsp;<IconStar/>&nbsp; documentation</>
 			</Checkbox>
 			<Checkbox checked={true} disabled={true}>No way to change</Checkbox>
-			<Checkbox checked={true} disabled={true}>And to change this one as well</Checkbox>
+			<Checkbox checked={false} disabled={true}>And to change this one as well</Checkbox>
 
 			<Title level={5}>Reversed</Title>
 
@@ -100,7 +100,7 @@ const [value3, setValue3] = useState(false);
 					<>I have read and understood the &nbsp;<IconStar/>&nbsp; documentation</>
 				</Checkbox>
 				<Checkbox checked={true} reversed={true} disabled={true}>No way to change</Checkbox>
-				<Checkbox checked={true} reversed={true} disabled={true}>And to change this one as well</Checkbox>
+				<Checkbox checked={false} reversed={true} disabled={true}>And to change this one as well</Checkbox>
 			</div>
 
 			<p>&nbsp;</p>
@@ -112,7 +112,7 @@ const [value3, setValue3] = useState(false);
 				<>I have read and understood the &nbsp;<IconStar/>&nbsp; documentation</>
 			</Checkbox>
 			<Checkbox checked={true} inline={true} disabled={true}>No way to change</Checkbox>
-			<Checkbox checked={true} inline={true} disabled={true}>And to change this one as well</Checkbox>
+			<Checkbox checked={false} inline={true} disabled={true}>And to change this one as well</Checkbox>
 
 			<Title level={5}>Reversed inline</Title>
 
@@ -122,7 +122,7 @@ const [value3, setValue3] = useState(false);
 				<>I have read and understood the &nbsp;<IconStar/>&nbsp; documentation</>
 			</Checkbox>
 			<Checkbox checked={true} inline={true} reversed={true} disabled={true}>No way to change</Checkbox>
-			<Checkbox checked={true} inline={true} reversed={true} disabled={true}>And to change this one as well</Checkbox>
+			<Checkbox checked={false} inline={true} reversed={true} disabled={true}>And to change this one as well</Checkbox>
 		</div>}
 	/>;
 };
