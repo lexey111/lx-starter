@@ -47,7 +47,7 @@ const Markup = `<Title level={4}>Default</Title>
 `;
 
 
-const Syntax = `export type TCheckbox = {
+const Syntax = `export type TCheckboxProps = {
 	checked: boolean
 	disabled?: boolean
 	inline?: boolean
@@ -56,8 +56,6 @@ const Syntax = `export type TCheckbox = {
 	children?: string | JSX.Element
 	title?: string
 };
-
-type TCheckboxProps = RequireAtLeastOne<TCheckbox, 'children' | 'title'>;
 
 const Checkbox: React.FC<TCheckboxProps> = (props: TCheckboxProps) => {...`;
 

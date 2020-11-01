@@ -26,7 +26,7 @@ function prepareSuperModal(
 		return null;
 	}
 
-	const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+	const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"]), [focusable]';
 	const modal = waitDiv;
 
 	const firstFocusableElement = modal.querySelectorAll(focusableElements)[0] as HTMLElement;
@@ -73,7 +73,12 @@ function prepareSuperModal(
 	};
 
 	document.addEventListener('keydown', trapFocus);
-	firstFocusableElement.focus();
+
+	setTimeout(() => {
+		if (firstFocusableElement) {
+			firstFocusableElement.focus();
+		}
+	}, 200);
 
 	return trapFocus;
 }

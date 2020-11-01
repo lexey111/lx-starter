@@ -72,8 +72,8 @@ const RadioGroup: React.FC<TRadioGroupProps> = (props: TRadioGroupProps) => {
 				const disabled = item.props.disabled === true;
 
 				return <div
-					className={'radiogroup-item' + (checked ? ' checked' : '') + (disabled ? ' disabled' : '')}
-					tabIndex={disabled ? -1 : 1}
+					className={'radiogroup-item focusable ' + (checked ? ' checked' : '') + (disabled ? ' disabled' : '')}
+					tabIndex={disabled ? -1 : 0}
 					data-value={item.props.value}
 					onKeyDownCapture={handleKey}
 					onClick={handleTitleClick}

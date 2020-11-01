@@ -16,7 +16,7 @@ export interface TAppExampleStoreData {
 	toggle: (id: string) => void
 }
 
-export default class CAppExampleStore implements TAppExampleStoreData {
+export default class CAppExampleTodoStore implements TAppExampleStoreData {
 	public items: Array<TAppExampleStoreRecord> = [];
 
 	constructor() {

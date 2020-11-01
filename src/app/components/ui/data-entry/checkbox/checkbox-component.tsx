@@ -1,13 +1,7 @@
 import React, {useCallback} from 'react';
 import {IconCheck} from '../../general/icons/icon-check-component';
 
-type RequireAtLeastOne<T, Keys extends keyof T = keyof T> =
-	Pick<T, Exclude<keyof T, Keys>>
-	& {
-	[K in Keys]-?: Required<Pick<T, K>> & Partial<Pick<T, Exclude<Keys, K>>>
-}[Keys];
-
-export type TCheckbox = {
+export type TCheckboxProps = {
 	checked: boolean
 	disabled?: boolean
 	inline?: boolean
@@ -17,10 +11,7 @@ export type TCheckbox = {
 	title?: string
 };
 
-type TCheckboxProps = RequireAtLeastOne<TCheckbox, 'children' | 'title'>;
-
 const Checkbox: React.FC<TCheckboxProps> = (props: TCheckboxProps) => {
-
 	const disabled = props.disabled === true || !props.onChange;
 
 	const handleTitleClick = useCallback(() => {
@@ -37,7 +28,7 @@ const Checkbox: React.FC<TCheckboxProps> = (props: TCheckboxProps) => {
 
 		const code = e.key;
 		if (code !== 'Enter' && code !== ' ') {
-			return false;
+			return true;
 		}
 
 		if (props.onChange) {
@@ -50,24 +41,28 @@ const Checkbox: React.FC<TCheckboxProps> = (props: TCheckboxProps) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [props.checked]);
 
+	const titleContent = props.title || props.children;
+	const hasTitle = Boolean(titleContent);
+
 	return <div
-		className={'checkbox-container'
+		className={'checkbox-container focusable'
 		+ (disabled ? ' disabled' : '')
+		+ (hasTitle ? '' : ' no-title')
 		+ (props.inline ? ' inline' : '')
 		+ (props.reversed ? ' reversed' : '')
 		+ (props.checked ? ' checked' : '')}
 		onKeyDownCapture={handleKey}
 		onClick={handleTitleClick}
-		tabIndex={disabled ? -1 : 1}
+		tabIndex={disabled ? -1 : 0}
 	>
 
 		<div className={'checkbox-tickmark'}>
 			{props.checked && <><IconCheck/><IconCheck/></>}
 		</div>
 
-		<div className={'checkbox-title'}>
-			{props.title || props.children}
-		</div>
+		{hasTitle && <div className={'checkbox-title'}>
+			{titleContent}
+		</div>}
 	</div>;
 };
 

@@ -25,6 +25,7 @@
 
 			svg {
 				fill: var(--app-color-remark);
+
 				&:first-child {
 					display: none;
 				}
@@ -50,8 +51,17 @@
 		}
 	}
 
+	&.no-title {
+		display: inline-flex;
+
+		.checkbox-tickmark {
+			margin: 0;
+		}
+	}
+
 	.checkbox-tickmark {
 		border: 2px solid var(--app-primary-color);
+		background-color: var(--app-background-lighten);
 		display: inline-flex;
 		align-items: center;
 		justify-items: center;
@@ -64,6 +74,7 @@
 		height: 14px;
 		line-height: 14px;
 		transition: all .2s ease;
+		cursor: pointer;
 
 		svg {
 			fill: var(--app-primary-text-color);

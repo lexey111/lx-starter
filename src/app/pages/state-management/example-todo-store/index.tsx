@@ -5,7 +5,7 @@ import {Title} from '../../../components/ui/general/typography/title-component';
 import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
 import {TodoListExample} from './todo-list-component';
 
-export const StateExamplePage: React.FC = () => {
+export const ExampleTodoStorePage: React.FC = () => {
 	return <>
 		<PageSubmenu/>
 		<Title>An example store</Title>
@@ -14,14 +14,14 @@ export const StateExamplePage: React.FC = () => {
 		</p>
 
 		<Title level={2}>Example</Title>
-		<SourceFile src={'src/app/pages/state-management/example-store/todo-list-component.tsx'}/>
+		<SourceFile src={'src/app/pages/state-management/example-todo-store/todo-list-component.tsx'}/>
 
 		<TodoListExample/>
 
 		<hr/>
 
 		<Title level={3}>Store structure</Title>
-		<SourceFile src={'src/app/store/example-store/app-example-store.ts'}/>
+		<SourceFile src={'src/app/store/example-todo-store/app-example-todo-store.ts'}/>
 
 		<SyntaxHighlight content={`import {makeAutoObservable} from 'mobx';
 
