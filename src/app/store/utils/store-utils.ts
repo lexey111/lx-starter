@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access */
+import {hasField, setObjectField} from './object-utils';
+
 function semiDeepCopy(key: string, source: Record<string, any>, destination: Record<string, any>): void {
 	// eslint-disable-next-line no-prototype-builtins
 	if (!source.hasOwnProperty(key)) {
@@ -41,7 +43,8 @@ export function handleStoreValue<T>(store: T, fieldName: string, fieldValue: unk
 	if (!fieldName) {
 		throw new Error('fieldName required!');
 	}
-	if (!Object.prototype.hasOwnProperty.call(store, fieldName)) {
+
+	if (!hasField(store, fieldName)) {
 		throw new Error(`Field ${fieldName} is absent in the store!`);
 	}
 
@@ -51,11 +54,12 @@ export function handleStoreValue<T>(store: T, fieldName: string, fieldValue: unk
 		valueToSave = (fieldValue as any).target.value;
 	}
 
-	store[fieldName] = valueToSave;
+	setObjectField(store, fieldName, valueToSave);
 
 	if (Object.prototype.hasOwnProperty.call(store, 'changed')) {
 		store['changed'] = true;
 	}
+
 	if (Object.prototype.hasOwnProperty.call(store, 'version')) {
 		if (!store['version']) {
 			store['version'] = 0;

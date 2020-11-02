@@ -21,7 +21,7 @@ export const TodoListExample: React.FC = observer(() => {
 		setShowDialog(false);
 	}, []);
 
-	return <div className={'example-todo-store-container'}>
+	return <div className={'example-component-container'}>
 		<SourceFile src={'src/app/pages/state-management/example-todo-store/todo-list-component.tsx'}/>
 		<Title level={4}>TODO List</Title>
 		<TodoListItemExample show={showDialog} closeDialog={closeDialog}/>

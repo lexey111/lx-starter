@@ -18,7 +18,7 @@ export const ExampleTodoStorePage: React.FC = () => {
 		<TodoListExample/>
 
 		<Title level={3}>Store structure</Title>
-		<SourceFile src={'src/app/store/example-todo-store/app-example-todo-store.ts'}/>
+		<SourceFile src={'src/app/store/example/example-todo-store/app-example-todo-store.ts'}/>
 
 		<p>
 			Here I'm using approach with different stores: one for the 'main' object (list of ToDo items) and second one for
@@ -64,7 +64,7 @@ export const AppExampleToDoStoreItem = new CAppExampleTodoStoreItem(); // curren
 		</p>
 
 		<SyntaxHighlight
-			title={'src/app/store/example-todo-store/app-example-store-list.ts'}
+			title={'src/app/store/example/example-todo-store/app-example-store-list.ts'}
 			content={`export type TAppExampleStoreItem = {
 	_id?: string
 	title: string
@@ -88,7 +88,7 @@ export default class CAppExampleStore implements TAppExampleStoreList {...}`}/>
 		</p>
 
 		<SyntaxHighlight
-			title={'src/app/store/example-todo-store/app-example-store-item.ts'}
+			title={'src/app/store/example/example-todo-store/app-example-store-item.ts'}
 			content={`import {makeAutoObservable} from 'mobx';
 import {TAppExampleStoreItem} from './app-example-store-list';
 

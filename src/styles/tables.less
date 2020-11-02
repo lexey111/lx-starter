@@ -2,6 +2,7 @@ table {
 	width: 100%;
 	border-spacing: 0;
 	border-collapse: collapse;
+	background-color: var(--app-background-lighten);
 
 	thead {
 		tr {
@@ -22,13 +23,73 @@ table {
 			td {
 				padding: 8px;
 				border: 1px solid var(--app-background-darken);
-				background-color: var(--app-background-darken-tint1);
 			}
 		}
+	}
+}
 
-		tr:nth-child(even) {
+table.no-borders {
+	border: none;
+
+	tr {
+		td {
+			border: none;
+		}
+	}
+}
+
+.disabled-cell {
+	color: var(--app-color-remark);
+	background-color: var(--app-background);
+}
+
+table.active-records {
+	border-collapse: separate;
+	background-color: transparent;
+
+	&.disabled {
+		tbody {
+			tr {
+				pointer-events: none;
+
+				td {
+					color: var(--app-color-remark);
+				}
+
+				&.selected {
+					td {
+						background-color: var(--app-background-darken);
+						border-color: var(--app-background-darken-tint4);
+						color: var(--app-color);
+					}
+				}
+			}
+		}
+	}
+
+	tbody {
+		tr {
 			td {
-				background-color: var(--app-background-lighten-tint1);
+				color: var(--app-link-color);
+				cursor: pointer;
+				transition: all .1s ease;
+				border: 2px solid transparent;
+				box-sizing: border-box;
+			}
+
+			&:hover {
+				td {
+					background-color: var(--app-link-color-active);
+					color: var(--app-background-lighten);
+				}
+			}
+
+			&.selected {
+				td {
+					font-weight: bold;
+					background-color: var(--app-link-color);
+					color: var(--app-background-lighten);
+				}
 			}
 		}
 	}

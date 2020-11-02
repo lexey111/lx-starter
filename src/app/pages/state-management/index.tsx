@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {A} from '../../components/ui/example-related/a-component';
 import {SourceFile} from '../../components/ui/example-related/source-file-component';
 import {SyntaxHighlight} from '../../components/ui/example-related/syntax-highlight';
@@ -25,6 +26,7 @@ export const StatePage: React.FC = () => {
 		<p>
 			Also this application designed as multi-store one. It means, for different purposes there are separated stores
 			to follow the <A href={'https://en.wikipedia.org/wiki/Single-responsibility_principle'}>single responsibility principle</A>.
+			You can find more details <Link to={'/state-management/todo-example'}>here</Link>.
 		</p>
 
 		<p>

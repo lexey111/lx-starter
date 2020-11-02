@@ -155,7 +155,57 @@ pre.example-filestructure {
 	}
 }
 
-.example-todo-store-container {
+.example-centered-full {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	justify-items: center;
+}
+
+.example-simple-form {
+	padding: 0 32px;
+
+	div.form-actions {
+		display: flex;
+		align-content: center;
+		align-items: center;
+		justify-content: flex-end;
+		flex-flow: row nowrap;
+		margin: 2em 0 1em 0;
+	}
+
+	div.form-row {
+		display: flex;
+		align-content: center;
+		align-items: center;
+		flex-flow: row nowrap;
+		margin-bottom: .5em;
+
+		label {
+			display: inline-flex;
+			align-content: center;
+			align-items: center;
+			justify-content: flex-end;
+			flex-shrink: 0;
+			flex-grow: 0;
+			min-width: 100px;
+			max-width: 100px;
+			width: 100px;
+			margin-right: 1em;
+		}
+
+		input {
+			display: inline-flex;
+			margin: 0;
+		}
+	}
+}
+
+.example-component-container {
 	border: 1px dashed var(--app-border-color);
 	padding: 16px;
 	background-color: var(--app-background-lighten);

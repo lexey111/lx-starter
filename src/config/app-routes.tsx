@@ -16,6 +16,7 @@ import {RoutingListOfArticles} from '../app/pages/routes-subroutes/example-page/
 import {AuthorTitle} from '../app/pages/routes-subroutes/example-page/list-of-articles/author-title-component';
 import {StatePage} from '../app/pages/state-management';
 import {StateMainStorePage} from '../app/pages/state-management/app-state';
+import {StateGenericStorePage} from '../app/pages/state-management/example-generic-store';
 import {ExampleTodoStorePage} from '../app/pages/state-management/example-todo-store';
 import {TestingPage} from '../app/pages/testing';
 import {ThemingPage} from '../app/pages/theming';
@@ -78,6 +79,12 @@ export const AppRoutes: TRouteMappingItems = [
 				page: <ExampleTodoStorePage/>,
 				noBreadcrumbs: true,
 				title: 'Example ToDo Store',
+			},
+			{
+				url: '/state-management/generic-example',
+				page: <StateGenericStorePage/>,
+				noBreadcrumbs: true,
+				title: 'Generic Store & Utils',
 			},
 		]
 	},
