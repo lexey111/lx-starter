@@ -1,23 +1,23 @@
 import {makeAutoObservable} from 'mobx';
 
-export type TAppExampleStoreRecord = {
+export type TAppExampleStoreItem = {
 	_id?: string
 	title: string
 	completed: boolean
 };
 
-export interface TAppExampleStoreData {
-	items: Array<TAppExampleStoreRecord>
+export interface TAppExampleStoreList {
+	items: Array<TAppExampleStoreItem>
 	hasItems: boolean
 
-	add: (item: TAppExampleStoreRecord) => void
-	update: (item: TAppExampleStoreRecord) => boolean
+	add: (item: TAppExampleStoreItem) => void
+	update: (item: TAppExampleStoreItem) => boolean
 	remove: (id: string) => boolean
 	toggle: (id: string) => void
 }
 
-export default class CAppExampleTodoStore implements TAppExampleStoreData {
-	public items: Array<TAppExampleStoreRecord> = [];
+export default class CAppExampleTodoStoreList implements TAppExampleStoreList {
+	public items: Array<TAppExampleStoreItem> = [];
 
 	constructor() {
 		makeAutoObservable(this);
@@ -27,7 +27,7 @@ export default class CAppExampleTodoStore implements TAppExampleStoreData {
 		return Boolean(this.items.length > 0);
 	}
 
-	add(item: TAppExampleStoreRecord): void {
+	add(item: TAppExampleStoreItem): void {
 		this.items.push({
 			...item,
 			_id: '_' + Math.random().toString(36).substr(2, 9)
@@ -52,7 +52,7 @@ export default class CAppExampleTodoStore implements TAppExampleStoreData {
 		this.items[idx].completed = !this.items[idx].completed;
 	}
 
-	update(item: TAppExampleStoreRecord): boolean {
+	update(item: TAppExampleStoreItem): boolean {
 		const idx = this.findItemById(item._id);
 		if (idx === -1) {
 			return false;

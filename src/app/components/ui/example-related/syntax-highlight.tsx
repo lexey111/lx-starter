@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useLayoutEffect, useRef} from 'react';
 import * as Prism from './prism.js';
 
 interface ISyntaxHighlightProps {
@@ -20,7 +20,7 @@ export const SyntaxHighlight = (
 
 	const hlRef = useRef<any>();
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		// run highlighting with delay
 		if (!hlRef.current) {
 			return;

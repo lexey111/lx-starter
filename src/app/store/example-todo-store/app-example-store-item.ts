@@ -1,7 +1,7 @@
 import {makeAutoObservable} from 'mobx';
-import {TAppExampleStoreRecord} from './app-example-store';
+import {TAppExampleStoreItem} from './app-example-store-list';
 
-export default class CAppExampleTodoStoreItem implements TAppExampleStoreRecord {
+export default class CAppExampleTodoStoreItem implements TAppExampleStoreItem {
 	public _id?: string = '';
 	public title = '';
 	public completed = false;
@@ -10,7 +10,7 @@ export default class CAppExampleTodoStoreItem implements TAppExampleStoreRecord 
 		makeAutoObservable(this);
 	}
 
-	get getItem(): TAppExampleStoreRecord {
+	get getItem(): TAppExampleStoreItem {
 		return {
 			_id: this._id,
 			title: this.title,
@@ -24,7 +24,7 @@ export default class CAppExampleTodoStoreItem implements TAppExampleStoreRecord 
 		this.completed = false;
 	}
 
-	setItem(item: TAppExampleStoreRecord): void {
+	setItem(item: TAppExampleStoreItem): void {
 		this._id = item._id;
 		this.title = item.title;
 		this.completed = item.completed;
