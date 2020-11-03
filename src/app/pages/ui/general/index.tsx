@@ -17,6 +17,7 @@ export const UiGeneralPage: React.FC = () => {
 
 		<p>
 			Very simple wrapper for <code>&lt;H1..6&gt;</code> tag. Just to keep things semantic.
+			Adds some dubious features, though.
 		</p>
 		<p>
 			See <SourceFile src={'src/styles/typography.less'} inline/> to alter the style.
