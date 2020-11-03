@@ -1,8 +1,7 @@
 import {makeAutoObservable} from 'mobx';
-import {_setData} from '../../utils/store-utils';
+import {_resetData, _setData} from '../../utils/store-utils';
 
 export type TPerson = {
-	gender: string
 	name: {
 		title: string
 		first: string
@@ -22,7 +21,6 @@ export type TPerson = {
 export type TPeople = Array<TPerson>;
 
 export const PERSON_INITIAL: TPerson = {
-	gender: 'female',
 	name: {
 		title: '',
 		first: '',
@@ -60,11 +58,12 @@ export default class CPeopleStore implements TPerson {
 	public version = 0;
 
 	constructor() {
+		this.resetPerson();
 		makeAutoObservable(this);
 	}
 
-	initNewPerson(): void {
-		_setData(this, PERSON_INITIAL, PERSON_INITIAL);
+	resetPerson(): void {
+		_resetData(this, PERSON_INITIAL);
 		this.changed = false;
 		this.version = 0;
 	}

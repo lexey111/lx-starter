@@ -1,6 +1,7 @@
 import {observer} from 'mobx-react';
 import React, {useCallback} from 'react';
 import {AppPersonStore} from '../../../../store/@store';
+import {getNestedObject} from '../../../../store/utils/object-utils';
 import {handleStoreValue} from '../../../../store/utils/store-utils';
 
 const fieldName = 'name.last';
@@ -13,6 +14,6 @@ export const PersonNameLastInput: React.FC = observer(() => {
 	return <input
 		type={'text'}
 		onChange={handleChange}
-		value={AppPersonStore.name.last}
+		value={getNestedObject(AppPersonStore, fieldName) as string}
 		maxLength={256}/>;
 });

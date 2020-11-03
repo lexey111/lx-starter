@@ -76,16 +76,16 @@ export const AppSiteMap: TRouteMappingItems = [
 				title: 'App State store',
 			},
 			{
+				url: '/state-management/generic-example',
+				page: <StateGenericStorePage/>,
+				noBreadcrumbs: true,
+				title: 'Stores and Utils',
+			},
+			{
 				url: '/state-management/todo-example',
 				page: <ExampleTodoStorePage/>,
 				noBreadcrumbs: true,
 				title: 'Example ToDo Store',
-			},
-			{
-				url: '/state-management/generic-example',
-				page: <StateGenericStorePage/>,
-				noBreadcrumbs: true,
-				title: 'Generic Store & Utils',
 			},
 		]
 	},

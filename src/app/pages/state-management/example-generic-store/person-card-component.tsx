@@ -20,6 +20,7 @@ type TPersonCardComponentProps = {
 
 export const PersonCardComponent: React.FC<TPersonCardComponentProps> =
 	observer((props) => {
+
 		return <div className={'example-simple-form'}>
 			<Title level={3} noTopMargin>
 				{AppPersonStore.name.title} {AppPersonStore.name.first} {AppPersonStore.name.last}

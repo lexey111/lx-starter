@@ -2,7 +2,6 @@ import {TPeople} from '../../../store/examples/example-people-store/app-example-
 
 export const PeopleFakeData: TPeople = [
 	{
-		'gender': 'male',
 		'name': {
 			'title': 'Mr',
 			'first': 'Mille',
@@ -19,7 +18,6 @@ export const PeopleFakeData: TPeople = [
 		'id': '160680-9203'
 	},
 	{
-		'gender': 'female',
 		'name': {
 			'title': 'Miss',
 			'first': 'Carmen',
@@ -36,7 +34,6 @@ export const PeopleFakeData: TPeople = [
 		'id': '011089607'
 	},
 	{
-		'gender': 'female',
 		'name': {
 			'title': 'Miss',
 			'first': 'Anna',
@@ -53,7 +50,6 @@ export const PeopleFakeData: TPeople = [
 		'id': '240364-4750'
 	},
 	{
-		'gender': 'male',
 		'name': {
 			'title': 'Mr',
 			'first': 'Germ',
@@ -70,7 +66,6 @@ export const PeopleFakeData: TPeople = [
 		'id': '93922403'
 	},
 	{
-		'gender': 'female',
 		'name': {
 			'title': 'Ms',
 			'first': 'Anastacia',
@@ -87,7 +82,6 @@ export const PeopleFakeData: TPeople = [
 		'id': '49824517'
 	},
 	{
-		'gender': 'female',
 		'name': {
 			'title': 'Mrs',
 			'first': 'ثنا',
