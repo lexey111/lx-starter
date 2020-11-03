@@ -47,10 +47,7 @@ export const PeopleExampleComponent: React.FC = observer(() => {
 	}, [currentPersonId, version]);
 
 	return <div className={'example-component-container'}>
-		<Title level={2}>Personal info</Title>
-		<p>
-			Select record and start editing
-		</p>
+		<Title level={2} subTitle={'Select record and start editing'}>Personal info</Title>
 
 		<table className={'no-borders'}>
 			<tbody>

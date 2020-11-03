@@ -21,11 +21,11 @@ type TPersonCardComponentProps = {
 export const PersonCardComponent: React.FC<TPersonCardComponentProps> =
 	observer((props) => {
 		return <div className={'example-simple-form'}>
-			<Title level={4}>
+			<Title level={3} noTopMargin>
 				{AppPersonStore.name.title} {AppPersonStore.name.first} {AppPersonStore.name.last}
 			</Title>
 
-			<Title level={6}>Name</Title>
+			<Title level={6} bottomBorder>Name</Title>
 
 			<div className={'form-row'}>
 				<label>Title</label>
@@ -42,7 +42,7 @@ export const PersonCardComponent: React.FC<TPersonCardComponentProps> =
 				<PersonNameLastInput/>
 			</div>
 
-			<Title level={6}>Contacts</Title>
+			<Title level={6} bottomBorder>Contacts</Title>
 
 			<div className={'form-row'}>
 				<label>E-mail</label>
@@ -56,7 +56,7 @@ export const PersonCardComponent: React.FC<TPersonCardComponentProps> =
 				<PersonCellInput/>
 			</div>
 
-			<Title level={6}>Location</Title>
+			<Title level={6} bottomBorder>Location</Title>
 
 			<div className={'form-row'}>
 				<label>Country</label>

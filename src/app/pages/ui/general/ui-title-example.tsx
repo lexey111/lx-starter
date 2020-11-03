@@ -23,6 +23,7 @@ const Syntax = `type TTitleProps = {
 	className?: string
 	subTitle?: string
 	bottomBorder?: boolean
+	noTopMargin?: boolean
 	level?: 1 | 2 | 3 | 4 | 5 | 6
 };
 
