@@ -1,4 +1,4 @@
-import {setObjectField} from '../utils';
+import {setObjectField} from '../object-utils';
 
 describe('Utils object set tests', () => {
 	describe('Non-object values and empty path', () => {
@@ -29,8 +29,8 @@ describe('Utils object set tests', () => {
 
 		it('should pass objects as is when no path provided', () => {
 			expect(setObjectField({a: 1}, '', 11)).toEqual({a: 1});
-			expect(setObjectField({a: 1}, null, 11)).toEqual({a: 1});
-			expect(setObjectField({a: 1}, undefined, 11)).toEqual({a: 1});
+			expect(setObjectField({a: 1}, null as any, 11)).toEqual({a: 1});
+			expect(setObjectField({a: 1}, void 0 as any, 11)).toEqual({a: 1});
 		});
 	});
 

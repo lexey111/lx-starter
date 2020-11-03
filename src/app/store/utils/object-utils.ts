@@ -5,7 +5,7 @@
  */
 const nameIdxExtractor = /(\S+)\[(\d+)]/;
 
-export function hasField(obj: unknown, path: string): boolean {
+export function hasField(obj: any, path: string): boolean {
 	const pathParts = (path || '').split('.');
 
 	for (let i = 0; i < pathParts.length; i++) {
@@ -13,8 +13,8 @@ export function hasField(obj: unknown, path: string): boolean {
 		if (propName.indexOf('[') !== -1) {
 			// array access, extract index and name
 			const matcher = nameIdxExtractor.exec(propName);
-			const arrayPropName = matcher?.[1];
-			const idx = matcher?.[2];
+			const arrayPropName = matcher?.[1] as string;
+			const idx = matcher?.[2] as string;
 
 			if (!obj || !obj[arrayPropName] || typeof obj[arrayPropName][idx] === 'undefined') {
 				return false;
@@ -36,24 +36,25 @@ function stringToPath(path: any): Array<string> {
 	if (typeof path !== 'string') {
 		return path;
 	}
-	const output = [];
+	const output: Array<string> = [];
+
 	path.split('.').forEach(item => {
-		item.split(/\[([^}]+)]/g).forEach(key => {
-			if (key.length > 0) {
-				output.push(key);
-			}
-		});
+		item
+			.split(/\[([^}]+)]/g)
+			.forEach((key: string) => {
+				if (key.length > 0) {
+					output.push(key);
+				}
+			});
 	});
 	return output;
 }
 
-export function getNestedObject(obj: unknown, path: string, defaultValue?: unknown): unknown {
+export function getNestedObject(obj: any, path: string, defaultValue?: any): any {
 	const pathArray = stringToPath(path);
 	let current = obj;
 
-	// eslint-disable-next-line @typescript-eslint/prefer-for-of
 	for (let i = 0; i < pathArray.length; i++) {
-		// eslint-disable-next-line no-prototype-builtins
 		if (!current.hasOwnProperty(pathArray[i])) {
 			return defaultValue;
 		}
@@ -62,14 +63,14 @@ export function getNestedObject(obj: unknown, path: string, defaultValue?: unkno
 	return current;
 }
 
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
-export function setObjectField(obj: unknown, path: string, value: unknown): any {
+export function setObjectField(obj: any, path: any, value: any): any {
 	if (!path || typeof path !== 'string') {
 		return obj;
 	}
 	const preKeys = path.split('.');
-	const keys = [];
+
+	const keys: Array<string> = [];
+
 	for (let i = 0; i < preKeys.length; i++) {
 		let prop = preKeys[i];
 		while (prop && prop.slice(-1) === '\\' && preKeys[i + 1]) {
@@ -82,7 +83,7 @@ export function setObjectField(obj: unknown, path: string, value: unknown): any 
 	let idx;
 	let lastKeyIsArray;
 	const keyLength = keys.length;
-	let currentKey = keys[keyLength - 1];
+	let currentKey: any = keys[keyLength - 1];
 
 	if (!obj || keyLength === 0) {
 		return obj;
@@ -98,7 +99,6 @@ export function setObjectField(obj: unknown, path: string, value: unknown): any 
 		idx = -1;
 		lastKeyIsArray = false;
 
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 		if (key.indexOf('[') !== -1) {
 			// index in array
 			const match = /(\S+)\[(\d+)]/.exec(key);
@@ -120,7 +120,6 @@ export function setObjectField(obj: unknown, path: string, value: unknown): any 
 			const shallowCopy = currentStep[keyName].slice();
 
 			if (shallowCopy.length === 0 || idx >= shallowCopy.length || idx < 0) {
-				// eslint-disable-next-line @typescript-eslint/restrict-template-expressions
 				throw new Error(`Index is out of bounds: "${keyName}[${idx}]"!`);
 			}
 

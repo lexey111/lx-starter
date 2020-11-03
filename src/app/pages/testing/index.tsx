@@ -65,20 +65,21 @@ export const TestingPage = (): JSX.Element => {
 			content={`---------------------------------------|---------|----------|---------|---------|-------------------
 File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------------------------|---------|----------|---------|---------|-------------------
-All files                              |     100 |    96.36 |   95.24 |     100 |                   
- components/ui/data-entry/radio-button |     100 |    91.84 |   88.89 |     100 |                   
+All files                              |   99.53 |    97.37 |     100 |   99.53 |                   
+ components/ui/data-entry/radio-button |     100 |      100 |     100 |     100 |                   
   radio-component.tsx                  |     100 |      100 |     100 |     100 |                   
-  radio-group-component.tsx            |     100 |     91.3 |   85.71 |     100 | 91                
+  radio-group-component.tsx            |     100 |      100 |     100 |     100 |                   
  routing                               |     100 |      100 |     100 |     100 |                   
   route-flatten.ts                     |     100 |      100 |     100 |     100 |                   
   route-mapping-utils.ts               |     100 |      100 |     100 |     100 |                   
- store/utils                           |     100 |      100 |     100 |     100 |                   
+ store/utils                           |   99.08 |    95.51 |     100 |   99.08 |                   
+  object-utils.ts                      |   98.65 |    93.44 |     100 |   98.65 | 37-38             
   store-utils.ts                       |     100 |      100 |     100 |     100 |                   
 ---------------------------------------|---------|----------|---------|---------|-------------------
-Test Suites: 6 passed, 6 total
-Tests:       76 passed, 76 total
+Test Suites: 8 passed, 8 total
+Tests:       106 passed, 106 total
 Snapshots:   0 total
-Time:        5.281 s, estimated 7 s
+Time:        7.586 s
 `}/>
 
 		<Title level={5}>Linting with ESLint</Title>

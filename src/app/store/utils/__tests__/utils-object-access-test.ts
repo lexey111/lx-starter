@@ -1,4 +1,4 @@
-import {getNestedObject, hasField} from '../utils';
+import {getNestedObject, hasField} from '../object-utils';
 
 describe('Utils object access tests', () => {
 	describe('"hasField" should check object field access', () => {

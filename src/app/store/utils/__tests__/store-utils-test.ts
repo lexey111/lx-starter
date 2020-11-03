@@ -1,4 +1,4 @@
-import {_getSnapshot, _resetData, _setData, handleStoreValue} from './store-utils';
+import {_getSnapshot, _resetData, _setData, handleStoreValue} from '../store-utils';
 
 describe('Store: _setData', () => {
 	it('Should assign data from template as is', () => {
