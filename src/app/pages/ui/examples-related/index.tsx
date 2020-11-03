@@ -1,4 +1,5 @@
 import React from 'react';
+import {Tag} from '../../../components/ui/example-related/tag-component';
 import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
 import {A} from '../../../components/ui/example-related/a-component';
 import {SourceFile} from '../../../components/ui/example-related/source-file-component';
@@ -31,7 +32,7 @@ export const UiExampleComponentsPage: React.FC = () => {
 		<Title level={4}>Not mentioned</Title>
 		<p>
 			A few components are not mentioned here,
-			like <code>&lt;SourceFile&gt;</code>, <code>&lt;A&gt;</code> and <code>&lt;ThemeSwitcher&gt;</code>.
+			like <Tag>SourceFile</Tag>, <Tag>A</Tag>, <Tag>Tag</Tag> and <Tag>ThemeSwitcher</Tag>.
 		</p>
 
 		<p>

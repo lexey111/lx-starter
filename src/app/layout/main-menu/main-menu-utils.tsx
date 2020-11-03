@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppRoutes} from '../../../config/app-routes';
+import {AppSiteMap} from '../../../config/app-site-map';
 import {TRouteMappingItem, TRouteMappingItems} from '../../routing/route-mapping-interface';
 import {getRouteByUrl} from '../../routing/route-mapping-utils';
 import {TMenuItems} from './main-menu-component';
@@ -38,7 +38,7 @@ export function calculateMenuParts(locationUrl: string, isLoggedIn: boolean): [T
 	const firstLevelActiveItem = getRouteByUrl(parts.length ? '/' + parts[0] : '');
 	const firstLevelActiveUrl = firstLevelActiveItem?.url || '/home';
 
-	const firstLevelItems = mapActive(filterByLoggedIn(AppRoutes, isLoggedIn), firstLevelActiveUrl);
+	const firstLevelItems = mapActive(filterByLoggedIn(AppSiteMap, isLoggedIn), firstLevelActiveUrl);
 	const primaryMenu = filterByMenuType(firstLevelItems, false);
 	const lateralMenu = filterByMenuType(firstLevelItems, true);
 

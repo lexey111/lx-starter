@@ -23,6 +23,11 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 	}
 
 	let {icon} = item;
+
+	if (icon && typeof icon === 'string') {
+		icon = <span className={'app-menu-pseudo-icon'}>{icon.substring(0, 1)}</span>;
+	}
+
 	if (!icon && typeof item.title === 'string') {
 		icon = <span className={'app-menu-pseudo-icon'}>{item.title.substring(0, 1)}</span>;
 	}

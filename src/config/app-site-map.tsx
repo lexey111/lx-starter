@@ -28,7 +28,7 @@ import {UiGeneralPage} from '../app/pages/ui/general';
 import {TRouteMappingItems} from '../app/routing/route-mapping-interface';
 
 // main app routing
-export const AppRoutes: TRouteMappingItems = [
+export const AppSiteMap: TRouteMappingItems = [
 	{
 		title: 'Home',
 		url: '/home',
@@ -59,6 +59,7 @@ export const AppRoutes: TRouteMappingItems = [
 	},
 	{
 		title: 'Theming',
+		icon: 'H',
 		url: '/theming',
 		page: <ThemingPage/>,
 	},
@@ -144,7 +145,7 @@ export const AppRoutes: TRouteMappingItems = [
 			},
 			{
 				title: 'Examples-related',
-				url: '/ui/example-related',
+				url: '/ui/examples-related',
 				noBreadcrumbs: true,
 				page: <UiExampleComponentsPage/>
 			},

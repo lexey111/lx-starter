@@ -1,14 +1,18 @@
 input[type=text] {
 	height: 25px;
 	line-height: 25px;
-	border: 2px solid var(--app-link-color);
+	border: 2px solid var(--app-background-darken-tint2);
 	min-width: 150px;
 	width: 100%;
 	border-radius: 0;
 	margin-bottom: 1em;
+	background-color: var(--app-background-darken-tint1);
+	color: var(--app-color);
+	transition: all .2s ease;
 
 	&:focus, &:active {
 		outline: none;
 		border-color: var(--app-link-color-active);
+		background-color: var(--app-background-lighten-tint2);
 	}
 }

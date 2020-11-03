@@ -5,7 +5,7 @@ import {SyntaxHighlight} from '../../components/ui/example-related/syntax-highli
 import {Tag} from '../../components/ui/example-related/tag-component';
 import {Title} from '../../components/ui/general/typography/title-component';
 
-const routeConfigFilename = 'src/config/app-routes.tsx';
+const routeConfigFilename = 'src/config/app-site-map.tsx';
 
 export const RoutingPage: React.FC = () => {
 	return <>
@@ -80,8 +80,8 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 		</p>
 
 		<SyntaxHighlight
-			title={'src/config/app-routes.tsx'}
-			content={'export const RouteMapping: TRouteMappingItems = flattenRoutes(AppRoutes)'}/>
+			title={'src/config/app-site-map.tsx'}
+			content={'export const RouteMapping: TRouteMappingItems = flattenRoutes(AppSiteMap)'}/>
 
 		<p>
 			These routes are used across the application, e.g., <SourceFile src={'src/app/@app.tsx'} inline/> uses

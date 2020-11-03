@@ -76,12 +76,14 @@ export const PersonCardComponent: React.FC<TPersonCardComponentProps> =
 			<div className={'form-actions'}>
 				<Button
 					onClick={props.onSave}
+					style={{width: '8em'}}
 					type={'primary'} disabled={!AppPersonStore.changed}>
 					Save
 				</Button>
 
 				<Button
 					onClick={props.onReset}
+					style={{width: '8em'}}
 					type={'danger'} disabled={!AppPersonStore.changed}>
 					Reset ({AppPersonStore.version})
 				</Button>

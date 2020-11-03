@@ -28,7 +28,7 @@ export const TodoListExample: React.FC = observer(() => {
 
 		{!AppExampleToDoStoreList.hasItems && <div>
 			<p>
-				There are no items yet.
+				No items yet.
 			</p>
 
 			<p>

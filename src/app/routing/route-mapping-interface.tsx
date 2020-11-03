@@ -3,7 +3,7 @@ export type TRouteMappingItem = {
 
 	title?: string | JSX.Element // Menu item title or function which returns title
 	subtitle?: JSX.Element // subtitle to show under the menu title line
-	icon?: JSX.Element // icon component
+	icon?: string | JSX.Element // icon component or a letter to display
 	page: JSX.Element // page (component) to render
 
 	isHomePage?: boolean // is it Home page?

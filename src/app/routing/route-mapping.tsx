@@ -1,9 +1,9 @@
-import {AppRoutes} from '../../config/app-routes';
+import {AppSiteMap} from '../../config/app-site-map';
 import {flattenRoutes} from './route-flatten';
 import {TRouteMappingItem, TRouteMappingItems} from './route-mapping-interface';
 
 // main app routing
-export const RouteMapping: TRouteMappingItems = flattenRoutes(AppRoutes);
+export const RouteMapping: TRouteMappingItems = flattenRoutes(AppSiteMap);
 
 export const HomeRoute: TRouteMappingItem = RouteMapping.find(item => item.isHomePage) as TRouteMappingItem; // suppress "undefined"
 

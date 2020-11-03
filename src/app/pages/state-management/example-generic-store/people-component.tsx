@@ -52,7 +52,7 @@ export const PeopleExampleComponent: React.FC = observer(() => {
 			Select record and start editing
 		</p>
 
-		<table>
+		<table className={'no-borders'}>
 			<tbody>
 			<tr>
 				<td style={{

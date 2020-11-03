@@ -13,13 +13,16 @@
 	transition: background 0.15s linear;
 
 	text-align: center;
+	align-content: center;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
 	border-image: none;
 
 	outline: none;
 	position: relative;
 
 	flex-flow: row nowrap;
-	align-items: center;
 }
 .simplebtn:first-of-type {
 	margin-left: 0;

@@ -29,18 +29,20 @@ export const AboutPage: React.FC = () => {
 					<li>Building</li>
 					<li><s>Routing: params</s></li>
 					<li>Layout: main menu</li>
-					<li>State management: app</li>
+					<li><s>State management: app</s></li>
 					<li>Auth state, login/logout/guards</li>
 					<li>State management: data example</li>
-					<li>Server error</li>
 					<li>Breadcrumbs actions</li>
 				</ul>
 			</li>
 			<li><s>Delay one render on route switching</s></li>
-			<li>Add icons to example routing (arrow back, article, user)</li>
+			<li><s>Add icons to example routing (arrow back, article, user)</s></li>
 			<li>Replace unnecessary observers with useLocation/useXXX hooks</li>
 			<li>Replace .Less vars with CSS vars</li>
 			<li>Order in @media files</li>
+			<li>In-page navigation with Title</li>
+			<li>npm run dry</li>
+			<li>Roadmap page</li>
 		</ul>
 	</>;
 };
