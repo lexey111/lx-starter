@@ -70,7 +70,6 @@ export const SyntaxHighlight = (
 
 	return <div className={'example-hl-container'}>
 		{title && <div className={'example-hl-title'}>{title}</div>}
-		<div className={'example-hl-title-language' + (title ? ' with-title' : '')}>{language}</div>
 		<pre
 			data-line={Array.isArray(lines) ? lines.join(',') : lines}
 			className={'hl-component'}

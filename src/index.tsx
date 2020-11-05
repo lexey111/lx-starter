@@ -30,7 +30,10 @@ let ticking = false;
 // restore app theme from the local storage
 const value: string = localStorage.getItem('app-theme') || 'light';
 const theme = AvailableThemes.includes(value) ? value : 'light';
-window.document.body.className = 'theme-' + theme;
+AvailableThemes.forEach(t => {
+	window.document.body.classList.remove('theme-' + t);
+});
+window.document.body.classList.add('theme-' + theme);
 
 const runApp = (): void => {
 	// subscribe to page scroll (for breadcrumbs component)

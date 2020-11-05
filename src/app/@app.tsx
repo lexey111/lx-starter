@@ -15,6 +15,7 @@ import {RouteMapping} from './routing/route-mapping';
 import {TRouteMappingItem} from './routing/route-mapping-interface';
 import {RouteToStoreComponent} from './routing/route-to-store-component';
 import {AppStateStore} from './store/@stores';
+import {AvailableThemes} from './store/app-state/app-state-store';
 
 const AppRoutes = RouteMapping.map((routeItem: TRouteMappingItem, idx: number) => {
 	if (!routeItem.url) {
@@ -39,7 +40,11 @@ const AppRoutes = RouteMapping.map((routeItem: TRouteMappingItem, idx: number) =
 export const App: React.FC = observer(() => {
 	useEffect(() => {
 		// subscribe to theme changes and apply current theme to body
-		window.document.body.className = 'theme-' + AppStateStore.theme;
+		AvailableThemes.forEach(t => {
+			window.document.body.classList.remove('theme-' + t);
+		});
+		window.document.body.classList.add('theme-' + AppStateStore.theme);
+
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppStateStore.theme]);
 
