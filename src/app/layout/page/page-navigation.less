@@ -1,0 +1,77 @@
+.with-breadcrumbs, .with-page-menu {
+	.app-page-navigation {
+		top: var(--app-breadcrumbs-height);
+
+		.app-page-navigation-list {
+			// margin-top: 2em;
+		}
+	}
+}
+
+.with-top-menu {
+	.app-page-navigation {
+		top: var(--app-menu-height);
+	}
+}
+
+.with-top-menu.with-breadcrumbs, .with-top-menu.with-page-menu {
+	.app-page-navigation {
+		top: calc(var(--app-breadcrumbs-height) + var(--app-breadcrumbs-height));
+	}
+}
+
+.app-page-navigation {
+	width: 100vw;
+	z-index: 101;
+	position: sticky;
+	top: 0;
+}
+
+.app-page-navigation-content {
+	width: var(--app-page-width);
+	display: block;
+	float: none;
+	clear: both;
+	position: relative;
+	margin: 0 auto;
+}
+
+.app-page-navigation-list {
+	display: flex;
+	flex-flow: column wrap;
+	height: auto;
+	position: absolute;
+	width: auto;
+	left: 100%;
+	margin-left: 32px;
+	min-height: 100vh;
+	z-index: 101;
+
+	animation-name: app-page-navigation-animation;
+	animation-timing-function: ease-in;
+	animation-duration: .2s;
+	animation-direction: normal;
+	animation-play-state: running;
+	animation-fill-mode: forwards;
+	animation-delay: .1s;
+	opacity: 0;
+	transform: translateX(-10px);
+
+	.app-page-nav-item {
+		display: flex;
+		padding: 8px 0;
+		white-space: nowrap;
+		max-width: 200px;
+	}
+}
+
+@keyframes app-page-navigation-animation {
+	0% {
+		opacity: .1;
+		transform: translateX(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}

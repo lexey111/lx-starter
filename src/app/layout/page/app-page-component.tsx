@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {AppPageNavigationStore} from '../../store/@stores';
-import {AppPageNavigation} from './app-page-navigation-component';
 
 type TAppPageProps = {
 	children?: any
@@ -33,6 +32,5 @@ export const AppPage: React.FC<TAppPageProps> = (props: TAppPageProps) => {
 		<div className={'app-page-content'}>
 			{readyToRender && props.children}
 		</div>
-		<AppPageNavigation/>
 	</div>;
 };

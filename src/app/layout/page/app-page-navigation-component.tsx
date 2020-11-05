@@ -1,5 +1,5 @@
 import {observer} from 'mobx-react';
-import React, {useCallback} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {AppPageNavigationStore} from '../../store/@stores';
 
 export const AppPageNavigation: React.FC = observer(() => {
@@ -27,19 +27,31 @@ export const AppPageNavigation: React.FC = observer(() => {
 		return false;
 	}, []);
 
+	useEffect(() => {
+		if (AppPageNavigationStore.hasItems) {
+			document.body.classList.add('with-page-navigation');
+		} else {
+			document.body.classList.remove('with-page-navigation');
+		}
+	}, [AppPageNavigationStore.hasItems]);
+
 	if (!AppPageNavigationStore.hasItems) {
 		return null;
 	}
 
 	return <div className={'app-page-navigation'}>
-		{AppPageNavigationStore.items.map(item => {
-			return <div
-				className={'app-page-nav-item'}
-				key={item.targetId}>
-				<a href={'#'} onClick={handleClick} data-anchor={item.targetId}>
-					{item.title}
-				</a>
-			</div>;
-		})}
+		<div className={'app-page-navigation-content'}>
+			<div className={'app-page-navigation-list'}>
+				{AppPageNavigationStore.items.map(item => {
+					return <div
+						className={'app-page-nav-item'}
+						key={item.targetId}>
+						<a href={'#'} onClick={handleClick} data-anchor={item.targetId}>
+							{item.title}
+						</a>
+					</div>;
+				})}
+			</div>
+		</div>
 	</div>;
 });

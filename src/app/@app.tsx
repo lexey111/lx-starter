@@ -9,6 +9,7 @@ import {AppMainMenu} from './layout/main-menu/main-menu-component';
 import {AppAuthPage} from './layout/page/app-auth-page-component';
 import {AppContainer} from './layout/page/app-container-component';
 import {AppPage} from './layout/page/app-page-component';
+import {AppPageNavigation} from './layout/page/app-page-navigation-component';
 import {AppTopPanel} from './layout/top-panel/app-top-panel-component';
 import {RouteMapping} from './routing/route-mapping';
 import {TRouteMappingItem} from './routing/route-mapping-interface';
@@ -50,6 +51,8 @@ export const App: React.FC = observer(() => {
 		<AppMainMenu position={AppStateStore.mainMenuPosition}/>
 
 		<AppBreadcrumbs/>
+
+		<AppPageNavigation/>
 
 		<AppContainer>
 			<AppLayout footer={<AppFooter/>}>

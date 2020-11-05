@@ -13,59 +13,20 @@
 	animation-fill-mode: forwards;
 
 	display: block;
-	min-width: calc(100% + 40px);
-	max-width: calc(100% + 40px);
-	width: calc(100% + 40px);
 	padding: 0;
-	margin: 0;
+	width: var(--app-page-width);
+	margin: 0 auto;
 	position: relative;
-}
-
-.app-page-navigation {
-	display: block;
-	float: left;
-	width: 200px;
-	position: fixed;
-	right: 200px;
-	top: 0;
-
-	animation-name: app-page-navigation-animation;
-	animation-timing-function: ease-in;
-	animation-duration: .2s;
-	animation-direction: normal;
-	animation-play-state: running;
-	animation-fill-mode: forwards;
-	animation-delay: .1s;
-	opacity: 0;
-	transform: translateX(-10px);
-
-	.app-page-nav-item {
-		display: flex;
-		padding: 8px 32px;
-		white-space: nowrap;
-		width: 200px;
-	}
 }
 
 .app-page-content {
-	padding: 0 32px;
+	padding: 0;
 	margin: 0;
 	float: none;
-	width: calc(100% - 200px - 64px);
+	width: 100%;
 	overflow: hidden;
 	display: block;
 	position: relative;
-
-	&:after {
-		content: '';
-		display: block;
-		width: 2px;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		background-color: var(--app-background-darken);
-	}
 }
 
 @keyframes app-page-animation {
@@ -77,13 +38,4 @@
 	}
 }
 
-@keyframes app-page-navigation-animation {
-	0% {
-		opacity: .1;
-		transform: translateX(10px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
+@import "page-navigation.less";
