@@ -30,15 +30,20 @@ export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	return <CustomHeader
-		className={'app-title app-title-level-' + (props.level ? props.level.toString() : '1')
-		+ (props.bottomBorder ? ' bottom-border' : '')
-		+ (props.noTopMargin ? ' no-top-margin' : '')
-		+ (props.className ? ' ' + props.className : '')}
-		id={TitleId.current}>
-		{props.children}
+	const hasSubtitle = Boolean(props.subTitle);
+
+	return <div className={'app-title app-title-level-' + (props.level ? props.level.toString() : '1')
+	+ (props.bottomBorder ? ' bottom-border' : '')
+	+ (props.noTopMargin ? ' no-top-margin' : '')
+	+ (hasSubtitle ? ' with-subtitle' : '')
+	+ (props.className ? ' ' + props.className : '')}>
+
+		<CustomHeader id={TitleId.current}>
+			{props.children}
+		</CustomHeader>
+
 		{props.subTitle && <div className={'app-subtitle'}>
 			{props.subTitle}
 		</div>}
-	</CustomHeader>;
+	</div>;
 };

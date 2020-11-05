@@ -46,7 +46,9 @@ export const RoutingArticleAuthor: React.FC = () => {
 			<div>{author}</div>
 		</div>
 
-		<Title level={5}>Author of &nbsp; <i>{article.title}</i></Title>
+		<Title level={5}>
+			Author of &nbsp; <i>{article.title}</i>
+		</Title>
 
 		<LipsumPara/>
 

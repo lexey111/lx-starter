@@ -1,19 +1,10 @@
 .app-title {
 	color: var(--app-header-color);
 	width: 100%;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 	align-content: flex-start;
 	align-items: flex-start;
-
-	.app-subtitle {
-		margin-top: -.5em;
-		display: flex;
-		flex-flow: row nowrap;
-		align-items: center;
-		font-size: .6em;
-		font-weight: normal;
-		color: var(--app-header-color-lighten);
-	}
+	margin-bottom: 1.5em;
 
 	&.bottom-border {
 		border-bottom: 2px solid var(--app-header-color-lighten);
@@ -24,18 +15,47 @@
 	}
 
 	&:first-child {
-		margin-top: 0;
+		h1, h2, h3, h4, h5, h6 {
+			margin-top: 0;
+		}
+	}
+
+	&.with-subtitle {
+		h1, h2, h3, h4, h5, h6 {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.app-subtitle {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	font-size: 1em;
+	font-weight: normal;
+	color: var(--app-header-color-lighten);
+}
+
+.app-title-level-1 {
+	.app-subtitle {
+		font-size: 1.2em;
+	}
+}
+
+.app-title-level-3 {
+	.app-subtitle {
+		font-size: .9em;
 	}
 }
 
 .app-title-level-4, .app-title-level-5 {
 	.app-subtitle {
-		font-size: .7em;
+		font-size: .8em;
 	}
 }
 
 .app-title-level-6 {
 	.app-subtitle {
-		font-size: .8em;
+		font-size: .7em;
 	}
 }

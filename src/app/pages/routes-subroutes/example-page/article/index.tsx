@@ -24,7 +24,9 @@ export const RoutingArticle: React.FC = () => {
 	}
 
 	return <>
-		<Title><IconFile/>&nbsp; {article.title || location.params.articleId}</Title>
+		<Title>
+			<IconFile/>&nbsp; {article.title || location.params.articleId}
+		</Title>
 
 		<Title level={5}>Author{article && article.authors.length > 1 ? 's' : ''}</Title>
 		<div>

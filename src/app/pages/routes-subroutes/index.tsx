@@ -11,7 +11,7 @@ export const RoutingPage: React.FC = () => {
 	return <>
 		<Title>Routing</Title>
 
-		<Title level={2}>Basic principles</Title>
+		<Title level={2} nav>Basic principles</Title>
 		<p>
 			Routes in the application have to be defined in the <SourceFile src={routeConfigFilename} inline/> file.
 			It is array of <code>TRouteMappingItems</code> objects:
@@ -49,7 +49,7 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 			id and second one is corresponding page.
 		</p>
 
-		<Title level={3}>Nesting</Title>
+		<Title level={3} nav>Nesting</Title>
 		<p>
 			Routes could be nested into other routes:
 		</p>
@@ -97,7 +97,7 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 </Switch>
 `}/>
 
-		<Title level={3}>How it works</Title>
+		<Title level={3} nav>How it works</Title>
 		<Title level={4}>Rendering</Title>
 
 		<p>
@@ -155,7 +155,7 @@ public isAuthorizationInProgress = false;
 			isn't logged in, or displays the spinner if authorization in process, or target page if user authorized successfully.
 		</p>
 
-		<Title level={4}>Routing params</Title>
+		<Title level={4} nav>Routing params</Title>
 		<p>
 			There are some data related to currently displayed page:
 		</p>

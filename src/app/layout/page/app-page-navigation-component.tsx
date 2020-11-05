@@ -22,7 +22,7 @@ export const AppPageNavigation: React.FC = observer(() => {
 		}
 		window.scrollTo({
 			top: offset - 100,
-			behavior: 'smooth'
+			behavior: 'auto'
 		});
 		return false;
 	}, []);

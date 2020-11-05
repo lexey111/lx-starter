@@ -13,7 +13,7 @@ export const UiDisplayPage: React.FC = () => {
 	return <>
 		<Title>Display</Title>
 
-		<Title level={2}>Tabs</Title>
+		<Title level={2} nav>Tabs</Title>
 		<SourceFile src={'src/app/components/ui/display/tabs'}/>
 
 		<p>
@@ -36,7 +36,7 @@ export const UiDisplayPage: React.FC = () => {
 
 		<Title level={2}>Wait for something</Title>
 
-		<Title level={3}>Tag wait</Title>
+		<Title level={3} nav>Tag wait</Title>
 		<SourceFile src={'src/app/components/ui/display/wait/wait-tag-component.tsx'}/>
 
 		<p>
@@ -45,7 +45,7 @@ export const UiDisplayPage: React.FC = () => {
 
 		<UiWaitTagExample/>
 
-		<Title level={3}>Inline wait</Title>
+		<Title level={3} nav>Inline wait</Title>
 		<SourceFile src={'src/app/components/ui/display/wait/wait-inline-component.tsx'}/>
 
 		<p>
@@ -54,7 +54,7 @@ export const UiDisplayPage: React.FC = () => {
 
 		<UiWaitInlineExample/>
 
-		<Title level={3}>Block wait</Title>
+		<Title level={3} nav>Block wait</Title>
 		<SourceFile src={'src/app/components/ui/display/wait/wait-block-component.tsx'}/>
 
 		<p>
@@ -63,7 +63,7 @@ export const UiDisplayPage: React.FC = () => {
 
 		<UiWaitBlockExample/>
 
-		<Title level={3}>Fullscreen wait</Title>
+		<Title level={3} nav>Fullscreen wait</Title>
 		<SourceFile src={'src/app/components/ui/display/wait/wait-fullscreen-component.tsx'}/>
 
 		<p>
@@ -78,7 +78,7 @@ export const UiDisplayPage: React.FC = () => {
 
 		<UiWaitFullscreenExample/>
 
-		<Title level={3}>Simple modal</Title>
+		<Title level={3} nav>Simple modal</Title>
 		<SourceFile src={'src/app/components/ui/display/wait/simple-modal-component.tsx'}/>
 
 		<p>

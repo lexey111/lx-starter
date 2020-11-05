@@ -11,7 +11,7 @@ export const UiDataEntryPage: React.FC = () => {
 			The components an user can interact with, and enter some data.
 		</p>
 
-		<Title level={2}>Radio</Title>
+		<Title level={2} nav>Radio</Title>
 		<SourceFile src={'src/app/components/ui/data-entry/radio-button'}/>
 
 		<p>
@@ -20,7 +20,7 @@ export const UiDataEntryPage: React.FC = () => {
 
 		<UiRadioExample/>
 
-		<Title level={2}>Checkbox</Title>
+		<Title level={2} nav>Checkbox</Title>
 		<SourceFile src={'src/app/components/ui/data-entry/checkbox/checkbox-component.tsx'}/>
 
 		<p>
