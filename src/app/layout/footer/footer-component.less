@@ -1,5 +1,3 @@
-@import "../../../styles/variables.less";
-
 .app-footer {
 	display: flex;
 	background-color: var(--app-background);
@@ -9,15 +7,16 @@
 	justify-items: flex-end;
 	flex-flow: row nowrap;
 	padding: 0;
+	margin: 0 auto;
 
-	max-width: @app-page-width;
+	width: var(--app-page-width);
 
 	box-sizing: border-box;
 	flex: 0 0 auto;
 
 	.app-footer-content {
 		display: block;
-		max-width: @app-page-width;
+		max-width: var(--app-page-width);
 		width: auto;
 		padding: 32px;
 		color: var(--app-color-remark);

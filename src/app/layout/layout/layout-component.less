@@ -1,10 +1,28 @@
+.with-breadcrumbs, .with-page-menu {
+	.app-layout {
+		min-height: calc(100vh - var(--app-breadcrumbs-height));
+	}
+}
+
+.with-top-menu {
+	.app-layout {
+		min-height: calc(100vh - var(--app-menu-height));
+	}
+}
+
+.with-top-menu.with-breadcrumbs, .with-top-menu.with-page-menu {
+	.app-layout {
+		min-height: calc(100vh - var(--app-breadcrumbs-height) - var(--app-menu-height));
+	}
+}
+
 .app-layout {
 	color: var(--app-color);
 	display: flex;
 	flex: auto;
 	flex-direction: column;
 	width: 100vw;
-	min-height: 100vh;
+	//min-height: 100vh;
 
 	background-color: var(--app-background);
 
