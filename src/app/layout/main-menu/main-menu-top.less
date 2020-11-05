@@ -1,0 +1,53 @@
+.with-top-panel {
+	.app-menu-top {
+		padding-top: 5px;
+	}
+}
+
+.app-menu-top {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100vw;
+	min-height: var(--app-menu-height);
+	height: var(--app-menu-height);
+
+	z-index: 109;
+	position: sticky;
+	top: 0;
+
+	background-color: var(--app-menu-background);
+
+	.app-main-menu-container {
+		box-sizing: border-box;
+		display: flex;
+		flex-flow: row nowrap;
+		margin: 0 auto;
+		padding: 0;
+		width: var(--app-page-width);
+		position: relative;
+		color: var(--app-primary-text-color);
+	}
+
+	.app-main-menu {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: var(--app-menu-height);
+		display: flex;
+		flex-flow: row nowrap;
+		z-index: 100;
+	}
+
+	.app-menu-stub {
+		width: auto;
+		height: 100%;
+		flex-grow: 2;
+		cursor: default;
+		pointer-events: none;
+	}
+
+	.menu-spacer {
+		width: 8px;
+	}
+}

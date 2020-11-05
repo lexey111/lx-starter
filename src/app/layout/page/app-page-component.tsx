@@ -1,4 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
+import {AppPageNavigationStore} from '../../store/@stores';
+import {AppPageNavigation} from './app-page-navigation-component';
 
 type TAppPageProps = {
 	children?: any
@@ -11,6 +13,7 @@ export const AppPage: React.FC<TAppPageProps> = (props: TAppPageProps) => {
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
+		AppPageNavigationStore.reset();
 
 		const delayedRender = setTimeout(() => {
 			setReadyToRender(true);
@@ -27,6 +30,9 @@ export const AppPage: React.FC<TAppPageProps> = (props: TAppPageProps) => {
 	}
 
 	return <div className={'app-page' + (props.className ? ' ' + props.className : '')}>
-		{readyToRender && props.children}
+		<div className={'app-page-content'}>
+			{readyToRender && props.children}
+		</div>
+		<AppPageNavigation/>
 	</div>;
 };

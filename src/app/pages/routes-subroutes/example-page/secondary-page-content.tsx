@@ -1,7 +1,7 @@
 import React from 'react';
 import {SyntaxHighlight} from '../../../components/ui/example-related/syntax-highlight';
 import useLocationParams from '../../../hooks/use-location-params';
-import {AppStateStore} from '../../../store/@store';
+import {AppStateStore} from '../../../store/@stores';
 
 export const SecondaryPageContent: React.FC = () => {
 	const location = useLocationParams();

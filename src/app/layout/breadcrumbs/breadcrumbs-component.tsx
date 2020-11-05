@@ -6,14 +6,15 @@ import useLocationParams from '../../hooks/use-location-params';
 import {HomeRoute} from '../../routing/route-mapping';
 import {TRouteMappingItem, TRouteMappingItems} from '../../routing/route-mapping-interface';
 import {getRouteByUrl} from '../../routing/route-mapping-utils';
-import {AppStateStore} from '../../store/@store';
+import {AppStateStore} from '../../store/@stores';
+import {PageSubmenu} from '../page-submenu/page-submenu-component';
 
 function calculateBreadCrumbs(currentRoute?: TRouteMappingItem): Array<TRouteMappingItem> {
 	if (!currentRoute || currentRoute.isHomePage) {
 		return [HomeRoute];
 	}
 
-	if (currentRoute.noBreadcrumbs === true) {
+	if (currentRoute.breadcrumbs !== 'default') {
 		return [];
 	}
 
@@ -38,13 +39,29 @@ function calculateBreadCrumbs(currentRoute?: TRouteMappingItem): Array<TRouteMap
 
 export const AppBreadcrumbs: React.FC = observer(() => {
 	const [breadcrumbs, setBreadcrumbs] = useState<TRouteMappingItems>([]);
+	const [useSubroutingMenu, setUseSubroutingMenu] = useState(false);
 
 	const location = useLocationParams();
 
 	useEffect(() => {
-		setBreadcrumbs(calculateBreadCrumbs(AppStateStore.currentRoute));
+		const usePageMenu = AppStateStore.currentRoute?.breadcrumbs === 'sub-menu';
+		setUseSubroutingMenu(usePageMenu);
+
+		if (!usePageMenu) {
+			setBreadcrumbs(calculateBreadCrumbs(AppStateStore.currentRoute));
+		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [location.url]);
+
+	if (useSubroutingMenu) {
+		return <div className={'app-breadcrumbs'}>
+			<div className={'app-breadcrumbs-content'}>
+				<div className={'app-breadcrumbs-panel'}>
+					<PageSubmenu/>
+				</div>
+			</div>
+		</div>;
+	}
 
 	if (!breadcrumbs.length || breadcrumbs.length === 1) {
 		return null;

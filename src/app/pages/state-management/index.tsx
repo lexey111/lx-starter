@@ -6,11 +6,9 @@ import {SyntaxHighlight} from '../../components/ui/example-related/syntax-highli
 import {IconFile} from '../../components/ui/general/icons/icon-file-component';
 import {IconFolder} from '../../components/ui/general/icons/icon-folder-component';
 import {Title} from '../../components/ui/general/typography/title-component';
-import {PageSubmenu} from '../../layout/page-submenu/page-submenu-component';
 
 export const StatePage: React.FC = () => {
 	return <>
-		<PageSubmenu/>
 		<Title>State management</Title>
 		<Title level={2}>Basic principles</Title>
 
@@ -35,7 +33,7 @@ export const StatePage: React.FC = () => {
 
 		<Title level={2}>Attachment of a store</Title>
 
-		<SourceFile src={'src/app/store/@store.ts'}/>
+		<SourceFile src={'src/app/store/@stores.ts'}/>
 
 		<p>
 			This is the place where stores are living. This is 'include' file which contains stores initialization:
@@ -50,7 +48,7 @@ export const StatePage: React.FC = () => {
 	`}<IconFolder/> {`utils
 		`}<IconFile/>{`store-utils.ts
 		`}<IconFile/>{`store-utils-test.ts
-	`}<IconFile/><b>@store.ts</b>
+	`}<IconFile/><b>@stores.ts</b>
 </pre>
 
 		<SyntaxHighlight content={`import CAppStateStore from './app-state/app-state-store';

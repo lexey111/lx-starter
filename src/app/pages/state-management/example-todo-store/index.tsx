@@ -2,12 +2,10 @@ import React from 'react';
 import {SourceFile} from '../../../components/ui/example-related/source-file-component';
 import {SyntaxHighlight} from '../../../components/ui/example-related/syntax-highlight';
 import {Title} from '../../../components/ui/general/typography/title-component';
-import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
 import {TodoListExample} from './todo-list-component';
 
 export const ExampleTodoStorePage: React.FC = () => {
 	return <>
-		<PageSubmenu/>
 		<Title>An example store</Title>
 		<p>
 			Well, this is pretty simple implementation of 'ToDo' application.
@@ -28,7 +26,7 @@ export const ExampleTodoStorePage: React.FC = () => {
 		</p>
 
 		<SyntaxHighlight
-			title={'src/app/store/@store.ts'}
+			title={'src/app/store/@stores.ts'}
 			content={`export const AppExampleToDoStoreList = new CAppExampleToDoStore(); // just an example of ToDo store
 export const AppExampleToDoStoreItem = new CAppExampleTodoStoreItem(); // current (active, on-edit) store item
 `}/>

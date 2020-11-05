@@ -2,7 +2,7 @@ import {observer} from 'mobx-react';
 import React from 'react';
 import {Button} from '../../../components/ui/general/button/button-component';
 import {Title} from '../../../components/ui/general/typography/title-component';
-import {AppPersonStore} from '../../../store/@store';
+import {AppPersonStore} from '../../../store/@stores';
 import {PersonCellInput} from './fields/input-cell-component';
 import {PersonLocationCityInput} from './fields/input-city-component';
 import {PersonLocationCountryInput} from './fields/input-country-component';

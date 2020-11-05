@@ -1,9 +1,8 @@
 import React from 'react';
-import {Tag} from '../../../components/ui/example-related/tag-component';
-import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
 import {A} from '../../../components/ui/example-related/a-component';
 import {SourceFile} from '../../../components/ui/example-related/source-file-component';
 import {SyntaxHighlight} from '../../../components/ui/example-related/syntax-highlight';
+import {Tag} from '../../../components/ui/example-related/tag-component';
 import {Title} from '../../../components/ui/general/typography/title-component';
 import {ExampleSyntaxHighlightTabs} from './example-highlighting-tabs';
 import {ExampleLipsum} from './example-lipsum';
@@ -11,7 +10,6 @@ import {ExampleSyntaxHighlight} from './example-syntax-highlight';
 
 export const UiExampleComponentsPage: React.FC = () => {
 	return <>
-		<PageSubmenu/>
 		<Title>Examples-related components</Title>
 
 		<p>

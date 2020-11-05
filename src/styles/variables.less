@@ -1,23 +1,28 @@
 @app-page-width: 960px;
-@app-menu-height: 64px;
+@app-font-size: 14px;
+@app-small-font-size: 12px;
+
+@app-menu-height: 48px;
 @app-menu-width: 64px;
 @app-menu-icon-size: 21px;
 @app-menu-width-expanded: 200px;
 @app-menu-width-small: 32px;
+
 @app-breadcrumbs-height: 48px;
 
 @app-background: #f2f2f2;
 
-@app-primary-color: #40b4e0;
+@app-primary-color: #135486;
+@app-primary-bright-color: #ffbd0e;
 @app-primary-text-color: #fff;
 
 @app-danger-color: #e20443;
 @app-danger-text-color: #fff;
 
-@app-warning-color: #dc8a2c;
+@app-warning-color: #ffbd0e;
 @app-warning-text-color: #fff;
 
-@app-success-color: #4fa222;
+@app-success-color: #59cf05;
 @app-success-text-color: #fff;
 
 @app-code-color: #ecdbb7;
@@ -26,14 +31,20 @@
 @app-accent-color: #305372;
 @app-accent-background: #bddbf6;
 
+@app-menu-background: darken(@app-primary-color, 5);
+@app-menu-text-color: darken(@app-primary-text-color, 15);
+
 @app-menu-separator: darken(@app-background, 10);
 @app-menu-separator-complimentary: #1b435c;
-@app-menu-selected-color: @app-menu-separator-complimentary;
-@app-menu-hover-color: @app-primary-color;
-@app-menu-hover-background: @app-background;
-@app-menu-color: @app-accent-color;
-@app-menu-background: @app-background;
-@app-menu-small-font-size: .9em;
+
+@app-menu-selected-color: lighten(@app-menu-background, 15);
+@app-menu-selected-text-color: lighten(@app-menu-text-color, 5);
+@app-menu-hover-text-color: lighten(@app-menu-text-color, 20);
+@app-menu-hover-color: lighten(@app-menu-background, 10);
+@app-menu-color-lighten: lighten(@app-menu-background, 12);
+@app-menu-color-darken: lighten(@app-menu-background, 5);
+@app-menu-font-size: 13px;
+@app-menu-small-font-size: 11px;
 
 @app-primary-complimentary-color: #ffffff;
 @app-layout-header-background: @app-background;
@@ -52,8 +63,10 @@
 @narrow-layout-2: 576px;
 
 body {
-	--app-background: @app-background;
+	--app-page-width: @app-page-width;
+	--app-breadcrumbs-height: @app-breadcrumbs-height;
 
+	--app-background: @app-background;
 	--app-background-lighten: lighten(@app-background, 10);
 
 	--app-background-lighten-tint1: lighten(@app-background, 2);
@@ -78,6 +91,7 @@ body {
 	--app-code-text-color: @app-code-text-color;
 
 	--app-primary-color: @app-primary-color;
+	--app-primary-bright-color: @app-primary-bright-color;
 	--app-primary-text-color: @app-primary-text-color;
 	--app-primary-color-lighten: lighten(@app-primary-color, 15);
 	--app-primary-color-darken: darken(@app-primary-color, 7);
@@ -97,15 +111,22 @@ body {
 	--app-success-color-lighten: lighten(@app-success-color, 7);
 	--app-success-color-darken: darken(@app-success-color, 7);
 
-	--app-menu-color: @app-menu-color;
+	--app-menu-text-color: @app-menu-text-color;
 	--app-menu-background: @app-menu-background;
 	--app-menu-separator: @app-menu-separator;
 	--app-menu-separator-darken: darken(@app-menu-separator, 10);
 	--app-menu-separator-complimentary: @app-menu-separator-complimentary;
 	--app-menu-selected-color: @app-menu-selected-color;
-	--app-menu-selected-background: @app-menu-separator;
+	--app-menu-selected-text-color: @app-menu-selected-text-color;
+	--app-menu-hover-text-color: @app-menu-hover-text-color;
 	--app-menu-hover-color: @app-menu-hover-color;
-	--app-menu-hover-background: @app-menu-hover-background;
+	--app-menu-color-lighen: @app-menu-color-lighten;
+	--app-menu-color-darken: @app-menu-color-darken;
+	// dimensions
+	--app-menu-icon-size: @app-menu-icon-size;
+	--app-menu-height: @app-menu-height;
+	--app-menu-font-size: @app-menu-font-size;
+	--app-menu-small-font-size: @app-menu-small-font-size;
 
 	--app-accent-color: @app-accent-color;
 	--app-accent-color-hover: lighten(@app-accent-color, 20%);
@@ -115,7 +136,7 @@ body {
 	--app-label-color: darken(@app-background, 40%);
 
 	--app-header-color: @app-header-color;
-	--app-header-color-lighten: mix(@app-header-color, @app-background, 60%);
+	--app-header-color-lighten: mix(@app-header-color, @app-background, 80%);
 
 	--app-primary-complimentary-color: @app-primary-complimentary-color;
 	--app-color-remark: @app-color-remark;
@@ -126,11 +147,6 @@ body {
 	--app-border-color: @app-border-color;
 
 	// fonts
-	--app-font-size: 14px;
-	--app-small-font-size: 11px;
-
-	// dimensions
-	--app-menu-icon-size: @app-menu-icon-size;
-	--app-menu-height: @app-menu-height;
-	--app-menu-small-font-size: @app-menu-small-font-size;
+	--app-font-size: @app-font-size;
+	--app-small-font-size: @app-small-font-size;
 }

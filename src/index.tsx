@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import {App} from './app/@app';
 
-import {AppStateStore} from './app/store/@store';
+import {AppStateStore} from './app/store/@stores';
 import {AvailableThemes} from './app/store/app-state/app-state-store';
 import './styles/app.less';
 

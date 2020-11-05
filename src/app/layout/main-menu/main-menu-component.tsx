@@ -1,19 +1,46 @@
 import React, {useCallback, useEffect, useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import {IconExpander} from '../../components/ui/general/icons/icon-expander-component';
 import useLocationParams from '../../hooks/use-location-params';
 import useLoggedIn from '../../hooks/use-logged-in';
 import {TRouteMappingItem} from '../../routing/route-mapping-interface';
-import {IconExpander} from '../../components/ui/general/icons/icon-expander-component';
-import {calculateMenuParts, createMenuItem} from './main-menu-utils';
+import {calculateMenuParts} from './main-menu-utils';
+import {MainMenuItem} from './menu-items/main-menu-item-component';
 
 export type TMenuItem = TRouteMappingItem & { isActive?: boolean };
 export type TMenuItems = Array<TMenuItem>;
 
-export const AppMainMenu: React.FC = () => {
+type TAppMainMenuProps = {
+	position: string
+};
+
+type TKeyboardEventWithDataset = React.KeyboardEvent<HTMLDivElement> & {
+	target: {
+		dataset: {
+			url: string
+		}
+	}
+};
+
+function findParentMenuItem(node?: HTMLElement | null): HTMLElement | undefined {
+	if (!node) {
+		return void 0;
+	}
+	if (node.classList.contains('app-menu-item') || node.classList.contains('app-menu-sub-item')) {
+		return node;
+	}
+	return findParentMenuItem(node.parentElement);
+}
+
+export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProps) => {
+	const history = (useHistory as () => any)() as { push: (string) => void };
+
 	const [primaryMenuItems, setPrimaryMenuItems] = useState<TMenuItems>([]);
 	const [lateralMenuItems, setLateralMenuItems] = useState<TMenuItems>([]);
 	const [expanded, setExpanded] = useState(false);
 
 	const {loggedIn} = useLoggedIn();
+	const {position} = props;
 	const location = useLocationParams();
 
 	const handleToggleExpand = useCallback(() => {
@@ -21,7 +48,7 @@ export const AppMainMenu: React.FC = () => {
 	}, []);
 
 	useEffect(() => {
-		// re-render on each location and logged in state change
+		// re-render on each location (and logged in state) change
 		// to actualize menu items
 		const [leftMenu, rightMenu] = calculateMenuParts(location.url, loggedIn);
 
@@ -29,24 +56,71 @@ export const AppMainMenu: React.FC = () => {
 		setLateralMenuItems(rightMenu);
 
 		setExpanded(false);
+
+		const focusedElement = document.activeElement;
+		if (focusedElement && focusedElement.classList.contains('app-menu-sub-item')) {
+			(focusedElement as HTMLDivElement).blur();
+		}
 	}, [loggedIn, location.url]);
 
-	return <div className={'app-menu'}>
-		<div className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}>
-			<div className={'app-main-menu'}>
+	const handleMenuClick = useCallback((e: React.MouseEvent<HTMLElement>) => {
+		if (e.persist) {
+			e.persist();
+		}
+		const element = findParentMenuItem((e.target || e.currentTarget) as HTMLElement);
+		const url = element?.dataset?.url;
+		if (url) {
+			history.push(url);
+		}
+		e.preventDefault();
+		e.stopPropagation();
+		return false;
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
-				<div className={'app-menu-expander'} onClick={handleToggleExpand}>
+	const handleMenuKey = useCallback((e: TKeyboardEventWithDataset) => {
+		if (e.persist) {
+			e.persist();
+		}
+		const code = e.key;
+		if (code !== 'Enter' && code !== ' ') {
+			return;
+		}
+		const url: unknown = e.target?.dataset?.url;
+		if (url) {
+			history.push(url);
+		} else {
+			return;
+		}
+
+		e.preventDefault();
+		e.stopPropagation();
+		return false;
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
+
+	return <div className={'app-menu ' + (position === 'side' ? 'app-menu-side' : 'app-menu-top')}>
+		<div className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}>
+			<div
+				className={'app-main-menu'}
+				onClick={handleMenuClick}
+				onKeyDownCapture={handleMenuKey}>
+
+				{position === 'side' && <div className={'app-menu-expander'} onClick={handleToggleExpand}>
 					<IconExpander/><i>Collapse</i>
 				</div>
+				}
 
-				{primaryMenuItems.map(createMenuItem)}
+				{primaryMenuItems.map((item, idx) => <MainMenuItem key={item.url || idx} item={item}/>)}
 
 				<div className={'app-menu-stub'}/>
 
-				{lateralMenuItems.map(createMenuItem)}
-				<div className={'bottom-menu-spacer'}></div>
+				{lateralMenuItems.map((item, idx) => <MainMenuItem key={item.url || idx} item={item}/>)}
+
+				<div className={'menu-spacer'}></div>
 			</div>
-			<div className={'app-menu-backdrop'} onClick={handleToggleExpand}></div>
+
+			{position === 'side' && <div className={'app-menu-backdrop'} onClick={handleToggleExpand}></div>}
 		</div>
 	</div>;
 };

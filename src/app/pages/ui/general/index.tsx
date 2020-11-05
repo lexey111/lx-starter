@@ -2,29 +2,29 @@ import React from 'react';
 import {A} from '../../../components/ui/example-related/a-component';
 import {SourceFile} from '../../../components/ui/example-related/source-file-component';
 import {Title} from '../../../components/ui/general/typography/title-component';
-import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
 import {UiButtonsExample} from './ui-buttons-example';
 import {UiIconsExample} from './ui-icons-example';
 import {UiTitleExample} from './ui-title-example';
 
 export const UiGeneralPage: React.FC = () => {
 	return <>
-		<PageSubmenu/>
 		<Title>General components</Title>
 
-		<Title level={2}>Title</Title>
+		<Title nav level={2}>Title</Title>
 		<SourceFile src={'src/app/components/ui/general/typography'}/>
 
 		<p>
 			Very simple wrapper for <code>&lt;H1..6&gt;</code> tag. Just to keep things semantic.
-			Adds some dubious features, though.
+			Also has a couple of dubious features, though.
 		</p>
+
 		<p>
-			See <SourceFile src={'src/styles/typography.less'} inline/> to alter the style.
+			See <SourceFile src={'src/styles/typography.less'} inline/> to alter the styles.
 		</p>
+
 		<UiTitleExample/>
 
-		<Title level={2}>Buttons</Title>
+		<Title nav level={2}>Buttons</Title>
 		<SourceFile src={'src/app/components/ui/general/button'}/>
 
 		<p>
@@ -36,7 +36,7 @@ export const UiGeneralPage: React.FC = () => {
 		</p>
 		<UiButtonsExample/>
 
-		<Title level={2}>SVG Icons</Title>
+		<Title nav level={2}>SVG Icons</Title>
 		<SourceFile src={'src/app/components/ui/general/icons'}/>
 
 		<p>

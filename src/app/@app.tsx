@@ -6,15 +6,19 @@ import {AppBreadcrumbs} from './layout/breadcrumbs/breadcrumbs-component';
 import {AppFooter} from './layout/footer/footer-component';
 import {AppLayout} from './layout/layout/layout-component';
 import {AppMainMenu} from './layout/main-menu/main-menu-component';
-import {AppAuthPage} from './layout/pages/app-auth-page-component';
-import {AppContainer} from './layout/pages/app-container-component';
-import {AppPage} from './layout/pages/app-page-component';
+import {AppAuthPage} from './layout/page/app-auth-page-component';
+import {AppContainer} from './layout/page/app-container-component';
+import {AppPage} from './layout/page/app-page-component';
+import {AppTopPanel} from './layout/top-panel/app-top-panel-component';
 import {RouteMapping} from './routing/route-mapping';
 import {TRouteMappingItem} from './routing/route-mapping-interface';
 import {RouteToStoreComponent} from './routing/route-to-store-component';
-import {AppStateStore} from './store/@store';
+import {AppStateStore} from './store/@stores';
 
 const AppRoutes = RouteMapping.map((routeItem: TRouteMappingItem, idx: number) => {
+	if (!routeItem.url) {
+		return null;
+	}
 	return <Route
 		exact path={routeItem.url}
 		key={idx}
@@ -33,7 +37,7 @@ const AppRoutes = RouteMapping.map((routeItem: TRouteMappingItem, idx: number) =
 
 export const App: React.FC = observer(() => {
 	useEffect(() => {
-		// subscribe to theme changes
+		// subscribe to theme changes and apply current theme to body
 		window.document.body.className = 'theme-' + AppStateStore.theme;
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppStateStore.theme]);
@@ -41,7 +45,9 @@ export const App: React.FC = observer(() => {
 	return <Router>
 		<RouteToStoreComponent/>
 
-		<AppMainMenu/>
+		<AppTopPanel/>
+
+		<AppMainMenu position={AppStateStore.mainMenuPosition}/>
 
 		<AppBreadcrumbs/>
 

@@ -3,10 +3,11 @@ import React from 'react';
 import {IconHome} from '../app/components/ui/general/icons/icon-home-component';
 import {IconStar} from '../app/components/ui/general/icons/icon-star-component';
 import {AboutPage} from '../app/pages/about';
-import {BuilderPage} from '../app/pages/builder';
-import {GettingStartedPage} from '../app/pages/getting-started';
+import {CustomPage} from '../app/pages/custom';
+import {CustomMenuDropdown} from '../app/pages/custom/custom-menu-dropdown-component';
+import {CustomMenuItem} from '../app/pages/custom/custom-menu-item-component';
 import {HomePage} from '../app/pages/home';
-import {MenuPage} from '../app/pages/menu';
+import {HomePageTopPanel} from '../app/pages/home/home-page-top-panel-component';
 import {RoutingPage} from '../app/pages/routes-subroutes';
 import {RoutingMainPage} from '../app/pages/routes-subroutes/example-page';
 import {RoutingArticle} from '../app/pages/routes-subroutes/example-page/article';
@@ -19,7 +20,6 @@ import {StateMainStorePage} from '../app/pages/state-management/app-state';
 import {StateGenericStorePage} from '../app/pages/state-management/example-generic-store';
 import {ExampleTodoStorePage} from '../app/pages/state-management/example-todo-store';
 import {TestingPage} from '../app/pages/testing';
-import {ThemingPage} from '../app/pages/theming';
 import {UiPage} from '../app/pages/ui';
 import {UiDataEntryPage} from '../app/pages/ui/data-entry';
 import {UiDisplayPage} from '../app/pages/ui/display';
@@ -33,65 +33,64 @@ export const AppSiteMap: TRouteMappingItems = [
 		title: 'Home',
 		url: '/home',
 		isHomePage: true,
-		noBreadcrumbs: true,
+		breadcrumbs: 'none',
+		topPanel: <HomePageTopPanel/>,
 		icon: <IconHome/>,
 		page: <HomePage/>,
 	},
-	{
-		title: 'Getting started',
-		url: '/getting-started',
-		page: <GettingStartedPage/>,
-	},
-	{
-		title: 'Builder',
-		url: '/builder',
-		page: <BuilderPage/>,
-	},
+	// {
+	// 	title: 'Getting started',
+	// 	url: '/getting-started',
+	// 	page: <GettingStartedPage/>,
+	// },
+	// {
+	// 	title: 'Builder',
+	// 	url: '/builder',
+	// 	page: <BuilderPage/>,
+	// },
 	{
 		title: 'Testing',
 		url: '/testing',
 		page: <TestingPage/>,
 	},
-	{
-		title: 'Main menu',
-		url: '/menu',
-		page: <MenuPage/>,
-	},
-	{
-		title: 'Theming',
-		icon: 'H',
-		url: '/theming',
-		page: <ThemingPage/>,
-	},
+	// {
+	// 	title: 'Main menu',
+	// 	url: '/menu',
+	// 	page: <MenuPage/>,
+	// },
+	// {
+	// 	title: 'Theming',
+	// 	url: '/theming',
+	// 	page: <ThemingPage/>,
+	// },
 	{
 		title: 'State management',
 		url: '/state-management',
 		page: <StatePage/>,
-		noBreadcrumbs: true,
+		breadcrumbs: 'sub-menu',
 		routes: [
 			{
 				url: '/state-management/app-state',
 				page: <StateMainStorePage/>,
-				noBreadcrumbs: true,
+				breadcrumbs: 'sub-menu',
 				title: 'App State store',
 			},
 			{
 				url: '/state-management/generic-example',
 				page: <StateGenericStorePage/>,
-				noBreadcrumbs: true,
+				breadcrumbs: 'sub-menu',
 				title: 'Stores and Utils',
 			},
 			{
 				url: '/state-management/todo-example',
 				page: <ExampleTodoStorePage/>,
-				noBreadcrumbs: true,
+				breadcrumbs: 'sub-menu',
 				title: 'Example ToDo Store',
 			},
 		]
 	},
 	{
 		title: 'Routing',
-		icon: <IconStar/>,
 		url: '/routing',
 		page: <RoutingPage/>,
 		routes: [
@@ -123,30 +122,30 @@ export const AppSiteMap: TRouteMappingItems = [
 		title: 'UI Components',
 		url: '/ui',
 		page: <UiPage/>,
-		noBreadcrumbs: true,
+		breadcrumbs: 'sub-menu',
 		routes: [
 			{
 				title: 'General',
 				url: '/ui/general',
-				noBreadcrumbs: true,
+				breadcrumbs: 'sub-menu',
 				page: <UiGeneralPage/>
 			},
 			{
 				title: 'Display',
 				url: '/ui/display',
-				noBreadcrumbs: true,
+				breadcrumbs: 'sub-menu',
 				page: <UiDisplayPage/>
 			},
 			{
 				title: 'Data entry',
 				url: '/ui/data-entry',
-				noBreadcrumbs: true,
+				breadcrumbs: 'sub-menu',
 				page: <UiDataEntryPage/>
 			},
 			{
 				title: 'Examples-related',
 				url: '/ui/examples-related',
-				noBreadcrumbs: true,
+				breadcrumbs: 'sub-menu',
 				page: <UiExampleComponentsPage/>
 			},
 		]
@@ -155,6 +154,18 @@ export const AppSiteMap: TRouteMappingItems = [
 		title: 'About',
 		icon: <IconStar/>,
 		url: '/about',
-		page: <AboutPage/>
-	}
+		page: <AboutPage/>,
+		isLateral: true
+	},
+	{
+		url: '/custom',
+		isLateral: true,
+		title: 'Custom menu item',
+		menuItem: <CustomMenuItem/>,
+		page: <CustomPage/>
+	},
+	{
+		isLateral: true,
+		menuItem: <CustomMenuDropdown/>,
+	},
 ];

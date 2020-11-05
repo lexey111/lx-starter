@@ -1,13 +1,11 @@
 import React from 'react';
 import {SourceFile} from '../../../components/ui/example-related/source-file-component';
 import {Title} from '../../../components/ui/general/typography/title-component';
-import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
 import {UiCheckboxExample} from './ui-checkbox-example';
 import {UiRadioExample} from './ui-radio-example';
 
 export const UiDataEntryPage: React.FC = () => {
 	return <>
-		<PageSubmenu/>
 		<Title>Data entry</Title>
 		<p>
 			The components an user can interact with, and enter some data.

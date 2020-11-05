@@ -5,7 +5,7 @@ import {SimpleModal} from '../../../components/ui/display/wait/simple-modal-comp
 import {SourceFile} from '../../../components/ui/example-related/source-file-component';
 import {SyntaxHighlight} from '../../../components/ui/example-related/syntax-highlight';
 import {Button} from '../../../components/ui/general/button/button-component';
-import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../store/@store';
+import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../store/@stores';
 
 type TTodoListItemExampleProps = {
 	show: boolean
@@ -48,7 +48,7 @@ export const TodoListItemExample: React.FC<TTodoListItemExampleProps> = observer
 		<div className={'modal-header'}>
 			TODO item
 		</div>
-		<SourceFile src={'src/app/pages/state-management/example-todo-store/todo-list-item-component.tsx'}/>
+		<SourceFile src={'src/app/page/state-management/example-todo-store/todo-list-item-component.tsx'}/>
 		<p>
 			Please enter the title:
 		</p>

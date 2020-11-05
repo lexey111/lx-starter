@@ -10,7 +10,7 @@
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: center;
-		font-size: .7em;
+		font-size: .6em;
 		font-weight: normal;
 		color: var(--app-header-color-lighten);
 	}
@@ -21,5 +21,21 @@
 
 	&.no-top-margin {
 		margin-top: 0;
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.app-title-level-4, .app-title-level-5 {
+	.app-subtitle {
+		font-size: .7em;
+	}
+}
+
+.app-title-level-6 {
+	.app-subtitle {
+		font-size: .8em;
 	}
 }

@@ -1,7 +1,7 @@
 import {observer} from 'mobx-react';
 import React, {useCallback, useEffect, useState} from 'react';
 import {Title} from '../../../components/ui/general/typography/title-component';
-import {AppPersonStore} from '../../../store/@store';
+import {AppPersonStore} from '../../../store/@stores';
 import {PERSON_INITIAL, TPerson} from '../../../store/examples/example-people-store/app-example-person';
 import {_setData} from '../../../store/utils/store-utils';
 import {PeopleFakeData} from './people-fake-data';

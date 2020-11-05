@@ -6,7 +6,7 @@ import {SourceFile} from '../../../components/ui/example-related/source-file-com
 import {SyntaxHighlight} from '../../../components/ui/example-related/syntax-highlight';
 import {Button} from '../../../components/ui/general/button/button-component';
 import {Title} from '../../../components/ui/general/typography/title-component';
-import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../store/@store';
+import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../store/@stores';
 import {TodoListItemExample} from './todo-list-item-component';
 
 export const TodoListExample: React.FC = observer(() => {
@@ -22,7 +22,7 @@ export const TodoListExample: React.FC = observer(() => {
 	}, []);
 
 	return <div className={'example-component-container'}>
-		<SourceFile src={'src/app/pages/state-management/example-todo-store/todo-list-component.tsx'}/>
+		<SourceFile src={'src/app/page/state-management/example-todo-store/todo-list-component.tsx'}/>
 		<Title level={4}>TODO List</Title>
 		<TodoListItemExample show={showDialog} closeDialog={closeDialog}/>
 

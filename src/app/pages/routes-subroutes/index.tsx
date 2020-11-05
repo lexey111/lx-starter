@@ -33,7 +33,7 @@ export const RoutingPage: React.FC = () => {
 
 	spinnerDuringLogin?: boolean
 
-	noBreadcrumbs?: boolean // default: false
+	breadcrumbs?: 'default' | 'none' | 'sub-menu'
 
 	isLateral?: boolean // show it in the right/bottom menu? (default = false)
 
@@ -58,18 +58,18 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 	title: 'UI Components',
 	url: '/ui',
 	page: <UiPage/>,
-	noBreadcrumbs: true,
+	breadcrumbs: 'sub-menu',
 	routes: [
 		{
 			title: 'General',
 			url: '/ui/general',
-			noBreadcrumbs: true,
+			breadcrumbs: 'sub-menu',
 			page: <UiGeneralPage/>
 		},
 		{
 			title: 'Display',
 			url: '/ui/display',
-			noBreadcrumbs: true,
+			breadcrumbs: 'sub-menu',
 			page: <UiDisplayPage/>
 		},
 	]}, ...

@@ -2,7 +2,7 @@ import {RouteMapping} from './route-mapping';
 import {TRouteMappingItem} from './route-mapping-interface';
 
 function testParametrizedItem(item: TRouteMappingItem, url: string): boolean {
-	if (!item.url.includes(':')) {
+	if (!item.url?.includes(':')) {
 		return false;
 	}
 
@@ -36,7 +36,7 @@ export function getRoutesByParentUrl(url: string | undefined, skipParametrized =
 	}
 	const result = RouteMapping.filter(item => item._parentUrl === url);
 	if (skipParametrized) {
-		return result.filter(item => item.url.indexOf('/:') === -1);
+		return result.filter(item => item.url?.indexOf('/:') === -1);
 	}
 	return result;
 }

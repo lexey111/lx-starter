@@ -1,9 +1,7 @@
-import React from 'react';
 import {AppSiteMap} from '../../../config/app-site-map';
-import {TRouteMappingItem, TRouteMappingItems} from '../../routing/route-mapping-interface';
+import {TRouteMappingItems} from '../../routing/route-mapping-interface';
 import {getRouteByUrl} from '../../routing/route-mapping-utils';
 import {TMenuItems} from './main-menu-component';
-import {MainMenuItem} from './menu-items/main-menu-item-component';
 
 function filterByMenuType(items: TMenuItems, forLateral: boolean): TMenuItems {
 	return items.filter(item => {
@@ -30,7 +28,10 @@ function filterByLoggedIn(items: TRouteMappingItems, isLoggedIn: boolean): TRout
 }
 
 function mapActive(items: TRouteMappingItems, firstLevelActiveUrl: string): TMenuItems {
-	return items.map(item => ({...item, isActive: item.url === firstLevelActiveUrl}));
+	return items.map(item => ({
+		...item,
+		isActive: item.url === firstLevelActiveUrl
+	}));
 }
 
 export function calculateMenuParts(locationUrl: string, isLoggedIn: boolean): [TMenuItems, TMenuItems, string] {
@@ -45,8 +46,3 @@ export function calculateMenuParts(locationUrl: string, isLoggedIn: boolean): [T
 	return [primaryMenu, lateralMenu, firstLevelActiveUrl];
 }
 
-export function createMenuItem(item: TRouteMappingItem & { isActive?: boolean }): React.ReactNode {
-	return <div key={item.url} className={'app-menu-item' + (item.isActive ? ' selected' : '')}>
-		<MainMenuItem item={item}/>
-	</div>;
-}

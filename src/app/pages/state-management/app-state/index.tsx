@@ -4,11 +4,9 @@ import {SourceFile} from '../../../components/ui/example-related/source-file-com
 import {SyntaxHighlight} from '../../../components/ui/example-related/syntax-highlight';
 import {Tag} from '../../../components/ui/example-related/tag-component';
 import {Title} from '../../../components/ui/general/typography/title-component';
-import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
 
 export const StateMainStorePage: React.FC = () => {
 	return <>
-		<PageSubmenu/>
 		<Title>Application State store</Title>
 
 		<Title level={2}>The purpose</Title>

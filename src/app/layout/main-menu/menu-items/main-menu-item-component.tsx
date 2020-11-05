@@ -1,9 +1,8 @@
 import {observer} from 'mobx-react';
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {IconStar} from '../../../components/ui/general/icons/icon-star-component';
 import {TRouteMappingItem} from '../../../routing/route-mapping-interface';
-import {AppStateStore} from '../../../store/@store';
-import {IconSpinner} from '../../../components/ui/general/icons/icon-spinner-component';
+import {AppStateStore} from '../../../store/@stores';
 
 type TMainMenuItemProps = {
 	item: TRouteMappingItem
@@ -11,51 +10,55 @@ type TMainMenuItemProps = {
 
 export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMainMenuItemProps) => {
 	const {item} = props;
-
-	if (AppStateStore.isAuthorizationInProgress && item.spinnerDuringLogin) {
-		return <Link to={item.url}>
-			<div className={'app-menu-item-content'}>
-				<div className={'app-menu-title'}>
-					<IconSpinner/>
-				</div>
-			</div>
-		</Link>;
-	}
-
 	let {icon} = item;
 
-	if (icon && typeof icon === 'string') {
-		icon = <span className={'app-menu-pseudo-icon'}>{icon.substring(0, 1)}</span>;
+	if (!icon && typeof item.title === 'string' && AppStateStore.mainMenuPosition === 'side') {
+		icon = <IconStar/>;
 	}
 
-	if (!icon && typeof item.title === 'string') {
-		icon = <span className={'app-menu-pseudo-icon'}>{item.title.substring(0, 1)}</span>;
-	}
+	const activeUrl = AppStateStore.currentRoute?.url;
+	const availableSubroutes = item.routes?.filter(x => x.url?.indexOf('/:') === -1);
+	const itemHasVisibleRoutes = availableSubroutes && availableSubroutes.length > 0;
+	const activeSubroute = availableSubroutes?.find(x => x.url === activeUrl);
+	const itemIsActive = activeUrl === item.url;
+	const hasCustomItem = Boolean(item.menuItem);
 
-	const itemHasVisibleRoutes = item.routes && item?.routes.filter(x => x.url.indexOf('/:') === -1).length > 0;
+	return <div
+		className={'app-menu-item' + (itemIsActive ? ' selected' : '') +
+		(itemHasVisibleRoutes ? ' with-subroutes' : '')}
+		data-url={itemHasVisibleRoutes ? '' : item.url}
+		tabIndex={0}>
 
-	return <>
-		<Link to={item.url}>
-			<div className={'app-menu-item-content'}>
+		{hasCustomItem
+			? <div className={'app-menu-item-content own-content'}>{item.menuItem}</div>
+			: <div className={'app-menu-item-content'}>
 				<div className={'app-menu-title'}>
 					{icon}
 					<div className={'app-menu-title-parts'}>
 						{item.title}
 						{item.subtitle && <div className={'app-menu-subtitle'}>{item.subtitle}</div>}
+						{activeSubroute && <div className={'app-menu-subtitle app-menu-active-subroute'}>{activeSubroute.title}</div>}
 					</div>
 				</div>
 			</div>
-		</Link>
+		}
 
-		{itemHasVisibleRoutes && <div className={'app-menu-sub-items'}>
-			{item.routes?.filter(x => x.url.indexOf('/:') === -1).map(subRoute => {
-				return <Link
-					className={'app-menu-sub-item' + (subRoute.url === AppStateStore.currentRoute?.url ? ' active' : '')}
-					key={subRoute.url}
-					to={subRoute.url}>
+		{availableSubroutes && availableSubroutes.length > 0 && <div className={'app-menu-sub-items'}>
+			<div
+				className={'app-menu-sub-item' + (item.url === activeUrl ? ' active' : '')}
+				data-url={item.url}
+				tabIndex={0}>
+				{item.title}
+			</div>
+			{availableSubroutes.map(subRoute => {
+				return <div
+					className={'app-menu-sub-item' + (subRoute.url === activeUrl ? ' active' : '')}
+					data-url={subRoute.url}
+					tabIndex={0}
+					key={subRoute.url}>
 					{subRoute.title}
-				</Link>;
+				</div>;
 			})}
 		</div>}
-	</>;
+	</div>;
 });

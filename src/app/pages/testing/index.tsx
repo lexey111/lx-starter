@@ -7,13 +7,13 @@ import {Title} from '../../components/ui/general/typography/title-component';
 export const TestingPage = (): JSX.Element => {
 	return <>
 		<Title>Testing</Title>
-		<Title level={3}>Disclaimer</Title>
+		<Title nav level={3}>Disclaimer</Title>
 		<p>
 			I'm lazy, so &mdash; may be, yet &mdash; only few tests are here. Just to demonstrate how to use the technology
 			and to check is configuration viable.
 		</p>
 
-		<Title level={2}>Overview</Title>
+		<Title nav level={2}>Overview</Title>
 
 		<p>
 			To run unit tests in the application, <A href={'https://jestjs.io/docs/en/getting-started'}>Jest</A> Testing
@@ -88,7 +88,7 @@ Time:        7.586 s
 		<Title level={5}>Print ESLint rules</Title>
 		<SyntaxHighlight language={'bash'} content={'npm run eslint-dump'}/>
 
-		<Title level={2}>How to create tests</Title>
+		<Title nav level={2}>How to create tests</Title>
 		<p>
 			You need to create file with name <code>some-name<b>-test.ts</b></code> (or .tsx). Test runner is configured
 			to collect all the files in folders <code>__tests__</code> plus files named <code>...-test(.ts|.tsx)</code>.
@@ -104,7 +104,7 @@ Time:        7.586 s
 			and if the folder contains more than one test file &mdash; create <code>__tests__</code> subfolder.
 		</p>
 
-		<Title level={3}>Unit tests</Title>
+		<Title nav level={3}>Unit tests</Title>
 		<p>
 			To simplify, unit tests are needed to check something non-visual. Only Jest is used.
 		</p>
@@ -120,7 +120,7 @@ Time:        7.586 s
 		expect(1).toEqual(1);
 	});
 });`}/>
-		<Title level={3}>UI unit tests</Title>
+		<Title nav level={3}>UI unit tests</Title>
 		<p>
 			In distinction with just plain unit tests, such kind of tests includes rendering of some markups:
 		</p>

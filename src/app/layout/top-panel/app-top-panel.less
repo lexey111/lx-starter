@@ -1,0 +1,35 @@
+.app-top-panel {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100vw;
+	background-color: var(--app-primary-color);
+
+	.app-top-panel-content {
+		box-sizing: border-box;
+		flex: auto;
+		min-height: 0;
+		margin: 0 auto;
+		padding: 32px 0;
+		width: var(--app-page-width);
+		position: relative;
+		color: var(--app-primary-text-color);
+		z-index: 110;
+
+		* {
+			color: var(--app-primary-text-color);
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -3px;
+			left: -32px;
+			right: -32px;
+			height: 6px;
+			background-color: var(--app-primary-bright-color);
+			border-radius: 6px;
+			box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+			z-index: 101;
+		}
+	}
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import {SourceFile} from '../../../components/ui/example-related/source-file-component';
 import {Tag} from '../../../components/ui/example-related/tag-component';
 import {Title} from '../../../components/ui/general/typography/title-component';
-import {PageSubmenu} from '../../../layout/page-submenu/page-submenu-component';
 import {UiSimpleModalExample} from './ui-simple-modal';
 import {UiTabsExample} from './ui-tabs-example';
 import {UiWaitBlockExample} from './ui-wait-block';
@@ -12,7 +11,6 @@ import {UiWaitTagExample} from './ui-wait-tag';
 
 export const UiDisplayPage: React.FC = () => {
 	return <>
-		<PageSubmenu/>
 		<Title>Display</Title>
 
 		<Title level={2}>Tabs</Title>

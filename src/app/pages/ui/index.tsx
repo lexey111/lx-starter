@@ -3,11 +3,9 @@ import {Link} from 'react-router-dom';
 import {A} from '../../components/ui/example-related/a-component';
 import {SourceFile} from '../../components/ui/example-related/source-file-component';
 import {Title} from '../../components/ui/general/typography/title-component';
-import {PageSubmenu} from '../../layout/page-submenu/page-submenu-component';
 
 export const UiPage: React.FC = () => {
 	return <>
-		<PageSubmenu/>
 
 		<Title>UI components</Title>
 

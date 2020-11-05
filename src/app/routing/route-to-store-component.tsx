@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
-import {AppStateStore} from '../store/@store';
+import {AppStateStore} from '../store/@stores';
 
 /**
  * Component performs synchronization between current URL and AppStateStore -

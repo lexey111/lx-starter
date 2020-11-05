@@ -6,13 +6,13 @@ import {ThemeSwitcher} from '../../components/ui/example-related/theme-switcher-
 import {Button} from '../../components/ui/general/button/button-component';
 import {Title} from '../../components/ui/general/typography/title-component';
 import {TRouteMappingItem} from '../../routing/route-mapping-interface';
-import {AppStateStore} from '../../store/@store';
+import {AppStateStore} from '../../store/@stores';
 
 function getRoutes(routes: Array<TRouteMappingItem>): Array<JSX.Element> {
 	let result: Array<JSX.Element> = [];
 
 	routes.forEach(route => {
-		if (route.url.indexOf('/:') !== -1) {
+		if (!route.url || route.url?.indexOf('/:') !== -1) {
 			return;
 		}
 		if (!route.routes || route.routes.length === 0) {

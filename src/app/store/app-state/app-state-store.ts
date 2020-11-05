@@ -1,12 +1,15 @@
 import {action, computed, makeObservable, observable} from 'mobx';
 import {TRouteMappingItem} from '../../routing/route-mapping-interface';
 
+export const AvailableThemes = ['dark', 'light'];
+
 export type TAppStateStoreData = {
 	currentRoute?: TRouteMappingItem | undefined // TRouteMappingItem
 	currentParams?: Record<string, string> // http://url/:param1/:param2 -> {param1: 'some', param2: 'text'}
 	currentLocation?: string // http://url/page1
 
-	serverError?: string // just to pass to global error page
+	theme: string
+	mainMenuPosition: string // 'side' | 'top'
 
 	_pageActions?: JSX.Element | null // optional action(s) that will be displayed in the breadcrumbs on scroll
 	_yScrollPos?: number // technical one, needed to show breadcrumbs panel after scroll distance reached > 32px
@@ -18,8 +21,6 @@ export type TAppStateStoreData = {
 	userImageUrl: string
 };
 
-export const AvailableThemes = ['dark', 'light'];
-
 export default class CAppStateStore implements TAppStateStoreData {
 	public currentRoute: TRouteMappingItem | undefined;
 	public currentParams: Record<any, any> = {};
@@ -29,6 +30,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 	public _yScrollPos = 0;
 
 	public theme = 'light';
+	public mainMenuPosition = 'top';
 
 	public isAuthorized = false;
 	public isAuthorizationInProgress = false;
@@ -50,6 +52,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 			_yScrollPos: observable,
 
 			theme: observable,
+			mainMenuPosition: observable,
 
 			isAuthorized: observable,
 			isAuthorizationInProgress: observable,
