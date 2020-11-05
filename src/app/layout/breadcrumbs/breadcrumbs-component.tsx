@@ -14,16 +14,17 @@ function calculateBreadCrumbs(currentRoute?: TRouteMappingItem): Array<TRouteMap
 		return [HomeRoute];
 	}
 
-	if (currentRoute.breadcrumbs !== 'default') {
+	if (typeof currentRoute.breadcrumbs !== 'undefined' && currentRoute.breadcrumbs !== 'default') {
 		return [];
 	}
 
-	const parts = currentRoute.url.split('/').filter(item => Boolean(item));
+	const parts = currentRoute.url?.split('/').filter(item => Boolean(item)) || [];
 	parts.pop(); // remove current route
 
 	const actualBreadcrumbs = [HomeRoute];
 
 	let currentPath = '';
+
 	parts.forEach(part => {
 		currentPath += '/' + part;
 		const currentPart = getRouteByUrl(currentPath);
@@ -52,6 +53,21 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [location.url]);
+
+	useEffect(() => {
+		if (useSubroutingMenu) {
+			document.body.classList.add('with-page-menu');
+		} else {
+			document.body.classList.remove('with-page-menu');
+		}
+
+		if (breadcrumbs.length > 1) {
+			document.body.classList.add('with-breadcrumbs');
+		} else {
+			document.body.classList.remove('with-breadcrumbs');
+		}
+
+	}, [useSubroutingMenu, breadcrumbs]);
 
 	if (useSubroutingMenu) {
 		return <div className={'app-breadcrumbs'}>

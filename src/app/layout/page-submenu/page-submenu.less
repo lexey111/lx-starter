@@ -1,29 +1,42 @@
 .page-submenu {
 	display: flex;
 	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
 	width: 100%;
-	background-color: var(--app-menu-background);
+	height: 100%;
 	border-bottom: 2px solid var(--app-menu-separator);
-	margin-bottom: 2em;
-	font-size: var(--app-small-font-size);
+	font-size: var(--app-menu-font-size);
 
 	.page-submenu-item {
 		display: inline-flex;
 		cursor: pointer;
 		white-space: nowrap;
-		margin-right: 1em;
-		padding: 8px 16px;
-		color: var(--app-menu-text-color);
+		height: 100%;
+		padding: 0 16px;
+		color: var(--app-link-color);
 		transition: all .2s ease;
 
 		&:hover, &:active, &:focus {
-			color: var(--app-menu-hover-text-color);
+			color: var(--app-link-color-active);
 		}
 
 		&.active {
 			pointer-events: none;
-			background-color: var(--app-menu-selected-background);
-			color: var(--app-menu-selected-color);
+			font-weight: bold;
+			color: var(--app-link-color-active);
+			position: relative;
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: -2px;
+				height: 2px;
+				left: 0;
+				right: 0;
+				background-color: var(--app-menu-selected-color);
+			}
 		}
 	}
 }

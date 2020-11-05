@@ -1,25 +1,33 @@
-@import "../../../styles/variables.less";
+.with-top-menu {
+	.app-breadcrumbs {
+		top: var(--app-menu-height);
+	}
+}
 
 .app-breadcrumbs {
-	position: relative;
-	width: 100%;
-	max-width: @app-page-width;
-	margin: 0 auto;
-	z-index: 101;
-	height: 0;
-	overflow: hidden;
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100vw;
+	min-height: var(--app-menu-height);
+	height: var(--app-menu-height);
+
+	z-index: 109;
+	position: sticky;
+	top: 0;
 
 	.app-breadcrumbs-content {
-		display: inline;
-		position: fixed;
-		width: inherit;
-		max-width: inherit;
-		padding-left: @app-menu-width + 16px;
+		box-sizing: border-box;
+		display: flex;
+		flex-flow: row nowrap;
+		margin: 0 auto;
+		padding: 0;
+		width: var(--app-page-width);
+		position: relative;
+		color: var(--app-primary-text-color);
 	}
 
 	.app-breadcrumbs-panel {
-		padding-left: 32px;
-		height: @app-breadcrumbs-height;
+		height: var(--app-breadcrumbs-height);
 		display: flex;
 		align-items: center;
 		width: 100%;
@@ -30,8 +38,8 @@
 			content: '';
 			position: absolute;
 			bottom: 4px;
-			left: 32px;
-			right: 32px;
+			left: 0;
+			right: 0;
 			display: block;
 			height: 2px;
 			background-color: var(--app-background-darken-tint3);
@@ -70,7 +78,7 @@
 		right: 34px;
 		top: 0;
 		bottom: 0;
-		transform: translateY(-@app-breadcrumbs-height);
+		transform: translateY(- (var(--app-breadcrumbs-height)));
 		display: flex;
 		align-items: center;
 	}

@@ -61,6 +61,11 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProp
 		if (focusedElement && focusedElement.classList.contains('app-menu-sub-item')) {
 			(focusedElement as HTMLDivElement).blur();
 		}
+		if (position === 'top') {
+			document.body.classList.add('with-top-menu');
+		} else {
+			document.body.classList.remove('with-top-menu');
+		}
 	}, [loggedIn, location.url]);
 
 	const handleMenuClick = useCallback((e: React.MouseEvent<HTMLElement>) => {
