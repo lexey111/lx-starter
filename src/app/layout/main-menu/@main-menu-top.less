@@ -6,6 +6,10 @@
 		.app-main-menu-container {
 			box-sizing: border-box;
 
+			.app-menu-burger {
+				display: flex;
+			}
+
 			.app-main-menu {
 				width: 200px;
 				max-width: 70%;
@@ -14,6 +18,11 @@
 				height: 100vh;
 				background-color: var(--app-menu-background);
 				box-shadow: 4px 0 8px rgba(0, 0, 0, .3);
+
+				z-index: -1;
+				pointer-events: none;
+				opacity: 0;
+				margin-top: var(--app-menu-height);
 
 				&:before {
 					content: '';
@@ -26,12 +35,22 @@
 					width: 50vw;
 				}
 
+				.app-menu-burger {
+					display: flex;
+				}
+
 				.app-menu-item, .app-menu-sub-item {
 					display: flex;
 				}
 
 				.app-menu-stub, .menu-spacer {
 					display: none;
+				}
+
+				.custom-menu-dropdown-list {
+					left: 150%;
+					right: unset;
+					top: 50%
 				}
 
 				.app-menu-item.with-subroutes {
@@ -49,6 +68,32 @@
 					}
 				}
 			}
+
+			.app-main-menu {
+				&:hover, &:focus, &:focus-within {
+					opacity: 1;
+					pointer-events: all;
+					z-index: 100;
+					animation-name: app-menu-burger-animation;
+					animation-timing-function: ease-in;
+					animation-duration: .2s;
+					animation-direction: normal;
+					animation-play-state: running;
+					animation-fill-mode: forwards;
+				}
+			}
 		}
+	}
+}
+
+@keyframes app-menu-burger-animation {
+	0% {
+		opacity: 0;
+		transform: translateX(-5px);
+	}
+	100% {
+		max-height: 2000px;
+		transform: translateX(0);
+		opacity: 1;
 	}
 }

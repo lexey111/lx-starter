@@ -163,7 +163,7 @@
 			}
 		}
 
-		&:hover, &:focus, &:focus-within {
+		&:focus, &:focus-within {
 			background-color: var(--app-menu-color-darken);
 			outline: none;
 
@@ -172,13 +172,14 @@
 				pointer-events: all;
 				border-top: 2px solid var(--app-primary-bright-color);
 				box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
-				margin-top: -2px;
-				z-index: 120;
+				margin-top: 0;
+				z-index: 130;
 				padding: 8px;
 				background-color: var(--app-menu-background);
 				height: auto;
 				width: auto;
-				animation-name: app-tab-animation;
+				transform-origin: top left;
+				animation-name: app-menu-sub-item-animation;
 				animation-timing-function: ease-in;
 				animation-duration: .1s;
 				animation-direction: normal;

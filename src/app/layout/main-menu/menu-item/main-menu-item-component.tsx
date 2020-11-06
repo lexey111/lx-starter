@@ -8,13 +8,22 @@ type TMainMenuItemProps = {
 	item: TMenuItem
 };
 
+function getSubItem(item: TMenuItem, activeUrl?: string): JSX.Element {
+	return <div
+		className={'app-menu-sub-item' + (item.url === activeUrl ? ' active' : '')}
+		data-url={item.url}
+		tabIndex={0}
+		key={item.url}>
+		{item.title}
+	</div>;
+}
+
 export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMainMenuItemProps) => {
 	const {item} = props;
 	let {icon} = item;
 
 	if (!icon && typeof item.title === 'string' && AppStateStore.mainMenuPosition === 'side') {
-		// side menu must have an icon
-		icon = <IconStar/>;
+		icon = <IconStar/>; // side menu must have an icon
 	}
 
 	const activeUrl = AppStateStore.currentRoute?.url;
@@ -27,6 +36,7 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 
 	return <div
 		className={'app-menu-item' + (itemIsActive ? ' selected' : '') +
+		(item.isHomePage ? ' app-menu-home-item' : '') +
 		(itemHasVisibleRoutes ? ' with-subroutes' : '')}
 		data-url={itemHasVisibleRoutes ? '' : item.url}
 		tabIndex={0}>
@@ -45,21 +55,8 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 		}
 
 		{availableSubroutes && availableSubroutes.length > 0 && <div className={'app-menu-sub-items'}>
-			<div
-				className={'app-menu-sub-item' + (item.url === activeUrl ? ' active' : '')}
-				data-url={item.url}
-				tabIndex={0}>
-				{item.title}
-			</div>
-			{availableSubroutes.map(subRoute => {
-				return <div
-					className={'app-menu-sub-item' + (subRoute.url === activeUrl ? ' active' : '')}
-					data-url={subRoute.url}
-					tabIndex={0}
-					key={subRoute.url}>
-					{subRoute.title}
-				</div>;
-			})}
+			{getSubItem(item, activeUrl)}
+			{availableSubroutes.map(subRoute => getSubItem(subRoute, activeUrl))}
 		</div>}
 	</div>;
 });

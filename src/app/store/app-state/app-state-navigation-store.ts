@@ -24,7 +24,6 @@ export default class CAppPageNavigationStore {
 		if (this.items.find(x => x.targetId === anchor.targetId)) {
 			return;
 		}
-		console.log('registerd', anchor);
 		this.items.push({...anchor});
 	};
 
@@ -33,7 +32,6 @@ export default class CAppPageNavigationStore {
 		if (idx === -1) {
 			return;
 		}
-		console.log('unregisterd', targetId);
 		this.items.splice(idx, 1);
 	};
 

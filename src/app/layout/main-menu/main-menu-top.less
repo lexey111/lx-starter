@@ -50,4 +50,36 @@
 	.menu-spacer {
 		width: 8px;
 	}
+
+	.app-menu-burger {
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+		justify-items: center;
+		float: none;
+		width: var(--app-menu-height);
+		height: var(--app-menu-height);
+		z-index: 10;
+		display: none;
+		position: relative;
+		cursor: pointer;
+
+		.app-icon {
+			width: 20px;
+			height: 20px;
+			fill: var(--app-menu-text-color);
+			z-index: 1;
+			transition: all .2s ease;
+		}
+
+		&:focus, &:hover, &:active {
+			outline: none;
+			border: none;
+			background-color: var(--app-menu-hover-color);
+
+			svg {
+				fill: var(--app-menu-text-color);
+			}
+		}
+	}
 }

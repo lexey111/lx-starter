@@ -1,6 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {IconExpander} from '../../components/ui/general/icons/icon-expander-component';
+import {IconMenu} from '../../components/ui/general/icons/icon-menu-component';
 import useLocationParams from '../../hooks/use-location-params';
 import useLoggedIn from '../../hooks/use-logged-in';
 import {TRouteMappingItem} from '../../routing/route-mapping-interface';
@@ -32,6 +33,30 @@ function findParentMenuItem(node?: HTMLElement | null): HTMLElement | undefined 
 	return findParentMenuItem(node.parentElement);
 }
 
+
+function handleBurgerMenu(): void {
+	// just focus first menu item
+	const homeMenu = document.querySelector('.app-menu-home-item') as HTMLDivElement;
+	if (!homeMenu) {
+		return;
+	}
+	homeMenu.focus();
+}
+
+function handleBurgerMenuKey(e: TKeyboardEventWithDataset): boolean {
+	if (e.persist) {
+		e.persist();
+	}
+	const code = e.key;
+	if (code !== 'Enter' && code !== ' ') {
+		return true;
+	}
+	handleBurgerMenu();
+	e.preventDefault();
+	e.stopPropagation();
+	return false;
+}
+
 export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProps) => {
 	const history = (useHistory as () => any)() as { push: (string) => void };
 
@@ -58,7 +83,11 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProp
 		setExpanded(false);
 
 		const focusedElement = document.activeElement;
-		if (focusedElement && focusedElement.classList.contains('app-menu-sub-item')) {
+
+		if (focusedElement && (
+			focusedElement.classList.contains('app-menu-sub-item') ||
+			focusedElement.classList.contains('app-menu-item'))
+		) {
 			(focusedElement as HTMLDivElement).blur();
 		}
 		if (position === 'top') {
@@ -66,7 +95,7 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProp
 		} else {
 			document.body.classList.remove('with-top-menu');
 		}
-	}, [loggedIn, location.url]);
+	}, [loggedIn, location.url, position]);
 
 	const handleMenuClick = useCallback((e: React.MouseEvent<HTMLElement>) => {
 		if (e.persist) {
@@ -104,14 +133,26 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProp
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
+
 	return <div className={'app-menu ' + (position === 'side' ? 'app-menu-side' : 'app-menu-top')}>
 		<div className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}>
+			{position === 'top' && <div
+				className={'app-menu-burger'}
+				tabIndex={0}
+				onKeyDownCapture={handleBurgerMenuKey}
+				onClick={handleBurgerMenu}>
+				<IconMenu/>
+			</div>
+			}
+
 			<div
 				className={'app-main-menu'}
 				onClick={handleMenuClick}
 				onKeyDownCapture={handleMenuKey}>
 
-				{position === 'side' && <div className={'app-menu-expander'} onClick={handleToggleExpand}>
+				{position === 'side' && <div
+					className={'app-menu-expander'}
+					onClick={handleToggleExpand}>
 					<IconExpander/><i>Collapse</i>
 				</div>
 				}

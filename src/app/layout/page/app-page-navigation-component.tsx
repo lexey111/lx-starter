@@ -33,6 +33,7 @@ export const AppPageNavigation: React.FC = observer(() => {
 		} else {
 			document.body.classList.remove('with-page-navigation');
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppPageNavigationStore.hasItems]);
 
 	if (!AppPageNavigationStore.hasItems) {

@@ -14,18 +14,19 @@ type TTitleProps = {
 
 export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 	const CustomHeader: any = `h${props.level || 1}`;
-	const TitleId = useRef<string>('_' + Math.random().toString(36).substr(2, 9));
+	const TitleId = useRef('_' + Math.random().toString(36).substr(2, 9));
 
 	useEffect(() => {
+		const id = TitleId.current;
 		if (props.nav) {
 			AppPageNavigationStore.register({
-				targetId: TitleId.current,
+				targetId: id,
 				isActive: false,
 				title: props.navTitle || props.children as string
 			});
 		}
 		return () => {
-			AppPageNavigationStore.unregister(TitleId.current);
+			AppPageNavigationStore.unregister(id);
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);

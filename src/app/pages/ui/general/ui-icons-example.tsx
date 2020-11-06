@@ -6,6 +6,7 @@ import {IconClose} from '../../../components/ui/general/icons/icon-close-compone
 import {IconExpander} from '../../../components/ui/general/icons/icon-expander-component';
 import {IconFile} from '../../../components/ui/general/icons/icon-file-component';
 import {IconHome} from '../../../components/ui/general/icons/icon-home-component';
+import {IconMenu} from '../../../components/ui/general/icons/icon-menu-component';
 import {IconSettings} from '../../../components/ui/general/icons/icon-settings-component';
 import {IconSpinner} from '../../../components/ui/general/icons/icon-spinner-component';
 import {IconStar} from '../../../components/ui/general/icons/icon-star-component';
@@ -22,7 +23,8 @@ const Markup = `<IconUser/>
 <IconFile/>
 <IconCheck/>
 <IconClose/>
-<IconSettings/>`;
+<IconSettings/>
+<IconMenu/>`;
 
 const JSX = <>
 	<IconUser/>
@@ -36,6 +38,7 @@ const JSX = <>
 	<IconCheck/>
 	<IconClose/>
 	<IconSettings/>
+	<IconMenu/>
 </>;
 
 const Code = `import {IconHome} from '../../../components/ui/general/icons/icon-home-component';
