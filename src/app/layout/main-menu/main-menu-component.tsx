@@ -5,7 +5,7 @@ import useLocationParams from '../../hooks/use-location-params';
 import useLoggedIn from '../../hooks/use-logged-in';
 import {TRouteMappingItem} from '../../routing/route-mapping-interface';
 import {calculateMenuParts} from './main-menu-utils';
-import {MainMenuItem} from './menu-items/main-menu-item-component';
+import {MainMenuItem} from './menu-item/main-menu-item-component';
 
 export type TMenuItem = TRouteMappingItem & { isActive?: boolean };
 export type TMenuItems = Array<TMenuItem>;

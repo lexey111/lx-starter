@@ -20,7 +20,7 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 	const availableSubroutes = item.routes?.filter(x => x.url?.indexOf('/:') === -1);
 	const itemHasVisibleRoutes = availableSubroutes && availableSubroutes.length > 0;
 	const activeSubroute = availableSubroutes?.find(x => x.url === activeUrl);
-	const itemIsActive = item.isActive; // activeUrl === item.url;
+	const itemIsActive = item.isActive;
 	const hasCustomItem = Boolean(item.menuItem);
 	const hasText = Boolean(item.title) || Boolean(item.subtitle) || Boolean(activeSubroute?.title);
 
@@ -38,9 +38,6 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 					<div className={'app-menu-title-parts'}>
 						{item.title}
 						{item.subtitle && <div className={'app-menu-subtitle'}>{item.subtitle}</div>}
-						{activeSubroute && <div className={'app-menu-subtitle app-menu-active-subroute'}>
-							{activeSubroute.title}
-						</div>}
 					</div>
 				</div>
 			</div>
