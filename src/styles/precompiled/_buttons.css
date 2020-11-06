@@ -1,6 +1,6 @@
 .simplebtn {
 	box-sizing: border-box;
-	font-size: .9em;
+	font-size: var(--app-small-font-size);
 	background-color: var(--sb-background);
 	border: 2px solid var(--sb-border);
 	color: var(--sb-color);
@@ -8,9 +8,10 @@
 	display: inline-flex;
 	flex-flow: column nowrap;
 	margin: 0 0 0 .4em;
-	padding: 0.4em 0.75em;
+	padding: 0.5em 1em;
 	text-decoration: none;
-	transition: background 0.15s linear;
+
+	transition: all 0.2s ease;
 
 	text-align: center;
 	align-content: center;
@@ -24,8 +25,13 @@
 
 	flex-flow: row nowrap;
 }
+
 .simplebtn:first-of-type {
 	margin-left: 0;
+}
+
+.simplebtn a {
+	color: var(--sb-fcolor);
 }
 
 .simplebtn:focus, .simplebtn.active {
@@ -64,6 +70,10 @@
 
 .simplebtn:hover:not(:disabled) {
 	background-color: var(--sb-hover)
+}
+
+.simplebtn:hover:not(:disabled) a {
+	color: var(--sb-fcolor)
 }
 
 .simplebtn:active:not(:disabled) {

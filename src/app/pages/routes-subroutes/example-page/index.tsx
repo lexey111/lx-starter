@@ -4,14 +4,16 @@ import {A} from '../../../components/ui/example-related/a-component';
 import {SourceFile} from '../../../components/ui/example-related/source-file-component';
 import {SyntaxHighlight} from '../../../components/ui/example-related/syntax-highlight';
 import {Tag} from '../../../components/ui/example-related/tag-component';
+import {Button} from '../../../components/ui/general/button/button-component';
 import {Title} from '../../../components/ui/general/typography/title-component';
 
 export const RoutingMainPage: React.FC = () => {
 	return <>
 		<Title>Routing: example</Title>
 		<p>
-			There is a <Link to={'/routing/example-page/list-of-articles'}>List of articles</Link>. The source of the titles
-			is <A href={'https://www.americanscientist.org/blog/from-the-staff/2019s-most-popular-articles'}>American Scientist</A>.
+			There is a <Button type={'primary'}>
+			<Link to={'/routing/example-page/list-of-articles'}>List of articles</Link></Button>.
+			The source of the titles is <A href={'https://www.americanscientist.org/blog/from-the-staff/2019s-most-popular-articles'}>American Scientist</A>.
 		</p>
 
 		<p>

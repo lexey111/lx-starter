@@ -33,21 +33,22 @@
 		background-color: var(--app-background);
 		position: relative;
 
-		&:after {
-			content: '';
-			position: absolute;
-			bottom: 4px;
-			left: 0;
-			right: 0;
-			display: block;
-			height: 2px;
-			background-color: var(--app-background-darken-tint3);
-			opacity: 0;
-			transform-origin: top center;
-			transform: scaleX(.5);
-			transition: opacity .2s ease, transform .4s ease;
+		&.with-bottom-shadow {
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				display: block;
+				height: 2px;
+				background-color: var(--app-background-darken-tint3);
+				opacity: 0;
+				transform-origin: top left;
+				transform: scaleX(.5);
+				transition: opacity .2s ease, transform .4s ease;
+			}
 		}
-
 
 		div.breadcrumb-item {
 			display: inline;

@@ -70,7 +70,7 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 	}, [useSubroutingMenu, breadcrumbs]);
 
 	if (useSubroutingMenu) {
-		return <div className={'app-breadcrumbs'}>
+		return <div className={'app-breadcrumbs' + (AppStateStore._yScrollPos > 32 ? ' page-scrolled' : '')}>
 			<div className={'app-breadcrumbs-content'}>
 				<div className={'app-breadcrumbs-panel'}>
 					<PageSubmenu/>
@@ -85,7 +85,7 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 
 	return <div className={'app-breadcrumbs' + (AppStateStore._yScrollPos > 32 ? ' page-scrolled' : '')}>
 		<div className={'app-breadcrumbs-content'}>
-			<div className={'app-breadcrumbs-panel'}>
+			<div className={'app-breadcrumbs-panel with-bottom-shadow'}>
 				{breadcrumbs.map((item, idx) => {
 					const hasOwnLink = typeof item.title !== 'string';
 
