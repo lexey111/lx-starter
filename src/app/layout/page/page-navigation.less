@@ -16,7 +16,7 @@
 
 .with-top-menu.with-breadcrumbs, .with-top-menu.with-page-menu {
 	.app-page-navigation {
-		top: calc(var(--app-breadcrumbs-height) + var(--app-menu-height));
+		top: calc(var(--app-breadcrumbs-height) + var(--app-menu-height) + 2em);
 	}
 }
 
@@ -41,9 +41,8 @@
 	flex-flow: column wrap;
 	height: auto;
 	position: absolute;
-	width: auto;
-	left: 100%;
-	margin-left: 32px;
+	width: var(--app-navigation-width);
+	left: calc(100% + 32px);
 	min-height: 100vh;
 	z-index: 101;
 
@@ -58,6 +57,7 @@
 	transform: translateX(-10px);
 
 	.app-page-nav-item {
+		font-size: var(--app-menu-font-size);
 		display: flex;
 		padding: 8px 0;
 		white-space: nowrap;

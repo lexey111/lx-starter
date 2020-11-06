@@ -4,7 +4,6 @@ import React, {useEffect} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {AppBreadcrumbs} from './layout/breadcrumbs/breadcrumbs-component';
 import {AppFooter} from './layout/footer/footer-component';
-import {AppLayout} from './layout/layout/layout-component';
 import {AppMainMenu} from './layout/main-menu/main-menu-component';
 import {AppAuthPage} from './layout/page/app-auth-page-component';
 import {AppContainer} from './layout/page/app-container-component';
@@ -60,11 +59,11 @@ export const App: React.FC = observer(() => {
 		<AppPageNavigation/>
 
 		<AppContainer>
-			<AppLayout footer={<AppFooter/>}>
-				<Switch>
-					{AppRoutes}
-				</Switch>
-			</AppLayout>
+			<Switch>
+				{AppRoutes}
+			</Switch>
 		</AppContainer>
+
+		<AppFooter/>
 	</Router>;
 });

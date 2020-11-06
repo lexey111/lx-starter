@@ -1,26 +1,24 @@
 .app-footer {
 	display: flex;
+	flex-grow: 0;
+	flex-shrink: 0;
 	background-color: var(--app-background);
-	align-content: flex-start;
-	justify-content: flex-end;
-	align-items: flex-end;
-	justify-items: flex-end;
-	flex-flow: row nowrap;
-	padding: 0;
-	margin: 0 auto;
+	flex-flow: column nowrap;
+	width: 100vw;
 
-	width: var(--app-page-width);
-
-	box-sizing: border-box;
-	flex: 0 0 auto;
+	margin-top: auto;
+	padding-top: 32px;
 
 	.app-footer-content {
-		display: block;
-		max-width: var(--app-page-width);
-		width: auto;
-		padding: 32px;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: flex-end;
+		margin: 0 auto;
+		width: var(--app-page-width);
+		padding: 32px 0;
 		color: var(--app-color-remark);
-
-		box-sizing: border-box;
+		border-top: 2px solid var(--app-background-darken);
 	}
 }

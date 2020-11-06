@@ -13,6 +13,7 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 	let {icon} = item;
 
 	if (!icon && typeof item.title === 'string' && AppStateStore.mainMenuPosition === 'side') {
+		// side menu must have an icon
 		icon = <IconStar/>;
 	}
 

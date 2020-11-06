@@ -1,17 +1,18 @@
 body {
 	display: flex;
 	flex-flow: column nowrap;
-	overflow-y: auto;
-	overflow-x: hidden;
 	background-color: var(--app-background);
 	color: var(--app-color);
+	// overflow-y: auto;
+	// overflow-x: hidden;
+	min-height: 100vh;
+	min-width: 100vw;
 }
 
 #app-mount-point {
-	display: block;
-	min-height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
 	position: relative;
-	overflow: visible;
 }
 
 .app-container {

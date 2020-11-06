@@ -1,0 +1,59 @@
+/**
+Waypoints
+ */
+@app-media-max: 1500px;
+@app-media-max-page-width: 1200px;
+
+@app-media-wide: 1300px;
+@app-media-wide-page-width: 1100px;
+
+@app-media-default-page-width: 960px;
+
+@app-media-narrow: 980px;
+@app-media-narrow-page-width: calc(100% - 64px);
+
+@app-media-min: 760px;
+@app-media-min-page-width: calc(100% - 32px);
+
+@app-media-inner-navigation: 1480px;
+@app-media-inner-navigation-min: 960px;
+
+@media screen and (max-width: @app-media-max) {
+	// 1300..1500 = 1100
+	body {
+		//border: 4px solid blue;
+		--app-page-width: @app-media-wide-page-width;
+	}
+}
+
+@media screen and (min-width: @app-media-max) {
+	// > 1500 = 1200
+	body {
+		// border: 4px solid red;
+		--app-page-width: @app-media-max-page-width;
+	}
+}
+
+@media screen and (max-width: @app-media-wide) {
+	// 980..1300 = 960
+	body {
+		// border: 4px solid olive;
+		--app-page-width: @app-media-default-page-width;
+	}
+}
+
+@media screen and (max-width: @app-media-narrow) {
+	// 760..980 = 100% - 64px
+	body {
+		// border: 4px solid magenta;
+		--app-page-width: @app-media-narrow-page-width;
+	}
+}
+
+@media screen and (max-width: @app-media-min) {
+	// < 760 = 100%, other effects (no menu etc.)
+	body {
+		//border: 4px solid black;
+		--app-page-width: @app-media-min-page-width;
+	}
+}

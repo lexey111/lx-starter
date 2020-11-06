@@ -1,3 +1,5 @@
+@import "app-container.less";
+
 .with-breadcrumbs, .with-page-menu {
 	.app-page {
 		margin-top: 2em;
@@ -13,17 +15,16 @@
 	animation-fill-mode: forwards;
 
 	display: block;
-	padding: 0;
-	max-width: var(--app-page-width);
+	width: var(--app-page-width);
 	margin: 0 auto;
+	padding: 0;
 	position: relative;
 }
 
 .app-page-content {
 	padding: 0;
-	margin: 0;
 	float: none;
-	width: 100%;
+	// width: 100%;
 	overflow: hidden;
 	display: block;
 	position: relative;
@@ -39,3 +40,4 @@
 }
 
 @import "page-navigation.less";
+@import "@page.less";
