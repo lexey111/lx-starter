@@ -1,0 +1,54 @@
+@import "./src/styles/@media.less";
+
+@media screen and (max-width: @app-media-top-menu-collapse) {
+	// collapse top menu to burger
+	.app-menu-top {
+		.app-main-menu-container {
+			box-sizing: border-box;
+
+			.app-main-menu {
+				width: 200px;
+				max-width: 70%;
+				flex-flow: column wrap;
+				display: flex;
+				height: 100vh;
+				background-color: var(--app-menu-background);
+				box-shadow: 4px 0 8px rgba(0, 0, 0, .3);
+
+				&:before {
+					content: '';
+					position: absolute;
+					background-color: var(--app-menu-background);
+					box-sizing: border-box;
+					top: 0;
+					bottom: 0;
+					left: -100%;
+					width: 50vw;
+				}
+
+				.app-menu-item, .app-menu-sub-item {
+					display: flex;
+				}
+
+				.app-menu-stub, .menu-spacer {
+					display: none;
+				}
+
+				.app-menu-item.with-subroutes {
+					clear: both;
+
+					&:before {
+						transform: rotate(-90deg);
+					}
+
+					&:hover, &:focus, &:focus-within {
+						.app-menu-sub-items {
+							top: 0;
+							left: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
