@@ -1,10 +1,10 @@
 .with-top-panel {
-	.app-menu-top {
+	.with-top-menu .app-menu {
 		padding-top: 5px;
 	}
 }
 
-.app-menu-top {
+.with-top-menu .app-menu {
 	display: flex;
 	flex-flow: column nowrap;
 	width: 100vw;
@@ -45,6 +45,11 @@
 		flex-grow: 2;
 		cursor: default;
 		pointer-events: none;
+	}
+
+	.app-menu-laterals {
+		display: flex;
+		flex-flow: row wrap;
 	}
 
 	.menu-spacer {

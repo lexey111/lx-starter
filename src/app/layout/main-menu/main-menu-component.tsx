@@ -95,6 +95,11 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProp
 		} else {
 			document.body.classList.remove('with-top-menu');
 		}
+		if (position === 'side') {
+			document.body.classList.add('with-side-menu');
+		} else {
+			document.body.classList.remove('with-side-menu');
+		}
 	}, [loggedIn, location.url, position]);
 
 	const handleMenuClick = useCallback((e: React.MouseEvent<HTMLElement>) => {
@@ -134,7 +139,7 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProp
 	}, []);
 
 
-	return <div className={'app-menu ' + (position === 'side' ? 'app-menu-side' : 'app-menu-top')}>
+	return <div className={'app-menu'}>
 		<div className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}>
 			{position === 'top' && <div
 				className={'app-menu-burger'}
@@ -157,11 +162,16 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProp
 				</div>
 				}
 
-				{primaryMenuItems.map((item, idx) => <MainMenuItem key={item.url || idx} item={item}/>)}
+				{primaryMenuItems.map(
+					(item, idx) => <MainMenuItem
+						key={item.url || idx} item={item}/>)}
 
-				<div className={'app-menu-stub'}/>
-
-				{lateralMenuItems.map((item, idx) => <MainMenuItem key={item.url || idx} item={item}/>)}
+				<div className={'app-menu-stub'}></div>
+				<div className={'app-menu-laterals'}>
+					{lateralMenuItems.map(
+						(item, idx) => <MainMenuItem
+							key={item.url || idx} item={item}/>)}
+				</div>
 
 				<div className={'menu-spacer'}></div>
 			</div>

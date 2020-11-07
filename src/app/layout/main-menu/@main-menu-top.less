@@ -2,7 +2,7 @@
 
 @media screen and (max-width: @app-media-top-menu-collapse) {
 	// collapse top menu to burger
-	.app-menu-top {
+	.with-top-menu .app-menu {
 		.app-main-menu-container {
 			box-sizing: border-box;
 
@@ -41,6 +41,10 @@
 
 				.app-menu-item, .app-menu-sub-item {
 					display: flex;
+				}
+
+				.app-menu-laterals {
+					flex-flow: column wrap;
 				}
 
 				.app-menu-stub, .menu-spacer {

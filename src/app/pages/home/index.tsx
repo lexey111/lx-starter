@@ -2,6 +2,7 @@ import {observer} from 'mobx-react';
 import React, {useCallback} from 'react';
 import {Link} from 'react-router-dom';
 import {AppSiteMap} from '../../../config/app-site-map';
+import {MenuPositionSwitcher} from '../../components/ui/example-related/menu-switcher-component';
 import {ThemeSwitcher} from '../../components/ui/example-related/theme-switcher-component';
 import {Button} from '../../components/ui/general/button/button-component';
 import {Title} from '../../components/ui/general/typography/title-component';
@@ -40,6 +41,7 @@ export const HomePage: React.FC = observer(() => {
 		<Title level={3}>UI variants</Title>
 
 		<ThemeSwitcher/>
+		<MenuPositionSwitcher/>
 
 		<Title level={3}>Site tree</Title>
 

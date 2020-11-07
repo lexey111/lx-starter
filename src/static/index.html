@@ -93,10 +93,12 @@
 <body>
 <noscript>Please turn on the Javascript.</noscript>
 <script>
-	const storedTheme = localStorage.getItem('current.theme') || '';
+	const storedTheme = localStorage.getItem('app-theme') || '';
 	if (storedTheme === 'dark') {
-		document.body.className = 'theme-dark';
+		document.body.classList.add('theme-dark');
 	}
+	const storedMenuPosition = localStorage.getItem('app-menu.position') === 'side' ? 'side' : 'top';
+	document.body.classList.add('with-' + storedMenuPosition + '-menu');
 </script>
 <div id="app-full-screen-message"></div>
 <div id="app-mount-point"></div>

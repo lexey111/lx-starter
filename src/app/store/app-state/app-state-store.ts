@@ -42,6 +42,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 		// initial theme
 		const value: string = localStorage.getItem('app-theme') || 'light';
 		this.theme = AvailableThemes.includes(value) ? value : 'light';
+		this.mainMenuPosition = localStorage.getItem('app-menu.position') === 'side' ? 'side' : 'top';
 
 		makeObservable(this, {
 			// currentRoute: observable, // must not be observable!
@@ -131,5 +132,13 @@ export default class CAppStateStore implements TAppStateStoreData {
 		const themeName = AvailableThemes.includes(value) ? value : 'light';
 		localStorage.setItem('app-theme', themeName);
 		this.theme = themeName;
+	};
+
+	setMenuPosition = (value: string): void => {
+		if (value !== 'top') {
+			value = 'side';
+		}
+		localStorage.setItem('app-menu.position', value);
+		this.mainMenuPosition = value;
 	};
 }

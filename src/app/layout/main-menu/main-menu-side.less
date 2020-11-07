@@ -1,0 +1,106 @@
+.with-side-menu .app-menu {
+	display: block;
+	width: var(--app-menu-width-expanded);
+
+	z-index: 110;
+	position: sticky;
+	height: 0;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	border: 2px solid red;
+
+	.app-main-menu-container {
+		box-sizing: border-box;
+		border: 2px solid yellow;
+		display: block;
+		margin: 0;
+		padding: 0;
+		min-height: 100vh;
+		width: var(--app-menu-width-expanded);
+		position: relative;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		color: var(--app-primary-text-color);
+	}
+
+	.app-main-menu {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		flex-flow: column nowrap;
+		z-index: 110;
+		background-color: var(--app-menu-background);
+	}
+
+	.app-menu-stub {
+		margin-top: auto;
+		width: 100%;
+		flex-grow: 2;
+		cursor: default;
+		pointer-events: none;
+	}
+
+	.app-menu-expander {
+		display: none;
+	}
+
+	.app-menu-laterals {
+		position: sticky;
+		bottom: 0;
+		border: 4px magenta solid;
+		box-sizing: border-box;
+	}
+
+	.menu-spacer {
+		display: flex;
+		width: 100%;
+	}
+
+	.app-menu-item {
+		.app-menu-sub-items {
+			opacity: 0;
+			max-height: 0;
+			overflow: hidden;
+			pointer-events: none;
+			background-color: var(--app-menu-background);
+			transition: all .2s ease;
+
+			.app-menu-sub-item {
+				height: var(--app-menu-height);
+				display: flex;
+				align-items: center;
+				transition: all .2s ease;
+				margin-left: calc(var(--app-menu-icon-size) + 8px);
+				padding: 0 8px;
+				background-color: var(--app-menu-background);
+				border-left: 2px solid var(--app-menu-background);
+
+				&.active {
+					font-weight: bold;
+					background-color: var(--app-menu-selected-color);
+					color: var(--app-menu-selected-text-color);
+					border-left: 2px solid var(--app-primary-bright-color);
+				}
+
+				&:hover {
+					border-color: transparent !important;
+				}
+			}
+		}
+
+		&.selected, &:focus, &:focus-within {
+			background-color: var(--app-menu-selected-color);
+
+			.app-menu-sub-items {
+				opacity: 1;
+				max-height: 2000px;
+				pointer-events: all;
+			}
+		}
+	}
+}
