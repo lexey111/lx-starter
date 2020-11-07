@@ -1,31 +1,47 @@
 import {observer} from 'mobx-react';
-import React, {useCallback, useEffect} from 'react';
+import React, {useEffect} from 'react';
+import useLocationParams from '../../hooks/use-location-params';
 import {AppPageNavigationStore} from '../../store/@stores';
 
+function scrollToHash(smooth?: boolean): void {
+	if (!window.location.hash) {
+		return;
+	}
+
+	const target = window.location.hash.substring(1);
+
+	if (!target) {
+		return;
+	}
+
+	const element = document.querySelector('[data-nav-target="' + target + '"]');
+	const offset = (element as HTMLDivElement)?.offsetTop;
+	if (!offset) {
+		return;
+	}
+
+	window.scrollTo({
+		top: offset - 100,
+		behavior: smooth === true ? 'smooth' : 'auto'
+	});
+}
+
 export const AppPageNavigation: React.FC = observer(() => {
-	const handleClick = useCallback((e: React.MouseEvent<any>) => {
-		e.preventDefault();
-		e.stopPropagation();
+	const appLocation = useLocationParams();
 
-		if (!e || !e.target || !e.target['dataset']) {
-			return false;
-		}
+	useEffect(() => {
+		window.addEventListener('hashchange', scrollToHash as () => void, false);
 
-		const target = (e as unknown as { target: { dataset: { anchor: string } } }).target.dataset.anchor;
-		if (!target) {
-			return;
-		}
+		const delayedScroll = setTimeout(() => {
+			scrollToHash(true); // initial scroll
+		}, 200);
 
-		const offset = document.getElementById(target)?.offsetTop;
-		if (!offset) {
-			return;
-		}
-		window.scrollTo({
-			top: offset - 100,
-			behavior: 'auto'
-		});
-		return false;
-	}, []);
+		return () => {
+			clearTimeout(delayedScroll);
+			window.addEventListener('hashchange', scrollToHash as () => void, false);
+		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [AppPageNavigationStore.hasItems]);
 
 	useEffect(() => {
 		if (AppPageNavigationStore.hasItems) {
@@ -47,7 +63,7 @@ export const AppPageNavigation: React.FC = observer(() => {
 					return <div
 						className={'app-page-nav-item'}
 						key={item.targetId}>
-						<a href={'#'} onClick={handleClick} data-anchor={item.targetId}>
+						<a href={appLocation.url + '#' + item.targetId}>
 							{item.title}
 						</a>
 					</div>;

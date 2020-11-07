@@ -27,7 +27,7 @@ export const UiExampleComponentsPage: React.FC = () => {
 			language={'less'}
 			content={'@import "ui/examples-related/examples-related.less";'}/>
 
-		<Title level={4} nav>Not mentioned</Title>
+		<Title level={4} nav={'not-mentioned'}>Not mentioned</Title>
 		<p>
 			A few components are not mentioned here,
 			like <Tag>SourceFile</Tag>, <Tag>A</Tag>, <Tag>Tag</Tag> and <Tag>ThemeSwitcher</Tag>.
@@ -39,7 +39,7 @@ export const UiExampleComponentsPage: React.FC = () => {
 
 		<hr/>
 
-		<Title level={3} nav>Lorem Ipsum</Title>
+		<Title level={3} nav={'lorem-ipsum'}>Lorem Ipsum</Title>
 		<SourceFile src={'src/app/components/ui/examples-related/lipsum.tsx'}/>
 		<p>
 			This is "Lorem Ipsum" text generator. It based on <A href={'https://github.com/knicklabs/lorem-ipsum.js#readme'}>lorem-ipsum</A> NPM package, so please
@@ -48,7 +48,7 @@ export const UiExampleComponentsPage: React.FC = () => {
 
 		<ExampleLipsum/>
 
-		<Title level={3} nav>Syntax highlight</Title>
+		<Title level={3} nav={'syntax-highlight'}>Syntax highlight</Title>
 		<SourceFile src={'src/app/components/ui/examples-related/syntax-highlight.tsx'}/>
 		<p>
 			The component display "highlighted" text. It build upon <A href={'https://prismjs.com/'}>Prism.js</A> library and is able to display a lot of
@@ -65,7 +65,7 @@ export const UiExampleComponentsPage: React.FC = () => {
 
 		<ExampleSyntaxHighlight/>
 
-		<Title level={3} nav>Example tabs</Title>
+		<Title level={3} nav={'example tabs'}>Example tabs</Title>
 		<SourceFile src={'src/app/components/ui/examples-related/syntax-example-tabs.tsx'}/>
 		<p>
 			A composition of <code>&lt;SyntaxHighlight&gt;</code> and <code>&lt;Tabs&gt;</code> components.

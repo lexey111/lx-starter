@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect} from 'react';
 import {AppPageNavigationStore} from '../../../../store/@stores';
 
 type TTitleProps = {
@@ -8,25 +8,27 @@ type TTitleProps = {
 	className?: string
 	bottomBorder?: boolean
 	noTopMargin?: boolean
-	nav?: boolean
+	nav?: string
 	children?: any
 };
 
 export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 	const CustomHeader: any = `h${props.level || 1}`;
-	const TitleId = useRef('_' + Math.random().toString(36).substr(2, 9));
 
 	useEffect(() => {
-		const id = TitleId.current;
-		if (props.nav) {
+		const targetId = props.nav;
+
+		if (targetId) {
 			AppPageNavigationStore.register({
-				targetId: id,
+				targetId,
 				isActive: false,
 				title: props.navTitle || props.children as string
 			});
 		}
 		return () => {
-			AppPageNavigationStore.unregister(id);
+			if (targetId) {
+				AppPageNavigationStore.unregister(targetId);
+			}
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -39,9 +41,15 @@ export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 	+ (hasSubtitle ? ' with-subtitle' : '')
 	+ (props.className ? ' ' + props.className : '')}>
 
-		<CustomHeader id={TitleId.current}>
+		{props.nav && <CustomHeader data-nav-target={props.nav}>
 			{props.children}
 		</CustomHeader>
+		}
+
+		{!props.nav && <CustomHeader>
+			{props.children}
+		</CustomHeader>
+		}
 
 		{props.subTitle && <div className={'app-subtitle'}>
 			{props.subTitle}

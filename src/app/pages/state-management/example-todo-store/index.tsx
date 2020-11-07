@@ -11,11 +11,11 @@ export const ExampleTodoStorePage: React.FC = () => {
 			Well, this is pretty simple implementation of 'ToDo' application.
 		</p>
 
-		<Title level={2} nav>Example</Title>
+		<Title level={2} nav={'example'}>Example</Title>
 
 		<TodoListExample/>
 
-		<Title level={2} nav>Store structure</Title>
+		<Title level={2} nav={'store-structure'}>Store structure</Title>
 		<SourceFile src={'src/app/store/example/example-todo-store/app-example-todo-store.ts'}/>
 
 		<p>

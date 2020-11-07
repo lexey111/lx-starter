@@ -10,7 +10,7 @@ export const UiGeneralPage: React.FC = () => {
 	return <>
 		<Title>General components</Title>
 
-		<Title nav level={2}>Title</Title>
+		<Title nav={'title'} level={2}>Title</Title>
 		<SourceFile src={'src/app/components/ui/general/typography'}/>
 
 		<p>
@@ -24,7 +24,7 @@ export const UiGeneralPage: React.FC = () => {
 
 		<UiTitleExample/>
 
-		<Title nav level={2}>Buttons</Title>
+		<Title nav={'buttons'} level={2}>Buttons</Title>
 		<SourceFile src={'src/app/components/ui/general/button'}/>
 
 		<p>
@@ -36,7 +36,7 @@ export const UiGeneralPage: React.FC = () => {
 		</p>
 		<UiButtonsExample/>
 
-		<Title nav level={2}>SVG Icons</Title>
+		<Title nav={'svg-icons'} level={2}>SVG Icons</Title>
 		<SourceFile src={'src/app/components/ui/general/icons'}/>
 
 		<p>

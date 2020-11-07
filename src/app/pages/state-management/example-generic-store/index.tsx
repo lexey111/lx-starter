@@ -9,7 +9,7 @@ export const StateGenericStorePage: React.FC = () => {
 	return <>
 		<Title>Generic State store</Title>
 
-		<Title level={2} nav>Overview</Title>
+		<Title level={2} nav={'overview'}>Overview</Title>
 		<p>
 			Usually when developer creates stores for many forms there are a lot of boilerplate
 			code appears. To serve 'common needs' I created <SourceFile src={'src/app/store/utils/store-utils.ts'} inline={true}/>.
@@ -21,10 +21,10 @@ export const StateGenericStorePage: React.FC = () => {
 			and <code>version</code> etc.
 		</p>
 
-		<Title level={3} nav>Example</Title>
+		<Title level={3} nav={'example'}>Example</Title>
 		<PeopleExampleComponent/>
 
-		<Title level={2} nav>How it works</Title>
+		<Title level={2} nav={'how-it-works'}>How it works</Title>
 		<Title level={3}>Store</Title>
 		<p>
 			Let's start with creating Person Store. First, I declared data types:
@@ -143,7 +143,7 @@ export function _resetData<T, U>(target: T, initialData: U): void {...}`}/>
 			only fields present in the <code>template</code>.
 		</p>
 
-		<Title level={3} nav>List of persons</Title>
+		<Title level={3} nav={'list-of-persons'}>List of persons</Title>
 		<p>
 			Here is a fake dataset, <SourceFile inline src={'src/app/page/state-management/example-generic-store/people-fake-data.ts'}></SourceFile>.
 		</p>
@@ -211,7 +211,7 @@ const setCurrentPerson = useCallback((id?: string): void => {
 			its data loaded into Person Store fields by <code>AppPersonStore.setPerson(person)</code>.
 		</p>
 
-		<Title level={3} nav>Person's card</Title>
+		<Title level={3} nav={'card'}>Person's card</Title>
 		<p>
 			Here is the card of person component comes into.
 		</p>
@@ -276,7 +276,7 @@ export const PersonCardComponent: React.FC<TPersonCardComponentProps> =
 			allows to correctly decide which is actual or not.
 		</p>
 
-		<Title level={3} nav>Input components</Title>
+		<Title level={3} nav={'input-components'}>Input components</Title>
 		<p>
 			Well, but who changes the data in the Store?
 		</p>

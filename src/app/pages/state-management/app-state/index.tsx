@@ -9,7 +9,7 @@ export const StateMainStorePage: React.FC = () => {
 	return <>
 		<Title>Application State store</Title>
 
-		<Title level={2} nav>The purpose</Title>
+		<Title level={2} nav={'purpose'}>The purpose</Title>
 		<SourceFile src={'src/app/store/app-state/app-state-store.ts'}/>
 
 		<p>
@@ -22,7 +22,7 @@ export const StateMainStorePage: React.FC = () => {
 			if you implement full-scale auth store and flow, e.g. with <A href={'https://firebase.google.com/docs/auth'}>Google Firebase</A>.
 		</p>
 
-		<Title level={2} nav>Structure</Title>
+		<Title level={2} nav={'structure'}>Structure</Title>
 
 		<SyntaxHighlight content={`
 export type TAppStateStoreData = {
