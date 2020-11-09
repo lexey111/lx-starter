@@ -1,16 +1,14 @@
-import React, {useCallback, useState} from 'react';
+import React, {RefObject, useCallback, useState} from 'react';
 import {IconExpander} from '../../components/ui/general/icons/icon-expander-component';
 import {IconMenu} from '../../components/ui/general/icons/icon-menu-component';
-import {TMenuItems, TUseHistory} from './main-menu-component';
+import {TMenuItems} from './main-menu-component';
 import {MainMenuItem} from './menu-item/main-menu-item-component';
 
 type TAppMainMenuMarkupProps = {
-	containerRef: any
-	expanded: boolean
-	position: 'side' | 'top'
-	history: TUseHistory
+	position: string
 	primaryMenuItems: TMenuItems
 	lateralMenuItems: TMenuItems
+	onItemClick: (url) => void
 };
 
 type TKeyboardEventWithDataset = React.KeyboardEvent<HTMLDivElement> & {
@@ -54,21 +52,21 @@ function handleBurgerMenuKey(e: TKeyboardEventWithDataset): boolean {
 	return false;
 }
 
-function _handleMenuClick(history: TUseHistory, e: React.MouseEvent<HTMLElement>): boolean {
+function _handleMenuClick(callback: (string) => void, e: React.MouseEvent<HTMLElement>): boolean {
 	if (e.persist) {
 		e.persist();
 	}
 	const element = findParentMenuItem((e.target || e.currentTarget) as HTMLElement);
 	const url = element?.dataset?.url;
 	if (url) {
-		history.push(url);
+		callback(url);
 	}
 	e.preventDefault();
 	e.stopPropagation();
 	return false;
 }
 
-function _handleMenuKey(history: TUseHistory, e: TKeyboardEventWithDataset): boolean {
+function _handleMenuKey(callback: (string) => void, e: TKeyboardEventWithDataset): boolean {
 	if (e.persist) {
 		e.persist();
 	}
@@ -78,7 +76,7 @@ function _handleMenuKey(history: TUseHistory, e: TKeyboardEventWithDataset): boo
 	}
 	const url: unknown = e.target?.dataset?.url;
 	if (url) {
-		history.push(url as string);
+		callback(url as string);
 	} else {
 		return true;
 	}
@@ -88,15 +86,15 @@ function _handleMenuKey(history: TUseHistory, e: TKeyboardEventWithDataset): boo
 	return false;
 }
 
-export const AppMainMenuMarkup: React.FC<TAppMainMenuMarkupProps> = (props: TAppMainMenuMarkupProps) => {
+export const AppMainMenuMarkup = React.forwardRef((props: TAppMainMenuMarkupProps, ref) => {
 	const [expanded, setExpanded] = useState(false);
 	const handleMenuClick = useCallback(e => {
-		return _handleMenuClick(props.history, e);
-	}, [props.history]);
+		return _handleMenuClick(props.onItemClick, e);
+	}, [props.onItemClick]);
 
 	const handleMenuKey = useCallback(e => {
-		return _handleMenuKey(props.history, e);
-	}, [props.history]);
+		return _handleMenuKey(props.onItemClick, e);
+	}, [props.onItemClick]);
 
 	const handleToggleExpand = useCallback(() => {
 		setExpanded(v => !v);
@@ -105,7 +103,7 @@ export const AppMainMenuMarkup: React.FC<TAppMainMenuMarkupProps> = (props: TApp
 
 	return <div className={'app-menu'}>
 		<div
-			ref={props.containerRef}
+			ref={ref as RefObject<HTMLDivElement>}
 			className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}
 		>
 			{props.position === 'top' && <div
@@ -146,4 +144,4 @@ export const AppMainMenuMarkup: React.FC<TAppMainMenuMarkupProps> = (props: TApp
 			{props.position === 'side' && <div className={'app-menu-backdrop'} onClick={handleToggleExpand}></div>}
 		</div>
 	</div>;
-};
+});
