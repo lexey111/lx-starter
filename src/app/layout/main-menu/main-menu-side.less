@@ -2,26 +2,20 @@
 	display: block;
 	width: var(--app-menu-width-expanded);
 
-	z-index: 110;
-	position: sticky;
-	height: 0;
+	z-index: 10;
+	position: fixed;
 	top: 0;
 	left: 0;
-	box-sizing: border-box;
-	border: 2px solid red;
+	bottom: 0;
+	background-color: var(--app-menu-background);
 
 	.app-main-menu-container {
-		box-sizing: border-box;
-		border: 2px solid yellow;
 		display: block;
 		margin: 0;
 		padding: 0;
 		min-height: 100vh;
 		width: var(--app-menu-width-expanded);
 		position: relative;
-		top: 0;
-		left: 0;
-		bottom: 0;
 		color: var(--app-primary-text-color);
 	}
 
@@ -34,7 +28,6 @@
 		display: flex;
 		flex-flow: column nowrap;
 		z-index: 110;
-		background-color: var(--app-menu-background);
 	}
 
 	.app-menu-stub {

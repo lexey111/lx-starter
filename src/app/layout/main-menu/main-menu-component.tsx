@@ -1,10 +1,12 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import {observer} from 'mobx-react';
+import React, {useCallback, useEffect, useLayoutEffect, useRef, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import {IconExpander} from '../../components/ui/general/icons/icon-expander-component';
 import {IconMenu} from '../../components/ui/general/icons/icon-menu-component';
 import useLocationParams from '../../hooks/use-location-params';
 import useLoggedIn from '../../hooks/use-logged-in';
 import {TRouteMappingItem} from '../../routing/route-mapping-interface';
+import {AppStateStore} from '../../store/@stores';
 import {calculateMenuParts} from './main-menu-utils';
 import {MainMenuItem} from './menu-item/main-menu-item-component';
 
@@ -33,7 +35,6 @@ function findParentMenuItem(node?: HTMLElement | null): HTMLElement | undefined 
 	return findParentMenuItem(node.parentElement);
 }
 
-
 function handleBurgerMenu(): void {
 	// just focus first menu item
 	const homeMenu = document.querySelector('.app-menu-home-item') as HTMLDivElement;
@@ -42,6 +43,10 @@ function handleBurgerMenu(): void {
 	}
 	homeMenu.focus();
 }
+
+export type TUseHistory = {
+	push: (string) => void
+};
 
 function handleBurgerMenuKey(e: TKeyboardEventWithDataset): boolean {
 	if (e.persist) {
@@ -57,8 +62,43 @@ function handleBurgerMenuKey(e: TKeyboardEventWithDataset): boolean {
 	return false;
 }
 
-export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProps) => {
-	const history = (useHistory as () => any)() as { push: (string) => void };
+function _handleMenuClick(history: TUseHistory, e: React.MouseEvent<HTMLElement>): boolean {
+	if (e.persist) {
+		e.persist();
+	}
+	const element = findParentMenuItem((e.target || e.currentTarget) as HTMLElement);
+	const url = element?.dataset?.url;
+	if (url) {
+		history.push(url);
+	}
+	e.preventDefault();
+	e.stopPropagation();
+	return false;
+}
+
+function _handleMenuKey(history: TUseHistory, e: TKeyboardEventWithDataset): boolean {
+	if (e.persist) {
+		e.persist();
+	}
+	const code = e.key;
+	if (code !== 'Enter' && code !== ' ') {
+		return true;
+	}
+	const url: unknown = e.target?.dataset?.url;
+	if (url) {
+		history.push(url as string);
+	} else {
+		return true;
+	}
+
+	e.preventDefault();
+	e.stopPropagation();
+	return false;
+}
+
+export const AppMainMenu: React.FC<TAppMainMenuProps> = observer((props: TAppMainMenuProps) => {
+	const history = (useHistory as () => any)() as TUseHistory;
+	const destroying = useRef(false);
 
 	const [primaryMenuItems, setPrimaryMenuItems] = useState<TMenuItems>([]);
 	const [lateralMenuItems, setLateralMenuItems] = useState<TMenuItems>([]);
@@ -68,8 +108,16 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProp
 	const {position} = props;
 	const location = useLocationParams();
 
+	const containerRef = useRef<HTMLDivElement>(null);
+
 	const handleToggleExpand = useCallback(() => {
 		setExpanded(v => !v);
+	}, []);
+
+	useEffect(() => {
+		return () => {
+			destroying.current = true;
+		};
 	}, []);
 
 	useEffect(() => {
@@ -102,45 +150,37 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProp
 		}
 	}, [loggedIn, location.url, position]);
 
-	const handleMenuClick = useCallback((e: React.MouseEvent<HTMLElement>) => {
-		if (e.persist) {
-			e.persist();
-		}
-		const element = findParentMenuItem((e.target || e.currentTarget) as HTMLElement);
-		const url = element?.dataset?.url;
-		if (url) {
-			history.push(url);
-		}
-		e.preventDefault();
-		e.stopPropagation();
-		return false;
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
 
-	const handleMenuKey = useCallback((e: TKeyboardEventWithDataset) => {
-		if (e.persist) {
-			e.persist();
-		}
-		const code = e.key;
-		if (code !== 'Enter' && code !== ' ') {
+	useLayoutEffect(() => {
+		if (position !== 'side' || !containerRef.current) {
+			if (containerRef.current && containerRef.current.style?.marginTop !== '0') {
+				containerRef.current.style.marginTop = '0';
+			}
 			return;
 		}
-		const url: unknown = e.target?.dataset?.url;
-		if (url) {
-			history.push(url);
-		} else {
-			return;
-		}
+		const margin = AppStateStore._toPanelHeight - AppStateStore._yScrollPos;
 
-		e.preventDefault();
-		e.stopPropagation();
-		return false;
+		window.requestAnimationFrame(() => {
+			if (!destroying.current && containerRef.current && containerRef.current.style) {
+				containerRef.current.style.marginTop = margin > 0 ? margin.toString() + 'px' : '0';
+			}
+		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [position, containerRef, AppStateStore._toPanelHeight, AppStateStore._yScrollPos]);
 
+	const handleMenuClick = useCallback(e => {
+		return _handleMenuClick(history, e);
+	}, [history]);
+
+	const handleMenuKey = useCallback(e => {
+		return _handleMenuKey(history, e);
+	}, [history]);
 
 	return <div className={'app-menu'}>
-		<div className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}>
+		<div
+			ref={containerRef}
+			className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}
+		>
 			{position === 'top' && <div
 				className={'app-menu-burger'}
 				tabIndex={0}
@@ -179,4 +219,4 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = (props: TAppMainMenuProp
 			{position === 'side' && <div className={'app-menu-backdrop'} onClick={handleToggleExpand}></div>}
 		</div>
 	</div>;
-};
+});

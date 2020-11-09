@@ -12,7 +12,8 @@ export type TAppStateStoreData = {
 	mainMenuPosition: string // 'side' | 'top'
 
 	_pageActions?: JSX.Element | null // optional action(s) that will be displayed in the breadcrumbs on scroll
-	_yScrollPos?: number // technical one, needed to show breadcrumbs panel after scroll distance reached > 32px
+	_yScrollPos: number // technical one, needed to show breadcrumbs panel after scroll distance reached > 32px
+	_toPanelHeight: number // technical one, needed to correct side menu position
 
 	isAuthorized: boolean
 	isAuthorizationInProgress: boolean
@@ -28,6 +29,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 
 	public _pageActions: JSX.Element | null = null;
 	public _yScrollPos = 0;
+	public _toPanelHeight = 0;
 
 	public theme = 'light';
 	public mainMenuPosition = 'top';
@@ -45,12 +47,12 @@ export default class CAppStateStore implements TAppStateStoreData {
 		this.mainMenuPosition = localStorage.getItem('app-menu.position') === 'side' ? 'side' : 'top';
 
 		makeObservable(this, {
-			// currentRoute: observable, // must not be observable!
-			// currentParams: observable,
+			// currentRoute and currentParams must not be observable!
 			currentLocation: observable,
 
 			_pageActions: observable,
 			_yScrollPos: observable,
+			_toPanelHeight: observable,
 
 			theme: observable,
 			mainMenuPosition: observable,
