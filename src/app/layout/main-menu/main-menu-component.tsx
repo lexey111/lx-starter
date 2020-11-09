@@ -68,8 +68,8 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = observer((props: TAppMai
 
 	useLayoutEffect(() => {
 		if (position !== 'side' || !containerRef.current) {
-			if (containerRef.current && containerRef.current.style?.marginTop !== '0') {
-				containerRef.current.style.marginTop = '0';
+			if (containerRef.current && containerRef.current.style?.paddingTop !== '0') {
+				containerRef.current.style.paddingTop = '0';
 			}
 			return;
 		}
@@ -77,7 +77,7 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = observer((props: TAppMai
 
 		window.requestAnimationFrame(() => {
 			if (!destroying.current && containerRef.current && containerRef.current.style) {
-				containerRef.current.style.marginTop = margin > 0 ? margin.toString() + 'px' : '0';
+				containerRef.current.style.paddingTop = margin > 0 ? margin.toString() + 'px' : '0';
 			}
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps

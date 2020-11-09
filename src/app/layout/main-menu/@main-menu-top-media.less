@@ -1,11 +1,10 @@
 @import "./src/styles/@media.less";
+@import "./src/styles/variables.less";
 
 @media screen and (max-width: @app-media-top-menu-collapse) {
 	// collapse top menu to burger
 	.with-top-menu .app-menu {
 		.app-main-menu-container {
-			box-sizing: border-box;
-
 			.app-menu-burger {
 				display: flex;
 			}
@@ -28,7 +27,6 @@
 					content: '';
 					position: absolute;
 					background-color: var(--app-menu-background);
-					box-sizing: border-box;
 					top: 0;
 					bottom: 0;
 					left: -100%;
@@ -44,11 +42,9 @@
 				}
 
 				.app-menu-laterals {
+					width: 100%;
 					flex-flow: column wrap;
-				}
-
-				.app-menu-stub, .menu-spacer {
-					display: none;
+					border-top: 1px solid var(--app-menu-separator);
 				}
 
 				.custom-menu-dropdown-list {

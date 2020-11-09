@@ -101,11 +101,8 @@ export const AppMainMenuMarkup = React.forwardRef((props: TAppMainMenuMarkupProp
 	}, []);
 
 
-	return <div className={'app-menu'}>
-		<div
-			ref={ref as RefObject<HTMLDivElement>}
-			className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}
-		>
+	return <div className={'app-menu'} ref={ref as RefObject<HTMLDivElement>}>
+		<div className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}>
 			{props.position === 'top' && <div
 				className={'app-menu-burger'}
 				tabIndex={0}
@@ -131,14 +128,11 @@ export const AppMainMenuMarkup = React.forwardRef((props: TAppMainMenuMarkupProp
 					(item, idx) => <MainMenuItem
 						key={item.url || idx} item={item}/>)}
 
-				<div className={'app-menu-stub'}></div>
 				<div className={'app-menu-laterals'}>
 					{props.lateralMenuItems.map(
 						(item, idx) => <MainMenuItem
 							key={item.url || idx} item={item}/>)}
 				</div>
-
-				<div className={'menu-spacer'}></div>
 			</div>
 
 			{props.position === 'side' && <div className={'app-menu-backdrop'} onClick={handleToggleExpand}></div>}
