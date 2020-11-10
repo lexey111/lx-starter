@@ -27,12 +27,12 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 	}
 
 	const activeUrl = AppStateStore.currentRoute?.url;
-	const availableSubroutes = item.routes?.filter(x => x.url?.indexOf('/:') === -1);
-	const itemHasVisibleRoutes = availableSubroutes && availableSubroutes.length > 0;
-	const activeSubroute = availableSubroutes?.find(x => x.url === activeUrl);
+	const availableSubRoutes = item.routes?.filter(x => x.url?.indexOf('/:') === -1);
+	const itemHasVisibleRoutes = availableSubRoutes && availableSubRoutes.length > 0;
+	const activeSubRoute = availableSubRoutes?.find(x => x.url === activeUrl);
 	const itemIsActive = item.isActive;
 	const hasCustomItem = Boolean(item.menuItem);
-	const hasText = Boolean(item.title) || Boolean(item.subtitle) || Boolean(activeSubroute?.title);
+	const hasText = Boolean(item.title) || Boolean(item.subtitle) || Boolean(activeSubRoute?.title);
 
 	return <div
 		className={'app-menu-item' + (itemIsActive ? ' selected' : '') +
@@ -54,9 +54,9 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 			</div>
 		}
 
-		{availableSubroutes && availableSubroutes.length > 0 && <div className={'app-menu-sub-items'}>
+		{availableSubRoutes && availableSubRoutes.length > 0 && <div className={'app-menu-sub-items'}>
 			{getSubItem(item, activeUrl)}
-			{availableSubroutes.map(subRoute => getSubItem(subRoute, activeUrl))}
+			{availableSubRoutes.map(subRoute => getSubItem(subRoute, activeUrl))}
 		</div>}
 	</div>;
 });

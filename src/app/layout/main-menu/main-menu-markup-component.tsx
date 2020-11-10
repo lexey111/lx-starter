@@ -49,6 +49,7 @@ function handleBurgerMenuKey(e: TKeyboardEventWithDataset): boolean {
 	handleBurgerMenu();
 	e.preventDefault();
 	e.stopPropagation();
+
 	return false;
 }
 
@@ -63,7 +64,7 @@ function _handleMenuClick(callback: (string) => void, e: React.MouseEvent<HTMLEl
 	}
 	e.preventDefault();
 	e.stopPropagation();
-	return false;
+	return Boolean(url);
 }
 
 function _handleMenuKey(callback: (string) => void, e: TKeyboardEventWithDataset): boolean {
@@ -72,34 +73,56 @@ function _handleMenuKey(callback: (string) => void, e: TKeyboardEventWithDataset
 	}
 	const code = e.key;
 	if (code !== 'Enter' && code !== ' ') {
-		return true;
+		return false;
 	}
 	const url: unknown = e.target?.dataset?.url;
-	if (url) {
-		callback(url as string);
-	} else {
-		return true;
+	if (!url) {
+		return false;
 	}
+
+	callback(url as string);
 
 	e.preventDefault();
 	e.stopPropagation();
-	return false;
+	return true;
 }
 
 export const AppMainMenuMarkup = React.forwardRef((props: TAppMainMenuMarkupProps, ref) => {
 	const [expanded, setExpanded] = useState(false);
+
 	const handleMenuClick = useCallback(e => {
-		return _handleMenuClick(props.onItemClick, e);
+		if (_handleMenuClick(props.onItemClick, e)) {
+			setExpanded(false); // collapse after click
+			return false;
+		}
+		return true;
 	}, [props.onItemClick]);
 
 	const handleMenuKey = useCallback(e => {
-		return _handleMenuKey(props.onItemClick, e);
+		if (_handleMenuKey(props.onItemClick, e)) {
+			setExpanded(false); // collapse after Enter key pressed
+			return false;
+		}
+		return true;
 	}, [props.onItemClick]);
 
 	const handleToggleExpand = useCallback(() => {
 		setExpanded(v => !v);
 	}, []);
 
+	const handleFocusing = useCallback((e: React.ChangeEvent) => {
+		if (props.position !== 'side' || expanded) {
+			return;
+		}
+
+		const elem = e.target;
+
+		if (!elem || !elem.classList.contains('with-subroutes')) {
+			return;
+		}
+
+		setExpanded(true);
+	}, [expanded, props.position]);
 
 	return <div className={'app-menu'} ref={ref as RefObject<HTMLDivElement>}>
 		<div className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}>
@@ -114,9 +137,9 @@ export const AppMainMenuMarkup = React.forwardRef((props: TAppMainMenuMarkupProp
 
 			<div
 				className={'app-main-menu'}
+				onFocus={handleFocusing}
 				onClick={handleMenuClick}
 				onKeyDownCapture={handleMenuKey}>
-
 				{props.position === 'side' && <div
 					className={'app-menu-expander'}
 					onClick={handleToggleExpand}>

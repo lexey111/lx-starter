@@ -29,7 +29,7 @@ export const PageTopPanel: React.FC<TTopPanelProps> = (props: TTopPanelProps) =>
 				borderBoxSize = entries[0].contentRect.height; // safari
 			}
 
-			AppStateStore._toPanelHeight = borderBoxSize || 0;
+			AppStateStore._topPanelHeight = borderBoxSize || 0;
 		});
 
 		resizeObserver.observe(ref.current as HTMLElement);

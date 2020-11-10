@@ -67,21 +67,22 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = observer((props: TAppMai
 	}, [loggedIn, location.url, position]);
 
 	useLayoutEffect(() => {
+		// sync scroll position if TopPanel presents and menu has 'side' position
 		if (position !== 'side' || !containerRef.current) {
 			if (containerRef.current && containerRef.current.style?.paddingTop !== '0') {
 				containerRef.current.style.paddingTop = '0';
 			}
 			return;
 		}
-		const margin = AppStateStore._toPanelHeight - AppStateStore._yScrollPos;
 
 		window.requestAnimationFrame(() => {
 			if (!destroying.current && containerRef.current && containerRef.current.style) {
+				const margin = AppStateStore._topPanelHeight - AppStateStore._yScrollPos;
 				containerRef.current.style.paddingTop = margin > 0 ? margin.toString() + 'px' : '0';
 			}
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [position, containerRef, AppStateStore._toPanelHeight, AppStateStore._yScrollPos]);
+	}, [position, containerRef, AppStateStore._topPanelHeight, AppStateStore._yScrollPos]);
 
 	const handleItemClick = useCallback((url: string) => {
 		history.push(url);

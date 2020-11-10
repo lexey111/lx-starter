@@ -14,8 +14,10 @@ export const RouteToStoreComponent: React.FC = () => {
 	const location = useLocation() as { pathname: string };
 
 	useEffect(() => {
-		AppStateStore.setLocation(location.pathname);
-		AppStateStore._toPanelHeight = 0;
+		if (AppStateStore.currentLocation !== location.pathname) {
+			AppStateStore.setLocation(location.pathname);
+			AppStateStore._topPanelHeight = 0;
+		}
 	}, [location]);
 
 	return <div>
