@@ -28,7 +28,7 @@ export const UiGeneralPage: React.FC = () => {
 		<SourceFile src={'src/app/components/ui/general/button'}/>
 
 		<p>
-			Buttons in The Starter are just styled with CSS. Source file is <SourceFile src={'src/styles/precompiled/_buttons.css'} inline/>
+			Buttons in The Starter are just styled with CSS. Source file is <SourceFile src={'src/styles/precompiled/buttons.less'} inline/>
 		</p>
 		<p>
 			The component idea was inspired by <A href={'https://press-css.io/'}>Press.Css</A> project.

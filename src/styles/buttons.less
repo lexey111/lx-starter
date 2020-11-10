@@ -1,6 +1,6 @@
 .simplebtn {
 	box-sizing: border-box;
-	font-size: var(--app-small-font-size);
+	font-size: var(--app-font-size);
 	background-color: var(--sb-background);
 	border: 2px solid var(--sb-border);
 	color: var(--sb-color);
@@ -24,6 +24,7 @@
 	position: relative;
 
 	flex-flow: row nowrap;
+	z-index: 1;
 }
 
 .simplebtn:first-of-type {
@@ -41,8 +42,11 @@
 	color: var(--sb-fcolor);
 	margin-top: 0;
 	border-color: var(--sb-fborder);
-	text-decoration: underline;
-	box-shadow: 0 -1px 1px var(--sb-background), 0 1px 1px var(--sb-background), 1px 0 1px var(--sb-background), -1px 0 1px var(--sb-background);
+	text-decoration: none;
+}
+
+.simplebtn-link:focus, .simplebtn-link.active {
+	border-color: var(--app-border-color);
 }
 
 .simplebtn:focus[disabled] {
@@ -64,35 +68,35 @@
 	pointer-events: none;
 	background: var(--app-background-darken);
 	border-color: var(--app-background-darken-tint1);
-	color: var(--app-color-remark);
+	color: var(--app-remark-color);
 	opacity: 0.7;
 }
 
 .simplebtn:hover:not(:disabled) {
-	background-color: var(--sb-hover)
-}
+	background-color: var(--sb-hover);
 
-.simplebtn:hover:not(:disabled) a {
-	color: var(--sb-fcolor)
+	a {
+		color: var(--sb-fcolor);
+	}
 }
 
 .simplebtn:active:not(:disabled) {
-	background-color: var(--sb-active)
+	background-color: var(--sb-active);
 }
 
 .simplebtn-sm {
-	font-size: 0.8em
+	font-size: var(--app-small-font-size);
 }
 
 .simplebtn-primary {
-	--sb-border: var(--app-primary-color-darken);
-	--sb-background: var(--app-primary-color);
-	--sb-color: var(--app-primary-text-color);
-	--sb-hover: var(--app-primary-color-darken);
-	--sb-active: var(--app-primary-color-lighten);
-	--sb-fcolor: var(--app-primary-text-color);
-	--sb-fbackground: var(--app-primary-color-darken);
-	--sb-fborder: var(--app-primary-color-lighten);
+	--sb-border: var(--app-primary-background);
+	--sb-background: var(--app-primary-background);
+	--sb-color: var(--app-primary-color);
+	--sb-hover: var(--app-primary-background-darken);
+	--sb-active: var(--app-primary-background-lighten);
+	--sb-fcolor: var(--app-primary-color);
+	--sb-fbackground: var(--app-primary-background-darken);
+	--sb-fborder: var(--app-primary-background-lighten);
 }
 
 .simplebtn-default {
@@ -104,28 +108,32 @@
 	--sb-fcolor: var(--app-color);
 	--sb-fbackground: var(--app-background-lighten);
 	--sb-fborder: var(--app-background-darken-tint4);
+
+	&:hover {
+		border-color: var(--app-background-darken-tint4);
+	}
 }
 
 .simplebtn-danger {
-	--sb-border: var(--app-danger-color-darken);
-	--sb-background: var(--app-danger-color);
-	--sb-color: var(--app-danger-text-color);
-	--sb-hover: var(--app-danger-color-lighten);
-	--sb-active: var(--app-danger-color-lighten);
-	--sb-fcolor: var(--app-danger-text-color);
-	--sb-fbackground: var(--app-danger-color-lighten);
-	--sb-fborder: var(--app-danger-color-darken);
+	--sb-border: var(--app-danger-background);
+	--sb-background: var(--app-danger-background);
+	--sb-color: var(--app-danger-color);
+	--sb-hover: var(--app-danger-background-lighten);
+	--sb-active: var(--app-danger-background-lighten);
+	--sb-fcolor: var(--app-danger-color);
+	--sb-fbackground: var(--app-danger-background-lighten);
+	--sb-fborder: var(--app-danger-background-darken);
 }
 
 .simplebtn-success {
-	--sb-border: var(--app-success-color-darken);
-	--sb-background: var(--app-success-color);
-	--sb-color: var(--app-success-text-color);
-	--sb-hover: var(--app-success-color-lighten);
-	--sb-active: var(--app-success-color-lighten);
-	--sb-fcolor: var(--app-success-text-color);
-	--sb-fbackground: var(--app-success-color-lighten);
-	--sb-fborder: var(--app-success-color-darken);
+	--sb-border: var(--app-success-background);
+	--sb-background: var(--app-success-background);
+	--sb-color: var(--app-success-color);
+	--sb-hover: var(--app-success-background-lighten);
+	--sb-active: var(--app-success-background-lighten);
+	--sb-fcolor: var(--app-success-color);
+	--sb-fbackground: var(--app-success-background-lighten);
+	--sb-fborder: var(--app-success-background-darken);
 }
 
 .simplebtn-link {
@@ -137,4 +145,8 @@
 	--sb-fcolor: var(--app-link-color-active);
 	--sb-fbackground: transparent;
 	--sb-fborder: transparent;
+
+	&:hover {
+		border-color: var(--app-background-darken-tint4);
+	}
 }

@@ -9,7 +9,7 @@
 
 	&.checked {
 		.checkbox-tickmark {
-			background-color: var(--app-primary-color);
+			background-color: var(--app-primary-background);
 		}
 	}
 
@@ -17,14 +17,14 @@
 		pointer-events: none;
 		cursor: pointer;
 		opacity: .8;
-		color: var(--app-color-remark);
+		color: var(--app-remark-color);
 
 		.checkbox-tickmark {
-			border-color: var(--app-color-remark);
+			border-color: var(--app-remark-color);
 			background-color: var(--app-background-darken);
 
 			svg {
-				fill: var(--app-color-remark);
+				fill: var(--app-remark-color);
 
 				&:first-child {
 					display: none;
@@ -60,7 +60,7 @@
 	}
 
 	.checkbox-tickmark {
-		border: 2px solid var(--app-primary-color);
+		border: 2px solid var(--app-primary-background);
 		background-color: var(--app-background-lighten);
 		display: inline-flex;
 		align-items: center;
@@ -77,7 +77,7 @@
 		cursor: pointer;
 
 		svg {
-			fill: var(--app-primary-text-color);
+			fill: var(--app-primary-color);
 			transition: all .1s ease;
 			position: absolute;
 			top: 1px;
@@ -110,10 +110,10 @@
 
 		.checkbox-tickmark {
 			border-color: var(--app-link-color-active);
-			background-color: var(--app-primary-color-lighten);
+			background-color: var(--app-primary-background-lighten);
 
 			svg {
-				fill: var(--app-primary-text-color);
+				fill: var(--app-primary-color);
 			}
 		}
 	}
@@ -122,7 +122,7 @@
 		text-decoration: underline;
 
 		.checkbox-tickmark {
-			border-color: var(--app-primary-color-darken);
+			border-color: var(--app-primary-background-darken);
 		}
 	}
 }

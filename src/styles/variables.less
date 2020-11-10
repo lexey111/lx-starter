@@ -1,149 +1,21 @@
-@app-page-width: 960px;
-@app-font-size: 14px;
-@app-small-font-size: 12px;
-
-@app-menu-height: 48px;
-@app-menu-width: 48px;
-@app-menu-icon-size: 21px;
-@app-menu-width-expanded: 200px;
-@app-menu-width-small: 32px;
-
-@app-breadcrumbs-height: 48px;
-
-@app-background: #f8f8f8;
-
-@app-primary-color: #135486;
-@app-primary-bright-color: #ffbd0e;
-@app-primary-text-color: #fff;
-
-@app-danger-color: #e20443;
-@app-danger-text-color: #fff;
-
-@app-warning-color: #ffbd0e;
-@app-warning-text-color: #fff;
-
-@app-success-color: #59cf05;
-@app-success-text-color: #fff;
-
-@app-code-color: #ecdbb7;
-@app-code-text-color: #444;
-
-@app-accent-color: #305372;
-@app-accent-background: #bddbf6;
-
-@app-menu-background: darken(@app-primary-color, 5);
-@app-menu-text-color: darken(@app-primary-text-color, 15);
-
-@app-menu-separator: mix(@app-menu-background, #fff, 80);
-@app-menu-separator-complimentary: #1b435c;
-
-@app-menu-selected-color: lighten(@app-menu-background, 15);
-@app-menu-selected-text-color: lighten(@app-menu-text-color, 5);
-@app-menu-hover-text-color: lighten(@app-menu-text-color, 20);
-@app-menu-hover-color: lighten(@app-menu-background, 10);
-@app-menu-color-lighten: lighten(@app-menu-background, 12);
-@app-menu-color-darken: lighten(@app-menu-background, 5);
-@app-menu-font-size: 13px;
-@app-menu-small-font-size: 11px;
-
-@app-primary-complimentary-color: #ffffff;
-@app-layout-header-background: @app-background;
-@app-border-color: #dce0e1;
-@app-color: #222;
-@app-header-color: #2b566e;
-@app-color-remark: #aaa;
-
-@app-link-color: @app-primary-color;
-@app-link-color-active: darken(@app-link-color, 10);
-
 body {
-	--app-background: @app-background;
-	--app-background-lighten: lighten(@app-background, 10);
+	// app
+	--app-page-width: 960px;
+	// app font sizes
+	--app-font-size: 14px;
+	--app-small-font-size: 12px;
 
-	--app-background-lighten-tint1: lighten(@app-background, 2);
-	--app-background-lighten-tint2: lighten(@app-background, 5);
-	--app-background-lighten-tint3: lighten(@app-background, 10);
-	--app-background-lighten-tint4: lighten(@app-background, 15);
-	--app-background-lighten-tint5: lighten(@app-background, 25);
-	--app-background-lighten-tint6: lighten(@app-background, 45);
+	// breadcrumbs and page menu
+	--app-breadcrumbs-height: 48px;
 
-	--app-background-darken: darken(@app-background, 5);
+	// main menu
+	--app-menu-height: 48px;
+	--app-menu-width: 48px;
+	--app-menu-icon-size: 21px;
+	--app-menu-font-size: 13px;
+	--app-menu-small-font-size: 11px;
+	--app-menu-width-expanded: 200px;
 
-	--app-background-darken-tint1: darken(@app-background, 3);
-	--app-background-darken-tint2: darken(@app-background, 5);
-	--app-background-darken-tint3: darken(@app-background, 10);
-	--app-background-darken-tint4: darken(@app-background, 15);
-	--app-background-darken-tint5: darken(@app-background, 25);
-	--app-background-darken-tint6: darken(@app-background, 45);
-
-	--app-color: @app-color;
-
-	--app-code-color: @app-code-color;
-	--app-code-text-color: @app-code-text-color;
-
-	--app-primary-color: @app-primary-color;
-	--app-primary-bright-color: @app-primary-bright-color;
-	--app-primary-text-color: @app-primary-text-color;
-	--app-primary-color-lighten: lighten(@app-primary-color, 15);
-	--app-primary-color-darken: darken(@app-primary-color, 7);
-
-	--app-danger-color: @app-danger-color;
-	--app-danger-text-color: @app-danger-text-color;
-	--app-danger-color-lighten: lighten(@app-danger-color, 7);
-	--app-danger-color-darken: darken(@app-danger-color, 7);
-
-	--app-warning-color: @app-warning-color;
-	--app-warning-text-color: @app-warning-text-color;
-	--app-warning-color-lighten: lighten(@app-warning-color, 7);
-	--app-warning-color-darken: darken(@app-warning-color, 7);
-
-	--app-success-color: @app-success-color;
-	--app-success-text-color: @app-success-text-color;
-	--app-success-color-lighten: lighten(@app-success-color, 7);
-	--app-success-color-darken: darken(@app-success-color, 7);
-
-	--app-menu-text-color: @app-menu-text-color;
-	--app-menu-background: @app-menu-background;
-	--app-menu-separator: @app-menu-separator;
-	--app-menu-separator-darken: darken(@app-menu-separator, 10);
-	--app-menu-separator-complimentary: @app-menu-separator-complimentary;
-	--app-menu-selected-color: @app-menu-selected-color;
-	--app-menu-selected-text-color: @app-menu-selected-text-color;
-	--app-menu-hover-text-color: @app-menu-hover-text-color;
-	--app-menu-hover-color: @app-menu-hover-color;
-	--app-menu-color-lighten: @app-menu-color-lighten;
-	--app-menu-color-darken: @app-menu-color-darken;
-
-	// dimensions
-	--app-page-width: @app-page-width;
-	--app-breadcrumbs-height: @app-breadcrumbs-height;
-	--app-menu-icon-size: @app-menu-icon-size;
-	--app-menu-height: @app-menu-height;
-	--app-menu-font-size: @app-menu-font-size;
-	--app-menu-small-font-size: @app-menu-small-font-size;
-	--app-menu-width: @app-menu-width;
-	--app-menu-width-expanded: @app-menu-width-expanded;
+	// navigation panel
 	--app-navigation-width: 150px;
-
-	--app-accent-color: @app-accent-color;
-	--app-accent-color-hover: lighten(@app-accent-color, 20%);
-	--app-accent-background: @app-accent-background;
-	--app-accent-border: darken(@app-accent-background, 10%);
-
-	--app-label-color: darken(@app-background, 40%);
-
-	--app-header-color: @app-header-color;
-	--app-header-color-lighten: mix(@app-header-color, @app-background, 80%);
-
-	--app-primary-complimentary-color: @app-primary-complimentary-color;
-	--app-color-remark: @app-color-remark;
-
-	--app-link-color: @app-link-color;
-	--app-link-color-active: @app-link-color-active;
-
-	--app-border-color: @app-border-color;
-
-	// fonts
-	--app-font-size: @app-font-size;
-	--app-small-font-size: @app-small-font-size;
 }

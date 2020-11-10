@@ -11,81 +11,81 @@
 	<base href="/">
 	<!-- "Critical path" styles -->
 	<style>
-		body {
-			font-family: system-ui;
-			font-display: optional;
-			min-height: 100vh;
-			min-width: 200px;
-			overflow-x: hidden;
-			font-size: 14px;
-			color: #000;
-			background-color: var(--app-background);
-		}
+       body {
+           font-family: system-ui;
+           font-display: optional;
+           min-height: 100vh;
+           min-width: 200px;
+           overflow-x: hidden;
+           font-size: 14px;
+           color: #000;
+           background-color: var(--app-background);
+       }
 
-		body.theme-dark {
-			color: var(--app-color);
-			background-color: var(--app-background);
-		}
+       body.theme-dark {
+           color: var(--app-color);
+           background-color: var(--app-background);
+       }
 
-		#app-full-screen-message {
-			display: none;
-			flex-flow: row wrap;
-			position: fixed;
-			overflow: hidden;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			width: 100vw;
-			height: 100vh;
-			align-content: center;
-			justify-content: center;
-			align-items: center;
-			justify-items: center;
-			background-color: #f2f2f2;
-			pointer-events: all;
-			z-index: -1;
-		}
+       #app-full-screen-message {
+           display: none;
+           flex-flow: row wrap;
+           position: fixed;
+           overflow: hidden;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           width: 100vw;
+           height: 100vh;
+           align-content: center;
+           justify-content: center;
+           align-items: center;
+           justify-items: center;
+           background-color: #f2f2f2;
+           pointer-events: all;
+           z-index: -1;
+       }
 
-		#app-full-screen-message #app-blur-control {
-			position: absolute;
-			top: -100px;
-			left: -100px;
-		}
+       #app-full-screen-message #app-blur-control {
+           position: absolute;
+           top: -100px;
+           left: -100px;
+       }
 
-		body.no-scroll {
-			pointer-events: none;
-			overflow: hidden;
-		}
+       body.no-scroll {
+           pointer-events: none;
+           overflow: hidden;
+       }
 
-		body.theme-dark #app-full-screen-message {
-			background-color: var(--app-background);
-			color: #ddd;
-		}
+       body.theme-dark #app-full-screen-message {
+           background-color: var(--app-background);
+           color: #ddd;
+       }
 
-		#app-full-screen-message.active {
-			display: flex;
-			z-index: 1000;
-			pointer-events: all;
-		}
+       #app-full-screen-message.active {
+           display: flex;
+           z-index: 1000;
+           pointer-events: all;
+       }
 
-		#app-full-screen-message > svg {
-			display: inline-flex;
-			flex-flow: column nowrap;
-			align-content: center;
-			justify-content: center;
-			align-items: center;
-			justify-items: center;
-			margin-right: 8px;
-		}
+       #app-full-screen-message > svg {
+           display: inline-flex;
+           flex-flow: column nowrap;
+           align-content: center;
+           justify-content: center;
+           align-items: center;
+           justify-items: center;
+           margin-right: 8px;
+       }
 
-		noscript {
-			display: flex;
-			width: 100vw;
-			height: 100vh;
-			align-items: center;
-			justify-content: center;
-		}
+       noscript {
+           display: flex;
+           width: 100vw;
+           height: 100vh;
+           align-items: center;
+           justify-content: center;
+       }
 	</style>
 	<link rel="stylesheet" href="styles/app.css" media="all">
 </head>
@@ -94,9 +94,18 @@
 <noscript>Please turn on the Javascript.</noscript>
 <script>
 	const storedTheme = localStorage.getItem('app-theme') || '';
+
 	if (storedTheme === 'dark') {
 		document.body.classList.add('theme-dark');
 	}
+	if (storedTheme === 'light') {
+		document.body.classList.add('theme-light');
+	}
+
+	if (!storedTheme || storedTheme === 'default') {
+		document.body.classList.add('theme-default');
+	}
+
 	const storedMenuPosition = localStorage.getItem('app-menu.position') === 'side' ? 'side' : 'top';
 	document.body.classList.add('with-' + storedMenuPosition + '-menu');
 </script>
