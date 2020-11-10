@@ -1,5 +1,6 @@
 import {observer} from 'mobx-react';
 import React from 'react';
+import {MenuPositionSwitcher} from '../../components/ui/example-related/menu-switcher-component';
 import {ThemeSwitcher} from '../../components/ui/example-related/theme-switcher-component';
 import {IconSettings} from '../../components/ui/general/icons/icon-settings-component';
 
@@ -16,8 +17,7 @@ export const CustomMenuDropdown: React.FC = observer(() => {
 			<p>
 				Menu
 			</p>
-			<a href="#">Menu at top</a>
-			<a href="#">Menu at left</a>
+			<MenuPositionSwitcher/>
 		</div>
 	</div>;
 });

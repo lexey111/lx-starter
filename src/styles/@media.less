@@ -15,8 +15,9 @@ Waypoints
 @app-media-min: 760px;
 @app-media-min-page-width: calc(100% - 32px);
 
-@app-media-top-menu-collapse: 860px;
-@app-media-side-menu-collapse: 1650px;
+@app-media-top-menu-collapse: 860px; // make burger menu at this point if position === 'top'
+@app-media-side-menu-collapse: 1650px; // collapse side menu at this point
+@app-media-side-menu-min-page: 1090px; // add --menu-width as left padding to page if width < this point
 
 @app-media-inner-navigation: 1550px;
 @app-media-inner-navigation-min: 960px;
