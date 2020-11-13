@@ -1,13 +1,16 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
+import {TRouteMappingItems} from '../app/engine/routing/route-mapping-interface';
 import {IconHome} from '../app/engine/ui-components/general/icons/icon-home-component';
 import {IconStar} from '../app/engine/ui-components/general/icons/icon-star-component';
 import {AboutPage} from '../app/pages/about';
 import {CustomPage} from '../app/pages/example-related/custom';
 import {CustomMenuDropdown} from '../app/pages/example-related/custom/custom-menu-dropdown-component';
 import {CustomMenuItem} from '../app/pages/example-related/custom/custom-menu-item-component';
-import {HomePage} from '../app/pages/home';
-import {HomePageTopPanel} from '../app/pages/home/home-page-top-panel-component';
+import {GettingStartedPage} from '../app/pages/example-related/getting-started';
+import {InternalsPage} from '../app/pages/example-related/internals';
+import {BuilderPage} from '../app/pages/example-related/internals/builder';
+import {TestingPage} from '../app/pages/example-related/internals/testing';
 import {RoutingPage} from '../app/pages/example-related/routes-subroutes';
 import {RoutingMainPage} from '../app/pages/example-related/routes-subroutes/example-page';
 import {RoutingArticle} from '../app/pages/example-related/routes-subroutes/example-page/article';
@@ -19,13 +22,13 @@ import {StatePage} from '../app/pages/example-related/state-management';
 import {StateMainStorePage} from '../app/pages/example-related/state-management/app-state';
 import {StateGenericStorePage} from '../app/pages/example-related/state-management/example-generic-store';
 import {ExampleTodoStorePage} from '../app/pages/example-related/state-management/example-todo-store';
-import {TestingPage} from '../app/pages/example-related/testing';
 import {UiPage} from '../app/pages/example-related/ui';
 import {UiDataEntryPage} from '../app/pages/example-related/ui/data-entry';
 import {UiDisplayPage} from '../app/pages/example-related/ui/display';
 import {UiExampleComponentsPage} from '../app/pages/example-related/ui/examples-related';
 import {UiGeneralPage} from '../app/pages/example-related/ui/general';
-import {TRouteMappingItems} from '../app/engine/routing/route-mapping-interface';
+import {HomePage} from '../app/pages/home';
+import {HomePageTopPanel} from '../app/pages/home/home-page-top-panel-component';
 
 // main app routing
 export const AppSiteMap: TRouteMappingItems = [
@@ -38,20 +41,30 @@ export const AppSiteMap: TRouteMappingItems = [
 		icon: <IconHome/>,
 		page: <HomePage/>,
 	},
-	// {
-	// 	title: 'Getting started',
-	// 	url: '/getting-started',
-	// 	page: <GettingStartedPage/>,
-	// },
-	// {
-	// 	title: 'Builder',
-	// 	url: '/builder',
-	// 	page: <BuilderPage/>,
-	// },
 	{
-		title: 'Testing',
-		url: '/testing',
-		page: <TestingPage/>,
+		title: 'Getting started',
+		url: '/getting-started',
+		page: <GettingStartedPage/>,
+	},
+	{
+		title: 'Internals',
+		url: '/internals',
+		breadcrumbs: 'sub-menu',
+		page: <InternalsPage/>,
+		routes: [
+			{
+				title: 'Builder',
+				url: '/internals/builder',
+				breadcrumbs: 'sub-menu',
+				page: <BuilderPage/>,
+			},
+			{
+				title: 'Testing',
+				url: '/internals/testing',
+				breadcrumbs: 'sub-menu',
+				page: <TestingPage/>,
+			},
+		]
 	},
 	// {
 	// 	title: 'Main menu',
