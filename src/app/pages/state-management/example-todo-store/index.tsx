@@ -1,7 +1,7 @@
 import React from 'react';
-import {SourceFile} from '../../../engine/components/ui/example-related/source-file-component';
-import {SyntaxHighlight} from '../../../engine/components/ui/example-related/syntax-highlight';
-import {Title} from '../../../engine/components/ui/general/typography/title-component';
+import {SourceFile} from '../../../engine/ui-components/example-related/source-file-component';
+import {SyntaxHighlight} from '../../../engine/ui-components/example-related/syntax-highlight';
+import {Title} from '../../../engine/ui-components/general/typography/title-component';
 import {TodoListExample} from './todo-list-component';
 
 export const ExampleTodoStorePage: React.FC = () => {

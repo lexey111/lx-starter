@@ -2,10 +2,10 @@ import {observer} from 'mobx-react';
 import React, {useCallback} from 'react';
 import {Link} from 'react-router-dom';
 import {AppSiteMap} from '../../../config/app-site-map';
-import {MenuPositionSwitcher} from '../../engine/components/ui/example-related/menu-switcher-component';
-import {ThemeSwitcher} from '../../engine/components/ui/example-related/theme-switcher-component';
-import {Button} from '../../engine/components/ui/general/button/button-component';
-import {Title} from '../../engine/components/ui/general/typography/title-component';
+import {MenuPositionSwitcher} from '../../engine/ui-components/example-related/menu-switcher-component';
+import {ThemeSwitcher} from '../../engine/ui-components/example-related/theme-switcher-component';
+import {Button} from '../../engine/ui-components/general/button/button-component';
+import {Title} from '../../engine/ui-components/general/typography/title-component';
 import {TRouteMappingItem} from '../../engine/routing/route-mapping-interface';
 import {AppStateStore} from '../../engine/store/@stores';
 

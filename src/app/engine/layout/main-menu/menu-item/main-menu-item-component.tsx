@@ -1,6 +1,6 @@
 import {observer} from 'mobx-react';
 import React from 'react';
-import {IconStar} from '../../../components/ui/general/icons/icon-star-component';
+import {IconStar} from '../../../ui-components/general/icons/icon-star-component';
 import {AppStateStore} from '../../../store/@stores';
 import {TMenuItem} from '../main-menu-component';
 

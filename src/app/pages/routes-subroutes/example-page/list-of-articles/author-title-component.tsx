@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {WaitTag} from '../../../../engine/components/ui/display/wait/wait-tag-component';
+import {WaitTag} from '../../../../engine/ui-components/display/wait/wait-tag-component';
 import useLocationParams from '../../../../engine/hooks/use-location-params';
 import {exampleData} from '../example-data';
 

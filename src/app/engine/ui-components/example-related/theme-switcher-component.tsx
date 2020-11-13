@@ -1,7 +1,7 @@
 import {observer} from 'mobx-react';
 import React, {useCallback} from 'react';
-import {AppStateStore} from '../../../store/@stores';
-import {AvailableThemes} from '../../../store/app-state/app-state-store';
+import {AppStateStore} from '../../store/@stores';
+import {AvailableThemes} from '../../store/app-state/app-state-store';
 import {Radio, RadioGroup} from '../data-entry/radio-button/radio-group-component';
 
 const ThemeSwitcher: React.FC = observer(() => {

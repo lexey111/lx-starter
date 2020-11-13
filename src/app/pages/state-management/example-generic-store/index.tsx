@@ -1,8 +1,8 @@
 import React from 'react';
-import {A} from '../../../engine/components/ui/example-related/a-component';
-import {SourceFile} from '../../../engine/components/ui/example-related/source-file-component';
-import {SyntaxHighlight} from '../../../engine/components/ui/example-related/syntax-highlight';
-import {Title} from '../../../engine/components/ui/general/typography/title-component';
+import {A} from '../../../engine/ui-components/example-related/a-component';
+import {SourceFile} from '../../../engine/ui-components/example-related/source-file-component';
+import {SyntaxHighlight} from '../../../engine/ui-components/example-related/syntax-highlight';
+import {Title} from '../../../engine/ui-components/general/typography/title-component';
 import {PeopleExampleComponent} from './people-component';
 
 export const StateGenericStorePage: React.FC = () => {
@@ -276,7 +276,7 @@ export const PersonCardComponent: React.FC<TPersonCardComponentProps> =
 			allows to correctly decide which is actual or not.
 		</p>
 
-		<Title level={3} nav={'input-components'}>Input components</Title>
+		<Title level={3} nav={'input-ui-components'}>Input components</Title>
 		<p>
 			Well, but who changes the data in the Store?
 		</p>

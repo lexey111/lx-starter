@@ -1,5 +1,5 @@
 import React from 'react';
-import {WaitBlock} from '../../components/ui/display/wait/wait-block-component';
+import {WaitBlock} from '../../ui-components/display/wait/wait-block-component';
 import {AppStateStore} from '../../store/@stores';
 
 type TAppContainerProps = {

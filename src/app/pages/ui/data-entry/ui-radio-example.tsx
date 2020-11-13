@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-bind */
 import React, {useState} from 'react';
-import {SyntaxExampleTabs} from '../../../engine/components/ui/example-related/syntax-example-tabs';
-import {Radio, RadioGroup} from '../../../engine/components/ui/data-entry/radio-button/radio-group-component';
-import {Title} from '../../../engine/components/ui/general/typography/title-component';
+import {SyntaxExampleTabs} from '../../../engine/ui-components/example-related/syntax-example-tabs';
+import {Radio, RadioGroup} from '../../../engine/ui-components/data-entry/radio-button/radio-group-component';
+import {Title} from '../../../engine/ui-components/general/typography/title-component';
 
 const Markup = `<Title level={4}>Vertical</Title>
 <RadioGroup value={g1} onChange={(v) => setG1(v)}>

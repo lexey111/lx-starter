@@ -2,7 +2,7 @@ import {observer} from 'mobx-react';
 import React, {useEffect} from 'react';
 import {RedirectToLogin} from '../../routing/aux-components/redirect-to-login-component';
 import {AppStateStore} from '../../store/@stores';
-import {IconSpinner} from '../../components/ui/general/icons/icon-spinner-component';
+import {IconSpinner} from '../../ui-components/general/icons/icon-spinner-component';
 
 type TAppAuthPageProps = {
 	children?: any

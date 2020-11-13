@@ -1,6 +1,6 @@
 import React from 'react';
-import {WaitInlineComponent} from '../../../engine/components/ui/display/wait/wait-inline-component';
-import {SyntaxExampleTabs} from '../../../engine/components/ui/example-related/syntax-example-tabs';
+import {WaitInlineComponent} from '../../../engine/ui-components/display/wait/wait-inline-component';
+import {SyntaxExampleTabs} from '../../../engine/ui-components/example-related/syntax-example-tabs';
 
 const Markup = `<WaitInlineComponent message={'Please wait...[custom message]...'}/>
 <WaitInlineComponent/>

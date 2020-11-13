@@ -1,8 +1,8 @@
 import React from 'react';
-import {TabPane, Tabs} from '../../../engine/components/ui/display/tabs/tabs-component';
-import {LipsumPara} from '../../../engine/components/ui/example-related/lipsum';
-import {SyntaxExampleTabs} from '../../../engine/components/ui/example-related/syntax-example-tabs';
-import {IconHome} from '../../../engine/components/ui/general/icons/icon-home-component';
+import {TabPane, Tabs} from '../../../engine/ui-components/display/tabs/tabs-component';
+import {LipsumPara} from '../../../engine/ui-components/example-related/lipsum';
+import {SyntaxExampleTabs} from '../../../engine/ui-components/example-related/syntax-example-tabs';
+import {IconHome} from '../../../engine/ui-components/general/icons/icon-home-component';
 
 const Markup = `<Tabs activeId={'page2'}>
 	<TabPane title={'Page 1'} id={'page1'}>

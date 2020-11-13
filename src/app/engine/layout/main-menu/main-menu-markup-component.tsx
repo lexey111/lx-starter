@@ -1,6 +1,6 @@
 import React, {RefObject, useCallback, useState} from 'react';
-import {IconExpander} from '../../components/ui/general/icons/icon-expander-component';
-import {IconMenu} from '../../components/ui/general/icons/icon-menu-component';
+import {IconExpander} from '../../ui-components/general/icons/icon-expander-component';
+import {IconMenu} from '../../ui-components/general/icons/icon-menu-component';
 import {TMenuItems} from './main-menu-component';
 import {MainMenuItem} from './menu-item/main-menu-item-component';
 

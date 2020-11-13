@@ -1,6 +1,6 @@
 import {observer} from 'mobx-react';
 import React, {useCallback, useEffect, useState} from 'react';
-import {Title} from '../../../engine/components/ui/general/typography/title-component';
+import {Title} from '../../../engine/ui-components/general/typography/title-component';
 import {AppPersonStore} from '../../../engine/store/@stores';
 import {PERSON_INITIAL, TPerson} from '../../../engine/store/examples/example-people-store/app-example-person';
 import {_setData} from '../../../engine/store/utils/store-utils';

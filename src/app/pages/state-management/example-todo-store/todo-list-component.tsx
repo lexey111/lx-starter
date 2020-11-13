@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-no-bind */
 import {observer} from 'mobx-react';
 import React, {useCallback, useState} from 'react';
-import {Checkbox} from '../../../engine/components/ui/data-entry/checkbox/checkbox-component';
-import {SourceFile} from '../../../engine/components/ui/example-related/source-file-component';
-import {SyntaxHighlight} from '../../../engine/components/ui/example-related/syntax-highlight';
-import {Button} from '../../../engine/components/ui/general/button/button-component';
-import {Title} from '../../../engine/components/ui/general/typography/title-component';
+import {Checkbox} from '../../../engine/ui-components/data-entry/checkbox/checkbox-component';
+import {SourceFile} from '../../../engine/ui-components/example-related/source-file-component';
+import {SyntaxHighlight} from '../../../engine/ui-components/example-related/syntax-highlight';
+import {Button} from '../../../engine/ui-components/general/button/button-component';
+import {Title} from '../../../engine/ui-components/general/typography/title-component';
 import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../engine/store/@stores';
 import {TodoListItemExample} from './todo-list-item-component';
 

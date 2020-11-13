@@ -1,5 +1,5 @@
 import React from 'react';
-import {Title} from '../../engine/components/ui/general/typography/title-component';
+import {Title} from '../../engine/ui-components/general/typography/title-component';
 
 export const ThemingPage: React.FC = () => {
 	return <>
