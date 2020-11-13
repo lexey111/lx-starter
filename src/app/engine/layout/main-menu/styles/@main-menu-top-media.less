@@ -1,7 +1,6 @@
-@import "../../../../styles/@media.less";
-@import "../../../../styles/variables.less";
+@import "../../../../../styles/@media.less";
 
-@media screen and (max-width: @app-media-top-menu-collapse) {
+@media screen and (max-width: @app-media-top-menu-collapse-to-burger) {
 	// collapse top menu to burger
 	.with-top-menu .app-menu {
 		.app-main-menu-container {
@@ -29,8 +28,8 @@
 					background-color: var(--app-menu-background);
 					top: 0;
 					bottom: 0;
-					left: -100%;
-					width: 50vw;
+					right: 0;
+					width: 100vw;
 				}
 
 				.app-menu-burger {

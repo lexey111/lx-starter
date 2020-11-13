@@ -59,6 +59,7 @@ function _handleMenuClick(callback: (string) => void, e: React.MouseEvent<HTMLEl
 	}
 	const element = findParentMenuItem((e.target || e.currentTarget) as HTMLElement);
 	const url = element?.dataset?.url;
+
 	if (url) {
 		callback(url);
 	}
@@ -76,6 +77,7 @@ function _handleMenuKey(callback: (string) => void, e: TKeyboardEventWithDataset
 		return false;
 	}
 	const url: unknown = e.target?.dataset?.url;
+
 	if (!url) {
 		return false;
 	}

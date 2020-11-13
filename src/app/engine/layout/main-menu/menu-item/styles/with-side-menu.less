@@ -1,0 +1,33 @@
+.with-side-menu {
+	.app-main-menu-container {
+		.app-menu-item.with-subroutes {
+
+			&:after {
+				// triangle
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				margin-top: -1px;
+				right: 4px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 2.5px 0 2.5px 4px;
+				border-color: transparent transparent transparent var(--app-menu-text-color);
+				transition: all .2s ease;
+				opacity: .8;
+			}
+		}
+
+		&.app-menu-expanded {
+			.app-menu-item.with-subroutes {
+				&:after {
+					transform-origin: center center;
+					transform: rotate(90deg);
+					right: 12px;
+				}
+			}
+		}
+	}
+}

@@ -22,6 +22,7 @@ import {StatePage} from '../app/pages/example-related/state-management';
 import {StateMainStorePage} from '../app/pages/example-related/state-management/app-state';
 import {StateGenericStorePage} from '../app/pages/example-related/state-management/example-generic-store';
 import {ExampleTodoStorePage} from '../app/pages/example-related/state-management/example-todo-store';
+import {ThemingPage} from '../app/pages/example-related/theming';
 import {UiPage} from '../app/pages/example-related/ui';
 import {UiDataEntryPage} from '../app/pages/example-related/ui/data-entry';
 import {UiDisplayPage} from '../app/pages/example-related/ui/display';
@@ -70,11 +71,6 @@ export const AppSiteMap: TRouteMappingItems = [
 	// 	title: 'Main menu',
 	// 	url: '/menu',
 	// 	page: <MenuPage/>,
-	// },
-	// {
-	// 	title: 'Theming',
-	// 	url: '/theming',
-	// 	page: <ThemingPage/>,
 	// },
 	{
 		title: 'State management',
@@ -132,11 +128,17 @@ export const AppSiteMap: TRouteMappingItems = [
 		]
 	},
 	{
-		title: 'UI Components',
+		title: 'UI & Components',
 		url: '/ui',
 		page: <UiPage/>,
 		breadcrumbs: 'sub-menu',
 		routes: [
+			{
+				title: 'Theming',
+				breadcrumbs: 'sub-menu',
+				url: '/ui/theming',
+				page: <ThemingPage/>,
+			},
 			{
 				title: 'General',
 				url: '/ui/general',

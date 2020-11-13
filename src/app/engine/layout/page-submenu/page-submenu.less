@@ -14,35 +14,37 @@
 
 .page-submenu {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 	min-height: var(--app-breadcrumbs-height);
 	font-size: var(--app-menu-font-size);
 	box-sizing: border-box;
+	position: relative;
 
 	.page-submenu-item {
-		display: inline-flex;
+		display: flex;
+		flex-flow: row nowrap;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		justify-items: center;
+		text-align: center;
 		cursor: pointer;
-		white-space: nowrap;
-		flex-shrink: 0;
+		// white-space: nowrap;
+		overflow-y: hidden;
+		overflow-x: hidden;
+		flex-shrink: 2;
 		flex-grow: 0;
 		height: calc(var(--app-breadcrumbs-height) - 16px);
+		width: auto;
 		padding: 0 16px;
 		color: var(--app-link-color);
 		transition: all .2s ease;
-		margin: 8px 0;
+		margin: 6px 0;
 		background-color: var(--app-background);
 		box-shadow: 0 0 1px rgba(0, 0, 0, .2), inset 0 0 1px rgba(255, 255, 255, .9);
-
-		&:first-child {
-			margin-left: 8px !important;
-		}
-
-		&:last-child {
-			margin-right: 8px !important;
-		}
 
 		&:hover, &:active, &:focus {
 			color: var(--app-link-color-active);
@@ -52,7 +54,6 @@
 
 		&.active {
 			pointer-events: none;
-			// font-weight: bold;
 			color: var(--app-link-color-active);
 			position: relative;
 			background-color: var(--app-primary-bright-background);
