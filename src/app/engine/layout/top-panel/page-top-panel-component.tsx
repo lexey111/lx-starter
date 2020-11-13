@@ -3,6 +3,7 @@ import {AppStateStore} from '../../store/@stores';
 
 type TTopPanelProps = {
 	children: any
+	className?: string
 };
 
 export const PageTopPanel: React.FC<TTopPanelProps> = (props: TTopPanelProps) => {
@@ -41,7 +42,7 @@ export const PageTopPanel: React.FC<TTopPanelProps> = (props: TTopPanelProps) =>
 		};
 	}, [ref]);
 
-	return <div className={'app-top-panel-content'} ref={ref}>
+	return <div className={'app-top-panel-content' + (props.className ? ' ' + props.className : '')} ref={ref}>
 		{props.children}
 	</div>;
 };

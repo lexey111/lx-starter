@@ -7,6 +7,7 @@ import {AboutPage} from '../app/pages/about';
 import {CustomPage} from '../app/pages/example-related/custom';
 import {CustomMenuDropdown} from '../app/pages/example-related/custom/custom-menu-dropdown-component';
 import {CustomMenuItem} from '../app/pages/example-related/custom/custom-menu-item-component';
+import {CustomPageTopPanel} from '../app/pages/example-related/custom/custom-page-top-panel-component';
 import {GettingStartedPage} from '../app/pages/example-related/getting-started';
 import {InternalsPage} from '../app/pages/example-related/internals';
 import {BuilderPage} from '../app/pages/example-related/internals/builder';
@@ -177,6 +178,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		isLateral: true,
 		title: 'Custom menu item',
 		menuItem: <CustomMenuItem/>,
+		topPanel: <CustomPageTopPanel/>,
 		page: <CustomPage/>
 	},
 	{
