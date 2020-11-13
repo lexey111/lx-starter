@@ -1,4 +1,4 @@
-import {TPeople} from '../../../store/examples/example-people-store/app-example-person';
+import {TPeople} from '../../../engine/store/examples/example-people-store/app-example-person';
 
 export const PeopleFakeData: TPeople = [
 	{

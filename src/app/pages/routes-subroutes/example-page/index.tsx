@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {A} from '../../../components/ui/example-related/a-component';
-import {SourceFile} from '../../../components/ui/example-related/source-file-component';
-import {SyntaxHighlight} from '../../../components/ui/example-related/syntax-highlight';
-import {Tag} from '../../../components/ui/example-related/tag-component';
-import {Button} from '../../../components/ui/general/button/button-component';
-import {Title} from '../../../components/ui/general/typography/title-component';
+import {A} from '../../../engine/components/ui/example-related/a-component';
+import {SourceFile} from '../../../engine/components/ui/example-related/source-file-component';
+import {SyntaxHighlight} from '../../../engine/components/ui/example-related/syntax-highlight';
+import {Tag} from '../../../engine/components/ui/example-related/tag-component';
+import {Button} from '../../../engine/components/ui/general/button/button-component';
+import {Title} from '../../../engine/components/ui/general/typography/title-component';
 
 export const RoutingMainPage: React.FC = () => {
 	return <>

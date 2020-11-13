@@ -1,6 +1,6 @@
 import React from 'react';
-import {SourceFile} from '../../../components/ui/example-related/source-file-component';
-import {Title} from '../../../components/ui/general/typography/title-component';
+import {SourceFile} from '../../../engine/components/ui/example-related/source-file-component';
+import {Title} from '../../../engine/components/ui/general/typography/title-component';
 import {UiCheckboxExample} from './ui-checkbox-example';
 import {UiRadioExample} from './ui-radio-example';
 

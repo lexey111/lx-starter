@@ -1,4 +1,4 @@
-import {AppSiteMap} from '../../../config/app-site-map';
+import {AppSiteMap} from '../../../../config/app-site-map';
 import {TRouteMappingItems} from '../../routing/route-mapping-interface';
 import {getRouteByUrl} from '../../routing/route-mapping-utils';
 import {TMenuItems} from './main-menu-component';

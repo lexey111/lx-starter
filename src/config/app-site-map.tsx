@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
-import {IconHome} from '../app/components/ui/general/icons/icon-home-component';
-import {IconStar} from '../app/components/ui/general/icons/icon-star-component';
+import {IconHome} from '../app/engine/components/ui/general/icons/icon-home-component';
+import {IconStar} from '../app/engine/components/ui/general/icons/icon-star-component';
 import {AboutPage} from '../app/pages/about';
 import {CustomPage} from '../app/pages/custom';
 import {CustomMenuDropdown} from '../app/pages/custom/custom-menu-dropdown-component';
@@ -25,7 +25,7 @@ import {UiDataEntryPage} from '../app/pages/ui/data-entry';
 import {UiDisplayPage} from '../app/pages/ui/display';
 import {UiExampleComponentsPage} from '../app/pages/ui/examples-related';
 import {UiGeneralPage} from '../app/pages/ui/general';
-import {TRouteMappingItems} from '../app/routing/route-mapping-interface';
+import {TRouteMappingItems} from '../app/engine/routing/route-mapping-interface';
 
 // main app routing
 export const AppSiteMap: TRouteMappingItems = [

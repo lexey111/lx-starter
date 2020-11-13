@@ -1,9 +1,9 @@
 import React, {useCallback, useState} from 'react';
-import {Checkbox} from '../../../components/ui/data-entry/checkbox/checkbox-component';
-import {SimpleModal} from '../../../components/ui/display/wait/simple-modal-component';
-import {SyntaxExampleTabs} from '../../../components/ui/example-related/syntax-example-tabs';
-import {Tag} from '../../../components/ui/example-related/tag-component';
-import {Button} from '../../../components/ui/general/button/button-component';
+import {Checkbox} from '../../../engine/components/ui/data-entry/checkbox/checkbox-component';
+import {SimpleModal} from '../../../engine/components/ui/display/wait/simple-modal-component';
+import {SyntaxExampleTabs} from '../../../engine/components/ui/example-related/syntax-example-tabs';
+import {Tag} from '../../../engine/components/ui/example-related/tag-component';
+import {Button} from '../../../engine/components/ui/general/button/button-component';
 
 const Markup = `<Button type={'success'} onClick={doShowSimpleModal}>Show simple modal</Button>
 <hr/>

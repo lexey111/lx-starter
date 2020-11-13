@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {TPerson} from '../../../store/examples/example-people-store/app-example-person';
+import {TPerson} from '../../../engine/store/examples/example-people-store/app-example-person';
 import {PeopleFakeData} from './people-fake-data';
 
 type TPeopleExampleListComponentProps = {

@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {Checkbox} from '../../../components/ui/data-entry/checkbox/checkbox-component';
-import {SyntaxExampleTabs} from '../../../components/ui/example-related/syntax-example-tabs';
-import {IconStar} from '../../../components/ui/general/icons/icon-star-component';
-import {Title} from '../../../components/ui/general/typography/title-component';
+import {Checkbox} from '../../../engine/components/ui/data-entry/checkbox/checkbox-component';
+import {SyntaxExampleTabs} from '../../../engine/components/ui/example-related/syntax-example-tabs';
+import {IconStar} from '../../../engine/components/ui/general/icons/icon-star-component';
+import {Title} from '../../../engine/components/ui/general/typography/title-component';
 
 const Markup = `<Title level={4}>Default</Title>
 

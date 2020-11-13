@@ -1,11 +1,11 @@
 import {observer} from 'mobx-react';
 import React, {useCallback} from 'react';
-import {Checkbox} from '../../../components/ui/data-entry/checkbox/checkbox-component';
-import {SimpleModal} from '../../../components/ui/display/wait/simple-modal-component';
-import {SourceFile} from '../../../components/ui/example-related/source-file-component';
-import {SyntaxHighlight} from '../../../components/ui/example-related/syntax-highlight';
-import {Button} from '../../../components/ui/general/button/button-component';
-import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../store/@stores';
+import {Checkbox} from '../../../engine/components/ui/data-entry/checkbox/checkbox-component';
+import {SimpleModal} from '../../../engine/components/ui/display/wait/simple-modal-component';
+import {SourceFile} from '../../../engine/components/ui/example-related/source-file-component';
+import {SyntaxHighlight} from '../../../engine/components/ui/example-related/syntax-highlight';
+import {Button} from '../../../engine/components/ui/general/button/button-component';
+import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../engine/store/@stores';
 
 type TTodoListItemExampleProps = {
 	show: boolean

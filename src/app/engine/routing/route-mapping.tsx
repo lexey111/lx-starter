@@ -1,4 +1,4 @@
-import {AppSiteMap} from '../../config/app-site-map';
+import {AppSiteMap} from '../../../config/app-site-map';
 import {flattenRoutes} from './route-flatten';
 import {TRouteMappingItem, TRouteMappingItems} from './route-mapping-interface';
 

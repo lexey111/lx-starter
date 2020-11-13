@@ -1,8 +1,8 @@
 import {observer} from 'mobx-react';
 import React, {useCallback} from 'react';
-import {AppPersonStore} from '../../../../store/@stores';
-import {getNestedObject} from '../../../../store/utils/object-utils';
-import {handleStoreValue} from '../../../../store/utils/store-utils';
+import {AppPersonStore} from '../../../../engine/store/@stores';
+import {getNestedObject} from '../../../../engine/store/utils/object-utils';
+import {handleStoreValue} from '../../../../engine/store/utils/store-utils';
 
 const fieldName = 'email';
 

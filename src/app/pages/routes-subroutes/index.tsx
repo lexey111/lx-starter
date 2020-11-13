@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {SourceFile} from '../../components/ui/example-related/source-file-component';
-import {SyntaxHighlight} from '../../components/ui/example-related/syntax-highlight';
-import {Tag} from '../../components/ui/example-related/tag-component';
-import {Title} from '../../components/ui/general/typography/title-component';
+import {SourceFile} from '../../engine/components/ui/example-related/source-file-component';
+import {SyntaxHighlight} from '../../engine/components/ui/example-related/syntax-highlight';
+import {Tag} from '../../engine/components/ui/example-related/tag-component';
+import {Title} from '../../engine/components/ui/general/typography/title-component';
 
 const routeConfigFilename = 'src/config/app-site-map.tsx';
 

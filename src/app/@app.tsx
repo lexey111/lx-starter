@@ -2,19 +2,19 @@
 import {observer} from 'mobx-react';
 import React, {useEffect} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {AppBreadcrumbs} from './layout/breadcrumbs/breadcrumbs-component';
-import {AppFooter} from './layout/footer/footer-component';
-import {AppMainMenu} from './layout/main-menu/main-menu-component';
-import {AppAuthPage} from './layout/page/app-auth-page-component';
-import {AppContainer} from './layout/page/app-container-component';
-import {AppPage} from './layout/page/app-page-component';
-import {AppPageNavigation} from './layout/page/app-page-navigation-component';
-import {AppTopPanel} from './layout/top-panel/app-top-panel-component';
-import {RouteMapping} from './routing/route-mapping';
-import {TRouteMappingItem} from './routing/route-mapping-interface';
-import {RouteToStoreComponent} from './routing/route-to-store-component';
-import {AppStateStore} from './store/@stores';
-import {AvailableThemes} from './store/app-state/app-state-store';
+import {AppBreadcrumbs} from './engine/layout/breadcrumbs/breadcrumbs-component';
+import {AppFooter} from './engine/layout/footer/footer-component';
+import {AppMainMenu} from './engine/layout/main-menu/main-menu-component';
+import {AppAuthPage} from './engine/layout/page/app-auth-page-component';
+import {AppContainer} from './engine/layout/page/app-container-component';
+import {AppPage} from './engine/layout/page/app-page-component';
+import {AppPageNavigation} from './engine/layout/page/app-page-navigation-component';
+import {AppTopPanel} from './engine/layout/top-panel/app-top-panel-component';
+import {RouteMapping} from './engine/routing/route-mapping';
+import {TRouteMappingItem} from './engine/routing/route-mapping-interface';
+import {RouteToStoreComponent} from './engine/routing/route-to-store-component';
+import {AppStateStore} from './engine/store/@stores';
+import {AvailableThemes} from './engine/store/app-state/app-state-store';
 
 const AppRoutes = RouteMapping.map((routeItem: TRouteMappingItem, idx: number) => {
 	if (!routeItem.url) {

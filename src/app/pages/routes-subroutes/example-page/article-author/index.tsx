@@ -1,10 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {LipsumPara} from '../../../../components/ui/example-related/lipsum';
-import {IconArrowLeft} from '../../../../components/ui/general/icons/icon-arrow-left-component';
-import {IconUser} from '../../../../components/ui/general/icons/icon-user-component';
-import {Title} from '../../../../components/ui/general/typography/title-component';
-import useLocationParams from '../../../../hooks/use-location-params';
+import {LipsumPara} from '../../../../engine/components/ui/example-related/lipsum';
+import {IconArrowLeft} from '../../../../engine/components/ui/general/icons/icon-arrow-left-component';
+import {IconUser} from '../../../../engine/components/ui/general/icons/icon-user-component';
+import {Title} from '../../../../engine/components/ui/general/typography/title-component';
+import useLocationParams from '../../../../engine/hooks/use-location-params';
 import {exampleData} from '../example-data';
 import {SecondaryPageContent} from '../secondary-page-content';
 

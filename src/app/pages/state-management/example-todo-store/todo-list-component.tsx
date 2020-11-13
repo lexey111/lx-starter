@@ -1,12 +1,12 @@
 /* eslint-disable react/jsx-no-bind */
 import {observer} from 'mobx-react';
 import React, {useCallback, useState} from 'react';
-import {Checkbox} from '../../../components/ui/data-entry/checkbox/checkbox-component';
-import {SourceFile} from '../../../components/ui/example-related/source-file-component';
-import {SyntaxHighlight} from '../../../components/ui/example-related/syntax-highlight';
-import {Button} from '../../../components/ui/general/button/button-component';
-import {Title} from '../../../components/ui/general/typography/title-component';
-import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../store/@stores';
+import {Checkbox} from '../../../engine/components/ui/data-entry/checkbox/checkbox-component';
+import {SourceFile} from '../../../engine/components/ui/example-related/source-file-component';
+import {SyntaxHighlight} from '../../../engine/components/ui/example-related/syntax-highlight';
+import {Button} from '../../../engine/components/ui/general/button/button-component';
+import {Title} from '../../../engine/components/ui/general/typography/title-component';
+import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../engine/store/@stores';
 import {TodoListItemExample} from './todo-list-item-component';
 
 export const TodoListExample: React.FC = observer(() => {

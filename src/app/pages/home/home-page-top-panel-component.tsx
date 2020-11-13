@@ -1,7 +1,7 @@
 import React from 'react';
-import {LipsumPara} from '../../components/ui/example-related/lipsum';
-import {Title} from '../../components/ui/general/typography/title-component';
-import {PageTopPanel} from '../../layout/top-panel/page-top-panel-component';
+import {LipsumPara} from '../../engine/components/ui/example-related/lipsum';
+import {Title} from '../../engine/components/ui/general/typography/title-component';
+import {PageTopPanel} from '../../engine/layout/top-panel/page-top-panel-component';
 
 export const HomePageTopPanel: React.FC = () => {
 	return <PageTopPanel>
