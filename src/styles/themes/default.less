@@ -1,4 +1,4 @@
-@import "../colors.less";
+@import "default-colors.less";
 
 body.theme-default {
 	--app-background: @app-background;
@@ -46,17 +46,6 @@ body.theme-default {
 	--app-success-background-darken: darken(@app-success-background, 7);
 	--app-success-color: @app-success-color;
 
-	--app-menu-background: @app-menu-background;
-	--app-menu-text-color: @app-menu-text-color;
-	--app-menu-separator: @app-menu-separator;
-	--app-menu-separator-darken: darken(@app-menu-separator, 10);
-	--app-menu-selected-color: @app-menu-selected-color;
-	--app-menu-selected-text-color: @app-menu-selected-text-color;
-	--app-menu-hover-text-color: @app-menu-hover-text-color;
-	--app-menu-hover-color: @app-menu-hover-color;
-	--app-menu-color-lighten: @app-menu-color-lighten;
-	--app-menu-color-darken: @app-menu-color-darken;
-
 	--app-accent-color: @app-accent-color;
 	--app-accent-color-hover: lighten(@app-accent-color, 20%);
 	--app-accent-background: @app-accent-background;
@@ -73,4 +62,24 @@ body.theme-default {
 	--app-link-color-active: @app-link-color-active;
 
 	--app-border-color: @app-border-color;
+
+	// main menu
+	--app-menu-background: @app-menu-background;
+	--app-menu-color: @app-menu-color;
+
+	--app-menu-separator: @app-menu-separator-color;
+	--app-menu-separator-darken: darken(@app-menu-separator-color, 10);
+
+	--app-menu-current-background: @app-menu-current-background;
+	--app-menu-current-color: @app-menu-current-color;
+
+	--app-menu-focused-background: @app-menu-focused-background;
+	--app-menu-focused-color: @app-menu-focused-color;
+	--app-menu-focused-border: @app-menu-focused-border;
+
+	--app-menu-hover-background: @app-menu-hover-background;
+	--app-menu-hover-color: @app-menu-hover-color;
+
+	--app-menu-color-lighten: @app-menu-color-lighten;
+	--app-menu-color-darken: @app-menu-color-darken;
 }

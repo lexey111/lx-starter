@@ -16,6 +16,7 @@
 	top: 0;
 
 	background-color: var(--app-menu-background);
+	box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.2);
 
 	.app-main-menu-container {
 		box-sizing: border-box;
@@ -62,7 +63,7 @@
 		.app-icon {
 			width: 20px;
 			height: 20px;
-			fill: var(--app-menu-text-color);
+			fill: var(--app-menu-color);
 			z-index: 1;
 			transition: all .2s ease;
 		}
@@ -70,10 +71,19 @@
 		&:focus, &:hover, &:active {
 			outline: none;
 			border: none;
-			background-color: var(--app-menu-hover-color);
+			background-color: var(--app-menu-hover-background);
 
 			svg {
-				fill: var(--app-menu-text-color);
+				fill: var(--app-menu-color);
+			}
+		}
+
+		&:focus {
+			background-color: var(--app-menu-focused-background);
+			color: var(--app-menu-focused-color);
+
+			svg {
+				fill: var(--app-menu-focused-color);
 			}
 		}
 	}

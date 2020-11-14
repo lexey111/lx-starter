@@ -24,7 +24,7 @@ const AppRoutes = RouteMapping.map((routeItem: TRouteMappingItem, idx: number) =
 		exact path={routeItem.url}
 		key={idx}
 		render={(props: { match: { params: Record<string, string> } }) => {
-			// set current page & route params
+			// actualize current page & route params in AppState Store
 			AppStateStore.setCurrentRoute(routeItem, props.match.params);
 
 			// return corresponding page wrapper

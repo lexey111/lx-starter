@@ -47,21 +47,21 @@
 			overflow: hidden;
 			width: 0;
 			height: 0;
-			color: var(--app-menu-text-color);
+			color: var(--app-menu-color);
 			font-size: var(--app-menu-small-font-size);
 		}
 
 		.app-icon {
 			transform-origin: center center;
-			fill: var(--app-menu-text-color);
+			fill: var(--app-menu-color);
 			transition: all .2s ease;
 		}
 
 		&:hover, &:active, &:focus {
-			background-color: var(--app-menu-hover-color);
+			background-color: var(--app-menu-hover-background);
 
 			svg {
-				fill: var(--app-menu-hover-text-color);
+				fill: var(--app-menu-hover-color);
 			}
 		}
 	}
@@ -94,8 +94,8 @@
 
 				&.active {
 					font-weight: bold;
-					background-color: var(--app-menu-selected-color);
-					color: var(--app-menu-selected-text-color);
+					background-color: var(--app-menu-current-background);
+					color: var(--app-menu-current-color);
 					border-right: 2px solid var(--app-primary-bright-background);
 					box-shadow: 0 0 1px rgba(0, 0, 0, .3);
 
@@ -135,7 +135,7 @@
 		}
 
 		&.selected, &:focus, &:focus-within {
-			background-color: var(--app-menu-selected-color);
+			background-color: var(--app-menu-current-background);
 
 			.app-menu-sub-items {
 				opacity: 1;

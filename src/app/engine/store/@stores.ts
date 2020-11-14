@@ -6,10 +6,11 @@ import CAppExampleToDoStore from './examples/example-todo-store/app-example-stor
 
 // current view state + auth state
 export const AppStateStore = new CAppStateStore();
-// page sub-navigation
+
+// page sub-navigation (local waypoints)
 export const AppPageNavigationStore = new CAppPageNavigationStore();
 
-// TODO Store example
+// ToDo Store example
 export const AppExampleToDoStoreList = new CAppExampleToDoStore(); // example ToDo store
 export const AppExampleToDoStoreItem = new CAppExampleTodoStoreItem(); // current (active, on-edit) store item
 

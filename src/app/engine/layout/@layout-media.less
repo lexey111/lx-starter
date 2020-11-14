@@ -1,0 +1,38 @@
+// Due to media queries can not operate with CSS variables value,
+// .less file variables have to be included instead
+@import "../../../styles/@media.less";
+
+@media screen and (max-width: @app-media-max) {
+	// 1300..1500 = 1100
+	body {
+		--app-page-width: @app-media-wide-page-width;
+	}
+}
+
+@media screen and (min-width: @app-media-max) {
+	// > 1500 = 1200
+	body {
+		--app-page-width: @app-media-max-page-width;
+	}
+}
+
+@media screen and (max-width: @app-media-wide) {
+	// 980..1300 = 960
+	body {
+		--app-page-width: @app-media-default-page-width;
+	}
+}
+
+@media screen and (max-width: @app-media-narrow) {
+	// 760..980 = 100% - 64px
+	body {
+		--app-page-width: @app-media-narrow-page-width;
+	}
+}
+
+@media screen and (max-width: @app-media-min) {
+	// < 760 = 100%, other effects (no menu etc.)
+	body {
+		--app-page-width: @app-media-min-page-width;
+	}
+}

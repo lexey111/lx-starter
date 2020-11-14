@@ -10,7 +10,7 @@
 	height: 100%;
 	z-index: 120;
 
-	color: var(--app-menu-text-color);
+	color: var(--app-menu-color);
 
 	&:after {
 		content: '';
@@ -42,12 +42,12 @@
 		font-size: var(--app-menu-small-font-size);
 
 		* > {
-			color: var(--app-menu-text-color) !important;
+			color: var(--app-menu-color) !important;
 		}
 
 		p > {
 			font-size: var(--app-menu-small-font-size);
-			color: var(--app-menu-text-color);
+			color: var(--app-menu-color);
 			opacity: .9;
 			line-height: 1;
 			padding: 3px 8px;
@@ -63,18 +63,18 @@
 			height: 32px;
 			line-height: 32px;
 			white-space: nowrap;
-			color: var(--app-menu-text-color);
+			color: var(--app-menu-color);
 			background-color: var(--app-menu-color);
 			transition: all .2s ease;
 
 			&:hover, &:active, &:focus {
-				color: var(--app-menu-hover-text-color) !important;
-				border-color: var(--app-menu-hover-text-color) !important;
-				background-color: var(--app-menu-hover-color) !important;
+				color: var(--app-menu-hover-color) !important;
+				border-color: var(--app-menu-hover-color) !important;
+				background-color: var(--app-menu-hover-background) !important;
 			}
 
 			.app-icon, i {
-				fill: var(--app-menu-text-color);
+				fill: var(--app-menu-color);
 				width: 16px;
 				height: 16px;
 				margin-right: 8px;

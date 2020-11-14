@@ -13,7 +13,7 @@
 			height: 0;
 			border-style: solid;
 			border-width: 4px 2.5px 0 2.5px;
-			border-color: var(--app-menu-text-color) transparent transparent transparent;
+			border-color: var(--app-menu-color) transparent transparent transparent;
 			opacity: .8;
 		}
 
@@ -51,7 +51,7 @@
 		}
 
 		&:focus, &:focus-within {
-			background-color: var(--app-menu-color-darken);
+			background-color: var(--app-menu-focused-background);
 			outline: none;
 
 			.app-menu-sub-items {
@@ -84,6 +84,8 @@
 
 					&.active {
 						font-weight: bold;
+						background-color: var(--app-menu-current-background);
+						color: var(--app-menu-current-color);
 					}
 				}
 			}

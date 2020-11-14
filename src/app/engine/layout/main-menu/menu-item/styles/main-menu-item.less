@@ -5,38 +5,38 @@
 	margin: 0;
 	padding: 0;
 	position: relative;
-	color: var(--app-menu-text-color);
+	color: var(--app-menu-color);
 	font-size: var(--app-menu-font-size);
 	text-decoration: none;
+	border: 1px solid transparent;
+	box-sizing: content-box;
 	z-index: 110;
 
 	&:focus {
-		color: var(--app-menu-hover-text-color);
-		background-color: var(--app-menu-color-darken);
-		border: none;
+		color: var(--app-menu-focused-color);
+		border: 1px solid var(--app-menu-focused-border);
 		outline: none;
 	}
 
 	&:hover, &:active {
-		color: var(--app-menu-hover-text-color) !important;
-		border-color: var(--app-menu-hover-text-color) !important;
-		background-color: var(--app-menu-hover-color) !important;
+		color: var(--app-menu-hover-color) !important;
+		background-color: var(--app-menu-hover-background) !important;
 
 		.app-icon {
-			fill: var(--app-menu-hover-text-color) !important;
+			fill: var(--app-menu-hover-color) !important;
 		}
 	}
 
 	&.selected {
-		background-color: var(--app-menu-selected-color);
-		color: var(--app-menu-selected-text-color);
+		background-color: var(--app-menu-current-background);
+		color: var(--app-menu-current-color);
 
 		svg {
-			fill: var(--app-menu-selected-text-color);
+			fill: var(--app-menu-current-color);
 		}
 
 		.app-menu-item-content {
-			color: var(--app-menu-selected-text-color);
+			color: var(--app-menu-current-color);
 			font-weight: bold;
 
 			&:hover {
@@ -92,7 +92,7 @@
 	.app-icon {
 		width: var(--app-menu-icon-size);
 		height: var(--app-menu-icon-size);
-		fill: var(--app-menu-text-color);
+		fill: var(--app-menu-color);
 
 		transition: transform .2s ease, fill .2s ease;
 		transform-origin: right center;
