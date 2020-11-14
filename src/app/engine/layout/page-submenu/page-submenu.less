@@ -1,6 +1,7 @@
 .with-page-menu {
 	.app-breadcrumbs {
-		background-color: var(--app-background-darken);
+		background-color: var(--app-submenu-background);
+		color: var(--app-submenu-color);
 		box-shadow: 0 8px 16px var(--app-background);
 
 		.app-breadcrumbs-content {
@@ -40,23 +41,23 @@
 		height: calc(var(--app-breadcrumbs-height) - 16px);
 		width: auto;
 		padding: 0 16px;
-		color: var(--app-link-color);
+		color: var(--app-submenu-item-color);
 		transition: all .2s ease;
 		margin: 6px 0;
-		background-color: var(--app-background);
+		background-color: var(--app-submenu-item-background);
 		box-shadow: 0 0 1px rgba(0, 0, 0, .2), inset 0 0 1px rgba(255, 255, 255, .9);
 
 		&:hover, &:active, &:focus {
-			color: var(--app-link-color-active);
-			background-color: var(--app-background-lighten);
-			box-shadow: 0 0 1px rgba(0, 0, 0, .4);
+			color: var(--app-menu-hover-color);
+			background-color: var(--app-menu-hover-background);
+			text-decoration: underline;
 		}
 
 		&.active {
 			pointer-events: none;
-			color: var(--app-link-color-active);
+			color: var(--app-accent-color);
 			position: relative;
-			background-color: var(--app-primary-bright-background);
+			background-color: var(--app-accent-background);
 			box-shadow: 0 0 1px rgba(0, 0, 0, .3);
 		}
 	}

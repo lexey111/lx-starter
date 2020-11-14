@@ -1,7 +1,7 @@
 import {observer} from 'mobx-react';
 import React from 'react';
+import {AppStateStore} from '../../../../store/@stores';
 import {IconStar} from '../../../ui-components/general/icons/icon-star-component';
-import {AppStateStore} from '../../../store/@stores';
 import {TMenuItem} from '../main-menu-component';
 
 type TMainMenuItemProps = {
@@ -28,21 +28,25 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 
 	const activeUrl = AppStateStore.currentRoute?.url;
 	const availableSubRoutes = item.routes?.filter(x => x.url?.indexOf('/:') === -1);
-	const itemHasVisibleRoutes = availableSubRoutes && availableSubRoutes.length > 0;
+	let itemHasVisibleRoutes = availableSubRoutes && availableSubRoutes.length > 0;
 	const activeSubRoute = availableSubRoutes?.find(x => x.url === activeUrl);
 	const itemIsActive = item.isActive;
 	const hasCustomItem = Boolean(item.menuItem);
 	const hasText = Boolean(item.title) || Boolean(item.subtitle) || Boolean(activeSubRoute?.title);
+	if (hasCustomItem && item.menuItemExpandable === true) {
+		itemHasVisibleRoutes = true;
+	}
 
 	return <div
-		className={'app-menu-item' + (itemIsActive ? ' selected' : '') +
+		className={'app-menu-item' + (itemIsActive ? ' current' : '') +
 		(item.isHomePage ? ' app-menu-home-item' : '') +
+		(hasCustomItem ? ' own-content' : '') +
 		(itemHasVisibleRoutes ? ' with-subroutes' : '')}
 		data-url={itemHasVisibleRoutes ? '' : item.url}
 		tabIndex={0}>
 
 		{hasCustomItem
-			? <div className={'app-menu-item-content own-content'}>{item.menuItem}</div>
+			? <div className={'app-menu-item-content'}>{item.menuItem}</div>
 			: <div className={'app-menu-item-content'}>
 				<div className={'app-menu-title' + (hasText ? ' icon-and-text' : '')}>
 					{icon}

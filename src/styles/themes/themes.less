@@ -1,0 +1,14 @@
+@import "light.less";
+@import "default.less";
+
+@import "mapping.less";
+
+body.theme-default {
+	.theme-default(); // set up LESS variables
+	@theme-mapping(); // apply them to CSS variables
+}
+
+body.theme-light {
+	.theme-light();
+	@theme-mapping();
+}

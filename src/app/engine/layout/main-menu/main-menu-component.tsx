@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 import useLocationParams from '../../hooks/use-location-params';
 import useLoggedIn from '../../hooks/use-logged-in';
 import {TRouteMappingItem} from '../../routing/route-mapping-interface';
-import {AppStateStore} from '../../store/@stores';
+import {AppStateStore} from '../../../store/@stores';
 import {AppMainMenuMarkup} from './main-menu-markup-component';
 import {calculateMenuParts} from './main-menu-utils';
 

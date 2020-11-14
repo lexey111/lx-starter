@@ -4,31 +4,31 @@ import {TRouteMappingItems} from '../app/engine/routing/route-mapping-interface'
 import {IconHome} from '../app/engine/ui-components/general/icons/icon-home-component';
 import {IconStar} from '../app/engine/ui-components/general/icons/icon-star-component';
 import {AboutPage} from '../app/pages/about';
-import {CustomPage} from '../app/pages/example-related/custom';
-import {CustomMenuDropdown} from '../app/pages/example-related/custom/custom-menu-dropdown-component';
-import {CustomMenuItem} from '../app/pages/example-related/custom/custom-menu-item-component';
-import {CustomPageTopPanel} from '../app/pages/example-related/custom/custom-page-top-panel-component';
-import {GettingStartedPage} from '../app/pages/example-related/getting-started';
-import {InternalsPage} from '../app/pages/example-related/internals';
-import {BuilderPage} from '../app/pages/example-related/internals/builder';
-import {TestingPage} from '../app/pages/example-related/internals/testing';
-import {RoutingPage} from '../app/pages/example-related/routes-subroutes';
-import {RoutingMainPage} from '../app/pages/example-related/routes-subroutes/example-page';
-import {RoutingArticle} from '../app/pages/example-related/routes-subroutes/example-page/article';
-import {RoutingArticleAuthor} from '../app/pages/example-related/routes-subroutes/example-page/article-author';
-import {ArticleTitle} from '../app/pages/example-related/routes-subroutes/example-page/article/article-title-component';
-import {RoutingListOfArticles} from '../app/pages/example-related/routes-subroutes/example-page/list-of-articles';
-import {AuthorTitle} from '../app/pages/example-related/routes-subroutes/example-page/list-of-articles/author-title-component';
-import {StatePage} from '../app/pages/example-related/state-management';
-import {StateMainStorePage} from '../app/pages/example-related/state-management/app-state';
-import {StateGenericStorePage} from '../app/pages/example-related/state-management/example-generic-store';
-import {ExampleTodoStorePage} from '../app/pages/example-related/state-management/example-todo-store';
-import {ThemingPage} from '../app/pages/example-related/theming';
-import {UiPage} from '../app/pages/example-related/ui';
-import {UiDataEntryPage} from '../app/pages/example-related/ui/data-entry';
-import {UiDisplayPage} from '../app/pages/example-related/ui/display';
-import {UiExampleComponentsPage} from '../app/pages/example-related/ui/examples-related';
-import {UiGeneralPage} from '../app/pages/example-related/ui/general';
+import {CustomPage} from '../app/pages/examples-related/custom';
+import {CustomMenuDropdown} from '../app/pages/examples-related/custom/custom-menu-dropdown-component';
+import {CustomMenuItem} from '../app/pages/examples-related/custom/custom-menu-item-component';
+import {CustomPageTopPanel} from '../app/pages/examples-related/custom/custom-page-top-panel-component';
+import {GettingStartedPage} from '../app/pages/examples-related/getting-started';
+import {InternalsPage} from '../app/pages/examples-related/internals';
+import {BuilderPage} from '../app/pages/examples-related/internals/builder';
+import {TestingPage} from '../app/pages/examples-related/internals/testing';
+import {RoutingPage} from '../app/pages/examples-related/routes-subroutes';
+import {RoutingMainPage} from '../app/pages/examples-related/routes-subroutes/example-page';
+import {RoutingArticle} from '../app/pages/examples-related/routes-subroutes/example-page/article';
+import {RoutingArticleAuthor} from '../app/pages/examples-related/routes-subroutes/example-page/article-author';
+import {ArticleTitle} from '../app/pages/examples-related/routes-subroutes/example-page/article/article-title-component';
+import {RoutingListOfArticles} from '../app/pages/examples-related/routes-subroutes/example-page/list-of-articles';
+import {AuthorTitle} from '../app/pages/examples-related/routes-subroutes/example-page/list-of-articles/author-title-component';
+import {StatePage} from '../app/pages/examples-related/state-management';
+import {StateMainStorePage} from '../app/pages/examples-related/state-management/app-state';
+import {StateGenericStorePage} from '../app/pages/examples-related/state-management/example-generic-store';
+import {ExampleTodoStorePage} from '../app/pages/examples-related/state-management/example-todo-store';
+import {ThemingPage} from '../app/pages/examples-related/theming';
+import {UiPage} from '../app/pages/examples-related/ui';
+import {UiDataEntryPage} from '../app/pages/examples-related/ui/data-entry';
+import {UiDisplayPage} from '../app/pages/examples-related/ui/display';
+import {UiExampleComponentsPage} from '../app/pages/examples-related/ui/examples-related';
+import {UiGeneralPage} from '../app/pages/examples-related/ui/general';
 import {HomePage} from '../app/pages/home';
 import {HomePageTopPanel} from '../app/pages/home/home-page-top-panel-component';
 
@@ -176,7 +176,6 @@ export const AppSiteMap: TRouteMappingItems = [
 	{
 		url: '/custom',
 		isLateral: true,
-		title: 'Custom menu item',
 		menuItem: <CustomMenuItem/>,
 		topPanel: <CustomPageTopPanel/>,
 		page: <CustomPage/>
@@ -184,5 +183,6 @@ export const AppSiteMap: TRouteMappingItems = [
 	{
 		isLateral: true,
 		menuItem: <CustomMenuDropdown/>,
+		menuItemExpandable: true
 	},
 ];

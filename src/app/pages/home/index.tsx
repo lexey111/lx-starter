@@ -7,7 +7,7 @@ import {ThemeSwitcher} from '../../engine/ui-components/example-related/theme-sw
 import {Button} from '../../engine/ui-components/general/button/button-component';
 import {Title} from '../../engine/ui-components/general/typography/title-component';
 import {TRouteMappingItem} from '../../engine/routing/route-mapping-interface';
-import {AppStateStore} from '../../engine/store/@stores';
+import {AppStateStore} from '../../store/@stores';
 
 function getRoutes(routes: Array<TRouteMappingItem>): Array<JSX.Element> {
 	let result: Array<JSX.Element> = [];

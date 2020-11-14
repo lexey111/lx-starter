@@ -1,0 +1,67 @@
+.theme-light() {
+	@app-background: #fff;
+	@app-color: #111;
+
+	@app-primary-background: #2e67ff;
+	@app-primary-color: #fff;
+
+	@app-accent-background: #ff0e8b;
+	@app-accent-color: #435123;
+
+	@app-danger-background: #ae1943;
+	@app-danger-color: #fff;
+
+	@app-warning-background: #ffbd0e;
+	@app-warning-color: #fff;
+
+	@app-success-background: #5b9200;
+	@app-success-color: #fff;
+
+	@app-code-background: #ecdbb7;
+	@app-code-color: #444;
+
+
+	@app-border-color: #dce0e1;
+	@app-header-color: #290f1e;
+	@app-remark-color: #ccc;
+
+	@app-link-color: @app-primary-background;
+	@app-link-color-active: darken(@app-link-color, 10);
+
+	@app-top-background: #f8f8f8;
+	@app-top-color: #07509f;
+
+	// main menu
+	@app-menu-background: #eee;
+	@app-menu-color: #555;
+
+	@app-menu-separator-color: mix(@app-menu-background, #fff, 80);
+
+	@app-menu-current-background: darken(@app-menu-background, 15);
+	@app-menu-current-color: #333;
+
+	@app-menu-focused-background: lighten(@app-menu-background, 5);
+	@app-menu-focused-color: #13182d;
+
+	@app-menu-hover-color: lighten(@app-menu-color, 20);
+	@app-menu-hover-background: lighten(@app-menu-background, 10);
+
+	@app-menu-color-lighten: lighten(@app-menu-background, 12);
+	@app-menu-color-darken: lighten(@app-menu-background, 5);
+
+	// page submenu
+	@app-submenu-background: #ccc;
+	@app-submenu-color: #000;
+	@app-submenu-item-background: lighten(@app-menu-current-background, 10);
+	@app-submenu-item-color: lighten(@app-menu-current-color, 10);
+
+	.page-submenu-item {
+		&:first-of-type {
+			border-radius: 6px 0 0 6px;
+		}
+
+		&:last-of-type {
+			border-radius: 0 6px 6px 0;
+		}
+	}
+}

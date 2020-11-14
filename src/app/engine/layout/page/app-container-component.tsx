@@ -1,6 +1,6 @@
 import React from 'react';
 import {WaitBlock} from '../../ui-components/display/wait/wait-block-component';
-import {AppStateStore} from '../../store/@stores';
+import {AppStateStore} from '../../../store/@stores';
 
 type TAppContainerProps = {
 	children?: any

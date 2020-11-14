@@ -1,7 +1,7 @@
 import {observer} from 'mobx-react';
 import React, {useEffect} from 'react';
 import useLocationParams from '../../hooks/use-location-params';
-import {AppPageNavigationStore} from '../../store/@stores';
+import {AppPageNavigationStore} from '../../../store/@stores';
 
 function scrollToHash(smooth?: boolean): void {
 	if (!window.location.hash) {

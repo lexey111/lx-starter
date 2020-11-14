@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {AppPageNavigationStore} from '../../../store/@stores';
+import {AppPageNavigationStore} from '../../../../store/@stores';
 
 type TTitleProps = {
 	level?: 1 | 2 | 3 | 4 | 5 | 6

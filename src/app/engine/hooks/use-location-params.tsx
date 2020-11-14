@@ -2,7 +2,7 @@ import {autorun} from 'mobx';
 import React, {useState} from 'react';
 import {TRouteMappingItem} from '../routing/route-mapping-interface';
 import {getRouteByUrl} from '../routing/route-mapping-utils';
-import {AppStateStore} from '../store/@stores';
+import {AppStateStore} from '../../store/@stores';
 
 type TURLParams = {
 	url: string

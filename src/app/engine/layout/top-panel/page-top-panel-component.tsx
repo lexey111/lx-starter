@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import {AppStateStore} from '../../store/@stores';
+import {AppStateStore} from '../../../store/@stores';
 
 type TTopPanelProps = {
 	children: any

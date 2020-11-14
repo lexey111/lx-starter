@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {AppPageNavigationStore} from '../../store/@stores';
+import {AppPageNavigationStore} from '../../../store/@stores';
 
 type TAppPageProps = {
 	children?: any

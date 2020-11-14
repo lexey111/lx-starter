@@ -6,7 +6,7 @@ import useLocationParams from '../../hooks/use-location-params';
 import {HomeRoute} from '../../routing/route-mapping';
 import {TRouteMappingItem, TRouteMappingItems} from '../../routing/route-mapping-interface';
 import {getRouteByUrl} from '../../routing/route-mapping-utils';
-import {AppStateStore} from '../../store/@stores';
+import {AppStateStore} from '../../../store/@stores';
 import {PageSubmenu} from '../page-submenu/page-submenu-component';
 
 function calculateBreadCrumbs(currentRoute?: TRouteMappingItem): Array<TRouteMappingItem> {

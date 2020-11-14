@@ -7,18 +7,13 @@
 	position: relative;
 	color: var(--app-menu-color);
 	font-size: var(--app-menu-font-size);
+	height: var(--app-menu-height);
 	text-decoration: none;
-	border: 1px solid transparent;
 	box-sizing: content-box;
 	z-index: 110;
+	transition: all .2s ease;
 
-	&:focus {
-		color: var(--app-menu-focused-color);
-		border: 1px solid var(--app-menu-focused-border);
-		outline: none;
-	}
-
-	&:hover, &:active {
+	&:hover, &:active, &:focus {
 		color: var(--app-menu-hover-color) !important;
 		background-color: var(--app-menu-hover-background) !important;
 
@@ -27,7 +22,7 @@
 		}
 	}
 
-	&.selected {
+	&.current {
 		background-color: var(--app-menu-current-background);
 		color: var(--app-menu-current-color);
 
@@ -45,6 +40,21 @@
 		}
 	}
 
+	&:focus {
+		outline: none;
+		background-color: var(--app-menu-focused-background) !important;
+		color: var(--app-menu-focused-color) !important;
+	}
+
+	&.own-content {
+		padding: 0;
+		height: unset;
+
+		.app-menu-item-content {
+			padding: 0 !important;
+		}
+	}
+
 	.app-menu-item-content {
 		clear: both;
 		overflow: hidden;
@@ -58,11 +68,6 @@
 		line-height: 1;
 		padding: 0 16px;
 		transition: all .1s ease;
-
-		&.own-content {
-			padding: 0;
-			overflow: unset;
-		}
 
 		.app-menu-title, .app-menu-subtitle {
 			display: flex;
@@ -86,7 +91,6 @@
 				font-weight: normal;
 			}
 		}
-
 	}
 
 	.app-icon {
@@ -110,6 +114,11 @@
 	transition: transform .1s ease, opacity .1s ease;
 	transform-origin: left center;
 	white-space: nowrap;
+}
+
+.app-menu-sub-item {
+	font-style: italic;
+	font-size: .9em;
 }
 
 @import "with-top-menu.less";

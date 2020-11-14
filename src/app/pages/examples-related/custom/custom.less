@@ -1,0 +1,121 @@
+.custom-menu-dropdown {
+	padding: 0 16px;
+
+	.custom-menu-dropdown-list {
+		width: 200px !important;
+		background-color: var(--app-menu-current-background) !important;
+		font-size: var(--app-menu-small-font-size);
+
+		* > {
+			color: var(--app-menu-color) !important;
+		}
+
+		p > {
+			font-size: var(--app-menu-small-font-size);
+			color: var(--app-menu-color);
+			opacity: .9;
+			line-height: 1;
+			padding: 3px 0;
+			margin: 8px 0;
+			background-color: rgba(255, 255, 255, .1);
+			box-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+			cursor: default;
+		}
+
+		.radiogroup-content {
+			flex-flow: column wrap;
+
+			.radiogroup-item {
+				margin-bottom: 4px;
+			}
+		}
+	}
+}
+
+.with-side-menu .app-menu {
+	.custom-menu-dropdown {
+	}
+
+	.custom-menu-dropdown-list {
+	}
+}
+
+.custom-page-top-panel {
+	padding: 0 8px !important;
+	margin: 0;
+	width: 100vw !important;
+	display: flex;
+	flex-flow: row nowrap;
+	height: 56px;
+	align-items: center;
+	background-color: #8a0a78;
+	color: #fff;
+
+	&:after {
+		display: none;
+	}
+
+	.app-icon {
+		fill: #66095a;
+		width: 30px;
+		height: 30px;
+		padding: 6px;
+		margin-right: 16px;
+		background-color: #e2777a;
+		border-radius: 100%;
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+	}
+
+	h1 {
+		font-size: 22px;
+		color: #fff !important;
+		text-transform: uppercase;
+	}
+
+	.custom-search {
+		margin-left: 32px;
+		display: flex;
+		flex-flow: row nowrap;
+		align-self: center;
+		align-content: center;
+		width: 20%;
+		opacity: .5;
+		transition: all .2s ease;
+
+		&:hover {
+			opacity: .8;
+		}
+
+		&:focus-within {
+			opacity: 1;
+			width: 30%;
+		}
+
+		input {
+			display: flex;
+			align-content: center;
+			flex-flow: row nowrap;
+			align-self: center;
+			color: #333;
+			padding: 2px 8px;
+			margin: 0;
+			height: 24px;
+			border: none;
+		}
+	}
+
+	.custom-avatar {
+		margin-left: auto;
+		display: flex;
+		border: 4px solid #e2b1f5;
+		border-radius: 100%;
+		width: 32px;
+		height: 32px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: 100%;
+		}
+	}
+}

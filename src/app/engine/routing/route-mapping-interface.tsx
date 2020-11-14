@@ -5,6 +5,7 @@ export type TRouteMappingItem = {
 	subtitle?: string | JSX.Element // subtitle to show under the menu title line
 	icon?: JSX.Element // icon component
 	menuItem?: JSX.Element // entire menu item component
+	menuItemExpandable?: boolean // if custom menu item is expandable
 	page?: JSX.Element // page (component) to render
 	topPanel?: JSX.Element // panel to be displayed above top menu (if layout uses top menu; or at page top otherwise)
 

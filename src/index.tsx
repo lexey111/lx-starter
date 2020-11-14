@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 
 import {App} from './app/@app';
 
-import {AppStateStore} from './app/engine/store/@stores';
-import {AvailableThemes} from './app/engine/store/app-state/app-state-store';
+import {AppStateStore} from './app/store/@stores';
+import {AvailableThemes} from './app/store/app-state/app-state-store';
 import './styles/app.less';
 
 declare const PRODUCTION: boolean; // webpack DefinePlugin

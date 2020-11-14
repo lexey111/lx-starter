@@ -3,6 +3,10 @@
 		overflow-y: auto;
 		overflow-x: hidden;
 
+		.app-menu-item, .app-menu-sub-item {
+			height: unset;
+		}
+
 		.app-menu-item.with-subroutes {
 			&:after {
 				// triangle
@@ -11,14 +15,30 @@
 				position: absolute;
 				top: 50%;
 				margin-top: -1px;
-				right: 2px;
+				right: 12px;
 				width: 0;
 				height: 0;
 				border-style: solid;
 				border-width: 2.5px 0 2.5px 4px;
 				border-color: transparent transparent transparent var(--app-menu-color);
+				transform: rotate(90deg);
 				transition: all .4s ease;
 				opacity: .8;
+			}
+
+			&.own-content {
+				height: unset !important;
+				display: flex;
+				align-items: center;
+				min-height: var(--app-menu-height);
+
+				.app-menu-title {
+					height: var(--app-menu-height) !important;
+				}
+
+				.app-menu-item-content {
+					height: unset !important;
+				}
 			}
 		}
 

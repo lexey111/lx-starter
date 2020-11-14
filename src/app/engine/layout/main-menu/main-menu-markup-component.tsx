@@ -137,6 +137,8 @@ export const AppMainMenuMarkup = React.forwardRef((props: TAppMainMenuMarkupProp
 			</div>
 			}
 
+			{props.position === 'side' && <div className={'app-menu-backdrop'} onClick={handleToggleExpand}></div>}
+
 			<div
 				className={'app-main-menu'}
 				onFocus={handleFocusing}
@@ -160,7 +162,6 @@ export const AppMainMenuMarkup = React.forwardRef((props: TAppMainMenuMarkupProp
 				</div>
 			</div>
 
-			{props.position === 'side' && <div className={'app-menu-backdrop'} onClick={handleToggleExpand}></div>}
 		</div>
 	</div>;
 });

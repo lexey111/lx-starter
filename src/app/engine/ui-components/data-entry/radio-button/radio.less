@@ -54,7 +54,7 @@
 			flex-shrink: 0;
 			width: 14px;
 			height: 14px;
-			border: 2px solid var(--app-primary-background);
+			border: 2px solid var(--app-accent-background);
 			background-color: var(--app-background-lighten);
 			border-radius: 100%;
 			margin-right: .4em;
@@ -70,7 +70,7 @@
 
 		&.checked {
 			.radiogroup-item-selector {
-				background-color: var(--app-primary-background);
+				background-color: var(--app-accent-background);
 
 				span {
 					position: absolute;
@@ -90,12 +90,18 @@
 			outline: none;
 
 			.radiogroup-item-selector {
-				background-color: var(--app-primary-background-lighten);
-				border-color: var(--app-primary-background-darken);
+				border-color: var(--app-link-color-active);
 			}
 
 			.radiogroup-item-title {
 				color: var(--app-link-color-active);
+			}
+		}
+		&.checked {
+			&:hover, &:active, &:focus {
+				.radiogroup-item-selector {
+					background-color: var(--app-link-color-active);
+				}
 			}
 		}
 
@@ -110,10 +116,10 @@
 
 			.radiogroup-item-selector {
 				background-color: var(--app-background-darken);
-				border-color: var(--app-background-darken-tint4);
+				border-color: var(--app-background-darken-shade-4);
 
 				span {
-					background-color: var(--app-background-lighten-tint1);
+					background-color: var(--app-background-lighten-shade-1);
 				}
 			}
 

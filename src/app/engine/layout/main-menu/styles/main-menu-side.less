@@ -17,7 +17,6 @@
 		color: var(--app-primary-color);
 		width: var(--app-menu-width-expanded);
 		height: 100%;
-		box-shadow: inset -2px 0 2px rgba(0, 0, 0, .2);
 	}
 
 	.app-main-menu {
@@ -27,6 +26,7 @@
 		display: flex;
 		flex-flow: column nowrap;
 		z-index: 110;
+		background-color: var(--app-menu-background);
 	}
 
 	.app-menu-expander {
@@ -96,8 +96,7 @@
 					font-weight: bold;
 					background-color: var(--app-menu-current-background);
 					color: var(--app-menu-current-color);
-					border-right: 2px solid var(--app-primary-bright-background);
-					box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+					border-right: 2px solid var(--app-accent-background);
 
 					&:after {
 						content: '';
@@ -111,14 +110,7 @@
 			}
 		}
 
-		.custom-menu-dropdown-list {
-			left: 100%;
-			right: unset;
-			top: unset;
-			bottom: 0;
-		}
-
-		&.selected {
+		&.current {
 			position: relative;
 
 			&:before {
@@ -130,11 +122,11 @@
 				height: 100%;
 				left: 0;
 				width: 2px;
-				background-color: var(--app-primary-bright-background);
+				background-color: var(--app-accent-background);
 			}
 		}
 
-		&.selected, &:focus, &:focus-within {
+		&.current, &:focus, &:focus-within {
 			background-color: var(--app-menu-current-background);
 
 			.app-menu-sub-items {
