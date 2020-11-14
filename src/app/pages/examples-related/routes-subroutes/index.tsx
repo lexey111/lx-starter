@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {SourceFile} from '../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../engine/ui-components/example-related/src-component';
 import {SyntaxHighlight} from '../../../engine/ui-components/example-related/syntax-highlight';
 import {Tag} from '../../../engine/ui-components/example-related/tag-component';
 import {Title} from '../../../engine/ui-components/general/typography/title-component';
@@ -13,7 +13,7 @@ export const RoutingPage: React.FC = () => {
 
 		<Title level={2} nav={'principles'}>Basic principles</Title>
 		<p>
-			Routes in the application have to be defined in the <SourceFile src={routeConfigFilename} inline/> file.
+			Routes in the application have to be defined in the <Src src={routeConfigFilename} inline/> file.
 			It is array of <code>TRouteMappingItems</code> objects:
 		</p>
 
@@ -84,7 +84,7 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 			content={'export const RouteMapping: TRouteMappingItems = flattenRoutes(AppSiteMap)'}/>
 
 		<p>
-			These routes are used across the application, e.g., <SourceFile src={'src/app/@app.tsx'} inline/> uses
+			These routes are used across the application, e.g., <Src src={'src/app/@app.tsx'} inline/> uses
 			this flattened (1-level) structure to set up React <code>Router</code>:
 		</p>
 
@@ -101,7 +101,7 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 		<Title level={4}>Rendering</Title>
 
 		<p>
-			Aforementioned <SourceFile src={'src/app/@app.tsx'} inline/> provides routing structure. It gets
+			Aforementioned <Src src={'src/app/@app.tsx'} inline/> provides routing structure. It gets
 			the flattened array of routes and creates <code>&lt;Route&gt;</code> entries (see above).
 		</p>
 
@@ -136,7 +136,7 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 			First step is required for navigation-related things, like breadcrumbs or menus. Please pay attention:
 			changed params (<code>item: TRouteMappingItem</code> and <code>props.match.params</code>) are
 			not <b>observable</b>, so no re-rendering or events will be fired. It just setting up the data: activated
-			item of <SourceFile src={routeConfigFilename} inline/> and url params.
+			item of <Src src={routeConfigFilename} inline/> and url params.
 		</p>
 
 		<p>

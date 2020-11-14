@@ -2,7 +2,7 @@
 import {observer} from 'mobx-react';
 import React, {useCallback, useState} from 'react';
 import {Checkbox} from '../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
-import {SourceFile} from '../../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../../engine/ui-components/example-related/src-component';
 import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
 import {Button} from '../../../../engine/ui-components/general/button/button-component';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
@@ -22,7 +22,7 @@ export const TodoListExample: React.FC = observer(() => {
 	}, []);
 
 	return <div className={'example-component-container'}>
-		<SourceFile src={'src/app/page/state-management/example-todo-store/todo-list-component.tsx'}/>
+		<Src src={'src/app/page/state-management/example-todo-store/todo-list-component.tsx'}/>
 		<Title level={4}>TODO List</Title>
 		<TodoListItemExample show={showDialog} closeDialog={closeDialog}/>
 

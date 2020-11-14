@@ -1,6 +1,6 @@
 import React from 'react';
 import {A} from '../../../../engine/ui-components/example-related/a-component';
-import {SourceFile} from '../../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../../engine/ui-components/example-related/src-component';
 import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 import {PeopleExampleComponent} from './people-component';
@@ -12,7 +12,7 @@ export const StateGenericStorePage: React.FC = () => {
 		<Title level={2} nav={'overview'}>Overview</Title>
 		<p>
 			Usually when developer creates stores for many forms there are a lot of boilerplate
-			code appears. To serve 'common needs' I created <SourceFile src={'src/app/store/utils/store-utils.ts'} inline={true}/>.
+			code appears. To serve 'common needs' I created <Src src={'src/app/store/utils/store-utils.ts'} inline={true}/>.
 		</p>
 
 		<p>
@@ -145,7 +145,7 @@ export function _resetData<T, U>(target: T, initialData: U): void {...}`}/>
 
 		<Title level={3} nav={'list-of-persons'}>List of persons</Title>
 		<p>
-			Here is a fake dataset, <SourceFile inline src={'src/app/page/state-management/example-generic-store/people-fake-data.ts'}></SourceFile>.
+			Here is a fake dataset, <Src inline src={'src/app/page/state-management/example-generic-store/people-fake-data.ts'}></Src>.
 		</p>
 
 		<p>

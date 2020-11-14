@@ -1,6 +1,6 @@
 import React from 'react';
 import {A} from '../../../../engine/ui-components/example-related/a-component';
-import {SourceFile} from '../../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../../engine/ui-components/example-related/src-component';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 import {UiButtonsExample} from './ui-buttons-example';
 import {UiIconsExample} from './ui-icons-example';
@@ -11,7 +11,7 @@ export const UiGeneralPage: React.FC = () => {
 		<Title>General components</Title>
 
 		<Title nav={'title'} level={2}>Title</Title>
-		<SourceFile src={'src/app/ui-components/ui/general/typography'}/>
+		<Src src={'src/app/ui-components/ui/general/typography'}/>
 
 		<p>
 			Very simple wrapper for <code>&lt;H1..6&gt;</code> tag. Just to keep things semantic.
@@ -19,16 +19,16 @@ export const UiGeneralPage: React.FC = () => {
 		</p>
 
 		<p>
-			See <SourceFile src={'src/styles/typography.less'} inline/> to alter the styles.
+			See <Src src={'src/styles/typography.less'} inline/> to alter the styles.
 		</p>
 
 		<UiTitleExample/>
 
 		<Title nav={'buttons'} level={2}>Buttons</Title>
-		<SourceFile src={'src/app/ui-components/ui/general/button'}/>
+		<Src src={'src/app/ui-components/ui/general/button'}/>
 
 		<p>
-			Buttons in The Starter are just styled with CSS. Source file is <SourceFile src={'src/styles/precompiled/buttons.less'} inline/>
+			Buttons in The Starter are just styled with CSS. Source file is <Src src={'src/styles/precompiled/buttons.less'} inline/>
 		</p>
 		<p>
 			The component idea was inspired by <A href={'https://press-css.io/'}>Press.Css</A> project.
@@ -37,7 +37,7 @@ export const UiGeneralPage: React.FC = () => {
 		<UiButtonsExample/>
 
 		<Title nav={'svg-icons'} level={2}>SVG Icons</Title>
-		<SourceFile src={'src/app/ui-components/ui/general/icons'}/>
+		<Src src={'src/app/ui-components/ui/general/icons'}/>
 
 		<p>
 			Here I have a few icons needed (mostly) to display menu and spinners. They are just React SVG wrappers for some

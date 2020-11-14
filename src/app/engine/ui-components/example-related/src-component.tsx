@@ -5,13 +5,13 @@ type TSourceFileProps = {
 	inline?: boolean
 };
 
-export const SourceFile: React.FC<TSourceFileProps> = (props: TSourceFileProps) => {
+export const Src: React.FC<TSourceFileProps> = (props: TSourceFileProps) => {
 	const parts = props.src.split('/');
 	const filename = parts.pop();
 
 	return <span className={'app-example-source-file' + (props.inline ? ' inline' : '')}>
 		<span>
-			{parts.join(' / ')} / <b>&nbsp;{filename}</b>
+			{parts.length > 0 ? parts.join(' / ') + ' / ' : ''} <b>&nbsp;{filename}</b>
 		</span>
 	</span>;
 };

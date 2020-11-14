@@ -1,6 +1,6 @@
 import React from 'react';
 import {A} from '../../../../engine/ui-components/example-related/a-component';
-import {SourceFile} from '../../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../../engine/ui-components/example-related/src-component';
 import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 
@@ -25,7 +25,7 @@ export const TestingPage = (): JSX.Element => {
 			test files are excluded from linting because it is pretty often case to use 'invalid' input values or data types.
 		</p>
 		<p>
-			You can alter that in <SourceFile src={'src/.eslintrc.json'} inline/>:
+			You can alter that in <Src src={'src/.eslintrc.json'} inline/>:
 		</p>
 		<SyntaxHighlight content={`"ignorePatterns": [
 	"*-test.ts",
@@ -95,7 +95,7 @@ Time:        7.586 s
 		</p>
 
 		<p>
-			Config file is <SourceFile src={'build/jest.config.js'} inline/>. Extension '.ts' usually means unit tests and '.tsx' is
+			Config file is <Src src={'build/jest.config.js'} inline/>. Extension '.ts' usually means unit tests and '.tsx' is
 			for React-based testing.
 		</p>
 

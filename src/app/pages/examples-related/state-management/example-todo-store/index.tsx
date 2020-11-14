@@ -1,5 +1,5 @@
 import React from 'react';
-import {SourceFile} from '../../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../../engine/ui-components/example-related/src-component';
 import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 import {TodoListExample} from './todo-list-component';
@@ -16,7 +16,7 @@ export const ExampleTodoStorePage: React.FC = () => {
 		<TodoListExample/>
 
 		<Title level={2} nav={'store-structure'}>Store structure</Title>
-		<SourceFile src={'src/app/store/example/example-todo-store/app-example-todo-store.ts'}/>
+		<Src src={'src/app/store/example/example-todo-store/app-example-todo-store.ts'}/>
 
 		<p>
 			Here I'm using approach with different stores: one for the 'main' object (list of ToDo items) and second one for

@@ -15,14 +15,13 @@
 	span {
 		display: inline-flex;
 		flex-flow: row nowrap;
-		text-transform: uppercase;
 		vertical-align: center;
 		color: var(--app-accent-color);
 		font-size: var(--app-small-font-size);
 		line-height: calc(var(--app-small-font-size) + 2px);
 		border-right: 4px solid var(--app-accent-background);
 		box-sizing: border-box;
-		background-color: var(--app-background-darken-shade-2);
+		background-color: var(--app-accent-background);
 		margin: 0;
 		padding: 3px .5em;
 		white-space: nowrap;
@@ -31,11 +30,14 @@
 
 	&.inline {
 		display: inline-flex;
+		border: none;
 		margin: 0;
 
 		span {
 			border: none;
-			background-color: var(--app-accent-background);
+			background-color: var(--app-info-background);
+			color: var(--app-info-color);
+			border-radius: 3px;
 		}
 	}
 }
@@ -59,6 +61,7 @@
 	position: relative;
 	padding: 0;
 	margin-bottom: 1em;
+	border: 1px solid var(--app-light-border-color);
 
 	.example-hl-title {
 		display: block;
@@ -67,7 +70,7 @@
 		padding: 0 6px;
 		height: 24px;
 		line-height: 24px;
-		margin: 1em 0 0 0;
+		margin: 0;
 		font-size: .8em;
 		font-weight: bold;
 		color: var(--app-accent-color);
@@ -75,9 +78,9 @@
 	}
 
 	pre.hl-component {
-		margin: 0;
+		margin: 0 !important;
 		padding-left: 1em;
-		border-radius: 0;
+		border-radius: 0 !important;
 		font-size: 1em;
 		opacity: 0;
 
@@ -96,8 +99,10 @@
 
 .syntax-example-tabs {
 	margin: 2em 0;
+
 	.example-hl-container {
 		margin-bottom: 0;
+
 		pre {
 			margin: 0 !important;
 		}

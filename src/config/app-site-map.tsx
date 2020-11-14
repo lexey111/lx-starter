@@ -105,9 +105,9 @@ export const AppSiteMap: TRouteMappingItems = [
 		page: <RoutingPage/>,
 		routes: [
 			{
-				url: '/routing/example-page',
+				url: '/routing/example-pages',
 				page: <RoutingMainPage/>,
-				title: 'Example page',
+				title: 'Example pages',
 				routes: [
 					{
 						url: '/routing/example-page/list-of-articles',

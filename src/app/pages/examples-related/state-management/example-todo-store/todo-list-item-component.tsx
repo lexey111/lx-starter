@@ -2,7 +2,7 @@ import {observer} from 'mobx-react';
 import React, {useCallback} from 'react';
 import {Checkbox} from '../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
 import {SimpleModal} from '../../../../engine/ui-components/display/wait/simple-modal-component';
-import {SourceFile} from '../../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../../engine/ui-components/example-related/src-component';
 import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
 import {Button} from '../../../../engine/ui-components/general/button/button-component';
 import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../../store/@stores';
@@ -48,7 +48,7 @@ export const TodoListItemExample: React.FC<TTodoListItemExampleProps> = observer
 		<div className={'modal-header'}>
 			TODO item
 		</div>
-		<SourceFile src={'src/app/page/state-management/example-todo-store/todo-list-item-component.tsx'}/>
+		<Src src={'src/app/page/state-management/example-todo-store/todo-list-item-component.tsx'}/>
 		<p>
 			Please enter the title:
 		</p>

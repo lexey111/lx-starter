@@ -1,6 +1,6 @@
 import React from 'react';
 import {A} from '../../../../engine/ui-components/example-related/a-component';
-import {SourceFile} from '../../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../../engine/ui-components/example-related/src-component';
 import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
 import {Tag} from '../../../../engine/ui-components/example-related/tag-component';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
@@ -10,7 +10,7 @@ export const StateMainStorePage: React.FC = () => {
 		<Title>Application State store</Title>
 
 		<Title level={2} nav={'purpose'}>The purpose</Title>
-		<SourceFile src={'src/app/store/app-state/app-state-store.ts'}/>
+		<Src src={'src/app/store/app-state/app-state-store.ts'}/>
 
 		<p>
 			This store keeps current application state: current route, url and params, UI theme, last fatal server error etc., and

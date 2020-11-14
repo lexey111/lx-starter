@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {A} from '../../../engine/ui-components/example-related/a-component';
-import {SourceFile} from '../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../engine/ui-components/example-related/src-component';
 import {SyntaxHighlight} from '../../../engine/ui-components/example-related/syntax-highlight';
 import {IconFile} from '../../../engine/ui-components/general/icons/icon-file-component';
 import {IconFolder} from '../../../engine/ui-components/general/icons/icon-folder-component';
@@ -33,7 +33,7 @@ export const StatePage: React.FC = () => {
 
 		<Title level={2}>Attachment of a store</Title>
 
-		<SourceFile src={'src/app/store/@stores.ts'}/>
+		<Src src={'src/app/store/@stores.ts'}/>
 
 		<p>
 			This is the place where stores are living. This is 'include' file which contains stores initialization:

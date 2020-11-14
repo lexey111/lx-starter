@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {A} from '../../../engine/ui-components/example-related/a-component';
-import {SourceFile} from '../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../engine/ui-components/example-related/src-component';
 import {Title} from '../../../engine/ui-components/general/typography/title-component';
 
 export const UiPage: React.FC = () => {
@@ -18,7 +18,7 @@ export const UiPage: React.FC = () => {
 		<p>
 			Please use your favorite UI kit, or add separate UI components from different source. Internal
 			components are designed to be minimalistic and have no external dependencies, so feel free to
-			remove them all (especially <SourceFile src={'src/app/ui-components/ui/examples-related'} inline/> folder)
+			remove them all (especially <Src src={'src/app/engine/ui-components/example-related'} inline/> folder)
 			and replace with anything you do prefer.
 		</p>
 
@@ -48,7 +48,11 @@ export const UiPage: React.FC = () => {
 		</ul>
 
 		<p>
-			Components are located in <SourceFile src={'src/app/ui-components/ui'} inline={true}/> folder.
+			Components are located in <Src src={'src/app/ui-components/ui'} inline={true}/> folder.
+		</p>
+
+		<p>
+			And, of course, there is <Link to={'/ui/theming'}>theme engine</Link> here.
 		</p>
 
 	</>;

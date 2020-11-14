@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {A} from '../../../../engine/ui-components/example-related/a-component';
-import {SourceFile} from '../../../../engine/ui-components/example-related/source-file-component';
+import {Src} from '../../../../engine/ui-components/example-related/src-component';
 import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
 import {Tag} from '../../../../engine/ui-components/example-related/tag-component';
 import {Button} from '../../../../engine/ui-components/general/button/button-component';
@@ -63,7 +63,7 @@ export const RoutingMainPage: React.FC = () => {
 		<Title level={3}>Breadcrumb items</Title>
 		<p>
 			To implement active breadcrumb item uou just need to assign React component to the <code>title</code> field in
-			<SourceFile src={'src/config/app-site-map.tsx'} inline/> file:
+			<Src src={'src/config/app-site-map.tsx'} inline/> file:
 		</p>
 
 		<SyntaxHighlight lines={4} content={`{
