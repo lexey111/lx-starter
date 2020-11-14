@@ -14,12 +14,13 @@ export const AboutPage: React.FC = () => {
 			<li><s>- AntD</s></li>
 			<li>Fake log in/log out</li>
 			<li><s>Secondary menu for pages</s></li>
-			<li>Extra theme</li>
+			<li><s>Extra theme</s></li>
+			<li>Dark theme</li>
 			<li><s>Main menu sub-routes for media queries</s></li>
-			<li>Horizontal menu</li>
-			<li>Top panel</li>
-			<li>Burger menu</li>
-			<li>Contrast menu</li>
+			<li><s>Horizontal menu</s></li>
+			<li><s>Top panel</s></li>
+			<li><s>Burger menu</s></li>
+			<li><s>Contrast menu</s></li>
 			<li>
 				<ul>
 					<li>Main</li>
@@ -38,9 +39,9 @@ export const AboutPage: React.FC = () => {
 			<li><s>Delay one render on route switching</s></li>
 			<li><s>Add icons to example routing (arrow back, article, user)</s></li>
 			<li>Replace unnecessary observers with useLocation/useXXX hooks</li>
-			<li>Replace .Less vars with CSS vars</li>
-			<li>Order in @media files</li>
-			<li>In-page navigation with Title</li>
+			<li><s>Replace .Less vars with CSS vars</s></li>
+			<li><s>Order in @media files</s></li>
+			<li><s>In-page navigation with Title</s></li>
 			<li>npm run dry</li>
 			<li>Roadmap page</li>
 			<li>i18n</li>

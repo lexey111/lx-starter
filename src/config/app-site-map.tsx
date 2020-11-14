@@ -176,6 +176,7 @@ export const AppSiteMap: TRouteMappingItems = [
 	{
 		url: '/custom',
 		isLateral: true,
+		title: 'Custom menu item',
 		menuItem: <CustomMenuItem/>,
 		topPanel: <CustomPageTopPanel/>,
 		page: <CustomPage/>

@@ -7,6 +7,70 @@
 			height: unset;
 		}
 
+		.app-menu-item {
+			.app-menu-sub-items {
+				opacity: 0;
+				max-height: 0;
+				overflow: hidden;
+				pointer-events: none;
+				background-color: var(--app-menu-background);
+				transition: all .2s ease;
+				padding: 1px 2px 1px 16px;
+
+				.app-menu-sub-item {
+					height: var(--app-menu-height);
+					display: flex;
+					align-items: center;
+					transition: all .2s ease;
+					padding: 0 8px;
+					background-color: var(--app-menu-background);
+					border-right: 2px solid var(--app-menu-background);
+
+					&.active {
+						font-weight: bold;
+						background-color: var(--app-menu-current-background);
+						color: var(--app-menu-current-color);
+						border-right: 2px solid var(--app-accent-background);
+
+						&:after {
+							content: '';
+							position: absolute;
+						}
+					}
+
+					&:hover {
+						border-color: transparent !important;
+					}
+				}
+			}
+
+			&.current {
+				position: relative;
+
+				&:before {
+					// indicator
+					content: '';
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					height: 100%;
+					left: 0;
+					width: 2px;
+					background-color: var(--app-accent-background);
+				}
+			}
+
+			&.current, &:focus, &:focus-within {
+				background-color: var(--app-menu-current-background);
+
+				.app-menu-sub-items {
+					opacity: 1;
+					max-height: 2000px;
+					pointer-events: all;
+				}
+			}
+		}
+
 		.app-menu-item.with-subroutes {
 			&:after {
 				// triangle
