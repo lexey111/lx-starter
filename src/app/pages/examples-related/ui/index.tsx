@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {A} from '../../../engine/ui-components/example-related/a-component';
 import {Src} from '../../../engine/ui-components/example-related/src-component';
+import {ThemeSwitcher} from '../../../engine/ui-components/example-related/theme-switcher-component';
 import {Title} from '../../../engine/ui-components/general/typography/title-component';
 
 export const UiPage: React.FC = () => {
@@ -52,8 +53,10 @@ export const UiPage: React.FC = () => {
 		</p>
 
 		<p>
-			And, of course, there is <Link to={'/ui/theming'}>theme engine</Link> here.
+			And, of course, there is <Link to={'/ui/theming'}>theme engine</Link> here:
 		</p>
+
+		<ThemeSwitcher/>
 
 	</>;
 };
