@@ -1,11 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {FileList} from '../../../../engine/ui-components/examples-related/filelist-component';
 import {Src} from '../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Tag} from '../../../../engine/ui-components/examples-related/tag-component';
 import {ThemeSwitcher} from '../../../../engine/ui-components/examples-related/theme-switcher-component';
-import {IconFile} from '../../../../engine/ui-components/general/icons/icon-file-component';
-import {IconFolder} from '../../../../engine/ui-components/general/icons/icon-folder-component';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 
 const StoreLink = (): JSX.Element => <Link to={'/state-management/app-state'}>AppState Store</Link>;
@@ -293,21 +292,22 @@ if (!storedTheme || storedTheme === 'default') {
 
 		<Title level={2} nav={'hwo_to_create'}>How to create a theme</Title>
 		<p>
-			With all aforementioned it is simple.
+			With all aforementioned it is simple:
 		</p>
-		<pre className={'example-filestructure'}>
-<IconFolder/>{`src
-	`}<IconFolder/> {`app
-		`}<IconFolder/> {`store
-			`}<IconFolder/> {`app-state
-				`}<IconFile/><b>app-state-store.ts</b> <i>- AvailableThemes </i>{`
-	`}<IconFolder/> {`static
-		`}<IconFile/><b>index.html</b> <i>- pre-init</i>{`
-	`}<IconFolder/> {`styles
-		`}<IconFolder/> {`themes
-			`}<IconFile/><b>themes.less</b> <i>- add theme attachment</i>{`
-			`}<IconFile/><b>default.less</b> <i>- create theme by example</i>
-</pre>
+
+		<FileList data={`[src]
+	[app]
+		[store]
+			[app-state]
+				app-state-store.ts - (4) AvailableThemes = ['default', 'light', 'dark', 'cool'] as const;
+	[static]
+		index.html - (5) pre-init
+	[styles]
+		[themes]
+			themes.less - (3) add theme attachment
+			default.less - (1) create theme file using this file as a template
+			*cool.less - (2) assign colors
+`}/>
 
 		<ol>
 			<li>

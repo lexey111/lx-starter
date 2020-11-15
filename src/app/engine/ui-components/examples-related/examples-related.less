@@ -135,8 +135,9 @@
 
 pre.example-filestructure {
 	padding: 1em;
-	background-color: var(--app-background-darken);
-	color: var(--app-header-color);
+	background-color: #2d3034;
+	box-shadow: 0 0 1px rgba(0, 0, 0, .2);
+	color: #7ec699;
 	white-space: pre;
 	word-break: normal;
 	tab-size: 1em;
@@ -144,13 +145,45 @@ pre.example-filestructure {
 	vertical-align: middle;
 
 	.app-icon {
-		fill: var(--app-primary-background);
+		fill: #7ec699;
 		margin-right: .4em;
 		vertical-align: middle;
 	}
 
-	i {
-		color: var(--app-remark-color);
+	.folder {
+		color: #fff;
+
+		.app-icon {
+			fill: #fff;
+		}
+	}
+
+	.highlighted {
+		background-color: #40464e;
+		color: #eeff00;
+
+		.app-icon {
+			fill: #eeff00;
+		}
+	}
+
+	.comment {
+		color: #999;
+		font-size: var(--app-small-font-size);
+		font-style: italic;
+		margin-left: 1em;
+		border: 1px solid #555;
+		border-radius: 3px;
+		background-color: #444;
+		padding: 2px 4px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+
+		&.important {
+			background-color: #0188ff;
+			border-color: #0188ff;
+			color: #fff;
+			font-weight: bold;
+		}
 	}
 }
 

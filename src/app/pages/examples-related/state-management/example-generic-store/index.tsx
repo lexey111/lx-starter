@@ -7,7 +7,7 @@ import {PeopleExampleComponent} from './people-component';
 
 export const StateGenericStorePage: React.FC = () => {
 	return <>
-		<Title>Generic State store</Title>
+		<Title>Generic usage</Title>
 
 		<Title level={2} nav={'overview'}>Overview</Title>
 		<p>
@@ -145,11 +145,8 @@ export function _resetData<T, U>(target: T, initialData: U): void {...}`}/>
 
 		<Title level={3} nav={'list-of-persons'}>List of persons</Title>
 		<p>
-			Here is a fake dataset, <Src inline src={'src/app/page/state-management/example-generic-store/people-fake-data.ts'}></Src>.
-		</p>
-
-		<p>
-			Let's assume we have got the data from an backend API.
+			Here is a fake dataset, <Src inline src={'src/app/pages/examples-related/state-management/example-generic-store/people-fake-data.ts'}></Src>, but let's
+			assume we have got the data from an backend API.
 		</p>
 
 		<p>
@@ -164,7 +161,7 @@ export function _resetData<T, U>(target: T, initialData: U): void {...}`}/>
 		</p>
 
 		<SyntaxHighlight
-			title={'src/app/page/state-management/example-generic-store/people-component.tsx'}
+			title={'src/app/pages/examples-related/state-management/example-generic-store/people-component.tsx'}
 			content={`function findPersonById(id?: string): TPerson | undefined {
 	return id
 		? PeopleFakeData.find(person => person.id === id)
@@ -194,7 +191,7 @@ const setCurrentPerson = useCallback((id?: string): void => {
 	}
 }, [setCurrentPersonId]);
 ...
-// src/app/pages/state-management/example-generic-store/people-list-component.tsx
+// src/app/pages/examples-related/state-management/example-generic-store/people-list-component.tsx
 // simplified
 ...
 <tr
@@ -222,7 +219,7 @@ const setCurrentPerson = useCallback((id?: string): void => {
 
 		<SyntaxHighlight
 			lines={[4, 5, 6, 7, 8, 9, 10, 11, 12, 28, 34, 35]}
-			title={'src/app/page/state-management/example-generic-store/person-card-component.tsx'}
+			title={'src/app/pages/examples-related/state-management/example-generic-store/person-card-component.tsx'}
 			content={`import {observer} from 'mobx-react';
 import React from 'react';
 import {AppPersonStore} from '../../../store/@store';
@@ -292,7 +289,7 @@ export const PersonCardComponent: React.FC<TPersonCardComponentProps> =
 
 		<SyntaxHighlight
 			lines={[10, 17]}
-			title={'src/app/page/state-management/example-generic-store/fields/input-first-component.tsx'}
+			title={'src/app/pages/examples-related/state-management/example-generic-store/fields/input-first-component.tsx'}
 			content={`import {observer} from 'mobx-react';
 import React, {useCallback} from 'react';
 import {AppPersonStore} from '../../../../store/@store';

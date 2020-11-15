@@ -120,5 +120,21 @@ export default class CAppExampleTodoStoreItem implements TAppExampleStoreItem {
 	}
 }`}/>
 
+		<Title level={2} nav={'components'}>Components</Title>
+
+		<p>
+			There are two components, <Src src={'src/app/pages/examples-related/state-management/example-todo-store/todo-list-component.tsx'} inline/> and <Src
+			src={'src/app/pages/examples-related/state-management/example-todo-store/todo-list-item-component.tsx'} inline/>.
+		</p>
+
+		<p>
+			First one displays the list of items and provides list level actions, like edit record, add new item, remove item.
+			Second one is the card component which edits current item (assigned by List component) in modal window.
+		</p>
+
+		<p>
+			They are relatively simple but long enough to just make reference without demonstrating source code right here.
+		</p>
+
 	</>;
 };

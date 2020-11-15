@@ -32,7 +32,7 @@ export const AboutPage: React.FC = () => {
 					<li>Layout: main menu</li>
 					<li><s>State management: app</s></li>
 					<li>Auth state, login/logout/guards</li>
-					<li>State management: data example</li>
+					<li><s>State management: data example</s></li>
 					<li>Breadcrumbs actions</li>
 				</ul>
 			</li>
@@ -44,8 +44,6 @@ export const AboutPage: React.FC = () => {
 			<li><s>In-page navigation with Title</s></li>
 			<li>npm run dry</li>
 			<li>Roadmap page</li>
-			<li>i18n</li>
-			<li>validation</li>
 		</ul>
 	</>;
 };
