@@ -1,12 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Src} from '../../../engine/ui-components/example-related/src-component';
-import {SyntaxHighlight} from '../../../engine/ui-components/example-related/syntax-highlight';
-import {Tag} from '../../../engine/ui-components/example-related/tag-component';
-import {ThemeSwitcher} from '../../../engine/ui-components/example-related/theme-switcher-component';
-import {IconFile} from '../../../engine/ui-components/general/icons/icon-file-component';
-import {IconFolder} from '../../../engine/ui-components/general/icons/icon-folder-component';
-import {Title} from '../../../engine/ui-components/general/typography/title-component';
+import {Src} from '../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
+import {Tag} from '../../../../engine/ui-components/examples-related/tag-component';
+import {ThemeSwitcher} from '../../../../engine/ui-components/examples-related/theme-switcher-component';
+import {IconFile} from '../../../../engine/ui-components/general/icons/icon-file-component';
+import {IconFolder} from '../../../../engine/ui-components/general/icons/icon-folder-component';
+import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 
 const StoreLink = (): JSX.Element => <Link to={'/state-management/app-state'}>AppState Store</Link>;
 const StoreFile = 'src/app/store/app-state/app-state-store.ts';
@@ -17,18 +17,19 @@ export const ThemingPage: React.FC = () => {
 		<Title>Theming</Title>
 		<Title level={3} nav={'principles'}>Basic principles</Title>
 		<p>
-			At the moment, application includes 3 themes: default, dark and light.
+			At the moment application includes 3 themes: default, dark and light.
 		</p>
 		<p>
 			Available themes are declared in the <Src src={StoreFile} inline/>:
 		</p>
+
 		<SyntaxHighlight
 			title={StoreFile}
 			content={`export const AvailableThemes = ['default', 'light', 'dark'] as const;
 type TypeOfAvailableThemes = typeof AvailableThemes[number];
 `}/>
 		<p>
-			Technically, all the themes are just mapping of .Less variables to CSS variables. There
+			Technically all the themes are just mapping of .LESS variables to CSS variables. There
 			is <Src src={'src/styles/themes/themes.less'} inline/> file which does all the magic:
 		</p>
 
@@ -54,18 +55,18 @@ body.theme-light {
 ...`}/>
 
 		<p>
-			You can see here importing of mixins with the .Less variables (1, 2), then <i>mapping file</i> (5) and, then,
+			You can see here importing of mixins with the .LESS variables (1, 2), then <i>mapping file</i> (5) and, then,
 			constructing the theme (8, 9).
 		</p>
 
 		<p>
-			In the end, theme is the set of CSS variables under specific class selector assigned to <Tag>body</Tag>:
+			In the end, a theme is a set of CSS variables under specific class selector assigned to <Tag>body</Tag>:
 			<code>body.theme-default</code>, <code>body.theme-light</code> etc.
 		</p>
 
 		<Title level={3} nav={'variables'}>Declaring variables</Title>
 		<p>
-			Content of theme file is pretty simple: it just a mixin with name like <code>.theme-%name%()</code>:
+			Content of a theme file is pretty simple. It is just a <i>mixin</i> with name like <code>.theme-%name%()</code>:
 		</p>
 		<SyntaxHighlight
 			language={'less'}
@@ -81,7 +82,7 @@ body.theme-light {
 	@app-accent-color: #305372;
 ...`}/>
 		<p>
-			In the <Src src={'theme.less'} inline/> file I include these variables under appropriate <code>body</code> class (5):
+			In the <Src src={'theme.less'} inline/> file I import these variables under appropriate <code>body</code> class (5):
 		</p>
 
 		<SyntaxHighlight
@@ -108,7 +109,7 @@ body.theme-default {
 ...
 }`}/>
 		<p>
-			Such simple trick allows to have kind of 'namespaces' and reuse mapper for all themes. Of course,
+			Such simple trick allows to have kind of 'namespaces' and to reuse mapper for any theme. Of course,
 			there could be more complicated tricks to generate the
 		</p>
 
@@ -121,12 +122,12 @@ body.theme-default {
 }`}/>
 		<p>
 			files, including just straightforward declaration of values, but I'm trying to do not use complicated
-			things that are based on .Less to keep, e.g., replacement Less to Sass as simple as possible.
+			LESS features to keep, e.g., replacement LESS to SASS as simple as possible.
 		</p>
 
 		<Title level={3} nav={'applying'}>Applying the variables</Title>
 		<p>
-			Then, variables declared in the <i>mapper</i>, could be used in the stylesheets:
+			Then variables declared in the <i>mapper</i> could be used in the stylesheets:
 		</p>
 
 		<SyntaxHighlight
@@ -144,12 +145,13 @@ body.theme-default {
 `}/>
 		<Title level={3} nav={'where_is_less'}>Where is .Less?</Title>
 		<p>
-			I use .Less files for local stylesheets because I like .Less, but there are very few spots to change
-			to replace it with .Sass, or Stylus, or native.
+			I use .LESS files for local stylesheets (because I prefer LESS), but there are very few spots to change
+			to replace it with SASS, or Stylus, or native.
 		</p>
 
 		<p>
-			First, themes are .Less files. But they are pretty simple and could be replaced easily, even with native CSS.
+			First, themes themselves, which are the .LESS files. But they are pretty simple and could be replaced easily,
+			even with native CSS.
 		</p>
 
 		<p>
@@ -163,15 +165,16 @@ body.theme-default {
 @app-media-max-page-width: 1200px;
 ...`}/>
 		<p>
-			Feel free to tune.
+			Feel free to tune, btw.
 		</p>
 
-		<p>Due to CSS variables restrictions, they can not be used as a values in media queries. This is the reason why
-			local <code>@*-media</code> files need to import these declarations:
+		<p>Due to CSS variables restrictions they can not be used as a values in media queries. This is the reason why
+			local <code>@*-media</code> files need to import these declarations (1):
 		</p>
 
 		<SyntaxHighlight
 			language={'less'}
+			lines={1}
 			title={'src/app/engine/layout/main-menu/styles/@main-menu-side-media.less'}
 			content={`@import "../../../../../styles/@media.less";
 
@@ -212,15 +215,14 @@ if (!storedTheme || storedTheme === 'default') {
 		</p>
 
 		<p>
-			Next step, after application started, is initialization
-			of <StoreLink/> &mdash; see below. In short,
+			Next step, after application started, is initialization of <StoreLink/> &mdash; see below. In short,
 			the Store reads the same value from <code>localStorage</code> and, if value valid, assigns it to observable field.
 		</p>
 
 		<Title level={4} nav={'storing'}>Storing the theme</Title>
 		<p>
-			There is very simple component <Tag>ThemeSwitcher</Tag>. Just a set of <Link to={'/ui/data-entry#radio'}>radio buttons</Link>,
-			try it:
+			There is very simple component <Tag>ThemeSwitcher</Tag>.
+			Just a set of <Link to={'/ui/data-entry#radio'}>radio buttons</Link>, try it:
 		</p>
 
 		<div className={'example-component-container'}>
@@ -247,27 +249,42 @@ if (!storedTheme || storedTheme === 'default') {
 `}/>
 		<Title level={4} nav={'switching'}>Switching the theme</Title>
 		<p>
-			And, last but not least, is applying appropriate class to <Tag>body</Tag>. As usual, straightforward way:
+			And, last but not least, is applying appropriate class to <Tag>body</Tag>. As usual, straightforward way &mdash;
 			right in the <Src src={'app/@app.tsx'} inline/> file:
 		</p>
 
 		<SyntaxHighlight
 			title={'src/app/@app.tsx'}
-			lines={[4, 5, 6, 8]}
-			content={`export const App: React.FC = observer(() => {
+			lines={3}
+			content={`export const App: React.FC = () => {
+	return <Router>
+		<ThemeToMarkupComponent/>
+		<RouteToStoreComponent/>
+...`}/>
+		<p>
+			When theme name changed in the <StoreLink/> it
+			reacts, removes all the theme-related classes from the <Tag>body</Tag> and adds actual one.
+		</p>
+
+		<p>
+			The component itself:
+		</p>
+
+		<SyntaxHighlight
+			title={'src/app/engine/layout/theme-to-markup-component.tsx'}
+			content={`export const ThemeToMarkupComponent: React.FC = observer(() => {
 	useEffect(() => {
 		// subscribe to theme changes and apply current theme to body
 		AvailableThemes.forEach(t => {
 			window.document.body.classList.remove('theme-' + t);
 		});
-
 		window.document.body.classList.add('theme-' + AppStateStore.theme);
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppStateStore.theme]);
-...`}/>
-		<p>
-			When theme name changed in the <StoreLink/> it
-			reacts, removes all the theme-related classes from the <Tag>body</Tag> (4-6) and adds actual one (8).
-		</p>
+
+	return null;
+});`}/>
 
 		<p>
 			That's it. Very little of React, only <StoreLink/> to make things a bit more

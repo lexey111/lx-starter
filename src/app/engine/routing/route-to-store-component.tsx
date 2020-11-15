@@ -20,6 +20,5 @@ export const RouteToStoreComponent: React.FC = () => {
 		}
 	}, [location]);
 
-	return <div>
-	</div>;
+	return null;
 };

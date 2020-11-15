@@ -1,5 +1,5 @@
 import React from 'react';
-import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
+import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
 import useLocationParams from '../../../../engine/hooks/use-location-params';
 import {AppStateStore} from '../../../../store/@stores';
 

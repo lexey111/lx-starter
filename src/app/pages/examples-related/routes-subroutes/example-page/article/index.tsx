@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {LipsumPara} from '../../../../../engine/ui-components/example-related/lipsum';
+import {LipsumPara} from '../../../../../engine/ui-components/examples-related/lipsum';
 import {IconArrowLeft} from '../../../../../engine/ui-components/general/icons/icon-arrow-left-component';
 import {IconFile} from '../../../../../engine/ui-components/general/icons/icon-file-component';
 import {Title} from '../../../../../engine/ui-components/general/typography/title-component';

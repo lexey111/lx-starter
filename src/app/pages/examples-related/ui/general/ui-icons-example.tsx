@@ -11,7 +11,7 @@ import {IconSettings} from '../../../../engine/ui-components/general/icons/icon-
 import {IconSpinner} from '../../../../engine/ui-components/general/icons/icon-spinner-component';
 import {IconStar} from '../../../../engine/ui-components/general/icons/icon-star-component';
 import {IconUser} from '../../../../engine/ui-components/general/icons/icon-user-component';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/example-related/syntax-example-tabs';
+import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
 
 const Markup = `<IconUser/>
 <IconStar/>

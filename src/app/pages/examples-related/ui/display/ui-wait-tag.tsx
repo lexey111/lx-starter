@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import {WaitTag} from '../../../../engine/ui-components/display/wait/wait-tag-component';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/example-related/syntax-example-tabs';
+import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
 import {Button} from '../../../../engine/ui-components/general/button/button-component';
 
 const Markup = `<p>

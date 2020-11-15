@@ -2,8 +2,8 @@ import {observer} from 'mobx-react';
 import React, {useCallback} from 'react';
 import {Checkbox} from '../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
 import {SimpleModal} from '../../../../engine/ui-components/display/wait/simple-modal-component';
-import {Src} from '../../../../engine/ui-components/example-related/src-component';
-import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
+import {Src} from '../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Button} from '../../../../engine/ui-components/general/button/button-component';
 import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../../store/@stores';
 

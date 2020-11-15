@@ -1,5 +1,5 @@
 import React from 'react';
-import {Src} from '../../../../engine/ui-components/example-related/src-component';
+import {Src} from '../../../../engine/ui-components/examples-related/src-component';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 import {UiCheckboxExample} from './ui-checkbox-example';
 import {UiRadioExample} from './ui-radio-example';

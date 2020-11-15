@@ -1,6 +1,6 @@
 import React from 'react';
-import {Src} from '../../../../engine/ui-components/example-related/src-component';
-import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
+import {Src} from '../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 import {TodoListExample} from './todo-list-component';
 

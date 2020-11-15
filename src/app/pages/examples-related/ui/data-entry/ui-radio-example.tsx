@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-bind */
 import React, {useState} from 'react';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/example-related/syntax-example-tabs';
+import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
 import {Radio, RadioGroup} from '../../../../engine/ui-components/data-entry/radio-button/radio-group-component';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {A} from '../../../engine/ui-components/example-related/a-component';
-import {Src} from '../../../engine/ui-components/example-related/src-component';
-import {ThemeSwitcher} from '../../../engine/ui-components/example-related/theme-switcher-component';
+import {A} from '../../../engine/ui-components/examples-related/a-component';
+import {Src} from '../../../engine/ui-components/examples-related/src-component';
+import {ThemeSwitcher} from '../../../engine/ui-components/examples-related/theme-switcher-component';
 import {Title} from '../../../engine/ui-components/general/typography/title-component';
 
 export const UiPage: React.FC = () => {
@@ -10,16 +10,15 @@ export const UiPage: React.FC = () => {
 
 		<Title>UI components</Title>
 
-		<Title level={2}>Overview</Title>
 		<p>
 			The Starter application includes a few simple UI components &mdash; only needed to display the application and
 			examples itself.
 		</p>
 
 		<p>
-			Please use your favorite UI kit, or add separate UI components from different source. Internal
-			components are designed to be minimalistic and have no external dependencies, so feel free to
-			remove them all (especially <Src src={'src/app/engine/ui-components/example-related'} inline/> folder)
+			Please use your favorite UI kit, or add separate UI components from different sources. Internal
+			components are designed to be minimalistic and to have no external dependencies, so feel free to
+			remove them all (especially <Src src={'src/app/engine/ui-components/examples-related'} inline/> folder)
 			and replace with anything you do prefer.
 		</p>
 
@@ -53,10 +52,16 @@ export const UiPage: React.FC = () => {
 		</p>
 
 		<p>
-			And, of course, there is <Link to={'/ui/theming'}>theme engine</Link> here:
+			And, of course, there is a theme engine:
 		</p>
 
-		<ThemeSwitcher/>
+		<div className={'example-component-container'}>
+			<ThemeSwitcher/>
+		</div>
+
+		<p>
+			See how it works <Link to={'/ui/theming'}>here</Link>.
+		</p>
 
 	</>;
 };

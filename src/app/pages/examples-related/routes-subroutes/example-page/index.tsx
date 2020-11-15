@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {A} from '../../../../engine/ui-components/example-related/a-component';
-import {Src} from '../../../../engine/ui-components/example-related/src-component';
-import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
-import {Tag} from '../../../../engine/ui-components/example-related/tag-component';
+import {A} from '../../../../engine/ui-components/examples-related/a-component';
+import {Src} from '../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
+import {Tag} from '../../../../engine/ui-components/examples-related/tag-component';
 import {Button} from '../../../../engine/ui-components/general/button/button-component';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 

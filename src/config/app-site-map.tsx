@@ -29,7 +29,7 @@ import {StatePage} from '../app/pages/examples-related/state-management';
 import {StateMainStorePage} from '../app/pages/examples-related/state-management/app-state';
 import {StateGenericStorePage} from '../app/pages/examples-related/state-management/example-generic-store';
 import {ExampleTodoStorePage} from '../app/pages/examples-related/state-management/example-todo-store';
-import {ThemingPage} from '../app/pages/examples-related/theming';
+import {ThemingPage} from '../app/pages/examples-related/ui/theming';
 import {UiPage} from '../app/pages/examples-related/ui';
 import {UiDataEntryPage} from '../app/pages/examples-related/ui/data-entry';
 import {UiDisplayPage} from '../app/pages/examples-related/ui/display';

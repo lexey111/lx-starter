@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-bind */
-import {observer} from 'mobx-react';
-import React, {useEffect} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {AppBreadcrumbs} from './engine/layout/breadcrumbs/breadcrumbs-component';
 import {AppFooter} from './engine/layout/footer/footer-component';
@@ -9,12 +8,12 @@ import {AppAuthPage} from './engine/layout/page/app-auth-page-component';
 import {AppContainer} from './engine/layout/page/app-container-component';
 import {AppPage} from './engine/layout/page/app-page-component';
 import {AppPageNavigation} from './engine/layout/page/navigation/app-page-navigation-component';
+import {ThemeToMarkupComponent} from './engine/layout/theme-to-markup-component';
 import {AppTopPanel} from './engine/layout/top-panel/app-top-panel-component';
 import {RouteMapping} from './engine/routing/route-mapping';
 import {TRouteMappingItem} from './engine/routing/route-mapping-interface';
 import {RouteToStoreComponent} from './engine/routing/route-to-store-component';
 import {AppStateStore} from './store/@stores';
-import {AvailableThemes} from './store/app-state/app-state-store';
 
 const AppRoutes = RouteMapping.map((routeItem: TRouteMappingItem, idx: number) => {
 	if (!routeItem.url) {
@@ -36,18 +35,9 @@ const AppRoutes = RouteMapping.map((routeItem: TRouteMappingItem, idx: number) =
 		}/>;
 });
 
-export const App: React.FC = observer(() => {
-	useEffect(() => {
-		// subscribe to theme changes and apply current theme to body
-		AvailableThemes.forEach(t => {
-			window.document.body.classList.remove('theme-' + t);
-		});
-		window.document.body.classList.add('theme-' + AppStateStore.theme);
-
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [AppStateStore.theme]);
-
+export const App: React.FC = () => {
 	return <Router>
+		<ThemeToMarkupComponent/>
 		<RouteToStoreComponent/>
 
 		<AppTopPanel/>
@@ -66,4 +56,4 @@ export const App: React.FC = observer(() => {
 
 		<AppFooter/>
 	</Router>;
-});
+};

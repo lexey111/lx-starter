@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Checkbox} from '../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/example-related/syntax-example-tabs';
+import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
 import {IconStar} from '../../../../engine/ui-components/general/icons/icon-star-component';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 

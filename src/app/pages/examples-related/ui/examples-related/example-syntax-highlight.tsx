@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-concat */
 import React from 'react';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/example-related/syntax-example-tabs';
-import {SyntaxHighlight} from '../../../../engine/ui-components/example-related/syntax-highlight';
+import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
+import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 
 const Markup = '<SyntaxHighlight content={' + '`' + `const a = 42;
