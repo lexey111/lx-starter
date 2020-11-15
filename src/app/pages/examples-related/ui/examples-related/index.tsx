@@ -10,27 +10,27 @@ import {ExampleSyntaxHighlight} from './example-syntax-highlight';
 
 export const UiExampleComponentsPage: React.FC = () => {
 	return <>
-		<Title>Examples-related components</Title>
+		<Title nav={'examples_related'} navTitle={'Overview'}>Examples-related components</Title>
 
 		<p>
 			The component that are used to display different examples and documentation.
 		</p>
 
 		<p>They are localed in <Src
-			src={'src/app/ui-components/ui/examples-related'}
+			src={'src/app/engine/ui-components/examples-related'}
 			inline/> folder, so during the preparation to real usage feel free to remove entire folder and cleanup leftovers.
 			E.g., stylesheet attachment:
 		</p>
 
 		<SyntaxHighlight
-			title={'src/app/ui-components/ui-components.less'}
+			title={'src/app/engine/ui-components/components.less'}
 			language={'less'}
-			content={'@import "ui/examples-related/examples-related.less";'}/>
+			content={'@import "examples-related/examples-related.less";'}/>
 
-		<Title level={4} nav={'not-mentioned'}>Not mentioned</Title>
+		<Title level={4} nav={'not_mentioned'}>Not mentioned</Title>
 		<p>
 			A few components are not mentioned here,
-			like <Tag>SourceFile</Tag>, <Tag>A</Tag>, <Tag>Tag</Tag> and <Tag>ThemeSwitcher</Tag>.
+			like <Tag>Src</Tag>, <Tag>A</Tag>, <Tag>Tag</Tag> and <Tag>ThemeSwitcher</Tag>.
 		</p>
 
 		<p>
@@ -39,8 +39,8 @@ export const UiExampleComponentsPage: React.FC = () => {
 
 		<hr/>
 
-		<Title level={3} nav={'lorem-ipsum'}>Lorem Ipsum</Title>
-		<Src src={'src/app/ui-components/ui/examples-related/lipsum.tsx'}/>
+		<Title level={3} nav={'lorem_ipsum'}>Lorem Ipsum</Title>
+		<Src src={'src/app/engine/ui-components/examples-related/lipsum.tsx'}/>
 		<p>
 			This is "Lorem Ipsum" text generator. It based on <A href={'https://github.com/knicklabs/lorem-ipsum.js#readme'}>lorem-ipsum</A> NPM package, so please
 			do not forget to remove this dependency from <code>package.json</code> during the project preparation.
@@ -48,8 +48,8 @@ export const UiExampleComponentsPage: React.FC = () => {
 
 		<ExampleLipsum/>
 
-		<Title level={3} nav={'syntax-highlight'}>Syntax highlight</Title>
-		<Src src={'src/app/ui-components/ui/examples-related/syntax-highlight.tsx'}/>
+		<Title level={3} nav={'syntax_highlight'}>Syntax highlight</Title>
+		<Src src={'src/app/engine/ui-components/examples-related/syntax-highlight.tsx'}/>
 		<p>
 			The component display "highlighted" text. It build upon <A href={'https://prismjs.com/'}>Prism.js</A> library and is able to display a lot of
 			languages.
@@ -59,14 +59,14 @@ export const UiExampleComponentsPage: React.FC = () => {
 			Do not forget to remove 3rd-party files on preparation:
 		</p>
 		<ul>
-			<li><Src inline src={'src/app/ui-components/ui/examples-related/prism.css'}/></li>
-			<li><Src inline src={'src/app/ui-components/ui/examples-related/prism.js'}/></li>
+			<li><Src inline src={'src/app/engine/ui-components/examples-related/prism.css'}/></li>
+			<li><Src inline src={'src/app/engine/ui-components/examples-related/prism.js'}/></li>
 		</ul>
 
 		<ExampleSyntaxHighlight/>
 
-		<Title level={3} nav={'example tabs'}>Example tabs</Title>
-		<Src src={'src/app/ui-components/ui/examples-related/syntax-example-tabs.tsx'}/>
+		<Title level={3} nav={'example_tabs'}>Example tabs</Title>
+		<Src src={'src/app/engine/ui-components/examples-related/syntax-example-tabs.tsx'}/>
 		<p>
 			A composition of <code>&lt;SyntaxHighlight&gt;</code> and <code>&lt;Tabs&gt;</code> components.
 		</p>

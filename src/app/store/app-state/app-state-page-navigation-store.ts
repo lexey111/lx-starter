@@ -3,9 +3,9 @@ import {makeAutoObservable} from 'mobx';
 export type TNavigationItem = {
 	title: string
 	targetId: string
-	titleRef: HTMLDivElement
+	anchorRef: HTMLDivElement
 
-	YPos?: number
+	YPos: number
 	partiallyVisible?: boolean
 	current?: boolean
 };
@@ -27,6 +27,15 @@ export default class CAppPageNavigationStore {
 	register = (anchor: TNavigationItem): void => {
 		if (this.items.find(x => x.targetId === anchor.targetId)) {
 			return;
+		}
+		if (!anchor.targetId) {
+			return;
+		}
+		if (anchor.targetId.includes(' ')) {
+			throw new Error(`Whitespace symbol in the target ID: ${anchor.targetId}`);
+		}
+		if (anchor.targetId.includes('#')) {
+			throw new Error(`# symbol in the target ID: ${anchor.targetId}`);
 		}
 		this.items.push({...anchor});
 	};

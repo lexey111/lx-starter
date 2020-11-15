@@ -22,7 +22,8 @@ export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 		if (targetId && elRef.current) {
 			AppPageNavigationStore.register({
 				targetId,
-				titleRef: elRef.current,
+				YPos: 0,
+				anchorRef: elRef.current,
 				title: props.navTitle || props.children as string
 			});
 		}
@@ -43,8 +44,7 @@ export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 		+ (props.noTopMargin ? ' no-top-margin' : '')
 		+ (hasSubtitle ? ' with-subtitle' : '')
 		+ (props.nav ? ' with-nav-target' : '')
-		+ (props.className ? ' ' + props.className : '')}
-		data-nav-target={props.nav}>
+		+ (props.className ? ' ' + props.className : '')}>
 
 		{props.nav && <CustomHeader data-nav-target={props.nav}>
 			{props.children}

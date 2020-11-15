@@ -33,7 +33,7 @@ export const sortAnchors = (anchors: TNavigationItems, extraTopPadding: number):
 	// update Y pos and sort - item could be added dynamically
 	// so order is invalid
 	anchors.forEach(item => {
-		item.YPos = item.titleRef.offsetTop;
+		item.YPos = item.anchorRef.offsetTop;
 	});
 	anchors.sort((a, b) => a.YPos - b.YPos);
 

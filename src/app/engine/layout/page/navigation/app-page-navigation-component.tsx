@@ -10,14 +10,13 @@ function scrollToHash(smooth?: boolean): void {
 	}
 
 	const target = window.location.hash.substring(1);
-
 	if (!target) {
 		return;
 	}
 
 	const element = document.querySelector('[data-nav-target="' + target + '"]');
 	const offset = (element as HTMLDivElement)?.offsetTop;
-	if (!offset) {
+	if (typeof offset === 'undefined') {
 		return;
 	}
 
@@ -28,12 +27,6 @@ function scrollToHash(smooth?: boolean): void {
 }
 
 let ticking = false;
-
-// function updateAnchorsVisibility(anchors: TNavigationItems): void {
-// 	anchors.forEach(anchor => {
-// 		anchor.isInViewPort = isElementInViewport(anchor.titleRef);
-// 	}, []);
-// }
 
 export const AppPageNavigation: React.FC = observer(() => {
 	const appLocation = useLocationParams();
