@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {AppPageNavigationStore} from '../../../../store/@stores';
 
 type TTitleProps = {
@@ -14,14 +14,16 @@ type TTitleProps = {
 
 export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 	const CustomHeader: any = `h${props.level || 1}`;
+	const elRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		const targetId = props.nav;
 
-		if (targetId) {
+		if (targetId && elRef.current) {
 			AppPageNavigationStore.register({
 				targetId,
-				isActive: false,
+				titleRef: elRef.current,
+				isInViewPort: false,
 				title: props.navTitle || props.children as string
 			});
 		}
@@ -31,15 +33,19 @@ export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 			}
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+	}, [elRef]);
 
 	const hasSubtitle = Boolean(props.subTitle);
 
-	return <div className={'app-title app-title-level-' + (props.level ? props.level.toString() : '1')
-	+ (props.bottomBorder ? ' bottom-border' : '')
-	+ (props.noTopMargin ? ' no-top-margin' : '')
-	+ (hasSubtitle ? ' with-subtitle' : '')
-	+ (props.className ? ' ' + props.className : '')}>
+	return <div
+		ref={elRef}
+		className={'app-title app-title-level-' + (props.level ? props.level.toString() : '1')
+		+ (props.bottomBorder ? ' bottom-border' : '')
+		+ (props.noTopMargin ? ' no-top-margin' : '')
+		+ (hasSubtitle ? ' with-subtitle' : '')
+		+ (props.nav ? ' with-nav-target' : '')
+		+ (props.className ? ' ' + props.className : '')}
+		data-nav-target={props.nav}>
 
 		{props.nav && <CustomHeader data-nav-target={props.nav}>
 			{props.children}

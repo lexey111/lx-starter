@@ -221,7 +221,10 @@ if (!storedTheme || storedTheme === 'default') {
 			There is very simple component <Tag>ThemeSwitcher</Tag>. Just a set of <Link to={'/ui/data-entry#radio'}>radio buttons</Link>,
 			try it:
 		</p>
-		<ThemeSwitcher/>
+
+		<div className={'example-component-container'}>
+			<ThemeSwitcher/>
+		</div>
 
 		<p>
 			The component is observer of <StoreLink/> and all it does

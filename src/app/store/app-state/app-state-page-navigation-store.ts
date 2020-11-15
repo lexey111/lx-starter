@@ -3,7 +3,11 @@ import {makeAutoObservable} from 'mobx';
 export type TNavigationItem = {
 	title: string
 	targetId: string
-	isActive: boolean
+	titleRef: HTMLDivElement
+
+	YPos: number
+	partiallyVisible: boolean
+	current: boolean
 };
 
 export type TNavigationItems = Array<TNavigationItem>;

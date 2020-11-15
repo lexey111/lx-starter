@@ -59,9 +59,40 @@
 	.app-page-nav-item {
 		font-size: var(--app-menu-font-size);
 		display: flex;
-		padding: 8px 0;
+		align-items: center;
+		align-content: center;
+		padding: 6px 0 6px 12px;
 		white-space: nowrap;
 		max-width: 200px;
+		position: relative;
+
+		&:after {
+			position: absolute;
+			content: '';
+			left: -1px;
+			top: 0;
+			bottom: 0;
+			width: 1px;
+			background-color: var(--app-background-darken);
+			transition: .2s background-color ease;
+		}
+
+		&.partially-visible {
+			&:after {
+				background-color: var(--app-accent-background);
+			}
+		}
+
+		&.current {
+			&:after {
+				background-color: var(--app-accent-background);
+				width: 5px;
+				left: -3px;
+				border-top: 5px solid var(--app-background);
+				border-bottom: 5px solid var(--app-background);
+				box-sizing: content-box;
+			}
+		}
 	}
 }
 

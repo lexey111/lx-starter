@@ -1,7 +1,8 @@
 import {observer} from 'mobx-react';
-import React, {useEffect} from 'react';
-import useLocationParams from '../../hooks/use-location-params';
-import {AppPageNavigationStore} from '../../../store/@stores';
+import React, {useEffect, useRef} from 'react';
+import {AppPageNavigationStore, AppStateStore} from '../../../../store/@stores';
+import useLocationParams from '../../../hooks/use-location-params';
+import {sortAnchors} from './navigation-utils';
 
 function scrollToHash(smooth?: boolean): void {
 	if (!window.location.hash) {
@@ -26,14 +27,32 @@ function scrollToHash(smooth?: boolean): void {
 	});
 }
 
+let ticking = false;
+
+// function updateAnchorsVisibility(anchors: TNavigationItems): void {
+// 	anchors.forEach(anchor => {
+// 		anchor.isInViewPort = isElementInViewport(anchor.titleRef);
+// 	}, []);
+// }
+
 export const AppPageNavigation: React.FC = observer(() => {
 	const appLocation = useLocationParams();
+
+	const destroying = useRef(false);
+
+	useEffect(() => {
+		return () => {
+			destroying.current = true;
+		};
+	}, []);
 
 	useEffect(() => {
 		window.addEventListener('hashchange', scrollToHash as () => void, false);
 
 		const delayedScroll = setTimeout(() => {
-			scrollToHash(true); // initial scroll
+			if (!destroying.current) {
+				scrollToHash(true); // initial scroll
+			}
 		}, 200);
 
 		return () => {
@@ -52,6 +71,23 @@ export const AppPageNavigation: React.FC = observer(() => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppPageNavigationStore.hasItems]);
 
+	useEffect(() => {
+		if (!ticking) {
+			window.requestAnimationFrame(() => {
+				if (destroying.current) {
+					return;
+				}
+				// detect visible nav anchors to highlight them
+				// updateAnchorsVisibility(AppPageNavigationStore.items);
+				sortAnchors(AppPageNavigationStore.items);
+				ticking = false;
+			});
+
+			ticking = true;
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [AppStateStore._yScrollPos]);
+
 	if (!AppPageNavigationStore.hasItems) {
 		return null;
 	}
@@ -61,7 +97,10 @@ export const AppPageNavigation: React.FC = observer(() => {
 			<div className={'app-page-navigation-list'}>
 				{AppPageNavigationStore.items.map(item => {
 					return <div
-						className={'app-page-nav-item'}
+						className={'app-page-nav-item'
+						+ (item.partiallyVisible ? ' partially-visible' : '')
+						+ (item.current ? ' current' : '')
+						}
 						key={item.targetId}>
 						<a href={appLocation.url + '#' + item.targetId}>
 							{item.title}

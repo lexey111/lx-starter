@@ -1,4 +1,4 @@
-import CAppPageNavigationStore from './app-state/app-state-navigation-store';
+import CAppPageNavigationStore from './app-state/app-state-page-navigation-store';
 import CAppStateStore from './app-state/app-state-store';
 import CPeopleStore from './examples/example-people-store/app-example-person';
 import CAppExampleTodoStoreItem from './examples/example-todo-store/app-example-store-item';

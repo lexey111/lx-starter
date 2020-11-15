@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 import {App} from './app/@app';
 
 import {AppStateStore} from './app/store/@stores';
-import {AvailableThemes} from './app/store/app-state/app-state-store';
 import './styles/app.less';
 
 declare const PRODUCTION: boolean; // webpack DefinePlugin
@@ -26,14 +25,6 @@ configure({
 
 let lastKnownScrollPosition = 0;
 let ticking = false;
-
-// restore app theme from the local storage
-const value: string = localStorage.getItem('app-theme') || 'light';
-const theme = AvailableThemes.includes(value) ? value : 'light';
-AvailableThemes.forEach(t => {
-	window.document.body.classList.remove('theme-' + t);
-});
-window.document.body.classList.add('theme-' + theme);
 
 const runApp = (): void => {
 	// subscribe to page scroll (for breadcrumbs component)
