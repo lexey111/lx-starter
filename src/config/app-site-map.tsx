@@ -19,22 +19,22 @@ import {PageMenuPage} from '../app/pages/examples-related/layout/page-menu';
 import {PageNavigationPage} from '../app/pages/examples-related/layout/page-navigation';
 import {TopPanelPage} from '../app/pages/examples-related/layout/top-panel';
 import {RoutingPage} from '../app/pages/examples-related/routes-subroutes';
-import {RoutingMainPage} from '../app/pages/examples-related/routes-subroutes/example-page';
-import {RoutingArticle} from '../app/pages/examples-related/routes-subroutes/example-page/article';
-import {RoutingArticleAuthor} from '../app/pages/examples-related/routes-subroutes/example-page/article-author';
-import {ArticleTitle} from '../app/pages/examples-related/routes-subroutes/example-page/article/article-title-component';
-import {RoutingListOfArticles} from '../app/pages/examples-related/routes-subroutes/example-page/list-of-articles';
-import {AuthorTitle} from '../app/pages/examples-related/routes-subroutes/example-page/list-of-articles/author-title-component';
+import {RoutingMainPage} from '../app/pages/examples-related/routes-subroutes/example-pages';
+import {RoutingArticle} from '../app/pages/examples-related/routes-subroutes/example-pages/article';
+import {RoutingArticleAuthor} from '../app/pages/examples-related/routes-subroutes/example-pages/article-author';
+import {ArticleTitle} from '../app/pages/examples-related/routes-subroutes/example-pages/article/article-title-component';
+import {RoutingListOfArticles} from '../app/pages/examples-related/routes-subroutes/example-pages/list-of-articles';
+import {AuthorTitle} from '../app/pages/examples-related/routes-subroutes/example-pages/list-of-articles/author-title-component';
 import {StatePage} from '../app/pages/examples-related/state-management';
 import {StateMainStorePage} from '../app/pages/examples-related/state-management/app-state';
 import {StateGenericStorePage} from '../app/pages/examples-related/state-management/example-generic-store';
 import {ExampleTodoStorePage} from '../app/pages/examples-related/state-management/example-todo-store';
-import {ThemingPage} from '../app/pages/examples-related/ui/theming';
 import {UiPage} from '../app/pages/examples-related/ui';
 import {UiDataEntryPage} from '../app/pages/examples-related/ui/data-entry';
 import {UiDisplayPage} from '../app/pages/examples-related/ui/display';
 import {UiExampleComponentsPage} from '../app/pages/examples-related/ui/examples-related';
 import {UiGeneralPage} from '../app/pages/examples-related/ui/general';
+import {ThemingPage} from '../app/pages/examples-related/ui/theming';
 import {HomePage} from '../app/pages/home';
 import {HomePageTopPanel} from '../app/pages/home/home-page-top-panel-component';
 
@@ -74,11 +74,6 @@ export const AppSiteMap: TRouteMappingItems = [
 			},
 		]
 	},
-	// {
-	// 	title: 'Main menu',
-	// 	url: '/menu',
-	// 	page: <MenuPage/>,
-	// },
 	{
 		title: 'State',
 		url: '/state-management',
@@ -116,17 +111,17 @@ export const AppSiteMap: TRouteMappingItems = [
 				title: 'Example pages',
 				routes: [
 					{
-						url: '/routing/example-page/list-of-articles',
+						url: '/routing/example-pages/list-of-articles',
 						page: <RoutingListOfArticles/>,
 						title: 'List of articles',
 					},
 					{
-						url: '/routing/example-page/list-of-articles/:articleId',
+						url: '/routing/example-pages/list-of-articles/:articleId',
 						page: <RoutingArticle/>,
 						title: <ArticleTitle/>,
 					},
 					{
-						url: '/routing/example-page/list-of-articles/:articleId/:authorId',
+						url: '/routing/example-pages/list-of-articles/:articleId/:authorId',
 						page: <RoutingArticleAuthor/>,
 						title: <AuthorTitle/>,
 					}

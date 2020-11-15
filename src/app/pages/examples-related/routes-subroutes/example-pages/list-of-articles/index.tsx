@@ -19,7 +19,7 @@ export const RoutingListOfArticles: React.FC = () => {
 				return <tr key={record.id}>
 					<td>
 						<b>
-							<Link to={'/routing/example-page/list-of-articles/' + record.id.toString()}>{record.title}</Link>
+							<Link to={'/routing/example-pages/list-of-articles/' + record.id.toString()}>{record.title}</Link>
 						</b>
 					</td>
 
@@ -27,7 +27,7 @@ export const RoutingListOfArticles: React.FC = () => {
 						<ul>
 							{record.authors.map(authorRecord => {
 								return <li key={authorRecord.authorId}><Link
-									to={'/routing/example-page/list-of-articles/' + record.id.toString() + '/' + authorRecord.authorId}>
+									to={'/routing/example-pages/list-of-articles/' + record.id.toString() + '/' + authorRecord.authorId}>
 									{authorRecord.author}
 								</Link></li>;
 							})}

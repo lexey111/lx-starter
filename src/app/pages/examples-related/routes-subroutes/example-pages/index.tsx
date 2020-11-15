@@ -9,15 +9,15 @@ import {Title} from '../../../../engine/ui-components/general/typography/title-c
 
 export const RoutingMainPage: React.FC = () => {
 	return <>
-		<Title>Routing: example</Title>
+		<Title nav={'example'}>Routing: example</Title>
 		<p>
 			There is a <Button type={'primary'}>
-			<Link to={'/routing/example-page/list-of-articles'}>List of articles</Link></Button>.
+			<Link to={'/routing/example-pages/list-of-articles'}>List of articles</Link></Button>.
 			The source of the titles is <A href={'https://www.americanscientist.org/blog/from-the-staff/2019s-most-popular-articles'}>American Scientist</A>.
 		</p>
 
 		<p>
-			Example serves routes like <code>/routing/example-page/list-of-articles/:articleId/:authorId</code>.
+			Example serves routes like <code>/routing/example-pages/list-of-articles/:articleId/:authorId</code>.
 			This is how they are declared in the config:
 		</p>
 
@@ -27,47 +27,47 @@ export const RoutingMainPage: React.FC = () => {
 	title: 'Example page',
 	routes: [
 		{
-			url: '/routing/example-page/list-of-articles',
+			url: '/routing/example-pages/list-of-articles',
 			page: <RoutingListOfArticles/>,
 			title: 'List of articles',
 		},
 		{
-			url: '/routing/example-page/list-of-articles/:articleId',
+			url: '/routing/example-pages/list-of-articles/:articleId',
 			page: <RoutingArticle/>,
 			title: <ArticleTitle/>,
 		},
 		{
-			url: '/routing/example-page/list-of-articles/:articleId/:authorId',
+			url: '/routing/example-pages/list-of-articles/:articleId/:authorId',
 			page: <RoutingArticleAuthor/>,
 			title: <AuthorTitle/>,
 		}
 	]
 },
 `}/>
-
+		<Title nav={'links'} level={3}>Good and bad links</Title>
 		<ul>
-			<li><Link to={'/routing/example-page/list-of-articles/1'}>Particular article (exists)</Link></li>
-			<li><Link to={'/routing/example-page/list-of-articles/1/Aaa'}>Author of the article (exists)</Link></li>
+			<li><Link to={'/routing/example-pages/list-of-articles/1'}>Particular article (exists)</Link></li>
+			<li><Link to={'/routing/example-pages/list-of-articles/1/Aaa'}>Author of the article (exists)</Link></li>
 
-			<li><Link to={'/routing/example-page/list-of-articles/xxx'}>Non-existing article (bad Id)</Link></li>
-			<li><Link to={'/routing/example-page/list-of-articles/1/xxx'}>Good article, bad author</Link></li>
-			<li><Link to={'/routing/example-page/list-of-articles/abc/xyz'}>Invalid article, invalid author</Link></li>
+			<li><Link to={'/routing/example-pages/list-of-articles/xxx'}>Non-existing article (bad Id)</Link></li>
+			<li><Link to={'/routing/example-pages/list-of-articles/1/xxx'}>Good article, bad author</Link></li>
+			<li><Link to={'/routing/example-pages/list-of-articles/abc/xyz'}>Invalid article, invalid author</Link></li>
 
 		</ul>
 
 		<p>
-			Try to open <Link to={'/routing/example-page/list-of-articles'}>full list</Link> and click to links in
+			Try to open <Link to={'/routing/example-pages/list-of-articles'}>full list</Link> and click to links in
 			"Article name" and "Author" columns. Pay attention to breadcrumb items.
 		</p>
 
-		<Title level={3}>Breadcrumb items</Title>
+		<Title level={3} nav={'breadcrumbs'}>Breadcrumb items</Title>
 		<p>
 			To implement active breadcrumb item uou just need to assign React component to the <code>title</code> field in
 			<Src src={'src/config/app-site-map.tsx'} inline/> file:
 		</p>
 
 		<SyntaxHighlight lines={4} content={`{
-	url: '/routing/example-page/list-of-articles/:articleId/:authorId',
+	url: '/routing/example-pages/list-of-articles/:articleId/:authorId',
 	page: <RoutingArticleAuthor/>,
 	title: <AuthorTitle/>,
 }

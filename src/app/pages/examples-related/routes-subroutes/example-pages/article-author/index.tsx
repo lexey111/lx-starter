@@ -8,7 +8,7 @@ import useLocationParams from '../../../../../engine/hooks/use-location-params';
 import {exampleData} from '../example-data';
 import {SecondaryPageContent} from '../secondary-page-content';
 
-const listOfArticlesUrl = '/routing/example-page/list-of-articles';
+const listOfArticlesUrl = '/routing/example-pages/list-of-articles';
 
 export const RoutingArticleAuthor: React.FC = () => {
 	const location = useLocationParams();

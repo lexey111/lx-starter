@@ -7,6 +7,9 @@ import {Title} from '../../../engine/ui-components/general/typography/title-comp
 
 const routeConfigFilename = 'src/config/app-site-map.tsx';
 
+const AppLink = ():JSX.Element => <Src src={'src/app/@app.tsx'} inline/>;
+
+// eslint-disable-next-line react/no-multi-comp
 export const RoutingPage: React.FC = () => {
 	return <>
 		<Title>Routing</Title>
@@ -18,20 +21,21 @@ export const RoutingPage: React.FC = () => {
 		</p>
 
 		<SyntaxHighlight content={`export type TRouteMappingItem = {
-	url: string // url to go - unique route id
+	url?: string // url to go - unique route id
 
 	title?: string | JSX.Element // Menu item title or function which returns title
-	subtitle?: JSX.Element // subtitle to show under the menu title line
+	subtitle?: string | JSX.Element // subtitle to show under the menu title line
 	icon?: JSX.Element // icon component
-	page: JSX.Element // page (component) to render
+	menuItem?: JSX.Element // entire menu item component
+	menuItemExpandable?: boolean // if custom menu item is expandable
+	page?: JSX.Element // page (component) to render
+	topPanel?: JSX.Element // panel to be displayed above top menu (if layout uses top menu; or at page top otherwise)
 
 	isHomePage?: boolean // is it Home page?
 	isLoginPage?: boolean // is it Login page?
 
 	onlyWhenLoggedIn?: boolean
 	onlyWhenLoggedOut?: boolean
-
-	spinnerDuringLogin?: boolean
 
 	breadcrumbs?: 'default' | 'none' | 'sub-menu'
 
@@ -45,8 +49,8 @@ export const RoutingPage: React.FC = () => {
 export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 
 		<p>
-			As you can see, only <code>url</code> and <code>page</code> are mandatory. It's obvious, first one is the route
-			id and second one is corresponding page.
+			All the menu structures (main menu, page menus, breadcrumbs) and available routes are described
+			by this structure. This is the core of application.
 		</p>
 
 		<Title level={3} nav={'nesting'}>Nesting</Title>
@@ -80,11 +84,11 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 		</p>
 
 		<SyntaxHighlight
-			title={'src/config/app-site-map.tsx'}
+			title={'src/app/engine/routing/route-mapping.tsx'}
 			content={'export const RouteMapping: TRouteMappingItems = flattenRoutes(AppSiteMap)'}/>
 
 		<p>
-			These routes are used across the application, e.g., <Src src={'src/app/@app.tsx'} inline/> uses
+			These routes are used across the application, e.g., <AppLink/> uses
 			this flattened (1-level) structure to set up React <code>Router</code>:
 		</p>
 
@@ -97,19 +101,21 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 </Switch>
 `}/>
 
-		<Title level={3} nav={'how-it-works'}>How it works</Title>
+		<Title level={3} nav={'how_it_works'}>How it works</Title>
 		<Title level={4}>Rendering</Title>
 
 		<p>
-			Aforementioned <Src src={'src/app/@app.tsx'} inline/> provides routing structure. It gets
-			the flattened array of routes and creates <code>&lt;Route&gt;</code> entries (see above).
+			Aforementioned <AppLink/> provides routing structure. It gets
+			the flattened array of routes and creates <Tag>Route</Tag> entries (see above).
 		</p>
 
 		<p>
-			Very important part of the entry is <code>render</code> function:
+			The most important part of each entry is <code>render</code> function:
 		</p>
 
-		<SyntaxHighlight content={`<Route
+		<SyntaxHighlight
+			title={'src/app/@app.tsx'}
+			content={`<Route
 	exact path={routeItem.url}
 	key={idx}
 	render={(props: { match: { params: Record<string, string> } }) => {
@@ -155,7 +161,7 @@ public isAuthorizationInProgress = false;
 			isn't logged in, or displays the spinner if authorization in process, or target page if user authorized successfully.
 		</p>
 
-		<Title level={4} nav={'routing-params'}>Routing params</Title>
+		<Title level={4} nav={'routing_params'}>Routing params</Title>
 		<p>
 			There are some data related to currently displayed page:
 		</p>
@@ -175,14 +181,14 @@ public isAuthorizationInProgress = false;
 		</p>
 
 		<SyntaxHighlight content={`{
-	url: '/routing/example-page/secondary-page/:id/:code',
+	url: '/routing/example-pages/secondary-page/:id/:code',
 	page: <RoutingSecondaryPage2/>,
 	title: 'Secondary page (P)',
 }
 `} lines={2}/>
 
 		<p>
-			<Link to={'/routing/example-page'}>Example page and description of route params</Link>.
+			<Link to={'/routing/example-pages'}>Example pages and description of route params</Link>.
 		</p>
 
 		<p>

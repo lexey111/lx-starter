@@ -18,7 +18,7 @@ export const RoutingArticle: React.FC = () => {
 		return <>
 			<Title>Article not found</Title>
 			<p>
-				<Link to={'/routing/example-page/list-of-articles'}><IconArrowLeft/>&nbsp; Return to list</Link>
+				<Link to={'/routing/example-pages/list-of-articles'}><IconArrowLeft/>&nbsp; Return to list</Link>
 			</p>
 		</>;
 	}
@@ -33,7 +33,7 @@ export const RoutingArticle: React.FC = () => {
 			<ul>
 				{article.authors.map(authorRecord => {
 					return <li key={authorRecord.authorId}><Link
-						to={'/routing/example-page/list-of-articles/' + article.id.toString() + '/' + authorRecord.authorId}>
+						to={'/routing/example-pages/list-of-articles/' + article.id.toString() + '/' + authorRecord.authorId}>
 						{authorRecord.author}
 					</Link></li>;
 				})}
@@ -45,7 +45,7 @@ export const RoutingArticle: React.FC = () => {
 		<LipsumPara/>
 
 		<p>
-			<Link to={'/routing/example-page/list-of-articles'}><IconArrowLeft/>&nbsp; Return to list</Link>
+			<Link to={'/routing/example-pages/list-of-articles'}><IconArrowLeft/>&nbsp; Return to list</Link>
 		</p>
 
 		<hr/>
