@@ -76,7 +76,7 @@ export const SyntaxExampleTabs = ({markup, code, data, syntax, styles, result, a
 				<SyntaxHighlight language={'tsx'} content={syntax as string}/>
 			</TabPane>}
 
-			{result && <TabPane title={'Result'} id={'6'}>{result}</TabPane>}
+			{result && <TabPane title={'Preview'} id={'6'}>{result}</TabPane>}
 		</Tabs>
 	</div>;
 };
