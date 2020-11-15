@@ -91,7 +91,7 @@ export const AppPageNavigation: React.FC = observer(() => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppStateStore._yScrollPos, AppStateStore._topPanelHeight]);
 
-	if (!AppPageNavigationStore.hasItems) {
+	if (!AppPageNavigationStore.hasItems || AppPageNavigationStore.items.length < 2) {
 		return null;
 	}
 

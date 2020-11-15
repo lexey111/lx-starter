@@ -64,6 +64,7 @@ const Syntax = `type TButtonProps = {
 	disabled?: boolean
 	small?: boolean
 	onClick?: () => void
+	style? : any
 };
 
 export const Button: React.FC<TButtonProps> = (props: TButtonProps) => {...`;

@@ -23,7 +23,6 @@ export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 			AppPageNavigationStore.register({
 				targetId,
 				titleRef: elRef.current,
-				isInViewPort: false,
 				title: props.navTitle || props.children as string
 			});
 		}

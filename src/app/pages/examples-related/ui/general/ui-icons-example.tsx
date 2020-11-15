@@ -5,6 +5,7 @@ import {IconCheck} from '../../../../engine/ui-components/general/icons/icon-che
 import {IconClose} from '../../../../engine/ui-components/general/icons/icon-close-component';
 import {IconExpander} from '../../../../engine/ui-components/general/icons/icon-expander-component';
 import {IconFile} from '../../../../engine/ui-components/general/icons/icon-file-component';
+import {IconFolder} from '../../../../engine/ui-components/general/icons/icon-folder-component';
 import {IconHome} from '../../../../engine/ui-components/general/icons/icon-home-component';
 import {IconMenu} from '../../../../engine/ui-components/general/icons/icon-menu-component';
 import {IconSettings} from '../../../../engine/ui-components/general/icons/icon-settings-component';
@@ -21,6 +22,7 @@ const Markup = `<IconUser/>
 <IconArrowLeft/>
 <IconArrowRight/>
 <IconFile/>
+<IconFolder/>
 <IconCheck/>
 <IconClose/>
 <IconSettings/>
@@ -35,13 +37,14 @@ const JSX = <>
 	<IconArrowLeft/>
 	<IconArrowRight/>
 	<IconFile/>
+	<IconFolder/>
 	<IconCheck/>
 	<IconClose/>
 	<IconSettings/>
 	<IconMenu/>
 </>;
 
-const Code = `import {IconHome} from '../../../components/ui/general/icons/icon-home-component';
+const Code = `import {IconHome} from '../../../../engine/ui-components/general/icons/icon-home-component';
 ...
 	<div>
 		<IconHome/>

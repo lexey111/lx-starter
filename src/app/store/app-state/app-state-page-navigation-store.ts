@@ -5,9 +5,9 @@ export type TNavigationItem = {
 	targetId: string
 	titleRef: HTMLDivElement
 
-	YPos: number
-	partiallyVisible: boolean
-	current: boolean
+	YPos?: number
+	partiallyVisible?: boolean
+	current?: boolean
 };
 
 export type TNavigationItems = Array<TNavigationItem>;
