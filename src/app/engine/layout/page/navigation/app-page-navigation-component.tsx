@@ -41,6 +41,7 @@ export const AppPageNavigation: React.FC = observer(() => {
 	const destroying = useRef(false);
 
 	useEffect(() => {
+
 		return () => {
 			destroying.current = true;
 		};
@@ -50,8 +51,11 @@ export const AppPageNavigation: React.FC = observer(() => {
 		window.addEventListener('hashchange', scrollToHash as () => void, false);
 
 		const delayedScroll = setTimeout(() => {
+			// initial scroll
 			if (!destroying.current) {
-				scrollToHash(true); // initial scroll
+				scrollToHash(true);
+				// initial detect visible nav anchors to highlight them
+				sortAnchors(AppPageNavigationStore.items, AppStateStore._topPanelHeight);
 			}
 		}, 200);
 
@@ -78,15 +82,14 @@ export const AppPageNavigation: React.FC = observer(() => {
 					return;
 				}
 				// detect visible nav anchors to highlight them
-				// updateAnchorsVisibility(AppPageNavigationStore.items);
-				sortAnchors(AppPageNavigationStore.items);
+				sortAnchors(AppPageNavigationStore.items, AppStateStore._topPanelHeight);
 				ticking = false;
 			});
 
 			ticking = true;
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [AppStateStore._yScrollPos]);
+	}, [AppStateStore._yScrollPos, AppStateStore._topPanelHeight]);
 
 	if (!AppPageNavigationStore.hasItems) {
 		return null;

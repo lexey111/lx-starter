@@ -2,13 +2,15 @@ import {TNavigationItems} from '../../../../store/app-state/app-state-page-navig
 
 const container = document.getElementById('app-mount-point');
 
-export const sortAnchors = (anchors: TNavigationItems): void => {
+export const sortAnchors = (anchors: TNavigationItems, extraTopPadding: number): void => {
 	if (!container) {
 		return;
 	}
 	const {scrollHeight} = container;
 	const scrollTop = window.scrollY;
 	let clientHeight = window.innerHeight || document.documentElement.clientHeight;
+
+	// correct client height by sticky elements
 	if (document.body.classList.contains('with-top-menu')) {
 		clientHeight -= 48; // top menu height
 	}
@@ -18,6 +20,9 @@ export const sortAnchors = (anchors: TNavigationItems): void => {
 	if (document.body.classList.contains('with-breadcrumbs')) {
 		clientHeight -= 48; // breadcrumbs panel height
 	}
+	// AppStateStore._topPanelHeight
+	clientHeight -= extraTopPadding;
+
 	const scrollBottom = scrollTop + clientHeight;
 
 	let itemFound;

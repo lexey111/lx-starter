@@ -77,8 +77,8 @@ export const AppMainMenu: React.FC<TAppMainMenuProps> = observer((props: TAppMai
 
 		window.requestAnimationFrame(() => {
 			if (!destroying.current && containerRef.current && containerRef.current.style) {
-				const margin = AppStateStore._topPanelHeight - AppStateStore._yScrollPos;
-				containerRef.current.style.paddingTop = margin > 0 ? margin.toString() + 'px' : '0';
+				const padding = AppStateStore._topPanelHeight - AppStateStore._yScrollPos;
+				containerRef.current.style.paddingTop = padding > 0 ? padding.toString() + 'px' : '0';
 			}
 		});
 		// eslint-disable-next-line react-hooks/exhaustive-deps

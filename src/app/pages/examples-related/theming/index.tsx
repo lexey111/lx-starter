@@ -145,12 +145,13 @@ body.theme-default {
 		<Title level={3} nav={'where_is_less'}>Where is .Less?</Title>
 		<p>
 			I use .Less files for local stylesheets because I like .Less, but there are very few spots to change
-			to replace it with .Sass, Stylus.
+			to replace it with .Sass, or Stylus, or native.
 		</p>
 
 		<p>
 			First, themes are .Less files. But they are pretty simple and could be replaced easily, even with native CSS.
 		</p>
+
 		<p>
 			Second, <Src src={'src/styles/@media.less'} inline/> which contains <code>@media</code> waypoints:
 		</p>

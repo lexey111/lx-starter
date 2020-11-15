@@ -12,6 +12,12 @@ import {GettingStartedPage} from '../app/pages/examples-related/getting-started'
 import {InternalsPage} from '../app/pages/examples-related/internals';
 import {BuilderPage} from '../app/pages/examples-related/internals/builder';
 import {TestingPage} from '../app/pages/examples-related/internals/testing';
+import {LayoutPage} from '../app/pages/examples-related/layout';
+import {BreadcrumbsPage} from '../app/pages/examples-related/layout/breadcrumbs';
+import {MainMenuPage} from '../app/pages/examples-related/layout/main-menu';
+import {PageMenuPage} from '../app/pages/examples-related/layout/page-menu';
+import {PageNavigationPage} from '../app/pages/examples-related/layout/page-navigation';
+import {TopPanelPage} from '../app/pages/examples-related/layout/top-panel';
 import {RoutingPage} from '../app/pages/examples-related/routes-subroutes';
 import {RoutingMainPage} from '../app/pages/examples-related/routes-subroutes/example-page';
 import {RoutingArticle} from '../app/pages/examples-related/routes-subroutes/example-page/article';
@@ -74,7 +80,7 @@ export const AppSiteMap: TRouteMappingItems = [
 	// 	page: <MenuPage/>,
 	// },
 	{
-		title: 'State management',
+		title: 'State',
 		url: '/state-management',
 		page: <StatePage/>,
 		breadcrumbs: 'sub-menu',
@@ -125,6 +131,44 @@ export const AppSiteMap: TRouteMappingItems = [
 						title: <AuthorTitle/>,
 					}
 				]
+			},
+		]
+	},
+	{
+		title: 'Layout',
+		url: '/layout',
+		page: <LayoutPage/>,
+		breadcrumbs: 'sub-menu',
+		routes: [
+			{
+				title: 'Top panel',
+				breadcrumbs: 'sub-menu',
+				url: '/layout/top-panel',
+				page: <TopPanelPage/>,
+			},
+			{
+				title: 'Main menu',
+				breadcrumbs: 'sub-menu',
+				url: '/layout/main-menu',
+				page: <MainMenuPage/>,
+			},
+			{
+				title: 'Breadcrumbs',
+				breadcrumbs: 'sub-menu',
+				url: '/layout/breadcrumbs',
+				page: <BreadcrumbsPage/>,
+			},
+			{
+				title: 'Page menu',
+				breadcrumbs: 'sub-menu',
+				url: '/layout/page-menu',
+				page: <PageMenuPage/>,
+			},
+			{
+				title: 'In-page navigation',
+				breadcrumbs: 'sub-menu',
+				url: '/layout/page-navigation',
+				page: <PageNavigationPage/>,
 			},
 		]
 	},
