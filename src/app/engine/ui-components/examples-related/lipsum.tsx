@@ -35,7 +35,7 @@ export const LipsumPara: React.FC<TLipsumParaProps> = (props: TLipsumParaProps) 
 		[props.words, props.paragraphs]
 	);
 
-	return <div>
+	return <div className={'lipsum-para'}>
 		{data.map((paragraph, idx) => {
 			let text = paragraph;
 			if (!text.endsWith('.')) {
