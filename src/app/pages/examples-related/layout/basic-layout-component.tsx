@@ -7,10 +7,10 @@ export const BasicLayout = (props: { sideMenu?: boolean }): JSX.Element => {
 	return <div className={'application-layout-example' + (props.sideMenu ? ' has-side-menu' : '')}>
 		<div className={'apl-container'}>
 			<div className={'apl-top-panel'}>
-				<Link to={'/layout/top-panel'}><i>Top panel</i></Link> (optional)
+				<Link to={'/layout/top-panel'}><i>Top panel</i></Link> [optional]
 			</div>
 			{!props.sideMenu && <div className={'apl-main-menu'}>
-				<Link to={'/layout/main-menu'}><i>Main menu</i></Link>
+				<Link to={'/layout/main-menu'}><i>Main menu</i></Link> [sticky]
 			</div>
 			}
 			{props.sideMenu && <div className={'apl-side-menu'}>
@@ -18,7 +18,7 @@ export const BasicLayout = (props: { sideMenu?: boolean }): JSX.Element => {
 			</div>
 			}
 			<div className={'apl-breadcrumbs'}>
-				<Link to={'/layout/breadcrumbs'}><i>Breadcrumbs</i></Link> or <Link to={'/layout/page-menu'}><i>Page menu</i></Link> (optional)
+				<Link to={'/layout/breadcrumbs'}><i>Breadcrumbs</i></Link> or <Link to={'/layout/page-menu'}><i>Page menu</i></Link> [optional, sticky]
 			</div>
 			<div className={'apl-page'}>
 				<div className={'apl-page-content'}>
@@ -28,7 +28,7 @@ export const BasicLayout = (props: { sideMenu?: boolean }): JSX.Element => {
 				<div className={'apl-page-nav'}>
 					<Link to={'/layout/page-navigation'}><i>in-page navigation</i></Link>
 					<p>
-						(optional)
+						[optional]
 					</p>
 				</div>
 			</div>

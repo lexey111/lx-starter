@@ -56,6 +56,9 @@ export const UiPage: React.FC = () => {
 		</p>
 
 		<div className={'example-component-container'}>
+			<Title level={6} bottomBorder noTopMargin>
+				Set menu position:
+			</Title>
 			<ThemeSwitcher/>
 		</div>
 

@@ -44,6 +44,8 @@ export const AboutPage: React.FC = () => {
 			<li><s>In-page navigation with Title</s></li>
 			<li>npm run dry</li>
 			<li>Roadmap page</li>
+			<li>Theme families</li>
+			<li>Fixed top panel</li>
 		</ul>
 	</>;
 };

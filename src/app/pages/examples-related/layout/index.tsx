@@ -36,5 +36,9 @@ export const LayoutPage: React.FC = () => {
 			<MenuPositionSwitcher/>
 		</div>
 
+		<p>
+			So the main content area - the page - is pretty customizable.
+		</p>
+
 	</>;
 };
