@@ -51,6 +51,7 @@ export const AppMainMenu: React.FC = observer(() => {
 		} else {
 			document.body.classList.remove('with-side-menu');
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [loggedIn, location.url, AppStateStore._mainMenuPosition]);
 
 	const handleItemClick = useCallback((url: string) => {

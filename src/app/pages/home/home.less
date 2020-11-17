@@ -1,0 +1,70 @@
+.home-top-panel {
+	.app-top-panel-content {
+		height: 220px;
+		width: 90%;
+		display: flex;
+		flex-flow: row nowrap;
+		align-self: center;
+		align-items: center;
+		justify-items: stretch;
+		padding: 0;
+		margin: 0;
+
+		.app-title {
+			margin: 0;
+
+			h1 {
+				font-size: 3em;
+				margin: 0;
+				line-height: 1em;
+				color: var(--app-accent-background);
+			}
+
+			.app-subtitle {
+				opacity: .7;
+				font-style: italic;
+			}
+		}
+
+		.home-top-column {
+			display: flex;
+			align-items: center;
+			height: 150px;
+			flex-grow: 2;
+			margin: 0 16px;
+			padding: 16px;
+			background-color: rgba(255, 255, 255, .2);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			box-shadow: 0 0 1px rgba(0, 0, 0, .2), inset 0 10px 80px rgba(255, 255, 255, .3);
+			border: 1px solid rgba(255, 255, 255, .3);
+			font-size: var(--app-small-font-size);
+
+			p {
+				line-height: 1;
+				margin: 0;
+			}
+		}
+	}
+}
+
+.home-top-panel-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url('/images/crank_opt.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
+	z-index: -1;
+	opacity: .9;
+}
+
+@-moz-document url-prefix() {
+	// trick for firefox which does not support backdrop blur
+	.home-top-panel-bg {
+		opacity: .2;
+	}
+}

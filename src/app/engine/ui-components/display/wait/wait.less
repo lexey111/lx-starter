@@ -90,8 +90,9 @@ span.app-wait-tag {
 	background-color: rgba(0, 0, 0, 0.2);
 	color: var(--app-color);
 	font-size: var(--app-font-size);
-	opacity: .9;
+	opacity: .98;
 	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
 	display: flex;
 	flex-flow: row nowrap;
 	align-content: center;
@@ -158,3 +159,12 @@ span.app-wait-tag {
 	}
 }
 
+@-moz-document url-prefix() {
+	// trick for firefox which does not support backdrop blur
+	#app-full-screen-message.modal-like {
+		background-color: rgba(255, 255, 255, .9);
+		color: var(--app-color);
+		font-size: var(--app-font-size);
+		opacity: 1;
+	}
+}

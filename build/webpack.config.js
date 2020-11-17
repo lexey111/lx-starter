@@ -116,9 +116,6 @@ module.exports = (env, args) => {
 						options: {
 							transpileOnly: true,
 							silent: true,
-							// getCustomTransformers: () => ({
-							// 	before: [tsImportPluginFactory( /** options */)],
-							// }),
 							compilerOptions: {
 								module: 'es2015',
 							},
@@ -180,10 +177,16 @@ module.exports = (env, args) => {
 				patterns: [
 					// static files to the site root folder (index and robots)
 					{
-						from: './src/static/**/*',
-						to: path.resolve('./dist/'),
+						from: './src/static/images/*',
+						to: path.resolve('./dist/images/'),
 						toType: 'dir',
 						flatten: true,
+					},
+					{
+						from: './src/static/*',
+						to: path.resolve('./dist/'),
+						toType: 'dir',
+						flatten: true
 					},
 				]
 			}),
