@@ -2,11 +2,11 @@
 import {observer} from 'mobx-react';
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
+import {AppStateStore} from '../../../store/@stores';
 import useLocationParams from '../../hooks/use-location-params';
 import {HomeRoute} from '../../routing/route-mapping';
 import {TRouteMappingItem, TRouteMappingItems} from '../../routing/route-mapping-interface';
 import {getRouteByUrl} from '../../routing/route-mapping-utils';
-import {AppStateStore} from '../../../store/@stores';
 import {PageSubmenu} from '../page-submenu/page-submenu-component';
 
 function calculateBreadCrumbs(currentRoute?: TRouteMappingItem): Array<TRouteMappingItem> {
@@ -41,7 +41,6 @@ function calculateBreadCrumbs(currentRoute?: TRouteMappingItem): Array<TRouteMap
 export const AppBreadcrumbs: React.FC = observer(() => {
 	const [breadcrumbs, setBreadcrumbs] = useState<TRouteMappingItems>([]);
 	const [useSubroutingMenu, setUseSubroutingMenu] = useState(false);
-
 	const location = useLocationParams();
 
 	useEffect(() => {
@@ -54,23 +53,9 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [location.url]);
 
-	useEffect(() => {
-		if (useSubroutingMenu) {
-			document.body.classList.add('with-page-menu');
-		} else {
-			document.body.classList.remove('with-page-menu');
-		}
-
-		if (breadcrumbs.length > 1) {
-			document.body.classList.add('with-breadcrumbs');
-		} else {
-			document.body.classList.remove('with-breadcrumbs');
-		}
-
-	}, [useSubroutingMenu, breadcrumbs]);
-
 	if (useSubroutingMenu) {
-		return <div className={'app-breadcrumbs' + (AppStateStore._yScrollPos > 32 ? ' page-scrolled' : '')}>
+		return <div
+			className={'app-breadcrumbs with-page-menu' + (AppStateStore._yScrollPos > 32 ? ' page-scrolled' : '')}>
 			<div className={'app-breadcrumbs-content'}>
 				<div className={'app-breadcrumbs-panel'}>
 					<PageSubmenu/>
@@ -85,7 +70,7 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 
 	return <div className={'app-breadcrumbs' + (AppStateStore._yScrollPos > 32 ? ' page-scrolled' : '')}>
 		<div className={'app-breadcrumbs-content'}>
-			<div className={'app-breadcrumbs-panel with-bottom-shadow'}>
+			<div className={'app-breadcrumbs-panel bottom-separator'}>
 				{breadcrumbs.map((item, idx) => {
 					const hasOwnLink = typeof item.title !== 'string';
 

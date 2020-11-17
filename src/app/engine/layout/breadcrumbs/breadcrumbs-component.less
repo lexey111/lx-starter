@@ -1,18 +1,13 @@
-.with-top-menu {
-	.app-breadcrumbs {
-		top: var(--app-menu-height);
-	}
-}
-
 .app-breadcrumbs {
 	display: flex;
 	flex-flow: column nowrap;
 	width: 100vw;
 	min-height: var(--app-breadcrumbs-height);
+	opacity: .9;
+	backdrop-filter: blur(4px);
+	background-color: var(--app-background);
 
 	z-index: 100;
-	position: sticky;
-	top: 0;
 
 	.app-breadcrumbs-content {
 		display: flex;
@@ -29,10 +24,9 @@
 		display: flex;
 		align-items: center;
 		width: 100%;
-		background-color: var(--app-background);
 		position: relative;
 
-		&.with-bottom-shadow {
+		&.bottom-separator {
 			&:after {
 				content: '';
 				position: absolute;

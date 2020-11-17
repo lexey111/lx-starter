@@ -3,7 +3,7 @@ import {PageTopPanel} from '../../../engine/layout/top-panel/page-top-panel-comp
 import {IconStar} from '../../../engine/ui-components/general/icons/icon-star-component';
 
 export const CustomPageTopPanel: React.FC = () => {
-	return <PageTopPanel className={'custom-page-top-panel'}>
+	return <PageTopPanel type='fixed' className={'custom-page-top-panel'}>
 		<IconStar/>
 
 		<h1>Custom Systems</h1>

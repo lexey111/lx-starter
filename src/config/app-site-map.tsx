@@ -18,6 +18,7 @@ import {MainMenuPage} from '../app/pages/examples-related/layout/main-menu';
 import {PageMenuPage} from '../app/pages/examples-related/layout/page-menu';
 import {PageNavigationPage} from '../app/pages/examples-related/layout/page-navigation';
 import {TopPanelPage} from '../app/pages/examples-related/layout/top-panel';
+import {ExampleTopPanel} from '../app/pages/examples-related/layout/top-panel/example-top-panel-component';
 import {RoutingPage} from '../app/pages/examples-related/routes-subroutes';
 import {RoutingMainPage} from '../app/pages/examples-related/routes-subroutes/example-pages';
 import {RoutingArticle} from '../app/pages/examples-related/routes-subroutes/example-pages/article';
@@ -139,6 +140,7 @@ export const AppSiteMap: TRouteMappingItems = [
 				title: 'Top panel',
 				breadcrumbs: 'sub-menu',
 				url: '/layout/top-panel',
+				topPanel: <ExampleTopPanel/>,
 				page: <TopPanelPage/>,
 			},
 			{

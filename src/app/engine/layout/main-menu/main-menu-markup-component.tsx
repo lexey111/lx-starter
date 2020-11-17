@@ -1,4 +1,6 @@
-import React, {RefObject, useCallback, useState} from 'react';
+import {observer} from 'mobx-react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
+import {AppStateStore} from '../../../store/@stores';
 import {IconExpander} from '../../ui-components/general/icons/icon-expander-component';
 import {IconMenu} from '../../ui-components/general/icons/icon-menu-component';
 import {TMenuItems} from './main-menu-component';
@@ -89,8 +91,34 @@ function _handleMenuKey(callback: (string) => void, e: TKeyboardEventWithDataset
 	return true;
 }
 
-export const AppMainMenuMarkup = React.forwardRef((props: TAppMainMenuMarkupProps, ref) => {
+let ticking = false;
+
+function correctMenuPos(element?: HTMLDivElement | null): void {
+	if (!element) {
+		return;
+	}
+	let top = '0';
+	if (AppStateStore._mainMenuPosition === 'side') {
+		const pHeight = Math.ceil(AppStateStore._topPanelHeight);
+
+		if (AppStateStore._topPanelType === 'fixed') {
+			top = pHeight > 0 ? pHeight.toString() + 'px' : '0';
+		}
+
+		if (AppStateStore._topPanelType !== 'fixed') {
+			const padding = pHeight - AppStateStore._yScrollPos;
+			top = padding > 0 ? padding.toString() + 'px' : '0';
+		}
+	}
+
+	if (top !== element.style.top) {
+		element.style.top = top;
+	}
+}
+
+export const AppMainMenuMarkup = observer((props: TAppMainMenuMarkupProps): JSX.Element => {
 	const [expanded, setExpanded] = useState(false);
+	const ref = useRef<HTMLDivElement>(null);
 
 	const handleMenuClick = useCallback(e => {
 		if (_handleMenuClick(props.onItemClick, e)) {
@@ -126,8 +154,28 @@ export const AppMainMenuMarkup = React.forwardRef((props: TAppMainMenuMarkupProp
 		setExpanded(true);
 	}, [expanded, props.position]);
 
-	return <div className={'app-menu'} ref={ref as RefObject<HTMLDivElement>}>
-		<div className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}>
+	useEffect(() => {
+		if (!ticking) {
+			window.requestAnimationFrame(() => {
+				const element = ref.current;
+				correctMenuPos(element);
+				ticking = false;
+			});
+			ticking = true;
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [
+		ref.current,
+		AppStateStore._topPanelType,
+		AppStateStore._topPanelHeight,
+		AppStateStore._mainMenuPosition,
+		AppStateStore._yScrollPos
+	]);
+
+	return <div className={'app-menu'}>
+		<div
+			ref={ref}
+			className={'app-main-menu-container ' + (expanded ? 'app-menu-expanded' : 'app-menu-collapsed')}>
 			{props.position === 'top' && <div
 				className={'app-menu-burger'}
 				tabIndex={0}
@@ -136,8 +184,6 @@ export const AppMainMenuMarkup = React.forwardRef((props: TAppMainMenuMarkupProp
 				<IconMenu/>
 			</div>
 			}
-
-			{props.position === 'side' && <div className={'app-menu-backdrop'} onClick={handleToggleExpand}></div>}
 
 			<div
 				className={'app-main-menu'}

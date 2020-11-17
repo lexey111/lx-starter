@@ -45,7 +45,7 @@ export const AboutPage: React.FC = () => {
 			<li>npm run dry</li>
 			<li>Roadmap page</li>
 			<li>Theme families</li>
-			<li>Fixed top panel</li>
+			<li><s>Fixed top panel</s></li>
 		</ul>
 	</>;
 };

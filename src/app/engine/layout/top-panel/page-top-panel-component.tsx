@@ -1,48 +1,31 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect} from 'react';
 import {AppStateStore} from '../../../store/@stores';
 
 type TTopPanelProps = {
 	children: any
 	className?: string
+	type?: 'default' | 'fixed'
 };
 
 export const PageTopPanel: React.FC<TTopPanelProps> = (props: TTopPanelProps) => {
-	const ref = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		if (!ref.current) {
-			return;
-		}
-
-		const resizeObserver = new ResizeObserver((entries: ReadonlyArray<ResizeObserverEntry>): void => {
-			if (!entries || entries.length === 0) {
-				return;
-			}
-
-			let borderBoxSize: number;
-			if (entries[0].borderBoxSize) {
-				if (entries[0].borderBoxSize[0]) {
-					borderBoxSize = entries[0].borderBoxSize[0].blockSize; // chromium
-				} else {
-					borderBoxSize = entries[0].borderBoxSize['blockSize'] as number; // firefox
-				}
-			} else {
-				borderBoxSize = entries[0].contentRect.height; // safari
-			}
-
-			AppStateStore._topPanelHeight = borderBoxSize || 0;
-		});
-
-		resizeObserver.observe(ref.current as HTMLElement);
+		// assign class passed (if any) to store -> container
+		AppStateStore._topPanelClass = props.className || '';
+		// assign type passed (if any) to store -> container
+		AppStateStore._topPanelType = props.type === 'fixed' ? 'fixed' : 'default';
 
 		return () => {
-			if (resizeObserver) {
-				resizeObserver.disconnect();
-			}
+			AppStateStore._topPanelClass = '';
+			AppStateStore._topPanelType = 'default';
 		};
-	}, [ref]);
+	}, [props.className, props.type]);
 
-	return <div className={'app-top-panel-content' + (props.className ? ' ' + props.className : '')} ref={ref}>
+	if (!props.children) {
+		return null;
+	}
+
+	return <div className={'app-top-panel-content'}>
 		{props.children}
 	</div>;
 };

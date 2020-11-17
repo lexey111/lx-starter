@@ -9,7 +9,7 @@ const MenuPositionSwitcher: React.FC = observer(() => {
 	}, []);
 
 	return <div className={'app-menu-switcher'}>
-		<RadioGroup value={AppStateStore.mainMenuPosition} onChange={handleMenuPositionChange} inline>
+		<RadioGroup value={AppStateStore._mainMenuPosition} onChange={handleMenuPositionChange} inline>
 			<Radio value={'top'} key={'top'}>At top</Radio>
 			<Radio value={'side'} key={'side'}>At left</Radio>
 		</RadioGroup>

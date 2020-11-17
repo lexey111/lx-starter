@@ -39,6 +39,8 @@ export type TAppStateStoreData = {
 	_pageActions?: JSX.Element | null // optional action(s) that will be displayed in the breadcrumbs on scroll
 	_yScrollPos: number // technical one, needed to show breadcrumbs panel after scroll distance reached > 32px
 	_topPanelHeight: number // technical one, needed to correct side menu position
+	_topPanelClass: string // extra class assigned to top panel to customize appearance
+	_topPanelType: 'default' | 'fixed' // behavior of top panel - scrollable with page or fixed position
 
 	isAuthorized: boolean // is current user logged in
 	isAuthorizationInProgress: boolean

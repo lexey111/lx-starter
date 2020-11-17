@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {AppTopFrame} from './engine/layout/app-top-frame-component';
 import {AppBreadcrumbs} from './engine/layout/breadcrumbs/breadcrumbs-component';
 import {AppFooter} from './engine/layout/footer/footer-component';
 import {AppMainMenu} from './engine/layout/main-menu/main-menu-component';
@@ -42,11 +43,11 @@ export const App: React.FC = () => {
 
 		<AppTopPanel/>
 
-		<AppMainMenu position={AppStateStore.mainMenuPosition}/>
-
-		<AppBreadcrumbs/>
-
-		<AppPageNavigation/>
+		<AppTopFrame>
+			<AppMainMenu/>
+			<AppBreadcrumbs/>
+			<AppPageNavigation/>
+		</AppTopFrame>
 
 		<AppContainer>
 			<Switch>
