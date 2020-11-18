@@ -1,15 +1,13 @@
 import {action, computed, makeObservable, observable} from 'mobx';
 import {TRouteMappingItem} from '../../engine/routing/route-mapping-interface';
-
-export const AvailableThemes = ['default', 'light', 'dark'] as const;
-type TypeOfAvailableThemes = typeof AvailableThemes[number];
+import {findTheme} from '../../engine/ui-components/theme-interface';
 
 export type TAppStateStoreData = {
 	currentRoute?: TRouteMappingItem | undefined // TRouteMappingItem
 	currentParams?: Record<string, string> // http://url/:param1/:param2 -> {param1: 'some', param2: 'text'}
 	currentLocation?: string // http://url/page1
 
-	theme: TypeOfAvailableThemes
+	themeCode: string // TAppTheme.code
 	_mainMenuPosition: string // 'side' | 'top'
 
 	_pageActions?: JSX.Element | null // optional action(s) that will be displayed in the breadcrumbs on scroll
@@ -36,7 +34,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 	public _topPanelClass = '';
 	public _topPanelType: 'default' | 'fixed' = 'default';
 
-	public theme: TypeOfAvailableThemes = 'default';
+	public themeCode = 'default';
 	public _mainMenuPosition: 'top' | 'side' = 'top';
 
 	public isAuthorized = false;
@@ -48,10 +46,12 @@ export default class CAppStateStore implements TAppStateStoreData {
 	constructor() {
 		// initial theme
 		const value = localStorage.getItem('app-theme') || 'default';
-		if (AvailableThemes.includes(value as TypeOfAvailableThemes)) {
-			this.theme = value as TypeOfAvailableThemes;
+		const currentTheme = findTheme(value);
+		if (currentTheme) {
+			this.themeCode = value;
 		}
 
+		// menu position
 		this._mainMenuPosition = localStorage.getItem('app-menu.position') === 'side' ? 'side' : 'top';
 
 		makeObservable(this, {
@@ -64,7 +64,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 			_topPanelClass: observable,
 			_topPanelType: observable,
 
-			theme: observable,
+			themeCode: observable,
 			_mainMenuPosition: observable,
 
 			isAuthorized: observable,
@@ -141,12 +141,13 @@ export default class CAppStateStore implements TAppStateStoreData {
 	};
 
 	setTheme = (value: string): void => {
-		let themeName = 'default';
-		if (AvailableThemes.includes(value as TypeOfAvailableThemes)) {
-			themeName = value;
+		let themeCode = 'default';
+		const currentTheme = findTheme(value);
+		if (currentTheme) {
+			themeCode = value;
 		}
-		localStorage.setItem('app-theme', themeName);
-		this.theme = themeName as TypeOfAvailableThemes;
+		localStorage.setItem('app-theme', themeCode);
+		this.themeCode = themeCode;
 	};
 
 	setMenuPosition = (value: string): void => {

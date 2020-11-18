@@ -93,16 +93,16 @@
 <body>
 <noscript>Please turn on the Javascript.</noscript>
 <script>
-	const storedTheme = localStorage.getItem('app-theme') || '';
+	const storedThemeCode = localStorage.getItem('app-theme') || '';
 
-	if (storedTheme === 'dark') {
+	if (storedThemeCode === 'dark') {
 		document.body.classList.add('theme-dark');
 	}
-	if (storedTheme === 'light') {
+	if (storedThemeCode === 'light') {
 		document.body.classList.add('theme-light');
 	}
 
-	if (!storedTheme || storedTheme === 'default') {
+	if (!storedThemeCode || storedThemeCode === 'default') {
 		document.body.classList.add('theme-default');
 	}
 

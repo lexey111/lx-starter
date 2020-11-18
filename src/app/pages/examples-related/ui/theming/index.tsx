@@ -19,14 +19,34 @@ export const ThemingPage: React.FC = () => {
 			At the moment application includes 3 themes: default, dark and light.
 		</p>
 		<p>
-			Available themes are declared in the <Src src={StoreFile} inline/>:
+			Available themes are declared in the <Src src={'src/app/engine/ui-components/theme-interface.ts'} inline/>:
 		</p>
 
 		<SyntaxHighlight
-			title={StoreFile}
-			content={`export const AvailableThemes = ['default', 'light', 'dark'] as const;
-type TypeOfAvailableThemes = typeof AvailableThemes[number];
-`}/>
+			title={'src/app/engine/ui-components/theme-interface.ts'}
+			content={`export type TAppTheme = {
+	code: string // theme name, will be used as part of CSS class like body.theme-%name%
+	family: 'dark' | 'light' // to tune some items that aren't directly covered with theme variables
+	title: string // to display theme in the interface, like "Solarized Dark cool theme"
+};
+
+export const AvailableThemes: ReadonlyArray<TAppTheme> = [
+	{
+		code: 'default',
+		family: 'light',
+		title: 'Default theme'
+	},
+	{
+		code: 'light',
+		family: 'light',
+		title: 'Light theme'
+	},
+	{
+		code: 'dark',
+		family: 'dark',
+		title: 'Dark theme'
+	},
+];`}/>
 		<p>
 			Technically all the themes are just mapping of .LESS variables to CSS variables. There
 			is <Src src={'src/styles/themes/themes.less'} inline/> file which does all the magic:
@@ -215,8 +235,22 @@ if (!storedTheme || storedTheme === 'default') {
 
 		<p>
 			Next step, after application started, is initialization of <StoreLink/> &mdash; see below. In short,
-			the Store reads the same value from <code>localStorage</code> and, if value valid, assigns it to observable field.
+			the Store reads the same value from <code>localStorage</code> and, if value valid, assigns it to observable field:
 		</p>
+
+		<SyntaxHighlight
+			title={StoreFile}
+			content={`...
+public themeCode = 'default';
+...
+constructor() {
+	// initial theme
+	const value = localStorage.getItem('app-theme') || 'default';
+	const currentTheme = findTheme(value);
+	if (currentTheme) {
+		this.themeCode = value;
+	}
+...`}/>
 
 		<Title level={4} nav={'storing'}>Storing the theme</Title>
 		<p>
@@ -226,7 +260,7 @@ if (!storedTheme || storedTheme === 'default') {
 
 		<div className={'example-component-container'}>
 			<Title level={6} bottomBorder noTopMargin>
-				Set menu position:
+				Set current theme
 			</Title>
 			<ThemeSwitcher/>
 		</div>
@@ -241,12 +275,13 @@ if (!storedTheme || storedTheme === 'default') {
 		</p>
 
 		<SyntaxHighlight content={`setTheme = (value: string): void => {
-	let themeName = 'default';
-	if (AvailableThemes.includes(value as TypeOfAvailableThemes)) {
-		themeName = value;
-	}
-	localStorage.setItem('app-theme', themeName);
-	this.theme = themeName as TypeOfAvailableThemes;
+		let themeCode = 'default';
+		const currentTheme = findTheme(value);
+		if (currentTheme) {
+			themeCode = value;
+		}
+		localStorage.setItem('app-theme', themeCode);
+		this.themeCode = themeCode;
 };
 `}/>
 		<Title level={4} nav={'switching'}>Switching the theme</Title>
@@ -276,14 +311,16 @@ if (!storedTheme || storedTheme === 'default') {
 			title={'src/app/engine/layout/theme-to-markup-component.tsx'}
 			content={`export const ThemeToMarkupComponent: React.FC = observer(() => {
 	useEffect(() => {
-		// subscribe to theme changes and apply current theme to body
-		AvailableThemes.forEach(t => {
-			window.document.body.classList.remove('theme-' + t);
-		});
-		window.document.body.classList.add('theme-' + AppStateStore.theme);
+		const bodyThemeList = Array.from(window.document.body.classList)
+			.filter(c => c.includes('theme-') && c !== 'theme-' + AppStateStore.themeCode);
 
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [AppStateStore.theme]);
+		// remove other theme classes if any
+		bodyThemeList.forEach(t => {
+			window.document.body.classList.remove(t);
+		});
+		// set actual theme
+		window.document.body.classList.add('theme-' + AppStateStore.themeCode);
+	}, [AppStateStore.themeCode]);
 
 	return null;
 });`}/>
@@ -300,16 +337,19 @@ if (!storedTheme || storedTheme === 'default') {
 
 		<FileList data={`[src]
 	[app]
+		[engine]
+			[ui-components]
+				theme-interface.ts  - (4) AvailableThemes = [..., {code: 'cool', family: 'light', title: 'Cool Theme'}]
 		[store]
 			[app-state]
-				app-state-store.ts - (4) AvailableThemes = ['default', 'light', 'dark', 'cool'] as const;
+				app-state-store.ts  - 
 	[static]
-		index.html - (5) pre-init
+		index.html - (5) pre-loader
 	[styles]
 		[themes]
 			themes.less - (3) add theme attachment
 			default.less - (1) create theme file using this file as a template
-			*cool.less - (2) assign colors
+			*cool.less - !(2) define colors
 `}/>
 
 		<ol>
@@ -328,7 +368,7 @@ if (!storedTheme || storedTheme === 'default') {
 
 			<li>
 				Add theme name to available themes: <code>const AvailableThemes</code> in
-				the <Src src={StoreFile} inline/> file.
+				the <Src src={'theme-interface.ts'} inline/> file.
 			</li>
 
 			<li>

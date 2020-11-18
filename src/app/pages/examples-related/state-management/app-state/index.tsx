@@ -33,8 +33,8 @@ export type TAppStateStoreData = {
 	currentParams?: Record<string, string> // http://url/:param1/:param2 -> {param1: 'some', param2: 'text'}
 	currentLocation?: string // http://url/page1
 
-	theme: TypeOfAvailableThemes
-	mainMenuPosition: string // 'side' | 'top'
+	themeCode: string // TAppTheme.code
+	_mainMenuPosition: string // 'side' | 'top'
 
 	_pageActions?: JSX.Element | null // optional action(s) that will be displayed in the breadcrumbs on scroll
 	_yScrollPos: number // technical one, needed to show breadcrumbs panel after scroll distance reached > 32px
@@ -63,10 +63,10 @@ export default class CAppStateStore implements TAppStateStoreData {...`}/>
 
 		<ul>
 			<li>
-				<code>theme</code> - current theme, read about that <Link to={'/ui/theming'}>here</Link>.
+				<code>themeCode</code> - current theme, read about that <Link to={'/ui/theming'}>here</Link>.
 			</li>
 			<li>
-				<code>mainMenuPosition</code> - where is menu located, <Link to={'/layout/main-menu'}>more details</Link>.
+				<code>_mainMenuPosition</code> - where is menu located, <Link to={'/layout/main-menu'}>more details</Link>.
 			</li>
 			<li>
 				<code>_pageActions</code> - page actions in the <Link to={'/layout/breadcrumbs'}>Breadcrumb panel</Link>.
@@ -74,6 +74,9 @@ export default class CAppStateStore implements TAppStateStoreData {...`}/>
 			<li>
 				<code>_yScrollPos</code> and <code>_topPanelHeight</code> are used by Main menu and Breadcrumbs to calculate
 				correct dimensions of layout parts.
+			</li>
+			<li>
+				<code>_topPanel*</code> - internal variables to display <Link to={'/layout/top-panel'}>Top panel</Link>.
 			</li>
 		</ul>
 	</>;
