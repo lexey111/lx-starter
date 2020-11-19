@@ -14,6 +14,7 @@ import {BreadcrumbsPage} from '../app/pages/examples-related/layout/breadcrumbs'
 import {PageActionsPage} from '../app/pages/examples-related/layout/breadcrumbs/page-actions';
 import {FooterPage} from '../app/pages/examples-related/layout/footer';
 import {MainMenuPage} from '../app/pages/examples-related/layout/main-menu';
+import {PagePage} from '../app/pages/examples-related/layout/page';
 import {PageSubMenuPage} from '../app/pages/examples-related/layout/page-submenu';
 import {PageNavigationPage} from '../app/pages/examples-related/layout/page-navigation';
 import {TopPanelPage} from '../app/pages/examples-related/layout/top-panel';
@@ -106,6 +107,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		url: '/routing',
 		page: <RoutingPage/>,
 		showIconInTopMenu: false,
+		breadcrumbs: 'sub-menu',
 		routes: [
 			{
 				url: '/routing/example-pages',
@@ -170,6 +172,11 @@ export const AppSiteMap: TRouteMappingItems = [
 				title: 'In-page navigation',
 				url: '/layout/page-navigation',
 				page: <PageNavigationPage/>,
+			},
+			{
+				title: 'Page',
+				url: '/layout/page',
+				page: <PagePage/>,
 			},
 			{
 				title: 'Footer',

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {LipsumPara} from '../../../../engine/ui-components/examples-related/lipsum';
-import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 
 export const BasicLayout = (props: { sideMenu?: boolean }): JSX.Element => {
 	return <div className={'application-layout-example' + (props.sideMenu ? ' has-side-menu' : '')}>
@@ -22,7 +21,7 @@ export const BasicLayout = (props: { sideMenu?: boolean }): JSX.Element => {
 			</div>
 			<div className={'apl-page'}>
 				<div className={'apl-page-content'}>
-					<Title level={6} bottomBorder>Page content</Title>
+					<Link to={'/layout/page'}><i>Page content</i></Link>
 					<LipsumPara/>
 				</div>
 				<div className={'apl-page-nav'}>

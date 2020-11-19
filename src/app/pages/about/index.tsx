@@ -34,13 +34,14 @@ export const AboutPage: React.FC = () => {
 					<li>Auth state, login/logout/guards</li>
 					<li><s>State management: data example</s></li>
 					<li><s>Breadcrumbs actions</s></li>
-					<li>Page submenu</li>
-					<li>In-Page navigation</li>
+					<li><s>Page submenu</s></li>
+					<li><s>In-Page navigation</s></li>
+					<li>Page</li>
+					<li><s>Footer</s></li>
 				</ul>
 			</li>
 			<li><s>Delay one render on route switching</s></li>
 			<li><s>Add icons to example routing (arrow back, article, user)</s></li>
-			<li>Replace unnecessary observers with useLocation/useXXX hooks</li>
 			<li><s>Replace .Less vars with CSS vars</s></li>
 			<li><s>Order in @media files</s></li>
 			<li><s>In-page navigation with Title</s></li>

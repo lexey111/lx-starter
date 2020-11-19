@@ -61,8 +61,8 @@ export const RoutingMainPage: React.FC = () => {
 
 		<Title level={3} nav={'breadcrumbs'}>Breadcrumb items</Title>
 		<p>
-			To implement active breadcrumb item you just need to assign React component to the <code>title</code> field in
-			<Src src={'src/config/app-site-map.tsx'} inline/> file:
+			To implement active breadcrumb item you just need to assign React component to the <code>title</code> field
+			in	<Src src={'src/config/app-site-map.tsx'} inline/> file:
 		</p>
 
 		<SyntaxHighlight lines={4} content={`{
