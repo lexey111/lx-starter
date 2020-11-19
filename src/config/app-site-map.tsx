@@ -13,7 +13,7 @@ import {LayoutPage} from '../app/pages/examples-related/layout';
 import {BreadcrumbsPage} from '../app/pages/examples-related/layout/breadcrumbs';
 import {PageActionsPage} from '../app/pages/examples-related/layout/breadcrumbs/page-actions';
 import {MainMenuPage} from '../app/pages/examples-related/layout/main-menu';
-import {PageMenuPage} from '../app/pages/examples-related/layout/page-menu';
+import {PageSubMenuPage} from '../app/pages/examples-related/layout/page-menu';
 import {PageNavigationPage} from '../app/pages/examples-related/layout/page-navigation';
 import {TopPanelPage} from '../app/pages/examples-related/layout/top-panel';
 import {ExampleTopPanel} from '../app/pages/examples-related/layout/top-panel/example-top-panel-component';
@@ -67,13 +67,11 @@ export const AppSiteMap: TRouteMappingItems = [
 			{
 				title: 'Builder',
 				url: '/internals/builder',
-				breadcrumbs: 'sub-menu',
 				page: <BuilderPage/>,
 			},
 			{
 				title: 'Testing',
 				url: '/internals/testing',
-				breadcrumbs: 'sub-menu',
 				page: <TestingPage/>,
 			},
 		]
@@ -88,19 +86,16 @@ export const AppSiteMap: TRouteMappingItems = [
 			{
 				url: '/state-management/app-state',
 				page: <StateMainStorePage/>,
-				breadcrumbs: 'sub-menu',
 				title: 'App State store',
 			},
 			{
 				url: '/state-management/generic-example',
 				page: <StateGenericStorePage/>,
-				breadcrumbs: 'sub-menu',
 				title: 'Generic usage',
 			},
 			{
 				url: '/state-management/todo-example',
 				page: <ExampleTodoStorePage/>,
-				breadcrumbs: 'sub-menu',
 				title: 'Example ToDo Store',
 			},
 		]
@@ -144,16 +139,19 @@ export const AppSiteMap: TRouteMappingItems = [
 		routes: [
 			{
 				title: 'Top panel',
-				breadcrumbs: 'sub-menu',
 				url: '/layout/top-panel',
 				topPanel: <ExampleTopPanel/>,
 				page: <TopPanelPage/>,
 			},
 			{
 				title: 'Main menu',
-				breadcrumbs: 'sub-menu',
 				url: '/layout/main-menu',
 				page: <MainMenuPage/>,
+			},
+			{
+				title: 'Breadcrumbs',
+				url: '/layout/breadcrumbs',
+				page: <BreadcrumbsPage/>,
 				routes: [
 					{
 						title: 'Page actions example',
@@ -163,20 +161,12 @@ export const AppSiteMap: TRouteMappingItems = [
 				]
 			},
 			{
-				title: 'Breadcrumbs',
-				breadcrumbs: 'sub-menu',
-				url: '/layout/breadcrumbs',
-				page: <BreadcrumbsPage/>,
-			},
-			{
-				title: 'Page menu',
-				breadcrumbs: 'sub-menu',
-				url: '/layout/page-menu',
-				page: <PageMenuPage/>,
+				title: 'Page submenu',
+				url: '/layout/page-submenu',
+				page: <PageSubMenuPage/>,
 			},
 			{
 				title: 'In-page navigation',
-				breadcrumbs: 'sub-menu',
 				url: '/layout/page-navigation',
 				page: <PageNavigationPage/>,
 			},
@@ -191,32 +181,27 @@ export const AppSiteMap: TRouteMappingItems = [
 		routes: [
 			{
 				title: 'Theming',
-				breadcrumbs: 'sub-menu',
 				url: '/ui/theming',
 				page: <ThemingPage/>,
 			},
 			{
 				title: 'General',
 				url: '/ui/general',
-				breadcrumbs: 'sub-menu',
 				page: <UiGeneralPage/>
 			},
 			{
 				title: 'Display',
 				url: '/ui/display',
-				breadcrumbs: 'sub-menu',
 				page: <UiDisplayPage/>
 			},
 			{
 				title: 'Data entry',
 				url: '/ui/data-entry',
-				breadcrumbs: 'sub-menu',
 				page: <UiDataEntryPage/>
 			},
 			{
 				title: 'Examples-related',
 				url: '/ui/examples-related',
-				breadcrumbs: 'sub-menu',
 				page: <UiExampleComponentsPage/>
 			},
 		]

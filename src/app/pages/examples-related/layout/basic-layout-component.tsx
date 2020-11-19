@@ -18,7 +18,7 @@ export const BasicLayout = (props: { sideMenu?: boolean }): JSX.Element => {
 			</div>
 			}
 			<div className={'apl-breadcrumbs'}>
-				<Link to={'/layout/breadcrumbs'}><i>Breadcrumbs</i></Link> or <Link to={'/layout/page-menu'}><i>Page menu</i></Link> [optional, sticky]
+				<Link to={'/layout/breadcrumbs'}><i>Breadcrumbs</i></Link> or <Link to={'/layout/page-submenu'}><i>Page submenu</i></Link> [optional, sticky]
 			</div>
 			<div className={'apl-page'}>
 				<div className={'apl-page-content'}>

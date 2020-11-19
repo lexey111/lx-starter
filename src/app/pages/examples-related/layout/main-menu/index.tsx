@@ -195,7 +195,8 @@ showIconInTopMenu?: boolean // default: true if icon assigned
 		<p>
 			Second one, <Tag>CustomMenuDropdown</Tag>, does not include <code>url</code> field. It means not only content but
 			all the logic of processing user input is up to developer. This particular example returns some content
-			wrapped in dropdown menu container.
+			wrapped in dropdown menu container. Pay attention to <code>menuItemExpandable</code> field: it is responsible
+			for rendering the dropdown, otherwise custom item will be just in-placed to menu bar.
 		</p>
 	</>;
 };

@@ -34,7 +34,7 @@ export const AboutPage: React.FC = () => {
 					<li>Auth state, login/logout/guards</li>
 					<li><s>State management: data example</s></li>
 					<li><s>Breadcrumbs actions</s></li>
-					<li>Page menu</li>
+					<li>Page submenu</li>
 					<li>In-Page navigation</li>
 				</ul>
 			</li>

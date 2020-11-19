@@ -44,7 +44,10 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 	const location = useLocationParams();
 
 	useEffect(() => {
-		const usePageMenu = AppStateStore.currentRoute?.breadcrumbs === 'sub-menu';
+		const parentRoute = getRouteByUrl(AppStateStore.currentRoute?._parentUrl);
+		const usePageMenu = Boolean(AppStateStore.currentRoute?.breadcrumbs === 'sub-menu')
+			|| Boolean(parentRoute) && parentRoute?.breadcrumbs === 'sub-menu';
+
 		setUseSubroutingMenu(usePageMenu);
 
 		if (!usePageMenu) {
@@ -55,7 +58,7 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 
 	if (useSubroutingMenu) {
 		return <div
-			className={'app-breadcrumbs with-page-menu' + (AppStateStore._yScrollPos > 32 ? ' page-scrolled' : '')}>
+			className={'app-breadcrumbs with-page-submenu' + (AppStateStore._yScrollPos > 32 ? ' page-scrolled' : '')}>
 			<div className={'app-breadcrumbs-content'}>
 				<div className={'app-breadcrumbs-panel'}>
 					<PageSubmenu/>

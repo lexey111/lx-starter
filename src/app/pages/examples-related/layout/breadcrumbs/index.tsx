@@ -13,7 +13,7 @@ export const BreadcrumbsPage: React.FC = () => {
 		<Src src={'src/engine/layout/breadcrumbs/breadcrumbs-component.tsx'}/>
 
 		<p>
-			Component displays the breadcrumb panel with "navigation pills" &mdash; or <Link to={'/layout/page-menu'}>page menu</Link>.
+			Component displays the breadcrumb panel with "navigation pills" &mdash; or <Link to={'/layout/page-submenu'}>page submenu</Link>.
 		</p>
 		<p>
 			In Breadcrumb mode component reacts to page scrolling and displays bottom border after some distance. It uses

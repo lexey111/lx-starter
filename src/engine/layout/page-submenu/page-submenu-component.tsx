@@ -16,16 +16,22 @@ export const PageSubmenu: React.FC = () => {
 		if (!route) {
 			return;
 		}
-		const subRoutes = getRoutesByParentUrl(location.url, true);
-		const switchToParent = Boolean(subRoutes?.length === 0);
-		// if current route is a single one, move one level up to it's parent, if any
-		const parentRoute = route?._parentUrl ? getRouteByUrl(route?._parentUrl) : void 0;
+		let routes: TMenuItems = [];
 
-		let routes: TMenuItems;
-		if (switchToParent && parentRoute) {
-			routes = [parentRoute, ...getRoutesByParentUrl(route?._parentUrl, true)]; // routes of current parent route
-		} else {
-			routes = [route, ...subRoutes]; // parent route + all 1st level siblings
+		if (route && route.breadcrumbs === 'sub-menu' && route._hasVisibleSubRoutes) {
+			// This is the root of submenu. Include it + it's subroutes
+			const subRoutes = getRoutesByParentUrl(route.url);
+			routes = [route, ...subRoutes];
+		}
+
+		if (routes.length === 0) {
+			// let's check the parent
+			const parentRoute = getRouteByUrl(route._parentUrl);
+			if (parentRoute && parentRoute.breadcrumbs === 'sub-menu' && parentRoute._hasVisibleSubRoutes) {
+				// ok, submenu root - the parent of current route
+				const subRoutes = getRoutesByParentUrl(parentRoute.url);
+				routes = [parentRoute, ...subRoutes];
+			}
 		}
 
 		if (routes) {

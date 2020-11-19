@@ -19,7 +19,10 @@ function testParametrizedItem(item: TRouteMappingItem, url: string): boolean {
 	return new RegExp(idMatcher).test(url);
 }
 
-export function getRouteByUrl(url: string): TRouteMappingItem | undefined {
+export function getRouteByUrl(url?: string): TRouteMappingItem | undefined {
+	if (!url) {
+		return void 0;
+	}
 	const currentLocation = RouteMapping.find(item => item.url === url);
 
 	if (currentLocation) {
@@ -28,6 +31,13 @@ export function getRouteByUrl(url: string): TRouteMappingItem | undefined {
 
 	// no direct match, try to find route/to/:param1/:param2...
 	return RouteMapping.find(item => testParametrizedItem(item, url));
+}
+
+export function getParentRouteByUrl(url: string | undefined): TRouteMappingItem | undefined {
+	if (!url) {
+		return void 0;
+	}
+	return RouteMapping.find(item => item._parentUrl === url); // find first
 }
 
 export function getRoutesByParentUrl(url: string | undefined, skipParametrized = false): TRouteMappingItem[] {

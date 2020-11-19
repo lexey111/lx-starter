@@ -18,7 +18,7 @@ export const LayoutPage: React.FC = () => {
 
 		<p>
 			However, Layout elements are dynamic. It means some of items could be displayed only on particular pages:
-			<Link to={'/layout/top-panel'}>Top panel</Link>, <Link to={'/layout/breadcrumbs'}>Breadcrumbs</Link>/<Link to={'/layout/page-menu'}>Page
+			<Link to={'/layout/top-panel'}>Top panel</Link>, <Link to={'/layout/breadcrumbs'}>Breadcrumbs</Link>/<Link to={'/layout/page-submenu'}>Page
 			menu</Link>, <Link to={'/layout/page-navigation'}>In-page navigation</Link>.
 		</p>
 

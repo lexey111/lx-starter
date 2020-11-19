@@ -50,7 +50,7 @@ export const RoutingPage: React.FC = () => {
 export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 
 		<p>
-			All the menu structures (<Link to={'/layout/main-menu'}>main menu</Link>, <Link to={'/layout/page-menu'}>page menu</Link>, <Link
+			All the menu structures (<Link to={'/layout/main-menu'}>main menu</Link>, <Link to={'/layout/page-submenu'}>page submenu</Link>, <Link
 			to={'/layout/breadcrumbs'}>breadcrumbs</Link>) and available routes are described
 			by this structure. This is the core of application.
 		</p>

@@ -111,6 +111,9 @@ export const RoutingMainPage: React.FC = () => {
 			This example component emulates server request with <code>setTimeout</code> and, then, assign the retrieved values
 			and style.
 		</p>
+		<p>
+			<Link to={'/layout/breadcrumbs'}>See more</Link> about breadcrumbs.
+		</p>
 	</>;
 };
 

@@ -14,8 +14,8 @@ export const sortAnchors = (anchors: TNavigationItems, extraTopPadding: number):
 	if (document.body.classList.contains('with-top-menu')) {
 		clientHeight -= 48; // top menu height
 	}
-	if (document.body.classList.contains('with-page-menu')) {
-		clientHeight -= 48; // page menu height
+	if (document.body.classList.contains('with-page-submenu')) {
+		clientHeight -= 48; // page submenu height
 	}
 	if (document.body.classList.contains('with-breadcrumbs')) {
 		clientHeight -= 48; // breadcrumbs panel height
