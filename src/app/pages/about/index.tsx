@@ -33,7 +33,7 @@ export const AboutPage: React.FC = () => {
 					<li><s>State management: app</s></li>
 					<li>Auth state, login/logout/guards</li>
 					<li><s>State management: data example</s></li>
-					<li>Breadcrumbs actions</li>
+					<li><s>Breadcrumbs actions</s></li>
 					<li>Page menu</li>
 					<li>In-Page navigation</li>
 				</ul>
