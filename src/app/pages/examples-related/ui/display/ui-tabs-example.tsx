@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {Checkbox} from '../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
-import {TabPane, Tabs} from '../../../../engine/ui-components/display/tabs/tabs-component';
-import {LipsumPara} from '../../../../engine/ui-components/examples-related/lipsum';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
-import {IconHome} from '../../../../engine/ui-components/general/icons/icon-home-component';
+import {Checkbox} from '../../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
+import {TabPane, Tabs} from '../../../../../engine/ui-components/display/tabs/tabs-component';
+import {LipsumPara} from '../../../../../engine/ui-components/examples-related/lipsum';
+import {SyntaxExampleTabs} from '../../../../../engine/ui-components/examples-related/syntax-example-tabs';
+import {IconHome} from '../../../../../engine/ui-components/general/icons/icon-home-component';
 
 const Markup = `<Tabs activeId={'page2'}>
 	<TabPane title={'Page 1'} id={'page1'}>

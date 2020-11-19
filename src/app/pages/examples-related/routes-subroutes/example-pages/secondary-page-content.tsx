@@ -1,6 +1,6 @@
 import React from 'react';
-import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
-import useLocationParams from '../../../../engine/hooks/use-location-params';
+import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
+import useLocationParams from '../../../../../engine/hooks/use-location-params';
 import {AppStateStore} from '../../../../store/@stores';
 
 export const SecondaryPageContent: React.FC = () => {

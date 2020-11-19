@@ -1,8 +1,8 @@
 import React from 'react';
-import {A} from '../../../../engine/ui-components/examples-related/a-component';
-import {Src} from '../../../../engine/ui-components/examples-related/src-component';
-import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
-import {Title} from '../../../../engine/ui-components/general/typography/title-component';
+import {A} from '../../../../../engine/ui-components/examples-related/a-component';
+import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
+import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 
 export const TestingPage = (): JSX.Element => {
 	return <>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {LipsumPara} from '../../../engine/ui-components/examples-related/lipsum';
-import {Title} from '../../../engine/ui-components/general/typography/title-component';
+import {LipsumPara} from '../../../../engine/ui-components/examples-related/lipsum';
+import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 
 export const BasicLayout = (props: { sideMenu?: boolean }): JSX.Element => {
 	return <div className={'application-layout-example' + (props.sideMenu ? ' has-side-menu' : '')}>

@@ -1,7 +1,7 @@
 import React from 'react';
-import {PageTopPanel} from '../../engine/layout/top-panel/page-top-panel-component';
-import {WaitTag} from '../../engine/ui-components/display/wait/wait-tag-component';
-import {Title} from '../../engine/ui-components/general/typography/title-component';
+import {PageTopPanel} from '../../../engine/layout/top-panel/page-top-panel-component';
+import {WaitTag} from '../../../engine/ui-components/display/wait/wait-tag-component';
+import {Title} from '../../../engine/ui-components/general/typography/title-component';
 
 const columnClassName = 'home-top-column';
 

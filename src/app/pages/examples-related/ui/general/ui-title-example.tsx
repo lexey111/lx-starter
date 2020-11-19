@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {Checkbox} from '../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
-import {LipsumPara} from '../../../../engine/ui-components/examples-related/lipsum';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
-import {Title} from '../../../../engine/ui-components/general/typography/title-component';
+import {Checkbox} from '../../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
+import {LipsumPara} from '../../../../../engine/ui-components/examples-related/lipsum';
+import {SyntaxExampleTabs} from '../../../../../engine/ui-components/examples-related/syntax-example-tabs';
+import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 
 const Markup = `<Title bottomBorder={border}>Title level 1</Title>
 	<Title bottomBorder={border} level={2}>Title level 2</Title>

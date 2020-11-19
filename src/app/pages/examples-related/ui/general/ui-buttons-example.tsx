@@ -1,7 +1,7 @@
 import React from 'react';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
-import {Button} from '../../../../engine/ui-components/general/button/button-component';
-import {Title} from '../../../../engine/ui-components/general/typography/title-component';
+import {SyntaxExampleTabs} from '../../../../../engine/ui-components/examples-related/syntax-example-tabs';
+import {Button} from '../../../../../engine/ui-components/general/button/button-component';
+import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 
 const Markup = `<Title level={5}>Default</Title>
 <div>

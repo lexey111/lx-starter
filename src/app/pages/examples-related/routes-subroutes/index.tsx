@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Src} from '../../../engine/ui-components/examples-related/src-component';
-import {SyntaxHighlight} from '../../../engine/ui-components/examples-related/syntax-highlight';
-import {Tag} from '../../../engine/ui-components/examples-related/tag-component';
-import {Title} from '../../../engine/ui-components/general/typography/title-component';
+import {Src} from '../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
+import {Tag} from '../../../../engine/ui-components/examples-related/tag-component';
+import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 
 const routeConfigFilename = 'src/config/app-site-map.tsx';
 
@@ -84,7 +84,7 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 		</p>
 
 		<SyntaxHighlight
-			title={'src/app/engine/routing/route-mapping.tsx'}
+			title={'src/engine/routing/route-mapping.tsx'}
 			content={'export const RouteMapping: TRouteMappingItems = flattenRoutes(AppSiteMap)'}/>
 
 		<p>

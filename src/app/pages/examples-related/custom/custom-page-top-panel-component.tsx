@@ -1,6 +1,6 @@
 import React from 'react';
-import {PageTopPanel} from '../../../engine/layout/top-panel/page-top-panel-component';
-import {IconStar} from '../../../engine/ui-components/general/icons/icon-star-component';
+import {PageTopPanel} from '../../../../engine/layout/top-panel/page-top-panel-component';
+import {IconStar} from '../../../../engine/ui-components/general/icons/icon-star-component';
 
 export const CustomPageTopPanel: React.FC = () => {
 	return <PageTopPanel type='fixed' className={'custom-page-top-panel'}>

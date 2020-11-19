@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-no-bind */
 import {observer} from 'mobx-react';
 import React, {useCallback, useState} from 'react';
-import {Checkbox} from '../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
-import {Src} from '../../../../engine/ui-components/examples-related/src-component';
-import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
-import {Button} from '../../../../engine/ui-components/general/button/button-component';
-import {Title} from '../../../../engine/ui-components/general/typography/title-component';
+import {Checkbox} from '../../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
+import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
+import {Button} from '../../../../../engine/ui-components/general/button/button-component';
+import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 import {AppExampleToDoStoreItem, AppExampleToDoStoreList} from '../../../../store/@stores';
 import {TodoListItemExample} from './todo-list-item-component';
 

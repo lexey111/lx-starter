@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-concat */
 import React from 'react';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
+import {SyntaxExampleTabs} from '../../../../../engine/ui-components/examples-related/syntax-example-tabs';
 
 const Markup = `<SyntaxExampleTabs
 	activePage={'syntax'}

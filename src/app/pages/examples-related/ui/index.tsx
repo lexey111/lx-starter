@@ -1,9 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {A} from '../../../engine/ui-components/examples-related/a-component';
-import {Src} from '../../../engine/ui-components/examples-related/src-component';
-import {ThemeSwitcher} from '../../../engine/ui-components/examples-related/theme-switcher-component';
-import {Title} from '../../../engine/ui-components/general/typography/title-component';
+import {A} from '../../../../engine/ui-components/examples-related/a-component';
+import {Src} from '../../../../engine/ui-components/examples-related/src-component';
+import {ThemeSwitcher} from '../../../../engine/ui-components/examples-related/theme-switcher-component';
+import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 
 export const UiPage: React.FC = () => {
 	return <>
@@ -18,7 +18,7 @@ export const UiPage: React.FC = () => {
 		<p>
 			Please use your favorite UI kit, or add separate UI components from different sources. Internal
 			components are designed to be minimalistic and to have no external dependencies, so feel free to
-			remove them all (especially <Src src={'src/app/engine/ui-components/examples-related'} inline/> folder)
+			remove them all (especially <Src src={'src/engine/ui-components/examples-related'} inline/> folder)
 			and replace with anything you do prefer.
 		</p>
 

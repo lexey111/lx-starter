@@ -1,8 +1,8 @@
 import {observer} from 'mobx-react';
 import React from 'react';
-import {MenuPositionSwitcher} from '../../../engine/ui-components/examples-related/menu-switcher-component';
-import {ThemeSwitcher} from '../../../engine/ui-components/examples-related/theme-switcher-component';
-import {IconSettings} from '../../../engine/ui-components/general/icons/icon-settings-component';
+import {MenuPositionSwitcher} from '../../../../engine/ui-components/examples-related/menu-switcher-component';
+import {ThemeSwitcher} from '../../../../engine/ui-components/examples-related/theme-switcher-component';
+import {IconSettings} from '../../../../engine/ui-components/general/icons/icon-settings-component';
 
 export const CustomMenuDropdown: React.FC = observer(() => {
 	return <div className={'custom-menu-dropdown'}>

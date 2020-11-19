@@ -1,11 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {FileList} from '../../../../engine/ui-components/examples-related/filelist-component';
-import {Src} from '../../../../engine/ui-components/examples-related/src-component';
-import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
-import {Tag} from '../../../../engine/ui-components/examples-related/tag-component';
-import {ThemeSwitcher} from '../../../../engine/ui-components/examples-related/theme-switcher-component';
-import {Title} from '../../../../engine/ui-components/general/typography/title-component';
+import {FileList} from '../../../../../engine/ui-components/examples-related/filelist-component';
+import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
+import {Tag} from '../../../../../engine/ui-components/examples-related/tag-component';
+import {ThemeSwitcher} from '../../../../../engine/ui-components/examples-related/theme-switcher-component';
+import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 
 const StoreLink = (): JSX.Element => <Link to={'/state-management/app-state'}>AppState Store</Link>;
 const StoreFile = 'src/app/store/app-state/app-state-store.ts';
@@ -19,11 +19,11 @@ export const ThemingPage: React.FC = () => {
 			At the moment application includes 3 themes: default, dark and light.
 		</p>
 		<p>
-			Available themes are declared in the <Src src={'src/app/engine/ui-components/theme-interface.ts'} inline/>:
+			Available themes are declared in the <Src src={'src/engine/ui-components/theme-interface.ts'} inline/>:
 		</p>
 
 		<SyntaxHighlight
-			title={'src/app/engine/ui-components/theme-interface.ts'}
+			title={'src/engine/ui-components/theme-interface.ts'}
 			content={`export type TAppTheme = {
 	code: string // theme name, will be used as part of CSS class like body.theme-%name%
 	family: 'dark' | 'light' // to tune some items that aren't directly covered with theme variables
@@ -194,7 +194,7 @@ body.theme-default {
 		<SyntaxHighlight
 			language={'less'}
 			lines={1}
-			title={'src/app/engine/layout/main-menu/styles/@main-menu-side-media.less'}
+			title={'src/engine/layout/main-menu/styles/@main-menu-side-media.less'}
 			content={`@import "../../../../../styles/@media.less";
 
 @media screen and (max-width: @app-media-side-menu-collapse) {
@@ -308,7 +308,7 @@ constructor() {
 		</p>
 
 		<SyntaxHighlight
-			title={'src/app/engine/layout/theme-to-markup-component.tsx'}
+			title={'src/engine/layout/theme-to-markup-component.tsx'}
 			content={`export const ThemeToMarkupComponent: React.FC = observer(() => {
 	useEffect(() => {
 		const bodyThemeList = Array.from(window.document.body.classList)

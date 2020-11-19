@@ -1,9 +1,9 @@
 import React from 'react';
-import {A} from '../../../../engine/ui-components/examples-related/a-component';
-import {Src} from '../../../../engine/ui-components/examples-related/src-component';
-import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
-import {Tag} from '../../../../engine/ui-components/examples-related/tag-component';
-import {Title} from '../../../../engine/ui-components/general/typography/title-component';
+import {A} from '../../../../../engine/ui-components/examples-related/a-component';
+import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
+import {Tag} from '../../../../../engine/ui-components/examples-related/tag-component';
+import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 import {UiButtonsExample} from './ui-buttons-example';
 import {UiIconsExample} from './ui-icons-example';
 import {UiTitleExample} from './ui-title-example';
@@ -13,7 +13,7 @@ export const UiGeneralPage: React.FC = () => {
 		<Title>General components</Title>
 
 		<Title nav={'title'} level={2}>Title</Title>
-		<Src src={'src/app/engine/ui-components/general/typography/title-component.tsx'}/>
+		<Src src={'src/engine/ui-components/general/typography/title-component.tsx'}/>
 
 		<p>
 			Very simple wrapper for <code>&lt;H1..6&gt;</code> tag, just to keep things semantic.
@@ -56,7 +56,7 @@ export const UiGeneralPage: React.FC = () => {
 		</p>
 
 		<Title nav={'buttons'} level={2}>Buttons</Title>
-		<Src src={'src/app/engine/ui-components/general/button/button-component.tsx'}/>
+		<Src src={'src/engine/ui-components/general/button/button-component.tsx'}/>
 
 		<p>
 			Buttons in The Starter are just styled with CSS. Source file is <Src src={'src/styles/precompiled/buttons.less'} inline/>
@@ -68,7 +68,7 @@ export const UiGeneralPage: React.FC = () => {
 		<UiButtonsExample/>
 
 		<Title nav={'svg-icons'} level={2}>SVG Icons</Title>
-		<Src src={'src/app/engine/ui-components/general/icons'}/>
+		<Src src={'src/engine/ui-components/general/icons'}/>
 
 		<p>
 			Here I have a few icons needed (mostly) to display menu and spinners. They are just React SVG wrappers for some

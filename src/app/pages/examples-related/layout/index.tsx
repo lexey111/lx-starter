@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {MenuPositionSwitcher} from '../../../engine/ui-components/examples-related/menu-switcher-component';
-import {Title} from '../../../engine/ui-components/general/typography/title-component';
+import {MenuPositionSwitcher} from '../../../../engine/ui-components/examples-related/menu-switcher-component';
+import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 import {BasicLayout} from './basic-layout-component';
 
 export const LayoutPage: React.FC = () => {

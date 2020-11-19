@@ -1,8 +1,8 @@
 import {observer} from 'mobx-react';
 import React, {useLayoutEffect} from 'react';
-import {PageTopPanel} from '../../../../engine/layout/top-panel/page-top-panel-component';
-import {LipsumPara} from '../../../../engine/ui-components/examples-related/lipsum';
-import {Title} from '../../../../engine/ui-components/general/typography/title-component';
+import {PageTopPanel} from '../../../../../engine/layout/top-panel/page-top-panel-component';
+import {LipsumPara} from '../../../../../engine/ui-components/examples-related/lipsum';
+import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 import {ExampleTopPanelStore} from './panel-store';
 
 export const ExampleTopPanel: React.FC = observer(() => {

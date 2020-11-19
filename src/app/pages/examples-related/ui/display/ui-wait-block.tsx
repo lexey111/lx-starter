@@ -1,7 +1,7 @@
 import React, {useCallback, useState} from 'react';
-import {WaitBlock} from '../../../../engine/ui-components/display/wait/wait-block-component';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
-import {Button} from '../../../../engine/ui-components/general/button/button-component';
+import {WaitBlock} from '../../../../../engine/ui-components/display/wait/wait-block-component';
+import {SyntaxExampleTabs} from '../../../../../engine/ui-components/examples-related/syntax-example-tabs';
+import {Button} from '../../../../../engine/ui-components/general/button/button-component';
 
 const Markup = '<WaitBlock/>';
 

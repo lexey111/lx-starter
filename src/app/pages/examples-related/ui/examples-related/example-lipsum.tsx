@@ -1,6 +1,6 @@
 import React from 'react';
-import {LipsumPara} from '../../../../engine/ui-components/examples-related/lipsum';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
+import {LipsumPara} from '../../../../../engine/ui-components/examples-related/lipsum';
+import {SyntaxExampleTabs} from '../../../../../engine/ui-components/examples-related/syntax-example-tabs';
 
 const Markup = '<LipsumPara paragraphs={2} words={45}/>';
 

@@ -1,6 +1,6 @@
 import {action, computed, makeObservable, observable} from 'mobx';
-import {TRouteMappingItem} from '../../engine/routing/route-mapping-interface';
-import {findTheme} from '../../engine/ui-components/theme-interface';
+import {TRouteMappingItem} from '../../../engine/routing/route-mapping-interface';
+import {findTheme} from '../../../engine/ui-components/theme-interface';
 
 export type TAppStateStoreData = {
 	currentRoute?: TRouteMappingItem | undefined // TRouteMappingItem

@@ -1,6 +1,6 @@
 import React from 'react';
-import {LipsumPara} from '../../../engine/ui-components/examples-related/lipsum';
-import {Title} from '../../../engine/ui-components/general/typography/title-component';
+import {LipsumPara} from '../../../../engine/ui-components/examples-related/lipsum';
+import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 
 export const CustomPage: React.FC = () => {
 	return <>

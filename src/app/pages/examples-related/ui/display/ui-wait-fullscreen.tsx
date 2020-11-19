@@ -1,8 +1,8 @@
 import React, {useCallback, useState} from 'react';
-import {WaitFullscreen} from '../../../../engine/ui-components/display/wait/wait-fullscreen-component';
-import {LipsumPara} from '../../../../engine/ui-components/examples-related/lipsum';
-import {SyntaxExampleTabs} from '../../../../engine/ui-components/examples-related/syntax-example-tabs';
-import {Button} from '../../../../engine/ui-components/general/button/button-component';
+import {WaitFullscreen} from '../../../../../engine/ui-components/display/wait/wait-fullscreen-component';
+import {LipsumPara} from '../../../../../engine/ui-components/examples-related/lipsum';
+import {SyntaxExampleTabs} from '../../../../../engine/ui-components/examples-related/syntax-example-tabs';
+import {Button} from '../../../../../engine/ui-components/general/button/button-component';
 
 const Markup = `<WaitFullscreen
 	hideSpinner={true}

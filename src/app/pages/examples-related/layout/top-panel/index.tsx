@@ -2,11 +2,11 @@
 import {observer} from 'mobx-react';
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Checkbox} from '../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
-import {Src} from '../../../../engine/ui-components/examples-related/src-component';
-import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
-import {Tag} from '../../../../engine/ui-components/examples-related/tag-component';
-import {Title} from '../../../../engine/ui-components/general/typography/title-component';
+import {Checkbox} from '../../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
+import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
+import {Tag} from '../../../../../engine/ui-components/examples-related/tag-component';
+import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 import {ExampleTopPanelStore} from './panel-store';
 
 export const TopPanelPage: React.FC = observer(() => {
