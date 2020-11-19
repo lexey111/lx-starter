@@ -1,6 +1,6 @@
 import {action, computed, makeObservable, observable} from 'mobx';
 import {TRouteMappingItem} from '../../../engine/routing/route-mapping-interface';
-import {findTheme} from '../../../engine/ui-components/theme-interface';
+import {getStoredThemeCode, setStoredThemeCode} from '../../../engine/ui-components/theme-interface';
 
 export type TAppStateStoreData = {
 	currentRoute?: TRouteMappingItem | undefined // TRouteMappingItem
@@ -46,11 +46,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 
 	constructor() {
 		// initial theme
-		const value = localStorage.getItem('app-theme') || 'default';
-		const currentTheme = findTheme(value);
-		if (currentTheme) {
-			this.themeCode = value;
-		}
+		this.themeCode = getStoredThemeCode();
 
 		// menu position
 		this._mainMenuPosition = localStorage.getItem('app-menu.position') === 'side' ? 'side' : 'top';
@@ -142,13 +138,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 	};
 
 	setTheme = (value: string): void => {
-		let themeCode = 'default';
-		const currentTheme = findTheme(value);
-		if (currentTheme) {
-			themeCode = value;
-		}
-		localStorage.setItem('app-theme', themeCode);
-		this.themeCode = themeCode;
+		this.themeCode = setStoredThemeCode(value);
 	};
 
 	setMenuPosition = (value: string): void => {

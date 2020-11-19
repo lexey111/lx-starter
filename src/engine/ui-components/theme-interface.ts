@@ -25,3 +25,19 @@ export const AvailableThemes: ReadonlyArray<TAppTheme> = [
 export function findTheme(code: string): TAppTheme | undefined {
 	return AvailableThemes.find(theme => theme.code === code);
 }
+
+export function getStoredThemeCode(): string {
+	const value = localStorage.getItem('app-theme') || 'default';
+	const theme = findTheme(value);
+	return theme ? theme.code : 'default';
+}
+
+export function setStoredThemeCode(code: string): string {
+	let themeCode = 'default';
+	const theme = findTheme(code);
+	if (theme) {
+		themeCode = theme.code;
+	}
+	localStorage.setItem('app-theme', themeCode);
+	return themeCode;
+}

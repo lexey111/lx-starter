@@ -46,7 +46,9 @@ export const AvailableThemes: ReadonlyArray<TAppTheme> = [
 		family: 'dark',
 		title: 'Dark theme'
 	},
-];`}/>
+];
+...service functions...
+`}/>
 		<p>
 			Technically all the themes are just mapping of .LESS variables to CSS variables. There
 			is <Src src={'src/styles/themes/themes.less'} inline/> file which does all the magic:
@@ -245,11 +247,14 @@ public themeCode = 'default';
 ...
 constructor() {
 	// initial theme
+	this.themeCode = getStoredThemeCode(); // from src/engine/ui-components/theme-interface.ts
+	
+// src/engine/ui-components/theme-interface.ts
+export function getStoredThemeCode(): string {
 	const value = localStorage.getItem('app-theme') || 'default';
-	const currentTheme = findTheme(value);
-	if (currentTheme) {
-		this.themeCode = value;
-	}
+	const theme = findTheme(value);
+	return theme ? theme.code : 'default';
+}	
 ...`}/>
 
 		<Title level={4} nav={'storing'}>Storing the theme</Title>
@@ -275,14 +280,19 @@ constructor() {
 		</p>
 
 		<SyntaxHighlight content={`setTheme = (value: string): void => {
-		let themeCode = 'default';
-		const currentTheme = findTheme(value);
-		if (currentTheme) {
-			themeCode = value;
-		}
-		localStorage.setItem('app-theme', themeCode);
-		this.themeCode = themeCode;
+		this.themeCode = setStoredThemeCode(value);
 };
+
+// src/engine/ui-components/theme-interface.ts
+export function setStoredThemeCode(code: string): string {
+	let themeCode = 'default';
+	const theme = findTheme(code);
+	if (theme) {
+		themeCode = theme.code;
+	}
+	localStorage.setItem('app-theme', themeCode);
+	return themeCode;
+}
 `}/>
 		<Title level={4} nav={'switching'}>Switching the theme</Title>
 		<p>
