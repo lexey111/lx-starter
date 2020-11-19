@@ -16,19 +16,27 @@ import {TRouteMappingItem} from '../engine/routing/route-mapping-interface';
 import {RouteToStoreComponent} from '../engine/routing/route-to-store-component';
 import {AppStateStore} from './store/@stores';
 
+export const AppTitle = '1xStarter';
+
 const AppRoutes = RouteMapping.map((routeItem: TRouteMappingItem, idx: number) => {
 	if (!routeItem.url) {
 		return null;
 	}
+
 	return <Route
 		exact path={routeItem.url}
 		key={idx}
 		render={(props: { match: { params: Record<string, string> } }) => {
 			// actualize current page & route params in AppState Store
 			AppStateStore.setCurrentRoute(routeItem, props.match.params);
+			if (typeof routeItem.title === 'string') {
+				document.title = AppTitle + ' | ' + routeItem.title;
+			} else {
+				document.title = AppTitle;
+			}
 
 			// return corresponding page wrapper
-			if (routeItem.onlyWhenLoggedIn) {
+			if (routeItem.onlyWhenAuthorized) {
 				return <AppAuthPage className={routeItem.pageClass}>{routeItem.page}</AppAuthPage>;
 			}
 			return <AppPage className={routeItem.pageClass}>{routeItem.page}</AppPage>;

@@ -54,12 +54,14 @@ export const AppSiteMap: TRouteMappingItems = [
 		title: 'Getting started',
 		url: '/getting-started',
 		page: <GettingStartedPage/>,
+		showIconInTopMenu: false,
 	},
 	{
 		title: 'Internals',
 		url: '/internals',
 		breadcrumbs: 'sub-menu',
 		page: <InternalsPage/>,
+		showIconInTopMenu: false,
 		routes: [
 			{
 				title: 'Builder',
@@ -80,6 +82,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		url: '/state-management',
 		page: <StatePage/>,
 		breadcrumbs: 'sub-menu',
+		showIconInTopMenu: false,
 		routes: [
 			{
 				url: '/state-management/app-state',
@@ -105,6 +108,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		title: 'Routing',
 		url: '/routing',
 		page: <RoutingPage/>,
+		showIconInTopMenu: false,
 		routes: [
 			{
 				url: '/routing/example-pages',
@@ -135,6 +139,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		url: '/layout',
 		page: <LayoutPage/>,
 		breadcrumbs: 'sub-menu',
+		showIconInTopMenu: false,
 		routes: [
 			{
 				title: 'Top panel',
@@ -174,6 +179,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		url: '/ui',
 		page: <UiPage/>,
 		breadcrumbs: 'sub-menu',
+		showIconInTopMenu: false,
 		routes: [
 			{
 				title: 'Theming',

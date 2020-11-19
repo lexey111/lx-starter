@@ -4,6 +4,7 @@ export type TRouteMappingItem = {
 	title?: string | JSX.Element // Menu item title or function which returns title
 	subtitle?: string | JSX.Element // subtitle to show under the menu title line
 	icon?: JSX.Element // icon component
+	showIconInTopMenu?: boolean // default: true if icon assigned
 	menuItem?: JSX.Element // entire menu item component
 	menuItemExpandable?: boolean // if custom menu item is expandable
 	page?: JSX.Element // page (component) to render
@@ -12,8 +13,8 @@ export type TRouteMappingItem = {
 	isHomePage?: boolean // is it Home page?
 	isLoginPage?: boolean // is it Login page?
 
-	onlyWhenLoggedIn?: boolean
-	onlyWhenLoggedOut?: boolean
+	onlyWhenAuthorized?: boolean
+	onlyWhenNotAuthorized?: boolean
 
 	breadcrumbs?: 'default' | 'none' | 'sub-menu'
 

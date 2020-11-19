@@ -7,7 +7,7 @@ import {Title} from '../../../../engine/ui-components/general/typography/title-c
 
 const routeConfigFilename = 'src/config/app-site-map.tsx';
 
-const AppLink = ():JSX.Element => <Src src={'src/app/@app.tsx'} inline/>;
+const AppLink = (): JSX.Element => <Src src={'src/app/@app.tsx'} inline/>;
 
 // eslint-disable-next-line react/no-multi-comp
 export const RoutingPage: React.FC = () => {
@@ -26,6 +26,7 @@ export const RoutingPage: React.FC = () => {
 	title?: string | JSX.Element // Menu item title or function which returns title
 	subtitle?: string | JSX.Element // subtitle to show under the menu title line
 	icon?: JSX.Element // icon component
+	showIconInTopMenu?: boolean // default: true if icon assigned
 	menuItem?: JSX.Element // entire menu item component
 	menuItemExpandable?: boolean // if custom menu item is expandable
 	page?: JSX.Element // page (component) to render
@@ -34,8 +35,8 @@ export const RoutingPage: React.FC = () => {
 	isHomePage?: boolean // is it Home page?
 	isLoginPage?: boolean // is it Login page?
 
-	onlyWhenLoggedIn?: boolean
-	onlyWhenLoggedOut?: boolean
+	onlyWhenAuthorized?: boolean
+	onlyWhenNotAuthorized?: boolean
 
 	breadcrumbs?: 'default' | 'none' | 'sub-menu'
 
@@ -49,7 +50,8 @@ export const RoutingPage: React.FC = () => {
 export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 
 		<p>
-			All the menu structures (main menu, page menus, breadcrumbs) and available routes are described
+			All the menu structures (<Link to={'/layout/main-menu'}>main menu</Link>, <Link to={'/layout/page-menu'}>page menu</Link>, <Link
+			to={'/layout/breadcrumbs'}>breadcrumbs</Link>) and available routes are described
 			by this structure. This is the core of application.
 		</p>
 
@@ -123,7 +125,7 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 		AppStateStore.setCurrentRoute(routeItem, props.match.params);
 
 		// return corresponding page wrapper
-		if (routeItem.onlyWhenLoggedIn) {
+		if (routeItem.onlyWhenAuthorized) {
 			return <AppAuthPage className={routeItem.pageClass}>{routeItem.page}</AppAuthPage>;
 		}
 		return <AppPage className={routeItem.pageClass}>{routeItem.page}</AppPage>;

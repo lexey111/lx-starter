@@ -25,6 +25,9 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 	if (!icon && typeof item.title === 'string' && AppStateStore._mainMenuPosition === 'side') {
 		icon = <IconStar/>; // side menu must have an icon
 	}
+	if (icon && AppStateStore._mainMenuPosition === 'top' && item.showIconInTopMenu === false) {
+		icon = void 0; // do not show icon in top menu
+	}
 
 	const activeUrl = AppStateStore.currentRoute?.url;
 	const availableSubRoutes = item.routes?.filter(x => x.url?.indexOf('/:') === -1);

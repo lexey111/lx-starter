@@ -29,11 +29,13 @@ export const AboutPage: React.FC = () => {
 					<li><s>Testing</s></li>
 					<li>Building</li>
 					<li><s>Routing: params</s></li>
-					<li>Layout: main menu</li>
+					<li><s>Layout: main menu</s></li>
 					<li><s>State management: app</s></li>
 					<li>Auth state, login/logout/guards</li>
 					<li><s>State management: data example</s></li>
 					<li>Breadcrumbs actions</li>
+					<li>Page menu</li>
+					<li>In-Page navigation</li>
 				</ul>
 			</li>
 			<li><s>Delay one render on route switching</s></li>

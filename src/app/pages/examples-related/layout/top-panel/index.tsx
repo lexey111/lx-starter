@@ -12,6 +12,7 @@ import {ExampleTopPanelStore} from './panel-store';
 export const TopPanelPage: React.FC = observer(() => {
 	return <>
 		<Title nav={'overview'}>Top panel</Title>
+		<Src src={'src/engine/layout/top-panel/app-top-panel-component.tsx'}/>
 
 		<p>
 			This is an optional topmost panel which displays... whatever.

@@ -35,6 +35,7 @@ export default class CAppStateStore implements TAppStateStoreData {
 	public _topPanelType: 'default' | 'fixed' = 'default';
 
 	public themeCode = 'default';
+
 	public _mainMenuPosition: 'top' | 'side' = 'top';
 
 	public isAuthorized = false;

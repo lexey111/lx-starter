@@ -17,10 +17,10 @@ function filterByMenuType(items: TMenuItems, forLateral: boolean): TMenuItems {
 
 function filterByLoggedIn(items: TRouteMappingItems, isLoggedIn: boolean): TRouteMappingItems {
 	return items.filter(item => {
-		if (item.onlyWhenLoggedIn === true && !isLoggedIn) {
+		if (item.onlyWhenAuthorized === true && !isLoggedIn) {
 			return false;
 		}
-		if (item.onlyWhenLoggedOut === true && isLoggedIn) {
+		if (item.onlyWhenNotAuthorized === true && isLoggedIn) {
 			return false;
 		}
 		return true;
