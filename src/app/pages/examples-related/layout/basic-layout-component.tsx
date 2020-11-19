@@ -33,7 +33,7 @@ export const BasicLayout = (props: { sideMenu?: boolean }): JSX.Element => {
 				</div>
 			</div>
 			<div className={'apl-footer'}>
-				<i>Footer</i>
+				<Link to={'/layout/footer'}><i>Footer</i></Link>
 			</div>
 
 			<div className={'apl-dimension'}>

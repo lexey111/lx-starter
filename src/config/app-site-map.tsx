@@ -12,8 +12,9 @@ import {TestingPage} from '../app/pages/examples-related/internals/testing';
 import {LayoutPage} from '../app/pages/examples-related/layout';
 import {BreadcrumbsPage} from '../app/pages/examples-related/layout/breadcrumbs';
 import {PageActionsPage} from '../app/pages/examples-related/layout/breadcrumbs/page-actions';
+import {FooterPage} from '../app/pages/examples-related/layout/footer';
 import {MainMenuPage} from '../app/pages/examples-related/layout/main-menu';
-import {PageSubMenuPage} from '../app/pages/examples-related/layout/page-menu';
+import {PageSubMenuPage} from '../app/pages/examples-related/layout/page-submenu';
 import {PageNavigationPage} from '../app/pages/examples-related/layout/page-navigation';
 import {TopPanelPage} from '../app/pages/examples-related/layout/top-panel';
 import {ExampleTopPanel} from '../app/pages/examples-related/layout/top-panel/example-top-panel-component';
@@ -169,6 +170,11 @@ export const AppSiteMap: TRouteMappingItems = [
 				title: 'In-page navigation',
 				url: '/layout/page-navigation',
 				page: <PageNavigationPage/>,
+			},
+			{
+				title: 'Footer',
+				url: '/layout/footer',
+				page: <FooterPage/>,
 			},
 		]
 	},
