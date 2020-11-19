@@ -1,8 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
 import React from 'react';
-import {TRouteMappingItems} from '../engine/routing/route-mapping-interface';
-import {IconHome} from '../engine/ui-components/general/icons/icon-home-component';
-import {IconStar} from '../engine/ui-components/general/icons/icon-star-component';
 import {AboutPage} from '../app/pages/about';
 import {CustomPage} from '../app/pages/examples-related/custom';
 import {CustomMenuDropdown} from '../app/pages/examples-related/custom/custom-menu-dropdown-component';
@@ -14,6 +11,7 @@ import {BuilderPage} from '../app/pages/examples-related/internals/builder';
 import {TestingPage} from '../app/pages/examples-related/internals/testing';
 import {LayoutPage} from '../app/pages/examples-related/layout';
 import {BreadcrumbsPage} from '../app/pages/examples-related/layout/breadcrumbs';
+import {PageActionsPage} from '../app/pages/examples-related/layout/breadcrumbs/page-actions';
 import {MainMenuPage} from '../app/pages/examples-related/layout/main-menu';
 import {PageMenuPage} from '../app/pages/examples-related/layout/page-menu';
 import {PageNavigationPage} from '../app/pages/examples-related/layout/page-navigation';
@@ -38,6 +36,9 @@ import {UiGeneralPage} from '../app/pages/examples-related/ui/general';
 import {ThemingPage} from '../app/pages/examples-related/ui/theming';
 import {HomePage} from '../app/pages/home';
 import {HomePageTopPanel} from '../app/pages/home/home-page-top-panel-component';
+import {TRouteMappingItems} from '../engine/routing/route-mapping-interface';
+import {IconHome} from '../engine/ui-components/general/icons/icon-home-component';
+import {IconStar} from '../engine/ui-components/general/icons/icon-star-component';
 
 // main app routing
 export const AppSiteMap: TRouteMappingItems = [
@@ -153,6 +154,13 @@ export const AppSiteMap: TRouteMappingItems = [
 				breadcrumbs: 'sub-menu',
 				url: '/layout/main-menu',
 				page: <MainMenuPage/>,
+				routes: [
+					{
+						title: 'Page actions example',
+						url: '/layout/breadcrumbs/page-actions',
+						page: <PageActionsPage/>,
+					}
+				]
 			},
 			{
 				title: 'Breadcrumbs',

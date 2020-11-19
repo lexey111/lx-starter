@@ -52,7 +52,6 @@ export const RoutingMainPage: React.FC = () => {
 			<li><Link to={'/routing/example-pages/list-of-articles/xxx'}>Non-existing article (bad Id)</Link></li>
 			<li><Link to={'/routing/example-pages/list-of-articles/1/xxx'}>Good article, bad author</Link></li>
 			<li><Link to={'/routing/example-pages/list-of-articles/abc/xyz'}>Invalid article, invalid author</Link></li>
-
 		</ul>
 
 		<p>
@@ -62,7 +61,7 @@ export const RoutingMainPage: React.FC = () => {
 
 		<Title level={3} nav={'breadcrumbs'}>Breadcrumb items</Title>
 		<p>
-			To implement active breadcrumb item uou just need to assign React component to the <code>title</code> field in
+			To implement active breadcrumb item you just need to assign React component to the <code>title</code> field in
 			<Src src={'src/config/app-site-map.tsx'} inline/> file:
 		</p>
 

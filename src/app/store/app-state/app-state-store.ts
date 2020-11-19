@@ -8,10 +8,13 @@ export type TAppStateStoreData = {
 	currentLocation?: string // http://url/page1
 
 	themeCode: string // TAppTheme.code
+
 	_mainMenuPosition: string // 'side' | 'top'
 
 	_pageActions?: JSX.Element | null // optional action(s) that will be displayed in the breadcrumbs on scroll
+
 	_yScrollPos: number // technical one, needed to show breadcrumbs panel after scroll distance reached > 32px
+
 	_topPanelHeight: number // technical one, needed to correct side menu position
 	_topPanelClass: string // extra class assigned to top panel to customize appearance
 	_topPanelType: 'default' | 'fixed' // behavior of top panel - scrollable with page or fixed position
@@ -29,7 +32,9 @@ export default class CAppStateStore implements TAppStateStoreData {
 	public currentLocation = '';
 
 	public _pageActions: JSX.Element | null = null;
+
 	public _yScrollPos = 0;
+
 	public _topPanelHeight = 0;
 	public _topPanelClass = '';
 	public _topPanelType: 'default' | 'fixed' = 'default';
@@ -56,12 +61,15 @@ export default class CAppStateStore implements TAppStateStoreData {
 			currentLocation: observable,
 
 			_pageActions: observable,
+
 			_yScrollPos: observable,
+
 			_topPanelHeight: observable,
 			_topPanelClass: observable,
 			_topPanelType: observable,
 
 			themeCode: observable,
+
 			_mainMenuPosition: observable,
 
 			isAuthorized: observable,
