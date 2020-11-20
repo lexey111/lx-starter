@@ -27,8 +27,8 @@ import {ArticleTitle} from '../app/pages/examples-related/routes-subroutes/examp
 import {RoutingListOfArticles} from '../app/pages/examples-related/routes-subroutes/example-pages/list-of-articles';
 import {AuthorTitle} from '../app/pages/examples-related/routes-subroutes/example-pages/list-of-articles/author-title-component';
 import {ProtectedRoutesPage} from '../app/pages/examples-related/routes-subroutes/protected';
-import {ProtectedRoutesWhenAuthorizedPage} from '../app/pages/examples-related/routes-subroutes/protected/when-authorized-page';
-import {ProtectedRoutesWhenNotAuthorizedPage} from '../app/pages/examples-related/routes-subroutes/protected/when-not-authorized-page';
+import {ProtectedRoutesWhenAuthorizedPage} from '../app/pages/examples-related/routes-subroutes/protected/pages/when-authorized-page';
+import {ProtectedRoutesWhenNotAuthorizedPage} from '../app/pages/examples-related/routes-subroutes/protected/pages/when-not-authorized-page';
 import {StatePage} from '../app/pages/examples-related/state-management';
 import {StateMainStorePage} from '../app/pages/examples-related/state-management/app-state';
 import {StateGenericStorePage} from '../app/pages/examples-related/state-management/example-generic-store';

@@ -3,6 +3,7 @@ import React from 'react';
 import {AppStateStore} from '../../../../app/store/@stores';
 import {Icon} from '../../../ui-components/general/icons/icon-component';
 import {TMenuItem} from '../main-menu-component';
+import {filterByLoggedIn} from '../main-menu-utils';
 
 type TMainMenuItemProps = {
 	item: TMenuItem
@@ -30,7 +31,7 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 	}
 
 	const activeUrl = AppStateStore.currentRoute?.url;
-	const availableSubRoutes = item.routes?.filter(x => x.url?.indexOf('/:') === -1);
+	const availableSubRoutes = filterByLoggedIn(item.routes?.filter(x => x.url?.indexOf('/:') === -1), AppStateStore.isAuthorized);
 	let itemHasVisibleRoutes = availableSubRoutes && availableSubRoutes.length > 0;
 	const activeSubRoute = availableSubRoutes?.find(x => x.url === activeUrl);
 	const itemIsActive = item.isActive;

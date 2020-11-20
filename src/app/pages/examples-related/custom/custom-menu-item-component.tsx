@@ -6,6 +6,7 @@ export const CustomMenuItem: React.FC = () => {
 		<i></i>
 		<i></i>
 		<i></i>
+		<b></b>
 	</div>;
 };
 

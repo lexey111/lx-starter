@@ -7,13 +7,24 @@ import {Tag} from '../../../../../engine/ui-components/examples-related/tag-comp
 import {Button} from '../../../../../engine/ui-components/general/button/button-component';
 import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 
+const listLink = '/routing/example-pages/list-of-articles';
+
 export const RoutingMainPage: React.FC = () => {
 	return <>
-		<Title nav={'example'}>Routing: example</Title>
+		<Title nav={'example'}>Routing: example pages</Title>
+		<p>
+			The page consists of different rather sophisticated route examples.
+		</p>
+
 		<p>
 			There is a <Button type={'primary'}>
-			<Link to={'/routing/example-pages/list-of-articles'}>List of articles</Link></Button>.
+			<Link to={listLink}>List of articles</Link></Button>.
 			The source of the titles is <A href={'https://www.americanscientist.org/blog/from-the-staff/2019s-most-popular-articles'}>American Scientist</A>.
+		</p>
+
+		<p>
+			It is a master-details dataset: <Link to={listLink}>list of articles</Link>, then particular article, then
+			author(s) of the article.
 		</p>
 
 		<p>
@@ -62,7 +73,7 @@ export const RoutingMainPage: React.FC = () => {
 		<Title level={3} nav={'breadcrumbs'}>Breadcrumb items</Title>
 		<p>
 			To implement active breadcrumb item you just need to assign React component to the <code>title</code> field
-			in	<Src src={'src/config/app-site-map.tsx'} inline/> file:
+			in <Src src={'src/config/app-site-map.tsx'} inline/> file:
 		</p>
 
 		<SyntaxHighlight lines={4} content={`{
