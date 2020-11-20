@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {IconCheck} from '../../general/icons/icon-check-component';
+import {Icon} from '../../general/icons/icon-component';
 
 export type TCheckboxProps = {
 	checked: boolean
@@ -57,7 +57,7 @@ const Checkbox: React.FC<TCheckboxProps> = (props: TCheckboxProps) => {
 	>
 
 		<div className={'checkbox-tickmark'}>
-			{props.checked && <><IconCheck/><IconCheck/></>}
+			{props.checked && <><Icon type={'check'}/><Icon type={'check'}/></>}
 		</div>
 
 		{hasTitle && <div className={'checkbox-title'}>

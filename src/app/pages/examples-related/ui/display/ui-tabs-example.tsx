@@ -3,7 +3,7 @@ import {Checkbox} from '../../../../../engine/ui-components/data-entry/checkbox/
 import {TabPane, Tabs} from '../../../../../engine/ui-components/display/tabs/tabs-component';
 import {LipsumPara} from '../../../../../engine/ui-components/examples-related/lipsum';
 import {SyntaxExampleTabs} from '../../../../../engine/ui-components/examples-related/syntax-example-tabs';
-import {IconHome} from '../../../../../engine/ui-components/general/icons/icon-home-component';
+import {Icon} from '../../../../../engine/ui-components/general/icons/icon-component';
 
 const Markup = `<Tabs activeId={'page2'}>
 	<TabPane title={'Page 1'} id={'page1'}>
@@ -12,7 +12,7 @@ const Markup = `<Tabs activeId={'page2'}>
 	<TabPane title={'Page 2 (active by default)'} id={'page2'}>
 		<LipsumPara paragraphs={2}/>
 	</TabPane>
-	<TabPane title={<span><IconHome/> Page 3</span>} id={'page3'}>
+	<TabPane title={<span><Icon type={'home'}/> Page 3</span>} id={'page3'}>
 		<LipsumPara paragraphs={2}/>
 	</TabPane>
 </Tabs>
@@ -46,7 +46,7 @@ export const UiTabsExample: React.FC = () => {
 				<TabPane title={'Page 2 (active by default)'} id={'page2'}>
 					<LipsumPara paragraphs={2}/>
 				</TabPane>
-				<TabPane title={<span><IconHome/> Page 3</span>} id={'page3'}>
+				<TabPane title={<span><Icon type={'home'}/> Page 3</span>} id={'page3'}>
 					<Checkbox checked={showPage4} onChange={setShowPage4}>Show Page 4</Checkbox>
 					<LipsumPara paragraphs={2}/>
 				</TabPane>

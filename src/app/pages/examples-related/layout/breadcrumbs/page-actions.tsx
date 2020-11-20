@@ -3,7 +3,7 @@ import {LipsumPara} from '../../../../../engine/ui-components/examples-related/l
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Button} from '../../../../../engine/ui-components/general/button/button-component';
-import {IconFile} from '../../../../../engine/ui-components/general/icons/icon-file-component';
+import {Icon} from '../../../../../engine/ui-components/general/icons/icon-component';
 import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 import {AppStateStore} from '../../../../store/@stores';
 
@@ -15,7 +15,7 @@ export const PageActionsPage: React.FC = () => {
 
 	useEffect(() => {
 		AppStateStore._pageActions = <>
-			<IconFile style={{
+			<Icon type={'file'} style={{
 				width: '24px',
 				height: '24px',
 				paddingRight: '6px',

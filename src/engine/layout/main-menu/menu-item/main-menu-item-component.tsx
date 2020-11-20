@@ -1,7 +1,7 @@
 import {observer} from 'mobx-react';
 import React from 'react';
 import {AppStateStore} from '../../../../app/store/@stores';
-import {IconStar} from '../../../ui-components/general/icons/icon-star-component';
+import {Icon} from '../../../ui-components/general/icons/icon-component';
 import {TMenuItem} from '../main-menu-component';
 
 type TMainMenuItemProps = {
@@ -23,7 +23,7 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 	let {icon} = item;
 
 	if (!icon && typeof item.title === 'string' && AppStateStore._mainMenuPosition === 'side') {
-		icon = <IconStar/>; // side menu must have an icon
+		icon = <Icon type={'star'}/>; // side menu must have an icon
 	}
 	if (icon && AppStateStore._mainMenuPosition === 'top' && item.showIconInTopMenu === false) {
 		icon = void 0; // do not show icon in top menu

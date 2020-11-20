@@ -22,11 +22,12 @@ const Markup = `<Title bottomBorder={border}>Title level 1</Title>
 const Syntax = `type TTitleProps = {
 	level?: 1 | 2 | 3 | 4 | 5 | 6
 	subTitle?: string | JSX.Element
-	navTitle?: string
+	navTitle?: string | JSX.Element
 	className?: string
 	bottomBorder?: boolean
 	noTopMargin?: boolean
 	nav?: string
+	navPadding?: 1 | 2
 	children?: any
 };
 

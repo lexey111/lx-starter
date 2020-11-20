@@ -4,6 +4,7 @@ import {A} from '../../../../../engine/ui-components/examples-related/a-componen
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Tag} from '../../../../../engine/ui-components/examples-related/tag-component';
+import {Icon} from '../../../../../engine/ui-components/general/icons/icon-component';
 import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 import {UiButtonsExample} from './ui-buttons-example';
 import {UiIconsExample} from './ui-icons-example';
@@ -48,6 +49,12 @@ export const UiGeneralPage: React.FC = () => {
 ...
 <Title nav={'anchor_3'} navTitle={'Short title'}>Long title which cannot fit to panel</Title>
 ...
+<Title 
+	nav={'anchor_4'} 
+	navTitle={<span>Very <b>important</b> note</span>}>
+	Some caption
+</Title>
+...
 `}/>
 
 		<p>
@@ -72,7 +79,12 @@ export const UiGeneralPage: React.FC = () => {
 		</p>
 		<UiButtonsExample/>
 
-		<Title nav={'svg_icons'} level={2}>SVG Icons</Title>
+		<Title
+			nav={'svg_icons'}
+			level={2}
+			navTitle={<span><Icon type={'star'} style={{fill: 'red'}}/> <b>SVG Icons</b></span>}>
+			SVG Icons
+		</Title>
 		<Src src={'src/engine/ui-components/general/icons'}/>
 
 		<p>

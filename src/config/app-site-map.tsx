@@ -15,8 +15,8 @@ import {PageActionsPage} from '../app/pages/examples-related/layout/breadcrumbs/
 import {FooterPage} from '../app/pages/examples-related/layout/footer';
 import {MainMenuPage} from '../app/pages/examples-related/layout/main-menu';
 import {PagePage} from '../app/pages/examples-related/layout/page';
-import {PageSubMenuPage} from '../app/pages/examples-related/layout/page-submenu';
 import {PageNavigationPage} from '../app/pages/examples-related/layout/page-navigation';
+import {PageSubMenuPage} from '../app/pages/examples-related/layout/page-submenu';
 import {TopPanelPage} from '../app/pages/examples-related/layout/top-panel';
 import {ExampleTopPanel} from '../app/pages/examples-related/layout/top-panel/example-top-panel-component';
 import {RoutingPage} from '../app/pages/examples-related/routes-subroutes';
@@ -39,8 +39,7 @@ import {ThemesPage} from '../app/pages/examples-related/ui/themes';
 import {HomePage} from '../app/pages/home';
 import {HomePageTopPanel} from '../app/pages/home/home-page-top-panel-component';
 import {TRouteMappingItems} from '../engine/routing/route-mapping-interface';
-import {IconHome} from '../engine/ui-components/general/icons/icon-home-component';
-import {IconStar} from '../engine/ui-components/general/icons/icon-star-component';
+import {Icon} from '../engine/ui-components/general/icons/icon-component';
 
 // main app routing
 export const AppSiteMap: TRouteMappingItems = [
@@ -50,7 +49,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		isHomePage: true,
 		breadcrumbs: 'none',
 		topPanel: <HomePageTopPanel/>,
-		icon: <IconHome/>,
+		icon: <Icon type={'home'}/>,
 		page: <HomePage/>,
 	},
 	{
@@ -221,7 +220,7 @@ export const AppSiteMap: TRouteMappingItems = [
 	},
 	{
 		title: 'About',
-		icon: <IconStar/>,
+		icon: <Icon type={'star'}/>,
 		url: '/about',
 		page: <AboutPage/>,
 		isLateral: true

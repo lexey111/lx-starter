@@ -1,6 +1,5 @@
 import React from 'react';
-import {IconFile} from '../general/icons/icon-file-component';
-import {IconFolder} from '../general/icons/icon-folder-component';
+import {Icon} from '../general/icons/icon-component';
 
 type TFileListProps = {
 	data: string
@@ -11,7 +10,7 @@ function prepareStrings(text: string): JSX.Element[] {
 		.filter(item => Boolean(item))
 		.map(item => {
 			const isFolder = item.indexOf('[') !== -1;
-			const icon = isFolder ? <IconFolder/> : <IconFile/>;
+			const icon = isFolder ? <Icon type={'folder'}/> : <Icon type={'file'}/>;
 			const indent = item.search(/\S|$/);
 
 			const hasComment = item.indexOf(' - ') !== -1;

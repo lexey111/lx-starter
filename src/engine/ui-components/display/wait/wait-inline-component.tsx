@@ -1,5 +1,5 @@
 import React from 'react';
-import {IconSpinner} from '../../general/icons/icon-spinner-component';
+import {Icon} from '../../general/icons/icon-component';
 
 type TWaitInlineComponentProps = {
 	message?: string
@@ -8,6 +8,6 @@ type TWaitInlineComponentProps = {
 
 export const WaitInlineComponent: React.FC<TWaitInlineComponentProps> = (props: TWaitInlineComponentProps) => {
 	return <span className={'app-wait-inline' + (props.className ? ' ' + props.className : '')}>
-		<IconSpinner/>&nbsp; {props.message || 'Processing... it can take some time...'}
+		<Icon type={'spinner'}/>&nbsp; {props.message || 'Processing... it can take some time...'}
 	</span>;
 };

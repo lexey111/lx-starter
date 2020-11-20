@@ -1,8 +1,8 @@
 import {observer} from 'mobx-react';
 import React, {useEffect} from 'react';
-import {RedirectToLogin} from '../../routing/aux-components/redirect-to-login-component';
 import {AppStateStore} from '../../../app/store/@stores';
-import {IconSpinner} from '../../ui-components/general/icons/icon-spinner-component';
+import {RedirectToLogin} from '../../routing/aux-components/redirect-to-login-component';
+import {Icon} from '../../ui-components/general/icons/icon-component';
 
 type TAppAuthPageProps = {
 	children?: any
@@ -15,7 +15,7 @@ export const AppAuthPage: React.FC<TAppAuthPageProps> = observer((props: TAppAut
 	}, []);
 
 	if (!AppStateStore.isAuthorized && AppStateStore.isAuthorizationInProgress) {
-		return <div className={'app-wait-page'}><IconSpinner/></div>;
+		return <div className={'app-wait-page'}><Icon type={'spinner'}/></div>;
 	}
 
 	if (!AppStateStore.isAuthorized && !AppStateStore.isAuthorizationInProgress) {

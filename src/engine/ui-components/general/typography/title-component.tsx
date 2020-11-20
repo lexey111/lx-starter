@@ -4,7 +4,7 @@ import {AppPageNavigationStore} from '../../../../app/store/@stores';
 type TTitleProps = {
 	level?: 1 | 2 | 3 | 4 | 5 | 6
 	subTitle?: string | JSX.Element
-	navTitle?: string
+	navTitle?: string | JSX.Element
 	className?: string
 	bottomBorder?: boolean
 	noTopMargin?: boolean

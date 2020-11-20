@@ -1,7 +1,7 @@
 import {makeAutoObservable} from 'mobx';
 
 export type TNavigationItem = {
-	title: string
+	title: string | JSX.Element
 	targetId: string
 	anchorRef: HTMLDivElement
 	navPadding?: 1 | 2

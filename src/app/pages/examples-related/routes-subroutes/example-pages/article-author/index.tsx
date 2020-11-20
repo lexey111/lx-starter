@@ -1,10 +1,10 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {LipsumPara} from '../../../../../../engine/ui-components/examples-related/lipsum';
-import {IconArrowLeft} from '../../../../../../engine/ui-components/general/icons/icon-arrow-left-component';
-import {IconUser} from '../../../../../../engine/ui-components/general/icons/icon-user-component';
-import {Title} from '../../../../../../engine/ui-components/general/typography/title-component';
 import useLocationParams from '../../../../../../engine/hooks/use-location-params';
+import {LipsumPara} from '../../../../../../engine/ui-components/examples-related/lipsum';
+import {Icon} from '../../../../../../engine/ui-components/general/icons/icon-component';
+import {Title} from '../../../../../../engine/ui-components/general/typography/title-component';
 import {exampleData} from '../example-data';
 import {SecondaryPageContent} from '../secondary-page-content';
 
@@ -23,7 +23,7 @@ export const RoutingArticleAuthor: React.FC = () => {
 		return <>
 			<Title>Article not found</Title>
 			<p>
-				<Link to={listOfArticlesUrl}><IconArrowLeft/>&nbsp; Return to list</Link>
+				<Link to={listOfArticlesUrl}><Icon type={'arrow-left'}/>&nbsp; Return to list</Link>
 			</p>
 		</>;
 	}
@@ -32,17 +32,17 @@ export const RoutingArticleAuthor: React.FC = () => {
 		return <>
 			<Title>Author not found</Title>
 			<p>
-				<Link to={listOfArticlesUrl}><IconArrowLeft/>&nbsp; Return to list</Link>
+				<Link to={listOfArticlesUrl}><Icon type={'arrow-left'}/>&nbsp; Return to list</Link>
 			</p>
 			<p>
-				<Link to={listOfArticlesUrl + '/' + article.id.toString()}><IconArrowLeft/>&nbsp; Return to article</Link>
+				<Link to={listOfArticlesUrl + '/' + article.id.toString()}><Icon type={'arrow-left'}/>&nbsp; Return to article</Link>
 			</p>
 		</>;
 	}
 
 	return <>
 		<div className={'example-avatar'}>
-			<IconUser/>
+			<Icon type={'user'}/>
 			<div>{author}</div>
 		</div>
 
@@ -53,10 +53,10 @@ export const RoutingArticleAuthor: React.FC = () => {
 		<LipsumPara/>
 
 		<p>
-			<Link to={listOfArticlesUrl}><IconArrowLeft/>&nbsp; Return to list</Link>
+			<Link to={listOfArticlesUrl}><Icon type={'arrow-left'}/>&nbsp; Return to list</Link>
 		</p>
 		<p>
-			<Link to={listOfArticlesUrl + '/' + article.id.toString()}><IconArrowLeft/>&nbsp; Return to article</Link>
+			<Link to={listOfArticlesUrl + '/' + article.id.toString()}><Icon type={'arrow-left'}/>&nbsp; Return to article</Link>
 		</p>
 
 		<hr/>

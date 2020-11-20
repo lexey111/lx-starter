@@ -1,5 +1,5 @@
 import React from 'react';
-import {IconUser} from '../../../../engine/ui-components/general/icons/icon-user-component';
+import {Icon} from '../../../../engine/ui-components/general/icons/icon-component';
 
 export const CustomMenuItem: React.FC = () => {
 	return <div style={
@@ -12,7 +12,7 @@ export const CustomMenuItem: React.FC = () => {
 			justifyContent: 'center',
 			alignContent: 'center',
 		}}>
-		<IconUser/>
+		<Icon type={'user'}/>
 	</div>;
 };
 

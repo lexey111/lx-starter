@@ -1,8 +1,7 @@
 import {observer} from 'mobx-react';
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {AppStateStore} from '../../../app/store/@stores';
-import {IconExpander} from '../../ui-components/general/icons/icon-expander-component';
-import {IconMenu} from '../../ui-components/general/icons/icon-menu-component';
+import {Icon} from '../../ui-components/general/icons/icon-component';
 import {TMenuItems} from './main-menu-component';
 import {MainMenuItem} from './menu-item/main-menu-item-component';
 
@@ -181,7 +180,7 @@ export const AppMainMenuMarkup = observer((props: TAppMainMenuMarkupProps): JSX.
 				tabIndex={0}
 				onKeyDownCapture={handleBurgerMenuKey}
 				onClick={handleBurgerMenu}>
-				<IconMenu/>
+				<Icon type={'menu'}/>
 			</div>
 			}
 
@@ -193,7 +192,7 @@ export const AppMainMenuMarkup = observer((props: TAppMainMenuMarkupProps): JSX.
 				{props.position === 'side' && <div
 					className={'app-menu-expander'}
 					onClick={handleToggleExpand}>
-					<IconExpander/><i>Collapse</i>
+					<Icon type={'expander'}/><i>Collapse</i>
 				</div>
 				}
 

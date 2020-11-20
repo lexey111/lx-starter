@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import {IconSpinner} from '../../general/icons/icon-spinner-component';
+import {Icon} from '../../general/icons/icon-component';
 
 type TWaitFullscreenComponentModalProps = {
 	_allowClose?: boolean
@@ -118,7 +118,7 @@ export const WaitFullscreen: React.FC<TWaitFullscreenComponentProps> = (props: T
 	}
 
 	return ReactDOM.createPortal(<>
-		{!props.hideSpinner && <IconSpinner/>}
+		{!props.hideSpinner && <Icon type={'spinner'}/>}
 		{(!props.message || typeof props.message === 'string') && <span>{props.message || 'Processing...'}</span>}
 		{typeof props.message !== 'string' && props.message}
 		<input type={'text'} id={'app-blur-control'}/>

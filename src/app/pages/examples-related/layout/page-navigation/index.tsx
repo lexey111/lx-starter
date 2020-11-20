@@ -33,7 +33,7 @@ export const PageNavigationPage: React.FC = () => {
 			content={`type TTitleProps = {
 	level?: 1 | 2 | 3 | 4 | 5 | 6
 	subTitle?: string | JSX.Element
-	navTitle?: string
+	navTitle?: string | JSX.Element
 	className?: string
 	bottomBorder?: boolean
 	noTopMargin?: boolean
@@ -71,6 +71,12 @@ export const PageNavigationPage: React.FC = () => {
 			content={`...
 	<Title nav={'keypoint' navTitle='Key point'}>
 		Long title description which has no chance to fit
+	</Title>
+...
+	<Title 
+		nav={'anchor_4'} 
+		navTitle={<span>Very <b>important</b> note with formatting</span>}>
+		Some caption
 	</Title>
 ...
 `}/>
