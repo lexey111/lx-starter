@@ -135,9 +135,7 @@
 
 pre.example-filestructure {
 	padding: 1em;
-	background-color: #2d3034;
 	box-shadow: 0 0 1px rgba(0, 0, 0, .2);
-	color: #7ec699;
 	white-space: pre;
 	word-break: normal;
 	tab-size: 1em;
@@ -146,58 +144,58 @@ pre.example-filestructure {
 	overflow-x: auto;
 
 	.app-icon {
-		fill: #7ec699;
 		margin-right: .4em;
 		vertical-align: middle;
 	}
 
-	.folder {
-		color: #fff;
-
-		.app-icon {
-			fill: #fff;
-		}
-	}
-
-	.highlighted {
-		background-color: #40464e;
-		color: #eeff00;
-
-		.app-icon {
-			fill: #eeff00;
-		}
-	}
-
 	.comment {
-		color: #999;
 		font-size: var(--app-small-font-size);
 		font-style: italic;
 		margin-left: 1em;
-		border: 1px solid #555;
 		border-radius: 3px;
-		background-color: #444;
 		padding: 2px 4px;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 
 		&.important {
-			background-color: #0188ff;
-			border-color: #0188ff;
-			color: #fff;
 			font-weight: bold;
 		}
 	}
 }
 
-.example-centered-full {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-flow: row nowrap;
-	align-content: center;
-	align-items: center;
-	justify-content: center;
-	justify-items: center;
-	color: var(--app-remark-color);
+pre.example-filestructure {
+	background-color: var(--app-background-darken);
+	color: var(--app-color);
+
+	.app-icon {
+		fill: var(--app-primary-background);
+	}
+
+	.folder {
+		fill: var(--app-accent-background);
+
+		.app-icon {
+			fill: var(--app-accent-background);
+		}
+	}
+
+	.highlighted {
+		background-color: var(--app-background-darken-shade-6);
+		color: var(--app-background-lighten-shade-6);
+
+		.app-icon {
+			fill: var(--app-background-lighten-shade-5);
+		}
+	}
+
+	.comment {
+		color: var(--app-info-color);
+		background-color: var(--app-info-background);
+
+		&.important {
+			background-color: var(--app-primary-background);
+			color: var(--app-primary-color);
+		}
+	}
 }
 
 .example-simple-form {

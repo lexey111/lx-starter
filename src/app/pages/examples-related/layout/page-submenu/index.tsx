@@ -33,9 +33,9 @@ export const PageSubMenuPage: React.FC = () => {
 	breadcrumbs: 'sub-menu', // <- the magic, sign to display page submenu for this route
 	routes: [
 		{
-			title: 'Theming',
-			url: '/ui/theming',
-			page: <ThemingPage/>,
+			title: 'Themes',
+			url: '/ui/themes',
+			page: <ThemesPage/>,
 		},
 		{
 			title: 'General',

@@ -63,7 +63,7 @@ export default class CAppStateStore implements TAppStateStoreData {...`}/>
 
 		<ul>
 			<li>
-				<code>themeCode</code> - current theme, read about that <Link to={'/ui/theming'}>here</Link>.
+				<code>themeCode</code> - current theme, read about that <Link to={'/ui/themes'}>here</Link>.
 			</li>
 			<li>
 				<code>_mainMenuPosition</code> - where is menu located, <Link to={'/layout/main-menu'}>more details</Link>.

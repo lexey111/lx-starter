@@ -11,19 +11,19 @@ const StoreLink = (): JSX.Element => <Link to={'/state-management/app-state'}>Ap
 const StoreFile = 'src/app/store/app-state/app-state-store.ts';
 
 // eslint-disable-next-line react/no-multi-comp
-export const ThemingPage: React.FC = () => {
+export const ThemesPage: React.FC = () => {
 	return <>
-		<Title>Theming</Title>
+		<Title>Themes</Title>
 		<Title level={3} nav={'principles'}>Basic principles</Title>
 		<p>
 			At the moment application includes 3 themes: default, dark and light.
 		</p>
 		<p>
-			Available themes are declared in the <Src src={'src/engine/ui-components/theme-interface.ts'} inline/>:
+			Available themes are declared in the <Src src={'src/engine/themes/theme-interface.ts'} inline/>:
 		</p>
 
 		<SyntaxHighlight
-			title={'src/engine/ui-components/theme-interface.ts'}
+			title={'src/engine/themes/theme-interface.ts'}
 			content={`export type TAppTheme = {
 	code: string // theme name, will be used as part of CSS class like body.theme-%name%
 	family: 'dark' | 'light' // to tune some items that aren't directly covered with theme variables
@@ -49,6 +49,18 @@ export const AvailableThemes: ReadonlyArray<TAppTheme> = [
 ];
 ...service functions...
 `}/>
+		<p>
+			A little remark about <code>family</code>. Some components, especially third-party, could be too
+			complicated &mdash; or has no sense &mdash; to tune up with current theme. For such cases the <code>family</code>
+			property exists:
+		</p>
+
+		<SyntaxHighlight
+			title={'src/engine/ui-components/examples-related/prism_dark.less'}
+			language={'less'}
+			content={'body.theme-family-dark {...'}
+		/>
+
 		<p>
 			Technically all the themes are just mapping of .LESS variables to CSS variables. There
 			is <Src src={'src/styles/themes/themes.less'} inline/> file which does all the magic:
@@ -247,9 +259,9 @@ public themeCode = 'default';
 ...
 constructor() {
 	// initial theme
-	this.themeCode = getStoredThemeCode(); // from src/engine/ui-components/theme-interface.ts
+	this.themeCode = getStoredThemeCode(); // from src/engine/themes/theme-interface.ts
 	
-// src/engine/ui-components/theme-interface.ts
+// src/engine/themes/theme-interface.ts
 export function getStoredThemeCode(): string {
 	const value = localStorage.getItem('app-theme') || 'default';
 	const theme = findTheme(value);
@@ -265,7 +277,7 @@ export function getStoredThemeCode(): string {
 
 		<div className={'example-component-container'}>
 			<Title level={6} bottomBorder noTopMargin>
-				Set current theme
+				Set theme
 			</Title>
 			<ThemeSwitcher/>
 		</div>
@@ -283,7 +295,7 @@ export function getStoredThemeCode(): string {
 		this.themeCode = setStoredThemeCode(value);
 };
 
-// src/engine/ui-components/theme-interface.ts
+// src/engine/themes/theme-interface.ts
 export function setStoredThemeCode(code: string): string {
 	let themeCode = 'default';
 	const theme = findTheme(code);
@@ -318,7 +330,7 @@ export function setStoredThemeCode(code: string): string {
 		</p>
 
 		<SyntaxHighlight
-			title={'src/engine/layout/theme-to-markup-component.tsx'}
+			title={'src/engine/themes/theme-to-markup-component.tsx'}
 			content={`export const ThemeToMarkupComponent: React.FC = observer(() => {
 	useEffect(() => {
 		const bodyThemeList = Array.from(window.document.body.classList)
@@ -328,8 +340,15 @@ export function setStoredThemeCode(code: string): string {
 		bodyThemeList.forEach(t => {
 			window.document.body.classList.remove(t);
 		});
+		const theme = findTheme(AppStateStore.themeCode);
 		// set actual theme
-		window.document.body.classList.add('theme-' + AppStateStore.themeCode);
+		if (theme) {
+			window.document.body.classList.add('theme-' + theme.code);
+			window.document.body.classList.add('theme-family-' + theme.family);
+		} else {
+			window.document.body.classList.add('theme-default');
+			window.document.body.classList.add('theme-family-light');
+		}
 	}, [AppStateStore.themeCode]);
 
 	return null;
@@ -373,7 +392,7 @@ export function setStoredThemeCode(code: string): string {
 			</li>
 
 			<li>
-				Import theme in the <Src src={'theme.less'} inline/> file and <a href={'ui/theming#variables'}>attach it</a>.
+				Import theme in the <Src src={'theme.less'} inline/> file and <a href={'ui/themes#variables'}>attach it</a>.
 			</li>
 
 			<li>
@@ -382,7 +401,7 @@ export function setStoredThemeCode(code: string): string {
 			</li>
 
 			<li>
-				Declare the <a href={'ui/theming#initial_loading'}>pre-loader</a> in <Src src={'index.html'} inline/>.
+				Declare the <a href={'ui/themes#initial_loading'}>pre-loader</a> in <Src src={'index.html'} inline/>.
 			</li>
 		</ol>
 	</>;

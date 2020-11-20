@@ -9,7 +9,7 @@ import {AppAuthPage} from '../engine/layout/page/app-auth-page-component';
 import {AppContainer} from '../engine/layout/page/app-container-component';
 import {AppPage} from '../engine/layout/page/app-page-component';
 import {AppPageNavigation} from '../engine/layout/page/navigation/app-page-navigation-component';
-import {ThemeToMarkupComponent} from '../engine/layout/theme-to-markup-component';
+import {ThemeToMarkupComponent} from '../engine/themes/theme-to-markup-component';
 import {AppTopPanel} from '../engine/layout/top-panel/app-top-panel-component';
 import {RouteMapping} from '../engine/routing/route-mapping';
 import {TRouteMappingItem} from '../engine/routing/route-mapping-interface';

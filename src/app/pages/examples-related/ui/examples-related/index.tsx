@@ -30,7 +30,7 @@ export const UiExampleComponentsPage: React.FC = () => {
 		<Title level={4} nav={'not_mentioned'}>Not mentioned</Title>
 		<p>
 			A few components are not mentioned here,
-			like <Tag>Src</Tag>, <Tag>A</Tag>, <Tag>Tag</Tag> and <Tag>ThemeSwitcher</Tag>.
+			like <Tag>Src</Tag>, <Tag>A</Tag>, <Tag>Tag</Tag>, <Tag>FileList</Tag> and <Tag>ThemeSwitcher</Tag>.
 		</p>
 
 		<p>

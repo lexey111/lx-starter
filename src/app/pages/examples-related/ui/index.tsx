@@ -57,13 +57,13 @@ export const UiPage: React.FC = () => {
 
 		<div className={'example-component-container'}>
 			<Title level={6} bottomBorder noTopMargin>
-				Set menu position:
+				Set theme
 			</Title>
 			<ThemeSwitcher/>
 		</div>
 
 		<p>
-			See how it works <Link to={'/ui/theming'}>here</Link>.
+			See how it works <Link to={'/ui/themes'}>here</Link>.
 		</p>
 
 	</>;

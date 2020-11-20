@@ -35,7 +35,7 @@ import {UiDataEntryPage} from '../app/pages/examples-related/ui/data-entry';
 import {UiDisplayPage} from '../app/pages/examples-related/ui/display';
 import {UiExampleComponentsPage} from '../app/pages/examples-related/ui/examples-related';
 import {UiGeneralPage} from '../app/pages/examples-related/ui/general';
-import {ThemingPage} from '../app/pages/examples-related/ui/theming';
+import {ThemesPage} from '../app/pages/examples-related/ui/themes';
 import {HomePage} from '../app/pages/home';
 import {HomePageTopPanel} from '../app/pages/home/home-page-top-panel-component';
 import {TRouteMappingItems} from '../engine/routing/route-mapping-interface';
@@ -193,9 +193,9 @@ export const AppSiteMap: TRouteMappingItems = [
 		showIconInTopMenu: false,
 		routes: [
 			{
-				title: 'Theming',
-				url: '/ui/theming',
-				page: <ThemingPage/>,
+				title: 'Themes',
+				url: '/ui/themes',
+				page: <ThemesPage/>,
 			},
 			{
 				title: 'General',
