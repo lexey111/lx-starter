@@ -1,10 +1,13 @@
+import {observer} from 'mobx-react';
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
+import {AppStateStore} from '../../../app/store/@stores';
 import useLocationParams from '../../hooks/use-location-params';
 import {getRouteByUrl, getRoutesByParentUrl} from '../../routing/route-mapping-utils';
 import {TMenuItem, TMenuItems} from '../main-menu/main-menu-component';
+import {filterByLoggedIn} from '../main-menu/main-menu-utils';
 
-export const PageSubmenu: React.FC = () => {
+export const PageSubmenu: React.FC = observer(() => {
 	const [listOfRoutes, setListOfRoutes] = useState<TMenuItems>([]);
 	const location = useLocationParams();
 
@@ -42,8 +45,9 @@ export const PageSubmenu: React.FC = () => {
 				}
 			});
 		}
-		setListOfRoutes(routes);
-	}, [location.url]);
+
+		setListOfRoutes(filterByLoggedIn(routes, AppStateStore.isAuthorized));
+	}, [location.url, AppStateStore.isAuthorized]);
 
 	return <div className={'page-submenu'}>
 		{listOfRoutes?.map((route: TMenuItem) => {
@@ -52,4 +56,4 @@ export const PageSubmenu: React.FC = () => {
 			</Link>;
 		})}
 	</div>;
-};
+});

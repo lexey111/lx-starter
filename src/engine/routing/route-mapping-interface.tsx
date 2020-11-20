@@ -3,8 +3,11 @@ export type TRouteMappingItem = {
 
 	title?: string | JSX.Element // Menu item title or function which returns title
 	subtitle?: string | JSX.Element // subtitle to show under the menu title line
+
 	icon?: JSX.Element // icon component
-	showIconInTopMenu?: boolean // default: true if icon assigned
+	showIconInTopMenu?: boolean // default: true (if icon assigned)
+	showTitleInTopMenu?: boolean // default: true, icon + title
+
 	menuItem?: JSX.Element // entire menu item component
 	menuItemExpandable?: boolean // if custom menu item is expandable
 	page?: JSX.Element // page (component) to render

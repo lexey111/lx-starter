@@ -41,6 +41,8 @@ import {UiGeneralPage} from '../app/pages/examples-related/ui/general';
 import {ThemesPage} from '../app/pages/examples-related/ui/themes';
 import {HomePage} from '../app/pages/home';
 import {HomePageTopPanel} from '../app/pages/home/home-page-top-panel-component';
+import {LoginPage} from '../app/pages/login';
+import {ProfilePage} from '../app/pages/profile';
 import {TRouteMappingItems} from '../engine/routing/route-mapping-interface';
 import {Icon} from '../engine/ui-components/general/icons/icon-component';
 
@@ -119,11 +121,13 @@ export const AppSiteMap: TRouteMappingItems = [
 			{
 				url: '/routing/protected-routes-auth',
 				page: <ProtectedRoutesWhenAuthorizedPage/>,
+				onlyWhenAuthorized: true,
 				title: 'Only when authorized',
 			},
 			{
 				url: '/routing/protected-routes-not-auth',
 				page: <ProtectedRoutesWhenNotAuthorizedPage/>,
+				onlyWhenNotAuthorized: true,
 				title: 'Only when not authorized',
 			},
 			{
@@ -255,5 +259,26 @@ export const AppSiteMap: TRouteMappingItems = [
 		isLateral: true,
 		menuItem: <CustomMenuDropdown/>,
 		menuItemExpandable: true
+	},
+	{
+		title: 'Profile',
+		icon: <Icon type={'user'}/>,
+		url: '/profile',
+		page: <ProfilePage/>,
+		isLateral: true,
+		showIconInTopMenu: true,
+		showTitleInTopMenu: false,
+		onlyWhenAuthorized: true
+	},
+	{
+		title: 'Login',
+		icon: <Icon type={'login'}/>,
+		url: '/login',
+		page: <LoginPage/>,
+		isLateral: true,
+		showIconInTopMenu: true,
+		showTitleInTopMenu: false,
+		onlyWhenNotAuthorized: true,
+		isLoginPage: true
 	},
 ];

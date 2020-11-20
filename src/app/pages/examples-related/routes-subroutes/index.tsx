@@ -25,8 +25,11 @@ export const RoutingPage: React.FC = () => {
 
 	title?: string | JSX.Element // Menu item title or function which returns title
 	subtitle?: string | JSX.Element // subtitle to show under the menu title line
+
 	icon?: JSX.Element // icon component
-	showIconInTopMenu?: boolean // default: true if icon assigned
+	showIconInTopMenu?: boolean // default: true (if icon assigned)
+	showTitleInTopMenu?: boolean // default: true, icon + title
+
 	menuItem?: JSX.Element // entire menu item component
 	menuItemExpandable?: boolean // if custom menu item is expandable
 	page?: JSX.Element // page (component) to render
@@ -69,17 +72,18 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 		{
 			title: 'General',
 			url: '/ui/general',
-			breadcrumbs: 'sub-menu',
 			page: <UiGeneralPage/>
 		},
 		{
 			title: 'Display',
 			url: '/ui/display',
-			breadcrumbs: 'sub-menu',
 			page: <UiDisplayPage/>
 		},
 	]}, ...
 `}/>
+		<p>
+			(Read more about <Link to={'/layout/page-submenu'}>breadcrumbs: 'sub-menu'</Link>)
+		</p>
 
 		<p>
 			Application during bootstrapping phase makes own copy of routes:
@@ -121,14 +125,17 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 	exact path={routeItem.url}
 	key={idx}
 	render={(props: { match: { params: Record<string, string> } }) => {
-		// set current page & route params
-		AppStateStore.setCurrentRoute(routeItem, props.match.params);
+			// actualize current page & route params in AppState Store
+			AppStateStore.setCurrentRoute(routeItem, props.match.params);
+			// set document title
+			if (typeof routeItem.title === 'string') {
+				document.title = AppTitle + ' | ' + routeItem.title;
+			} else {
+				document.title = AppTitle;
+			}
 
-		// return corresponding page wrapper
-		if (routeItem.onlyWhenAuthorized) {
-			return <AppAuthPage className={routeItem.pageClass}>{routeItem.page}</AppAuthPage>;
-		}
-		return <AppPage className={routeItem.pageClass}>{routeItem.page}</AppPage>;
+			// return page wrapper
+			return <AppPage className={routeItem.pageClass}>{routeItem.page}</AppPage>;
 	}
 }/>`}/>
 
@@ -137,7 +144,7 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 		</p>
 		<ol>
 			<li>Sets up current route in App State store;</li>
-			<li>Returns target page wrapped up with <Tag>AppPage</Tag> or <Tag>AppAuthPage</Tag>.</li>
+			<li>Returns target page wrapped up with <Tag>AppPage</Tag>.</li>
 		</ol>
 
 		<p>
@@ -153,7 +160,7 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 		</p>
 
 		<p>
-			Component <Tag>AppAuthPage</Tag> uses
+			<Tag>AppPage</Tag> uses
 		</p>
 		<SyntaxHighlight content={`public isAuthorized = false;
 public isAuthorizationInProgress = false;
@@ -161,6 +168,10 @@ public isAuthorizationInProgress = false;
 		<p>
 			fields of <code>AppStateStore</code>. It redirects to login route (if any) if current user
 			isn't logged in, or displays the spinner if authorization in process, or target page if user authorized successfully.
+		</p>
+
+		<p>
+			Read more about that on <Link to={'/routing/protected-routes'}>this page</Link>.
 		</p>
 
 		<Title level={4} nav={'routing_params'}>Routing params</Title>

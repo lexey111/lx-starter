@@ -40,6 +40,8 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 		itemHasVisibleRoutes = true;
 	}
 
+	const showTitle = Boolean(item.title) && item.showTitleInTopMenu !== false;
+
 	return <div
 		className={'app-menu-item' + (itemIsActive ? ' current' : '') +
 		(item.isHomePage ? ' app-menu-home-item' : '') +
@@ -51,11 +53,11 @@ export const MainMenuItem: React.FC<TMainMenuItemProps> = observer((props: TMain
 		{hasCustomItem
 			? <div className={'app-menu-item-content'}>{item.menuItem}</div>
 			: <div className={'app-menu-item-content'}>
-				<div className={'app-menu-title' + (hasText ? ' icon-and-text' : '')}>
+				<div className={'app-menu-title' + (hasText && showTitle ? ' icon-and-text' : '')}>
 					{icon}
 					<div className={'app-menu-title-parts'}>
-						{item.title}
-						{item.subtitle && <div className={'app-menu-subtitle'}>{item.subtitle}</div>}
+						{showTitle && item.title}
+						{item.subtitle && showTitle && <div className={'app-menu-subtitle'}>{item.subtitle}</div>}
 					</div>
 				</div>
 			</div>

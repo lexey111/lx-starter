@@ -15,7 +15,7 @@ function filterByMenuType(items: TMenuItems, forLateral: boolean): TMenuItems {
 	});
 }
 
-function filterByLoggedIn(items: TRouteMappingItems, isLoggedIn: boolean): TRouteMappingItems {
+export function filterByLoggedIn(items: TRouteMappingItems, isLoggedIn: boolean): TRouteMappingItems {
 	return items.filter(item => {
 		if (item.onlyWhenAuthorized === true && !isLoggedIn) {
 			return false;
