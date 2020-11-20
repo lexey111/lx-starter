@@ -9,6 +9,7 @@ type TTitleProps = {
 	bottomBorder?: boolean
 	noTopMargin?: boolean
 	nav?: string
+	navPadding?: 1 | 2
 	children?: any
 };
 
@@ -24,7 +25,8 @@ export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 				targetId,
 				YPos: 0,
 				anchorRef: elRef.current,
-				title: props.navTitle || props.children as string
+				title: props.navTitle || props.children as string,
+				navPadding: props.navPadding
 			});
 		}
 		return () => {

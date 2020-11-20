@@ -34,7 +34,6 @@ export const AppPageNavigation: React.FC = observer(() => {
 	const destroying = useRef(false);
 
 	useEffect(() => {
-
 		return () => {
 			destroying.current = true;
 		};
@@ -58,6 +57,12 @@ export const AppPageNavigation: React.FC = observer(() => {
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppPageNavigationStore.hasItems]);
+
+	useEffect(() => {
+		// anchors set changed - resort
+		sortAnchors(AppPageNavigationStore.items, AppStateStore._topPanelHeight);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [AppPageNavigationStore.items.length]);
 
 	useEffect(() => {
 		if (AppPageNavigationStore.hasItems) {
@@ -96,6 +101,7 @@ export const AppPageNavigation: React.FC = observer(() => {
 						className={'app-page-nav-item'
 						+ (item.partiallyVisible ? ' partially-visible' : '')
 						+ (item.current ? ' current' : '')
+						+ (item.navPadding ? ' padding-' + item.navPadding.toString() : '')
 						}
 						key={item.targetId}>
 						<a href={appLocation.url + '#' + item.targetId}>

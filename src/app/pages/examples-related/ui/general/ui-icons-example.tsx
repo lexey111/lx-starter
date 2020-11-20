@@ -1,60 +1,42 @@
 import React from 'react';
-import {IconArrowLeft} from '../../../../../engine/ui-components/general/icons/icon-arrow-left-component';
-import {IconArrowRight} from '../../../../../engine/ui-components/general/icons/icon-arrow-right-component';
-import {IconCheck} from '../../../../../engine/ui-components/general/icons/icon-check-component';
-import {IconClose} from '../../../../../engine/ui-components/general/icons/icon-close-component';
-import {IconExpander} from '../../../../../engine/ui-components/general/icons/icon-expander-component';
-import {IconFile} from '../../../../../engine/ui-components/general/icons/icon-file-component';
-import {IconFolder} from '../../../../../engine/ui-components/general/icons/icon-folder-component';
-import {IconHome} from '../../../../../engine/ui-components/general/icons/icon-home-component';
-import {IconMenu} from '../../../../../engine/ui-components/general/icons/icon-menu-component';
-import {IconSettings} from '../../../../../engine/ui-components/general/icons/icon-settings-component';
-import {IconSpinner} from '../../../../../engine/ui-components/general/icons/icon-spinner-component';
-import {IconStar} from '../../../../../engine/ui-components/general/icons/icon-star-component';
-import {IconUser} from '../../../../../engine/ui-components/general/icons/icon-user-component';
 import {SyntaxExampleTabs} from '../../../../../engine/ui-components/examples-related/syntax-example-tabs';
+import {Icon} from '../../../../../engine/ui-components/general/icons/icon-component';
+import {IconsMap} from '../../../../../engine/ui-components/general/icons/icons-map';
 
-const Markup = `<IconUser/>
-<IconUser style={{fill: 'red'}}/>
-<IconStar/>
-<IconHome style={{fill: 'green'}}/>
-<IconSpinner/>
-<IconExpander/>
-<IconArrowLeft/>
-<IconArrowRight/>
-<IconFile/>
-<IconFolder/>
-<IconCheck/>
-<IconClose/>
-<IconSettings/>
-<IconMenu/>`;
+const generatorFn = Object.keys(IconsMap).map(type => <Icon
+	key={type}
+	style={{fill: '#' + Math.floor(Math.random() * 16777215).toString(16)}}
+	type={type}/>);
+
+const Markup = Object.keys(IconsMap).map(type => `<Icon type={'${type}'}/>`).join('\n');
 
 const JSX = <>
-	<IconUser style={{fill: 'red'}}/>
-	<IconStar/>
-	<IconHome style={{fill: 'green'}}/>
-	<IconSpinner/>
-	<IconExpander/>
-	<IconArrowLeft/>
-	<IconArrowRight/>
-	<IconFile/>
-	<IconFolder/>
-	<IconCheck/>
-	<IconClose/>
-	<IconSettings/>
-	<IconMenu/>
+	<Icon type={'unknown'}/>
+
+	{generatorFn}
 </>;
 
 const Code = `import {IconHome} from '../../../../engine/ui-components/general/icons/icon-home-component';
 ...
 	<div>
-		<IconHome style={{fill: 'green'}}/>
+		<Icon type={'home'} style={{fill: 'green'}}/>
 	</div>
+
+	<Icon type={'unknown'}/>
+
+	{Object.keys(IconsMap).map(type => <Icon
+		key={type}
+		style={{fill: '#' + Math.floor(Math.random() * 16777215).toString(16)}}
+		type={type}/>)}
+
 ...
 `;
 
-const Syntax = `import React from 'react';
-import {TIconProps} from './icons-interface';
+const Syntax = `export type TIconProps = {
+	type: string
+	className?: string
+	style?: Record<string, string>
+};
 
 export const IconHome: React.FC<TIconProps> = (props: TIconProps) => {
 	const {

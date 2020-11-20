@@ -4,6 +4,7 @@ export type TNavigationItem = {
 	title: string
 	targetId: string
 	anchorRef: HTMLDivElement
+	navPadding?: 1 | 2
 
 	YPos: number
 	partiallyVisible?: boolean

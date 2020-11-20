@@ -29,7 +29,7 @@ export const PageNavigationPage: React.FC = () => {
 
 		<SyntaxHighlight
 			title={'src/engine/ui-components/general/typography/title-component.tsx'}
-			lines={[4, 8]}
+			lines={[4, 8, 9]}
 			content={`type TTitleProps = {
 	level?: 1 | 2 | 3 | 4 | 5 | 6
 	subTitle?: string | JSX.Element
@@ -38,11 +38,16 @@ export const PageNavigationPage: React.FC = () => {
 	bottomBorder?: boolean
 	noTopMargin?: boolean
 	nav?: string
+	navPadding?: 1 | 2
 	children?: any
 };`}/>
 
 		<p>
 			Key point here is <i>(8)</i>. If component has <code>nav: string</code> defined it included into local in-page navigation.
+		</p>
+
+		<p>
+			Optional property <code>navPadding</code> allows to set left padding (1 or 2) of particular item to mimic hierarchy.
 		</p>
 
 		<SyntaxHighlight
@@ -76,14 +81,14 @@ export const PageNavigationPage: React.FC = () => {
 		</p>
 
 		<div className={'example-component-container'}>
-			{showTitle && <Title level={3} nav={'dynamic_example'}>Dynamic title</Title>}
+			{showTitle && <Title level={3} nav={'dynamic_example'} navPadding={1}>Dynamic title</Title>}
 			<div>
 				<Checkbox checked={showTitle} onChange={setShowTitle}>Show the example title</Checkbox>
 			</div>
 
 			<SyntaxHighlight content={`const [showTitle, setShowTitle] = useState(true);
 ...
-	{showTitle && <Title level={3} nav={'dynamic_example'}>Dynamic title</Title>}
+	{showTitle && <Title level={3} nav={'dynamic_example'} navPadding={1}>Dynamic title</Title>}
 	<div>
 		<Checkbox checked={showTitle} onChange={setShowTitle}>Show the example title</Checkbox>
 	</div>

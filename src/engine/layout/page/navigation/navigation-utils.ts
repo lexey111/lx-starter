@@ -3,7 +3,7 @@ import {TNavigationItems} from '../../../../app/store/app-state/app-state-page-n
 const container = document.getElementById('app-mount-point');
 
 export const sortAnchors = (anchors: TNavigationItems, extraTopPadding: number): void => {
-	if (!container) {
+	if (!container || !anchors || anchors.length < 2) {
 		return;
 	}
 	const {scrollHeight} = container;
