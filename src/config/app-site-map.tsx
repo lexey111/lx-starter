@@ -26,6 +26,9 @@ import {RoutingArticleAuthor} from '../app/pages/examples-related/routes-subrout
 import {ArticleTitle} from '../app/pages/examples-related/routes-subroutes/example-pages/article/article-title-component';
 import {RoutingListOfArticles} from '../app/pages/examples-related/routes-subroutes/example-pages/list-of-articles';
 import {AuthorTitle} from '../app/pages/examples-related/routes-subroutes/example-pages/list-of-articles/author-title-component';
+import {ProtectedRoutesPage} from '../app/pages/examples-related/routes-subroutes/protected';
+import {ProtectedRoutesWhenAuthorizedPage} from '../app/pages/examples-related/routes-subroutes/protected/when-authorized-page';
+import {ProtectedRoutesWhenNotAuthorizedPage} from '../app/pages/examples-related/routes-subroutes/protected/when-not-authorized-page';
 import {StatePage} from '../app/pages/examples-related/state-management';
 import {StateMainStorePage} from '../app/pages/examples-related/state-management/app-state';
 import {StateGenericStorePage} from '../app/pages/examples-related/state-management/example-generic-store';
@@ -108,6 +111,21 @@ export const AppSiteMap: TRouteMappingItems = [
 		showIconInTopMenu: false,
 		breadcrumbs: 'sub-menu',
 		routes: [
+			{
+				url: '/routing/protected-routes',
+				page: <ProtectedRoutesPage/>,
+				title: 'Protected routes',
+			},
+			{
+				url: '/routing/protected-routes-auth',
+				page: <ProtectedRoutesWhenAuthorizedPage/>,
+				title: 'Only when authorized',
+			},
+			{
+				url: '/routing/protected-routes-not-auth',
+				page: <ProtectedRoutesWhenNotAuthorizedPage/>,
+				title: 'Only when not authorized',
+			},
 			{
 				url: '/routing/example-pages',
 				page: <RoutingMainPage/>,

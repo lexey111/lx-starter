@@ -50,6 +50,7 @@ export const AboutPage: React.FC = () => {
 			<li><s>Theme families</s></li>
 			<li><s>Fixed top panel</s></li>
 			<li>Fix Firefox page length</li>
+			<li>Alias for engine</li>
 		</ul>
 	</>;
 };

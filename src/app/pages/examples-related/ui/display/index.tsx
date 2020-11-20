@@ -34,9 +34,9 @@ export const UiDisplayPage: React.FC = () => {
 		</ul>
 		<UiTabsExample/>
 
-		<Title level={2}>Wait for something</Title>
+		<Title level={2} nav={'wait'}>Wait for something</Title>
 
-		<Title level={3} nav={'tag-wait'}>Tag wait</Title>
+		<Title level={3} nav={'tag_wait'} navPadding={1}>Tag wait</Title>
 		<Src src={'src/engine/ui-components/display/wait/wait-tag-component.tsx'}/>
 
 		<p>
@@ -45,7 +45,7 @@ export const UiDisplayPage: React.FC = () => {
 
 		<UiWaitTagExample/>
 
-		<Title level={3} nav={'inline-wait'}>Inline wait</Title>
+		<Title level={3} nav={'inline_wait'} navPadding={1}>Inline wait</Title>
 		<Src src={'src/engine/ui-components/display/wait/wait-inline-component.tsx'}/>
 
 		<p>
@@ -54,7 +54,7 @@ export const UiDisplayPage: React.FC = () => {
 
 		<UiWaitInlineExample/>
 
-		<Title level={3} nav={'block-wait'}>Block wait</Title>
+		<Title level={3} nav={'block_wait'} navPadding={1}>Block wait</Title>
 		<Src src={'src/engine/ui-components/display/wait/wait-block-component.tsx'}/>
 
 		<p>
@@ -63,7 +63,7 @@ export const UiDisplayPage: React.FC = () => {
 
 		<UiWaitBlockExample/>
 
-		<Title level={3} nav={'fullscreen-wait'}>Fullscreen wait</Title>
+		<Title level={3} nav={'fullscreen_wait'} navPadding={1}>Fullscreen wait</Title>
 		<Src src={'src/engine/ui-components/display/wait/wait-fullscreen-component.tsx'}/>
 
 		<p>
@@ -78,7 +78,7 @@ export const UiDisplayPage: React.FC = () => {
 
 		<UiWaitFullscreenExample/>
 
-		<Title level={3} nav={'simple-modal'}>Simple modal</Title>
+		<Title level={3} nav={'simple_modal'} navPadding={1}>Simple modal</Title>
 		<Src src={'src/engine/ui-components/display/wait/simple-modal-component.tsx'}/>
 
 		<p>
