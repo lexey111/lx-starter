@@ -2,7 +2,10 @@ module.exports = {
 	rootDir: '../',
 	verbose: true,
 	bail: false,
-	roots: ['<rootDir>/src/app/'],
+	roots: [
+		'<rootDir>/src/app/',
+		'<rootDir>/src/engine/',
+	],
 	setupFiles: [
 		'<rootDir>/build/test-setup.ts',
 		'<rootDir>/build/test-shim.ts',

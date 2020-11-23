@@ -50,7 +50,7 @@ function stringToPath(path: any): Array<string> {
 	return output;
 }
 
-export function getNestedObject(obj: any, path: string, defaultValue?: any): any {
+export function getNestedObject(obj: any, path: string | string[], defaultValue?: any): any {
 	const pathArray = stringToPath(path);
 	let current = obj;
 

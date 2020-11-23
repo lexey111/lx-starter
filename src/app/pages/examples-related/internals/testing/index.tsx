@@ -62,24 +62,25 @@ export const TestingPage = (): JSX.Element => {
 
 		<SyntaxHighlight
 			language={'bash'}
-			content={`---------------------------------------|---------|----------|---------|---------|-------------------
-File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
----------------------------------------|---------|----------|---------|---------|-------------------
-All files                              |   99.53 |    97.37 |     100 |   99.53 |                   
- components/ui/data-entry/radio-button |     100 |      100 |     100 |     100 |                   
-  radio-component.tsx                  |     100 |      100 |     100 |     100 |                   
-  radio-group-component.tsx            |     100 |      100 |     100 |     100 |                   
- routing                               |     100 |      100 |     100 |     100 |                   
-  route-flatten.ts                     |     100 |      100 |     100 |     100 |                   
-  route-mapping-utils.ts               |     100 |      100 |     100 |     100 |                   
- store/utils                           |   99.08 |    95.51 |     100 |   99.08 |                   
-  object-utils.ts                      |   98.65 |    93.44 |     100 |   98.65 | 37-38             
-  store-utils.ts                       |     100 |      100 |     100 |     100 |                   
----------------------------------------|---------|----------|---------|---------|-------------------
-Test Suites: 8 passed, 8 total
-Tests:       106 passed, 106 total
+			content={`----------------------------------------------|---------|----------|---------|---------|-------------------
+File                                          | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------------------------------|---------|----------|---------|---------|-------------------
+All files                                     |     100 |     99.4 |     100 |     100 |                   
+ app/store/utils                              |     100 |      100 |     100 |     100 |                   
+  object-utils.ts                             |     100 |      100 |     100 |     100 |                   
+  store-utils.ts                              |     100 |      100 |     100 |     100 |                   
+ engine/routing                               |     100 |    97.14 |     100 |     100 |                   
+  route-flatten.ts                            |     100 |      100 |     100 |     100 |                   
+  route-mapping-utils.ts                      |     100 |    95.83 |     100 |     100 | 42                
+ engine/ui-components/data-entry/radio-button |     100 |      100 |     100 |     100 |                   
+  radio-component.tsx                         |     100 |      100 |     100 |     100 |                   
+  radio-group-component.tsx                   |     100 |      100 |     100 |     100 |                   
+----------------------------------------------|---------|----------|---------|---------|-------------------
+Test Suites: 9 passed, 9 total
+Tests:       113 passed, 113 total
 Snapshots:   0 total
-Time:        7.586 s
+Time:        10.613 s
+Ran all test suites.
 `}/>
 
 		<Title level={5}>Linting with ESLint</Title>

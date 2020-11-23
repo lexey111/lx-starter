@@ -24,6 +24,10 @@ jest.mock('../route-mapping', () => {
 			{url: '/params7'},
 			{url: '/params7/:id1'},
 
+			{url_x: '/params8/:id1/:id2'},
+			{url: '/params8'},
+			{url: '/params8/:id1'},
+
 			{url: '/xxx/1'},
 			{url: '/xxx/1/a', _parentUrl: '/xxx/1'},
 			{url: '/xxx/1/b', _parentUrl: '/xxx/1'},
@@ -89,6 +93,11 @@ describe('Route mapping', () => {
 		it('should return sub routes without parametrized', () => {
 			const result = getRoutesByParentUrl('/xxx/1', true)
 			expect(result.length).toBe(2);
+		});
+
+		it('should return sub routes without parametrized', () => {
+			const result = getRoutesByParentUrl('/params8', true)
+			expect(result.length).toBe(0);
 		});
 	});
 

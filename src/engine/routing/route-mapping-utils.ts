@@ -33,13 +33,6 @@ export function getRouteByUrl(url?: string): TRouteMappingItem | undefined {
 	return RouteMapping.find(item => testParametrizedItem(item, url));
 }
 
-export function getParentRouteByUrl(url: string | undefined): TRouteMappingItem | undefined {
-	if (!url) {
-		return void 0;
-	}
-	return RouteMapping.find(item => item._parentUrl === url); // find first
-}
-
 export function getRoutesByParentUrl(url: string | undefined, skipParametrized = false): TRouteMappingItem[] {
 	if (!url) {
 		return [];

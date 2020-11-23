@@ -2,6 +2,29 @@ import {TRouteMappingItem} from './route-mapping-interface';
 
 export type TFlattenedRoute = TRouteMappingItem & { parentUrl?: string };
 
+/**
+ * Transforms RouteMapping from nested structure to flat array
+ * From
+ * [
+ *	   {
+ *		   url: '/A'
+ *	   },
+ *	   {
+ *		   url: '/B',
+ *		   routes: [
+ *			   {url: '/B.1'},
+ *			   {url: '/B.2'},
+ *		   ]
+ *	   }
+ * ]
+ *
+ * to
+ *
+ * [{url: 'A'}, {url: 'B'}, {url: '/B.1', _parentUrl: 'B'}, {url: '/B.2', _parentUrl: 'B'}]
+ *
+ * @param routes
+ * @param parentUrl
+ */
 export function flattenRoutes(routes: Array<TFlattenedRoute>, parentUrl?: string): Array<TFlattenedRoute> {
 	let result: Array<TFlattenedRoute> = [];
 

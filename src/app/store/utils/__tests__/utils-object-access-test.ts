@@ -35,6 +35,37 @@ describe('Utils object access tests', () => {
 			expect(hasField(data, 'a.b.c.e')).toBe(false);
 		});
 
+		it('should return false for empty path', () => {
+			const data = {
+				a: {
+					b: {
+						c: {
+							d: 42
+						}
+					}
+				}
+			};
+
+			expect(hasField(data, null as any)).toBe(false);
+			expect(hasField(data, '')).toBe(false);
+			expect(hasField(data, void 0 as any)).toBe(false);
+		});
+
+		it('should return false for bad path', () => {
+			const data = {
+				a: {
+					b: {
+						c: {
+							d: 42
+						}
+					}
+				}
+			};
+
+			expect(hasField(data, 'a.b[...')).toBe(false);
+			expect(hasField(data, 'a.*')).toBe(false);
+		});
+
 		it('should return true for array access', () => {
 			const data = {
 				a: {
@@ -146,6 +177,18 @@ describe('Utils object access tests', () => {
 			expect(getNestedObject(data, 'values')).toEqual({b: 14});
 			expect(getNestedObject(data, 'values.b')).toBe(14);
 			expect(getNestedObject(data, 'values.c')).toBe(undefined);
+		});
+
+		it('should return data for simple access, array form', () => {
+			const data = {
+				a: 42,
+				values: {
+					b: 14
+				}
+			};
+
+			expect(getNestedObject(data, ['values', 'b'])).toBe(14);
+			expect(getNestedObject(data, ['values', 'c'])).toBe(undefined);
 		});
 
 		it('should return data for nested access', () => {
