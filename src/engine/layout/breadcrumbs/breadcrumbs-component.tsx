@@ -53,7 +53,6 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 		if (!usePageMenu) {
 			setBreadcrumbs(calculateBreadCrumbs(AppStateStore.currentRoute));
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [location.url]);
 
 	if (useSubroutingMenu) {

@@ -44,6 +44,7 @@ import {HomePageTopPanel} from '../app/pages/home/home-page-top-panel-component'
 import {LoginPage} from '../app/pages/login';
 import {ProfilePage} from '../app/pages/profile';
 import {TRouteMappingItems} from '../engine/routing/route-mapping-interface';
+import {WaitTag} from '../engine/ui-components/display/wait/wait-tag-component';
 import {Icon} from '../engine/ui-components/general/icons/icon-component';
 
 // main app routing
@@ -122,13 +123,13 @@ export const AppSiteMap: TRouteMappingItems = [
 				url: '/routing/protected-routes-auth',
 				page: <ProtectedRoutesWhenAuthorizedPage/>,
 				onlyWhenAuthorized: true,
-				title: 'Only when authorized',
+				title: <span>Only when <WaitTag type={'success'}>authorized</WaitTag></span>,
 			},
 			{
 				url: '/routing/protected-routes-not-auth',
 				page: <ProtectedRoutesWhenNotAuthorizedPage/>,
 				onlyWhenNotAuthorized: true,
-				title: 'Only when not authorized',
+				title: <span>Only when <WaitTag type={'danger'}>not authorized</WaitTag></span>,
 			},
 			{
 				url: '/routing/example-pages',

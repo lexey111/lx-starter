@@ -55,13 +55,11 @@ export const AppPageNavigation: React.FC = observer(() => {
 			clearTimeout(delayedScroll);
 			window.addEventListener('hashchange', scrollToHash as () => void, false);
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppPageNavigationStore.hasItems]);
 
 	useEffect(() => {
 		// anchors set changed - resort
 		sortAnchors(AppPageNavigationStore.items, AppStateStore._topPanelHeight);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppPageNavigationStore.items.length]);
 
 	useEffect(() => {
@@ -70,7 +68,6 @@ export const AppPageNavigation: React.FC = observer(() => {
 		} else {
 			document.body.classList.remove('with-page-navigation');
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppPageNavigationStore.hasItems]);
 
 	useEffect(() => {
@@ -86,7 +83,6 @@ export const AppPageNavigation: React.FC = observer(() => {
 
 			ticking = true;
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppStateStore._yScrollPos, AppStateStore._topPanelHeight]);
 
 	if (!AppPageNavigationStore.hasItems || AppPageNavigationStore.items.length < 2) {

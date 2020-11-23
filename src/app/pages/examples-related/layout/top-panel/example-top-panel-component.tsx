@@ -11,7 +11,6 @@ export const ExampleTopPanel: React.FC = observer(() => {
 			// scroll page to top to show the panel
 			window.scrollTo(0, 0);
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [ExampleTopPanelStore.visible]);
 
 	return <PageTopPanel

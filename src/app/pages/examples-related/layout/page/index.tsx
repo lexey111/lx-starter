@@ -12,7 +12,7 @@ export const PagePage: React.FC = () => {
 
 		<Src src={'src/engine/layout/page/app-page-component.tsx'}/>
 		<p>
-			Pretty interesting component. It displays the <code>page</code> field component from routing config:
+			Pretty important component. It displays the <code>page</code> field component from routing config:
 		</p>
 		<SyntaxHighlight
 			title={'src/config/app-site-map.tsx'}
@@ -21,15 +21,15 @@ export const PagePage: React.FC = () => {
 {
 	title: 'In-page navigation',
 	url: '/layout/page-navigation',
-	page: <PageNavigationPage/>,
+	page: <SomePage/>,
 },
 ...`}/>
 		<p>
-			with very short animation (opacity, <code>@keyframes app-page-animation...</code>).
+			with very short animation (opacity through <code>@keyframes app-page-animation...</code>).
 		</p>
 
 		<p>
-			But some wrappers present. First, <Tag>AppContainer</Tag> (<Src src={'src/engine/layout/page/app-container-component.tsx'} inline/>) which
+			It adds some wrappers. First, <Tag>AppContainer</Tag> (<Src src={'src/engine/layout/page/app-container-component.tsx'} inline/>) which
 			adds the height observer.
 		</p>
 
@@ -38,8 +38,50 @@ export const PagePage: React.FC = () => {
 			fixed or scrollable so some logic involved to calculate container's position.
 		</p>
 
+		<Title nav={'auth'}>Auth guard</Title>
 		<p>
 			Next one is Authorization guard.
 		</p>
+
+		<SyntaxHighlight
+			title={'src/engine/layout/page/app-page-component.tsx'}
+			content={`if (!AppStateStore.isAuthorized && AppStateStore.isAuthorizationInProgress) {
+	return <WaitBlock message={'Please wait, auth is in progress...'}/>;
+}
+
+if (!AppStateStore.isAuthorized && AppStateStore.currentRoute?.onlyWhenAuthorized) {
+	if (LoginRoute && LoginRoute.url) {
+		return <Redirect to={LoginRoute.url}/>;
+	}
+	return <Redirect to={HomeRoute.url}/>;
+}
+
+if (AppStateStore.isAuthorized && AppStateStore.currentRoute?.onlyWhenNotAuthorized) {
+	return <Redirect to={HomeRoute.url}/>;
+}
+// render the page
+`}/>
+		<p>
+			Very straightforward dispatcher:
+		</p>
+
+		<ol>
+			<li>
+				If authorization is in progress (pending request) &mdash; display <Link to={'/ui/display#block_wait'}>Block Wait</Link> until response come, then
+				display the page.
+			</li>
+			<li>
+				If page is <code>onlyWhenAuthorized</code> and no user is logged in
+				(<code>AppStateStore.<b>isAuthorized</b></code> is <code>false</code>) &mdash; redirect to Login page.
+				If no Login page present &mdash; redirect to Home page.
+			</li>
+			<li>
+				If page is <code>onlyWhenNotAuthorized</code> and user is logged in &mdash; redirect to Home.
+			</li>
+			<li>
+				If the requested page has nor <code>onlyWhenAuthorized</code> nor <code>onlyWhenNotAuthorized</code> specified &mdash;
+				display the target page.
+			</li>
+		</ol>
 	</>;
 };

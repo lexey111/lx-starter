@@ -162,7 +162,6 @@ export const AppMainMenuMarkup = observer((props: TAppMainMenuMarkupProps): JSX.
 			});
 			ticking = true;
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [
 		ref.current,
 		AppStateStore._topPanelType,

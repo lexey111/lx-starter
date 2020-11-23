@@ -12,7 +12,6 @@ export const PeopleExampleListComponent: React.FC<TPeopleExampleListComponentPro
 	(props: TPeopleExampleListComponentProps) => {
 		const selectRecord = useCallback((e: React.MouseEvent<HTMLTableRowElement>) => {
 			props.onSelect(e.currentTarget.dataset['value']);
-			// eslint-disable-next-line react-hooks/exhaustive-deps
 		}, []);
 
 		return <table className={'no-borders active-records' + (props.disabled ? ' disabled' : '')}>

@@ -33,7 +33,6 @@ export const AuthorTitle: React.FC = () => {
 			setAuthorName('');
 			clearTimeout(delayedFakeName);
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [location.params.articleId]);
 
 	return <span>by <WaitTag showSpinner={true} type={tagType}>{authorName}</WaitTag></span>;

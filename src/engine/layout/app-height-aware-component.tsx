@@ -24,7 +24,6 @@ export const AppHeightAware: React.FC<TAppHeightAwareProps> = observer((props: T
 		} else {
 			ref.current.style[props.targetCSSProp] = '0';
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [
 		ref.current,
 		AppStateStore._topPanelType,

@@ -28,7 +28,6 @@ export const PeopleExampleComponent: React.FC = observer(() => {
 			// reset on exit
 			AppPersonStore.resetPerson();
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const setCurrentPerson = useCallback((id?: string): void => {
@@ -46,7 +45,6 @@ export const PeopleExampleComponent: React.FC = observer(() => {
 		// just load back data from PeopleFakeData record to Person store to
 		// reset Card changes
 		setCurrentPerson(currentPersonId);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentPersonId]);
 
 	const doSave = useCallback(() => {
@@ -60,7 +58,6 @@ export const PeopleExampleComponent: React.FC = observer(() => {
 			setVersion(version + 1); // to force list update after save because PeopleFakeData is not observable
 		}
 		setCurrentPerson(currentPersonId);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [currentPersonId, version]);
 
 	return <div className={'example-component-container'}>

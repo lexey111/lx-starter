@@ -4,6 +4,10 @@ import {MenuPositionSwitcher} from '../../../../engine/ui-components/examples-re
 import {ThemeSwitcher} from '../../../../engine/ui-components/examples-related/theme-switcher-component';
 import {Icon} from '../../../../engine/ui-components/general/icons/icon-component';
 
+/**
+ * Just a demo how to provide custom content to dropdown menu.
+ */
+
 export const CustomMenuDropdown: React.FC = observer(() => {
 	return <div className={'custom-menu-dropdown'}>
 		<div className={'app-menu-title'}>

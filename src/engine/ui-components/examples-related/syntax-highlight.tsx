@@ -46,7 +46,6 @@ export const SyntaxHighlight = (
 			hlRef.current = void 0;
 			clearTimeout(delay);
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [hlRef]);
 
 	let text = content;

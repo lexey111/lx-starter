@@ -28,7 +28,6 @@ export const ThemeToMarkupComponent: React.FC = observer(() => {
 			window.document.body.classList.add('theme-family-light');
 		}
 
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [AppStateStore.themeCode]);
 
 	return null;

@@ -24,7 +24,6 @@ export const TodoListItemExample: React.FC<TTodoListItemExampleProps> = observer
 
 	const cancelEdit = useCallback(() => {
 		props.closeDialog();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const saveRecord = useCallback(() => {
@@ -36,7 +35,6 @@ export const TodoListItemExample: React.FC<TTodoListItemExampleProps> = observer
 		AppExampleToDoStoreItem.initNewItem();
 
 		props.closeDialog();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return <SimpleModal

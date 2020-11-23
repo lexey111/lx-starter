@@ -18,7 +18,6 @@ const Checkbox: React.FC<TCheckboxProps> = (props: TCheckboxProps) => {
 		if (props.onChange) {
 			props.onChange(!props.checked);
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [props.checked]);
 
 	const handleKey = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -38,7 +37,6 @@ const Checkbox: React.FC<TCheckboxProps> = (props: TCheckboxProps) => {
 		e.preventDefault();
 		e.stopPropagation();
 		return false;
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [props.checked]);
 
 	const titleContent = props.title || props.children;

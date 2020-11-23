@@ -28,7 +28,6 @@ const RadioGroup: React.FC<TRadioGroupProps> = (props: TRadioGroupProps) => {
 		if (typeof value !== 'undefined' && props.onChange) {
 			props.onChange(value);
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const handleKey = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -49,7 +48,6 @@ const RadioGroup: React.FC<TRadioGroupProps> = (props: TRadioGroupProps) => {
 		e.preventDefault();
 		e.stopPropagation();
 		return false;
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	if (!props || !props.children) {

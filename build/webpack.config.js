@@ -118,6 +118,8 @@ module.exports = (env, args) => {
 							silent: true,
 							compilerOptions: {
 								module: 'es2015',
+								sourceMap: !isProduction,
+								configFile: path.resolve('./tsconfig.json')
 							},
 						},
 					}],
@@ -133,22 +135,20 @@ module.exports = (env, args) => {
 						{
 							loader: 'less-loader',
 							options:
-								isProduction ? {
-									sourceMap: true,
-									lessOptions: {
-										javascriptEnabled: true, // if antd used
-										minimize: {
-											discardComments: {
-												removeAll: true,
+								isProduction
+									? {
+										sourceMap: false,
+										lessOptions: {
+											minimize: {
+												discardComments: {
+													removeAll: true,
+												},
 											},
-										},
+										}
 									}
-								} : {
-									sourceMap: true,
-									lessOptions: {
-										javascriptEnabled: true,
-									}
-								},
+									: {
+										sourceMap: true,
+									},
 						},
 					],
 				},

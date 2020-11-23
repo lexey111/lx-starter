@@ -110,7 +110,6 @@ export const WaitFullscreen: React.FC<TWaitFullscreenComponentProps> = (props: T
 				document.removeEventListener('keydown', handler);
 			}
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	if (!waitDiv) {

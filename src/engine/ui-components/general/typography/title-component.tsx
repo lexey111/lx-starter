@@ -34,7 +34,6 @@ export const Title: React.FC<TTitleProps> = (props: TTitleProps) => {
 				AppPageNavigationStore.unregister(targetId);
 			}
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [elRef]);
 
 	const hasSubtitle = Boolean(props.subTitle);

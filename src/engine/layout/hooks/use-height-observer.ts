@@ -52,7 +52,6 @@ export default function useHeightObserver(ref: React.RefObject<HTMLDivElement>):
 				resizeObserver.disconnect();
 			}
 		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [ref.current]);
 
 	return {
