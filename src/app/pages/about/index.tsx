@@ -11,7 +11,6 @@ export const AboutPage: React.FC = () => {
 			<li><s>Theme switcher</s></li>
 			<li><s>Native layouts</s></li>
 			<li><s>SVG icons</s></li>
-			<li><s>- AntD</s></li>
 			<li><s>Fake log in/log out</s></li>
 			<li><s>Secondary menu for pages</s></li>
 			<li><s>Extra theme</s></li>
@@ -26,7 +25,7 @@ export const AboutPage: React.FC = () => {
 					<li>Main</li>
 					<li>Getting started</li>
 					<li>App folders</li>
-					<li>Testing</li>
+					<li><s>Testing</s></li>
 					<li>Building</li>
 					<li><s>Routing: params</s></li>
 					<li><s>Layout: main menu</s></li>
@@ -38,6 +37,7 @@ export const AboutPage: React.FC = () => {
 					<li><s>In-Page navigation</s></li>
 					<li><s>Page</s></li>
 					<li><s>Footer</s></li>
+					<li>Custom page</li>
 				</ul>
 			</li>
 			<li><s>Delay one render on route switching</s></li>
@@ -49,8 +49,8 @@ export const AboutPage: React.FC = () => {
 			<li>Roadmap page</li>
 			<li><s>Theme families</s></li>
 			<li><s>Fixed top panel</s></li>
-			<li>Fix Firefox page length</li>
-			<li>Related panel</li>
+			<li><s>Fix Firefox page length</s></li>
+			<li><s>Related panel</s></li>
 		</ul>
 	</>;
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../engine/layout/page/related/app-page-related-component';
 import {A} from '../../../../engine/ui-components/examples-related/a-component';
 import {Src} from '../../../../engine/ui-components/examples-related/src-component';
 import {ThemeSwitcher} from '../../../../engine/ui-components/examples-related/theme-switcher-component';
@@ -65,6 +66,23 @@ export const UiPage: React.FC = () => {
 		<p>
 			See how it works <Link to={'/ui/themes'}>here</Link>.
 		</p>
-
+		<PageRelated items={[
+			{
+				url: '/ui/general',
+				title: 'General'
+			},
+			{
+				url: '/ui/display',
+				title: 'Display'
+			},
+			{
+				url: '/ui/data-entry',
+				title: 'Data entry'
+			},
+			{
+				url: '/ui/examples-related',
+				title: 'For the Examples'
+			},
+		]}/>
 	</>;
 };

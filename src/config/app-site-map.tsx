@@ -97,7 +97,7 @@ export const AppSiteMap: TRouteMappingItems = [
 				title: 'App State store',
 			},
 			{
-				url: '/state-management/generic-example',
+				url: '/state-management/general-example',
 				page: <StateGenericStorePage/>,
 				title: 'Generic usage',
 			},

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../../../engine/layout/page/related/app-page-related-component';
 import {Title} from '../../../../../../engine/ui-components/general/typography/title-component';
 import {FakeLogin} from '../fake-login-component';
 
@@ -31,7 +32,44 @@ export const ProtectedRoutesWhenNotAuthorizedPage: React.FC = () => {
 				<Link to={'/login'}>Login page and Login component</Link>
 			</li>
 		</ul>
-
+		<PageRelated items={[
+			{
+				url: '/routing/protected-routes',
+				title: 'Protected routes'
+			},
+			{
+				url: '/login',
+				title: 'Login form'
+			},
+			{
+				url: '/layout/page',
+				title: 'Page & Auth'
+			},
+			{
+				url: '/layout/main-menu',
+				title: 'Main menu'
+			},
+			{
+				url: '/layout/page-submenu',
+				title: 'Page sub-menu'
+			},
+			{
+				url: '/layout/breadcrumbs',
+				title: 'Breadcrumbs'
+			},
+			{
+				url: '/state-management/app-state',
+				title: 'AppState Store'
+			},
+			{
+				url: '/routing/example-pages',
+				title: 'Example pages'
+			},
+			{
+				url: '/routing/example-pages/list-of-articles',
+				title: 'List of Articles'
+			},
+		]}/>
 	</>;
 };
 

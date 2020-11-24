@@ -27,10 +27,10 @@ export const UiExampleComponentsPage: React.FC = () => {
 			language={'less'}
 			content={'@import "examples-related/examples-related.less";'}/>
 
-		<Title level={4} nav={'not_mentioned'}>Not mentioned</Title>
+		<Title level={4} nav={'not_described'}>Not described</Title>
 		<p>
 			A few components are not mentioned here,
-			like <Tag>Src</Tag>, <Tag>A</Tag>, <Tag>Tag</Tag>, <Tag>FileList</Tag> and <Tag>ThemeSwitcher</Tag>.
+			like <Tag>Src</Tag>, <Tag>A</Tag>, <Tag>Tag</Tag>, <Tag>FileList</Tag>, <Tag>MenuPositionSwitcher</Tag> and <Tag>ThemeSwitcher</Tag>.
 		</p>
 
 		<p>

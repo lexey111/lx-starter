@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../engine/layout/page/related/app-page-related-component';
 import {A} from '../../../../engine/ui-components/examples-related/a-component';
 import {FileList} from '../../../../engine/ui-components/examples-related/filelist-component';
 import {Src} from '../../../../engine/ui-components/examples-related/src-component';
@@ -23,7 +24,7 @@ export const StatePage: React.FC = () => {
 		<p>
 			Also this application designed as multi-store one. It means, for different purposes there are separated stores
 			to follow the <A href={'https://en.wikipedia.org/wiki/Single-responsibility_principle'}>single responsibility principle</A>.
-			You can find more details <Link to={'/state-management/generic-example'}>here (generic example)</Link> or&nbsp;
+			You can find more details <Link to={'/state-management/general-example'}>here (general example)</Link> or&nbsp;
 			<Link to={'/state-management/todo-example'}>here (ToDo example)</Link>.
 		</p>
 
@@ -95,5 +96,19 @@ export const AppPersonStore = new CPeopleStore();
 				reflecting only a piece of full auth data in the main store is not a big deal and could be convenient.
 			</li>
 		</ul>
+		<PageRelated items={[
+			{
+				url: '/state-management/general-example',
+				title: 'General example Store'
+			},
+			{
+				url: '/state-management/todo-example',
+				title: 'ToDo Store'
+			},
+			{
+				url: '/state-management/app-state',
+				title: 'AppState Store'
+			},
+		]}/>
 	</>;
 };

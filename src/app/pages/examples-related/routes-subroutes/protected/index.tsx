@@ -1,6 +1,7 @@
 import {observer} from 'mobx-react';
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../../engine/layout/page/related/app-page-related-component';
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Tag} from '../../../../../engine/ui-components/examples-related/tag-component';
@@ -82,7 +83,33 @@ isAuthorizationInProgress: boolean
 				{AppStateStore.isAuthorized ? ' (unavailable now, need to log out - will redirect to Home page)' : ''}
 			</li>
 		</ul>
-
+		<PageRelated items={[
+			{
+				url: '/routing',
+				title: 'Routing'
+			},
+			{
+				url: '/login',
+				title: 'Login form'
+			},
+			{
+				url: '/layout/page',
+				title: 'Page & Auth'
+			},
+			{
+				url: '/state-management/app-state',
+				title: 'AppState Store'
+			},
+			AppStateStore.isAuthorized
+					? {
+						url: '/profile',
+						title: 'Profile page'
+					}
+					: {
+						url: '/login',
+						title: 'Login page'
+					}
+		]}/>
 	</>;
 });
 

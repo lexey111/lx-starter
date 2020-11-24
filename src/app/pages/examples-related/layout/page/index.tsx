@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../../engine/layout/page/related/app-page-related-component';
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Tag} from '../../../../../engine/ui-components/examples-related/tag-component';
@@ -83,5 +84,29 @@ if (AppStateStore.isAuthorized && AppStateStore.currentRoute?.onlyWhenNotAuthori
 				display the target page.
 			</li>
 		</ol>
+
+		<PageRelated items={[
+			{
+				url: '/layout/breadcrumbs',
+				title: 'Breadcrumbs'
+			},
+			{
+				url: '/layout/top-panel',
+				title: 'Top panel'
+			},
+			{
+				url: '/state-management/app-state',
+				title: 'AppState Store'
+			},
+			{
+				url: '/routing/protected-routes',
+				title: 'Protected routes'
+			},
+			{
+				url: '/ui/display#block_wait',
+				title: 'Block wait'
+			},
+		]}/>
+
 	</>;
 };

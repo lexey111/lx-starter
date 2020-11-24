@@ -2,6 +2,7 @@
 import {observer} from 'mobx-react';
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../../engine/layout/page/related/app-page-related-component';
 import {Checkbox} from '../../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
@@ -84,7 +85,7 @@ export const TopPanelPage: React.FC = observer(() => {
 			This is one of the simplest (excl. global vars and session/local storage): <code>Store</code>.
 		</p>
 
-		<Title level={3} nav={'dynamic_store'}>1. Store</Title>
+		<Title level={3} nav={'dynamic_store'} navPadding={1}>1. Store</Title>
 
 		<p>
 			Very, very simple one. Just to don't mess up the <Link to={'/state-management/app-state'}>AppState</Link> Store.
@@ -106,7 +107,7 @@ class CExampleTopPanelStore {
 export const ExampleTopPanelStore = new CExampleTopPanelStore();
 `}/>
 
-		<Title level={3} nav={'dynamic_panel'}>2. Panel</Title>
+		<Title level={3} nav={'dynamic_panel'} navPadding={1}>2. Panel</Title>
 		<p>
 			Panel component which reacts to store state:
 		</p>
@@ -128,7 +129,7 @@ export const ExampleTopPanelStore = new CExampleTopPanelStore();
 });
 `}/>
 
-		<Title level={3} nav={'dynamic_class'}>3. Appearance</Title>
+		<Title level={3} nav={'dynamic_class'} navPadding={1}>3. Appearance</Title>
 		<p>
 			<Tag>PageTopPanel</Tag> gets the property <code>className</code> which will be passed to the parent
 			container component (line 9). So let's add some CSS:
@@ -150,7 +151,7 @@ export const ExampleTopPanelStore = new CExampleTopPanelStore();
 		padding: 0;
 	}
 }`}/>
-		<Title level={3} nav={'dynamic_switch'}>4. Attach panel to page</Title>
+		<Title level={3} nav={'dynamic_switch'} navPadding={1}>4. Attach panel to page</Title>
 		<p>
 			Panel should be attached to particular page (route):
 		</p>
@@ -166,7 +167,7 @@ export const ExampleTopPanelStore = new CExampleTopPanelStore();
 	page: <TopPanelPage/>,
 },`}/>
 
-		<Title level={3} nav={'dynamic_switch'}>5. Switch</Title>
+		<Title level={3} nav={'dynamic_switch'} navPadding={1}>5. Switch</Title>
 		<p>
 			And the last part - implement the condition that will define the visibility. Just to keep the example
 			as simple as possible it is a <Tag>Checkbox</Tag>:
@@ -177,5 +178,17 @@ export const ExampleTopPanelStore = new CExampleTopPanelStore();
 	onChange={() => ExampleTopPanelStore.visible = !ExampleTopPanelStore.visible}> Show panel
 </Checkbox>
 `}/>
+
+		<PageRelated items={[
+			{
+				url: '/routing',
+				title: 'Routing'
+			},
+			{
+				url: '/state-management/app-state',
+				title: 'AppState Store'
+			},
+		]}/>
+
 	</>;
 });

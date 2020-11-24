@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../../engine/layout/page/related/app-page-related-component';
 import {A} from '../../../../../engine/ui-components/examples-related/a-component';
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
@@ -79,5 +80,32 @@ export default class CAppStateStore implements TAppStateStoreData {...`}/>
 				<code>_topPanel*</code> - internal variables to display <Link to={'/layout/top-panel'}>Top panel</Link>.
 			</li>
 		</ul>
+
+		<PageRelated items={[
+			{
+				url: '/layout/top-panel',
+				title: 'Top panel'
+			},
+			{
+				url: '/layout/main-menu',
+				title: 'Main menu'
+			},
+			{
+				url: '/layout/page-submenu',
+				title: 'Page sub-menu'
+			},
+			{
+				url: '/layout/breadcrumbs',
+				title: 'Breadcrumbs'
+			},
+			{
+				url: '/layout/breadcrumbs/page-actions',
+				title: 'Page actions'
+			},
+			{
+				url: '/ui/themes',
+				title: 'Themes'
+			},
+		]}/>
 	</>;
 };

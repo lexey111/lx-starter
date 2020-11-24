@@ -1,5 +1,7 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../../engine/layout/page/related/app-page-related-component';
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
@@ -178,6 +180,25 @@ export const BreadcrumbsPage: React.FC = () => {
 		<p>
 			<Link to={'/layout/breadcrumbs/page-actions'}>This page</Link> is very simple example of it.
 		</p>
+
+		<p>
+			Try to open <Link to={'/routing/example-pages/list-of-articles'}>full list</Link> and click to links in
+		</p>
+
+		<PageRelated items={[
+			{
+				url: '/routing/example-pages/list-of-articles',
+				title: 'Example List'
+			},
+			{
+				url: '/layout/breadcrumbs/page-actions',
+				title: 'Page actions'
+			},
+			{
+				url: '/layout/page-submenu',
+				title: 'Page submenu'
+			},
+		]}/>
 
 	</>;
 };

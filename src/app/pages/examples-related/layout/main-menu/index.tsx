@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../../engine/layout/page/related/app-page-related-component';
 import {MenuPositionSwitcher} from '../../../../../engine/ui-components/examples-related/menu-switcher-component';
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
@@ -145,7 +146,7 @@ isLoginPage?: boolean // is it Login page?
 		<Title level={2} nav={'icons'}>Icons</Title>
 
 		<p>
-			The <code>icon</code> field allows to assign one of <Link to={'/ui/general#svg-icons'}>SVG icons</Link>, or
+			The <code>icon</code> field allows to assign one of <Link to={'/ui/general#svg_icons'}>SVG icons</Link>, or
 			any other component. Just please be reasonable and assign icons for side menu because in collapsed mode
 			without icons it could be confusing. Thi is why in side mode menu uses default 'star' icon if developer
 			didn't specify own.
@@ -198,5 +199,21 @@ showIconInTopMenu?: boolean // default: true if icon assigned
 			wrapped in dropdown menu container. Pay attention to <code>menuItemExpandable</code> field: it is responsible
 			for rendering the dropdown, otherwise custom item will be just in-placed to menu bar.
 		</p>
+
+		<PageRelated items={[
+			{
+				url: '/routing',
+				title: 'Routing'
+			},
+			{
+				url: '/state-management/app-state',
+				title: 'AppState Store'
+			},
+			{
+				url: '/ui/general#svg_icons',
+				title: 'Icons'
+			},
+		]}/>
+
 	</>;
 };

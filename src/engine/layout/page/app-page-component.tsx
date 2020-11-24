@@ -20,7 +20,7 @@ export const AppPage: React.FC<TAppPageProps> = observer((props: TAppPageProps) 
 
 		const delayedRender = setTimeout(() => {
 			setReadyToRender(true);
-		}, 100);
+		}, 20);
 		//
 		return () => {
 			destroying.current = true;

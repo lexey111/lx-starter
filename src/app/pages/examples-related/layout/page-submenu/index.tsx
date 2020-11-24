@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../../engine/layout/page/related/app-page-related-component';
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
@@ -64,5 +65,13 @@ export const PageSubMenuPage: React.FC = () => {
 		<p>
 			This is why in the example above submenu will include <i>(2) (8) (13)</i>.
 		</p>
+
+		<PageRelated items={[
+			{
+				url: '/layout/breadcrumbs',
+				title: 'Breadcrumbs'
+			},
+		]}/>
+
 	</>;
 };

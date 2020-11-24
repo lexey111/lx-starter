@@ -1,5 +1,7 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../../engine/layout/page/related/app-page-related-component';
 import {A} from '../../../../../engine/ui-components/examples-related/a-component';
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
@@ -125,6 +127,29 @@ export const RoutingMainPage: React.FC = () => {
 		<p>
 			<Link to={'/layout/breadcrumbs'}>See more</Link> about breadcrumbs.
 		</p>
+
+		<PageRelated items={[
+			{
+				url: '/routing',
+				title: 'Routing'
+			},
+			{
+				url: '/layout/page-submenu',
+				title: 'Page sub-menu'
+			},
+			{
+				url: '/layout/breadcrumbs',
+				title: 'Breadcrumbs'
+			},
+			{
+				url: '/state-management/app-state',
+				title: 'AppState Store'
+			},
+			{
+				url: '/routing/example-pages/list-of-articles',
+				title: 'List of Articles'
+			},
+		]}/>
 	</>;
 };
 

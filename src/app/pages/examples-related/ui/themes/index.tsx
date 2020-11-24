@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../../engine/layout/page/related/app-page-related-component';
 import {FileList} from '../../../../../engine/ui-components/examples-related/filelist-component';
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
@@ -404,5 +405,15 @@ export function setStoredThemeCode(code: string): string {
 				Declare the <a href={'ui/themes#initial_loading'}>pre-loader</a> in <Src src={'index.html'} inline/>.
 			</li>
 		</ol>
+		<PageRelated items={[
+			{
+				url: '/state-management/app-state',
+				title: 'AppState Store'
+			},
+			{
+				url: '/ui/examples-related',
+				title: 'Examples-related'
+			},
+		]}/>
 	</>;
 };

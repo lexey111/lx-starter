@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {PageRelated} from '../../../../engine/layout/page/related/app-page-related-component';
 import {MenuPositionSwitcher} from '../../../../engine/ui-components/examples-related/menu-switcher-component';
 import {Title} from '../../../../engine/ui-components/general/typography/title-component';
 import {BasicLayout} from './basic-layout-component';
@@ -40,5 +41,39 @@ export const LayoutPage: React.FC = () => {
 			So the main content area - the page - is pretty customizable.
 		</p>
 
+		<PageRelated items={[
+			{
+				url: '/layout/top-panel',
+				title: 'Top panel'
+			},
+			{
+				url: '/layout/main-menu',
+				title: 'Main menu'
+			},
+			{
+				url: '/layout/breadcrumbs',
+				title: 'Breadcrumbs'
+			},
+			{
+				url: '/layout/page-submenu',
+				title: 'Page sub-menu'
+			},
+			{
+				url: '/layout/page',
+				title: 'Page & Auth'
+			},
+			{
+				url: '/layout/page-navigation',
+				title: 'In-page navigation'
+			},
+			{
+				url: '/layout/page-related',
+				title: 'Related menu'
+			},
+			{
+				url: '/layout/footer',
+				title: 'Footer'
+			},
+		]}/>
 	</>;
 };

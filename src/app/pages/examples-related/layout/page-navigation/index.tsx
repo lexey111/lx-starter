@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {PageRelated} from '../../../../../engine/layout/page/related/app-page-related-component';
 import {Checkbox} from '../../../../../engine/ui-components/data-entry/checkbox/checkbox-component';
 import {Src} from '../../../../../engine/ui-components/examples-related/src-component';
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
@@ -19,7 +20,7 @@ export const PageNavigationPage: React.FC = () => {
 		</p>
 
 		<p>
-			If you're using <Tag>Title</Tag> components you can have in=page navigation for free.
+			If you're using <Tag>Title</Tag> components you can have in-page navigation for free.
 		</p>
 
 		<Title level={2} nav={'usage'}>Using the Title</Title>
@@ -129,6 +130,15 @@ export const PageNavigationPage: React.FC = () => {
 			If page width more than 1550px navigation will be displayed at right of the page. If it between 960 and 1550px &mdash;
 			it will be embedded into page itself. If it less than 960px &mdash; navigation panel will be hidden out to save the space.
 		</p>
-
+		<PageRelated items={[
+			{
+				url: '/state-management/app-state',
+				title: 'AppState Store'
+			},
+			{
+				url: '/ui/general#navigation',
+				title: 'Title component'
+			},
+		]}/>
 	</>;
 };
