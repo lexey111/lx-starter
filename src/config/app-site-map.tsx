@@ -278,7 +278,6 @@ export const AppSiteMap: TRouteMappingItems = [
 		page: <LoginPage/>,
 		isLateral: true,
 		showIconInTopMenu: true,
-		showTitleInTopMenu: false,
 		onlyWhenNotAuthorized: true,
 		isLoginPage: true
 	},
