@@ -8,6 +8,7 @@ import {AppMainMenu} from '../engine/layout/main-menu/main-menu-component';
 import {AppContainer} from '../engine/layout/page/app-container-component';
 import {AppPage} from '../engine/layout/page/app-page-component';
 import {AppPageNavigation} from '../engine/layout/page/navigation/app-page-navigation-component';
+import {AppPageRelatedPanel} from '../engine/layout/page/related/app-page-related-panel';
 import {AppTopPanel} from '../engine/layout/top-panel/app-top-panel-component';
 import {RouteMapping} from '../engine/routing/route-mapping';
 import {TRouteMappingItem} from '../engine/routing/route-mapping-interface';
@@ -58,6 +59,8 @@ export const App: React.FC = () => {
 				{AppRoutes}
 			</Switch>
 		</AppContainer>
+
+		<AppPageRelatedPanel/>
 
 		<AppFooter/>
 	</Router>;

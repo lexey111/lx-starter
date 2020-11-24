@@ -6,7 +6,7 @@ export const BasicLayout = (props: { sideMenu?: boolean }): JSX.Element => {
 	return <div className={'application-layout-example' + (props.sideMenu ? ' has-side-menu' : '')}>
 		<div className={'apl-container'}>
 			<div className={'apl-top-panel'}>
-				<Link to={'/layout/top-panel'}><i>Top panel</i></Link> [optional]
+				<Link to={'/layout/top-panel'}><i>Top panel</i></Link> [optional, fixed or scrollable]
 			</div>
 			{!props.sideMenu && <div className={'apl-main-menu'}>
 				<Link to={'/layout/main-menu'}><i>Main menu</i></Link> [sticky]
@@ -24,12 +24,21 @@ export const BasicLayout = (props: { sideMenu?: boolean }): JSX.Element => {
 					<Link to={'/layout/page'}><i>Page content</i></Link>
 					<LipsumPara/>
 				</div>
+
 				<div className={'apl-page-nav'}>
-					<Link to={'/layout/page-navigation'}><i>in-page navigation</i></Link>
+					<Link to={'/layout/page-navigation'}><i>In-page navigation</i></Link>
 					<p>
 						[optional]
 					</p>
+
+					<div className={'apl-page-related'}>
+						<Link to={'/layout/page-related'}><i>Related links</i></Link>
+						<p>
+							[optional]
+						</p>
+					</div>
 				</div>
+
 			</div>
 			<div className={'apl-footer'}>
 				<Link to={'/layout/footer'}><i>Footer</i></Link>

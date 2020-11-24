@@ -16,6 +16,7 @@ import {FooterPage} from '../app/pages/examples-related/layout/footer';
 import {MainMenuPage} from '../app/pages/examples-related/layout/main-menu';
 import {PagePage} from '../app/pages/examples-related/layout/page';
 import {PageNavigationPage} from '../app/pages/examples-related/layout/page-navigation';
+import {PageRelatedPage} from '../app/pages/examples-related/layout/page-related';
 import {PageSubMenuPage} from '../app/pages/examples-related/layout/page-submenu';
 import {TopPanelPage} from '../app/pages/examples-related/layout/top-panel';
 import {ExampleTopPanel} from '../app/pages/examples-related/layout/top-panel/example-top-panel-component';
@@ -191,14 +192,19 @@ export const AppSiteMap: TRouteMappingItems = [
 				page: <PageSubMenuPage/>,
 			},
 			{
+				title: 'Page',
+				url: '/layout/page',
+				page: <PagePage/>,
+			},
+			{
 				title: 'In-page navigation',
 				url: '/layout/page-navigation',
 				page: <PageNavigationPage/>,
 			},
 			{
-				title: 'Page',
-				url: '/layout/page',
-				page: <PagePage/>,
+				title: 'Related',
+				url: '/layout/page-related',
+				page: <PageRelatedPage/>,
 			},
 			{
 				title: 'Footer',
