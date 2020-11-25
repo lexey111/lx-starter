@@ -49,7 +49,7 @@ type TPageRelatedProps = {
 
 	<AppPageRelatedPanel/>
 
-	<AppFooter/>
+	<AppFooterPanel/>
 </Router>;`}/>
 
 		<p>
@@ -132,7 +132,11 @@ return ReactDOM.createPortal(
 			},
 			{
 				title: <><Icon type={'star'}/> &nbsp; Related</>
-			}
+			},
+			{
+				url: '/layout/footer',
+				title: 'Footer'
+			},
 		]}/>
 	</>;
 };

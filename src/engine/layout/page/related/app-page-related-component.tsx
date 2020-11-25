@@ -13,7 +13,7 @@ type TPageRelatedProps = {
 };
 
 export const PageRelated: React.FC<TPageRelatedProps> = (props: TPageRelatedProps) => {
-	const container = useRef<HTMLDivElement>(null);
+	const container = useRef<any>(null);
 	const [visible, setVisible] = useState(false);
 
 	useEffect(() => {

@@ -37,7 +37,7 @@ export const AboutPage: React.FC = () => {
 					<li><s>In-Page navigation</s></li>
 					<li><s>Page</s></li>
 					<li><s>Footer</s></li>
-					<li>Custom page</li>
+					<li><s>Custom page</s></li>
 				</ul>
 			</li>
 			<li><s>Delay one render on route switching</s></li>
@@ -47,6 +47,7 @@ export const AboutPage: React.FC = () => {
 			<li><s>In-page navigation with Title</s></li>
 			<li>npm run dry</li>
 			<li>Roadmap page</li>
+			<li>Reread and fix errors</li>
 			<li><s>Theme families</s></li>
 			<li><s>Fixed top panel</s></li>
 			<li><s>Fix Firefox page length</s></li>

@@ -184,6 +184,7 @@
 			width: 32px;
 			height: 32px;
 		}
+
 		i {
 			opacity: 1;
 			width: 14px;
@@ -209,6 +210,40 @@
 				top: 27px;
 				left: 27px;
 			}
+		}
+	}
+}
+
+.some-custom-footer {
+	.app-footer-content {
+		flex-flow: column nowrap;
+		align-items: flex-start;
+	}
+}
+
+.custom-footer {
+	background-color: #8a0a78;
+	height: auto;
+	font-size: var(--app-small-font-size);
+
+	.app-footer-content {
+		border-top: none;
+		flex-flow: column nowrap;
+		align-items: flex-start;
+
+		.app-title {
+			h3 {
+				color: #fff;
+			}
+
+			margin-bottom: 0;
+			padding-bottom: 0;
+			font-size: var(--app-small-font-size);
+		}
+
+		p {
+			color: #fff;
+			font-size: var(--app-small-font-size);
 		}
 	}
 }
