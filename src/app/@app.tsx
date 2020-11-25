@@ -3,7 +3,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {AppTopFrame} from '../engine/layout/app-top-frame-component';
 import {AppBreadcrumbs} from '../engine/layout/breadcrumbs/breadcrumbs-component';
-import {AppFooter} from '../engine/layout/footer/footer-component';
+import {AppFooterPanel} from '../engine/layout/footer/app-footer-panel';
 import {AppMainMenu} from '../engine/layout/main-menu/main-menu-component';
 import {AppContainer} from '../engine/layout/page/app-container-component';
 import {AppPage} from '../engine/layout/page/app-page-component';
@@ -62,6 +62,6 @@ export const App: React.FC = () => {
 
 		<AppPageRelatedPanel/>
 
-		<AppFooter/>
+		<AppFooterPanel/>
 	</Router>;
 };
