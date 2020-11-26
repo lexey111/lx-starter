@@ -7,10 +7,6 @@ const columnClassName = 'home-top-column';
 
 export const HomePageTopPanel: React.FC = () => {
 	return <PageTopPanel className={'home-top-panel'}>
-		<div className={columnClassName} style={{padding: '16px 32px 16px 16px'}}>
-			<img src={'/images/crank_opt.png'} alt="crank"/>
-		</div>
-
 		<div className={columnClassName}>
 			<Title level={1} subTitle={<>HandCrank kit <span>by Lexey111</span></>}>
 				1xStarter
@@ -25,10 +21,10 @@ export const HomePageTopPanel: React.FC = () => {
 				<b>Kit includes:</b>
 			</p>
 			<ul>
-				<li>Smart layouts</li>
-				<li>Data Store</li>
-				<li>Smart components</li>
-				<li>Configurable protected routing</li>
+				<li>Smart adaptive layouts</li>
+				<li>Data Store & State Management</li>
+				<li>Smart UI components (minimal set)</li>
+				<li>Configurable auth-protected routing</li>
 				<li>Theming engine</li>
 				<li>Docs & Examples</li>
 			</ul>
@@ -39,12 +35,12 @@ export const HomePageTopPanel: React.FC = () => {
 				<b>Under the hood:</b>
 			</p>
 			<ul>
-				<li>React <WaitTag type={'danger'}>17</WaitTag></li>
-				<li>Webpack <WaitTag type={'danger'}>5</WaitTag></li>
-				<li>LESS <WaitTag>3</WaitTag></li>
+				<li>Core: React <WaitTag type={'danger'}>17</WaitTag></li>
+				<li>Build: Webpack <WaitTag type={'danger'}>5</WaitTag></li>
+				<li>Styles: LESS <WaitTag>3</WaitTag> and CSS variables</li>
 				<li>Typescript <WaitTag type={'warning'}>4</WaitTag></li>
-				<li>MobX <WaitTag>6</WaitTag></li>
-				<li>Jest <WaitTag>26</WaitTag></li>
+				<li>State: MobX <WaitTag>6</WaitTag></li>
+				<li>Testing: Jest <WaitTag>26</WaitTag></li>
 			</ul>
 		</div>
 	</PageTopPanel>;
