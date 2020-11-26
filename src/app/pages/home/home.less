@@ -1,70 +1,116 @@
+@import "../../../styles/@media.less";
+
 .home-top-panel {
 	.app-top-panel-content {
 		height: 220px;
-		width: 90%;
-		display: flex;
-		flex-flow: row nowrap;
-		align-self: center;
-		align-items: center;
-		justify-items: stretch;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1.5fr 1fr 1fr 1fr;
 		padding: 0;
-		margin: 0;
+		max-width: @app-media-max;
+		margin: 0 auto;
+		overflow: hidden;
 
 		.app-title {
-			margin: 0;
+			margin: 0 0 0 -12px;
+			white-space: nowrap;
 
 			h1 {
-				font-size: 3em;
+				font-size: 5em;
 				margin: 0;
 				line-height: 1em;
 				color: var(--app-accent-background);
 			}
 
 			.app-subtitle {
-				opacity: .7;
-				font-style: italic;
+				margin-left: .5em;
+				font-size: 2em;
+				line-height: 2.4em;
+				white-space: nowrap;
+
+				span {
+					vertical-align: baseline;
+					font-size: .5em;
+					padding-left: 1em;
+					padding-right: 1em;
+					margin-left: 1em;
+					border-left: 2px solid var(--app-accent-background);
+				}
 			}
+		}
+
+		img {
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-self: center;
+			width: 100%;
+			height: auto;
+			// transform: rotate(7deg);
+			flex-grow: 0;
+			flex-shrink: 3;
+			padding: 0;
 		}
 
 		.home-top-column {
 			display: flex;
-			align-items: center;
-			height: 150px;
-			flex-grow: 2;
-			margin: 0 16px;
-			padding: 16px;
-			background-color: rgba(255, 255, 255, .2);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-			box-shadow: 0 0 1px rgba(0, 0, 0, .2), inset 0 10px 80px rgba(255, 255, 255, .3);
-			border: 1px solid rgba(255, 255, 255, .3);
+			flex-flow: column nowrap;
+			justify-content: center;
+			align-self: center;
+			height: 200px;
+			margin: 0;
+			box-sizing: border-box;
+			padding: 16px 32px;
 			font-size: var(--app-small-font-size);
+			overflow: hidden;
 
 			p {
-				line-height: 1;
-				margin: 0;
+				line-height: 1.4;
+				margin: 1em 0;
+				font-size: var(--app-small-font-size);
+			}
+
+			ul {
+				padding-left: 0;
+
+				li {
+					white-space: nowrap;
+					list-style-type: circle;
+					list-style-position: inside;
+				}
 			}
 		}
 	}
 }
 
-.home-top-panel-bg {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-image: url('/images/crank_opt.png');
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 100%;
-	z-index: -1;
-	opacity: .9;
+@media screen and (max-width: @app-media-max-page-width) {
+	.home-top-panel {
+		.app-top-panel-content {
+			grid-template-columns: 1.5fr 1fr 1fr 0;
+		}
+	}
 }
 
-@-moz-document url-prefix() {
-	// trick for firefox which does not support backdrop blur
-	.home-top-panel-bg {
-		opacity: .2;
+@media screen and (max-width: @app-media-narrow) {
+	.home-top-panel {
+		.app-top-panel-content {
+			grid-template-columns: 1fr 1fr 1fr 0 ;
+		}
+	}
+}
+
+@media screen and (max-width: @app-media-header-middle) {
+	.home-top-panel {
+		.app-top-panel-content {
+			grid-template-columns: 0 1fr 1fr 0;
+		}
+	}
+}
+
+@media screen and (max-width: @app-media-header-min) {
+	.home-top-panel {
+		.app-top-panel-content {
+			grid-template-columns: 0 1fr 0 0;
+		}
 	}
 }
