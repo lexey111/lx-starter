@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {A} from '../../../engine/ui-components/examples-related/a-component';
-import {Src} from '../../../engine/ui-components/examples-related/src-component';
-import {SyntaxHighlight} from '../../../engine/ui-components/examples-related/syntax-highlight';
-import {FakeLogin} from '../examples-related/routes-subroutes/protected/fake-login-component';
+import {A} from '../../../../engine/ui-components/examples-related/a-component';
+import {Src} from '../../../../engine/ui-components/examples-related/src-component';
+import {SyntaxHighlight} from '../../../../engine/ui-components/examples-related/syntax-highlight';
+import {FakeLogin} from '../routes-subroutes/protected/fake-login-component';
 
 export const LoginPage: React.FC = () => {
 	return <>
-		<Src src={'src/app/pages/login/index.tsx'}/>
+		<Src src={'src/app/pages/examples-related/login/index.tsx'}/>
 
 		<div className={'example-component-container'}>
 			<FakeLogin/>
