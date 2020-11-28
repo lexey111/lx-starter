@@ -2,30 +2,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {AppSiteMap} from '../../../config/app-site-map';
-import {TRouteMappingItem} from '../../../engine/routing/route-mapping-interface';
 import {MenuPositionSwitcher} from '../../../engine/ui-components/examples-related/menu-switcher-component';
+import {Src} from '../../../engine/ui-components/examples-related/src-component';
 import {ThemeSwitcher} from '../../../engine/ui-components/examples-related/theme-switcher-component';
 import {Title} from '../../../engine/ui-components/general/typography/title-component';
-
-function getRoutes(routes: Array<TRouteMappingItem>): Array<JSX.Element> {
-	let result: Array<JSX.Element> = [];
-
-	routes.forEach(route => {
-		if (!route.url || route.url?.indexOf('/:') !== -1) {
-			return;
-		}
-		if (!route.routes || route.routes.length === 0) {
-			result.push(<li key={route.url}><Link to={route.url}>{route.title}</Link></li>);
-			return;
-		}
-		const inner = getRoutes(route.routes);
-
-		result.push(<li key={route.url}><Link to={route.url}>{route.title}</Link></li>);
-		result = [...result, <ul key={'nested_' + route.url}>{...inner}</ul>];
-	});
-
-	return result;
-}
+import {getRoutes} from './home-utils';
 
 export const HomePage: React.FC = () => {
 	return <>
@@ -123,29 +104,45 @@ export const HomePage: React.FC = () => {
 
 		<Title level={1} nav={'details'}>Details</Title>
 
-		<Title level={3} nav={'ui_variants'}>UI variants</Title>
-		<ThemeSwitcher/>
-		<MenuPositionSwitcher/>
-
 		<div className={'home-description-wrap'}>
-			<div className={'home-description-col1'}>
-				<div className={'image'}>
-				</div>
+			<div className={'home-description-left'}>
 				<div className={'home-description-inner'}>
+					<Title level={3} nav={'ui_variants'}>UI variants</Title>
+					<p>
+						There are two main things that could be switched on the fly: Theme and Menu Position.
+					</p>
+					<ThemeSwitcher/>
+					<p>
+						<Link to={'/ui/themes'}>Read more</Link> about theming.
+					</p>
+					<MenuPositionSwitcher/>
+					<p>
+						<Link to={'/layout/main-menu'}>Read more</Link> about main menu.
+					</p>
 				</div>
+
+				<p>
+					The entire <Link to={'/layout'}>layout</Link> is pretty flexible. Most of items are customizable,
+					adaptive and responsive. E.g., <Link to={'/layout/top-panel'}>top panel</Link> can be pinned to the top
+					&mdash; or can be scrollable with the page, and appearance of it can be completely changed like
+					in <Link to={'/custom'}>this example</Link>.
+				</p>
 			</div>
 
-			<div className={'home-description-col2'}>
-				<div className={'image'}></div>
+			<div className={'home-description-right'}>
 				<div className={'home-description-inner'}>
+					<Title level={3} nav={'site_map'}>Site map</Title>
+					<p>
+						This map is automatically created using site route description declared
+						in <Src src={'src/config/app-site-map.tsx'} inline/> file:
+					</p>
+					<ul className={'home-sitemap'}>
+						{getRoutes(AppSiteMap).map(item => item)}
+					</ul>
 				</div>
 			</div>
 		</div>
 
-		<Title level={3} nav={'site_map'}>Site map</Title>
-		<ul>
-			{getRoutes(AppSiteMap).map(item => item)}
-		</ul>
 	</>;
 };
 

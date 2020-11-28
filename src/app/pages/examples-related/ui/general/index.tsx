@@ -5,6 +5,7 @@ import {Src} from '../../../../../engine/ui-components/examples-related/src-comp
 import {SyntaxHighlight} from '../../../../../engine/ui-components/examples-related/syntax-highlight';
 import {Tag} from '../../../../../engine/ui-components/examples-related/tag-component';
 import {Icon} from '../../../../../engine/ui-components/general/icons/icon-component';
+import {IconsMap} from '../../../../../engine/ui-components/general/icons/icons-map';
 import {Title} from '../../../../../engine/ui-components/general/typography/title-component';
 import {UiButtonsExample} from './ui-buttons-example';
 import {UiIconsExample} from './ui-icons-example';
@@ -161,6 +162,17 @@ export const IconsMap: TIconMapEntry = {
 			huge amount of them &mdash; it should be replaced (or extended with dynamic/lazy loading).
 		</p>
 
+		<Title nav={'list_of_icons'} level={3} navPadding={1}>List of icons</Title>
+		<p>
+			List of available icons:
+		</p>
+
+		<pre className={'example-icon-list'}>
+	<ul>
+		{Object.keys(IconsMap).map(key => <li key={key}><Icon type={key}/>{key}</li>)}
+	</ul>
+</pre>
+
 		<Title nav={'adding_the_icons'} level={3} navPadding={1}>Adding own icons</Title>
 		<p>
 			To add your own icon just get the content of your SVG (all inside <Tag>svg</Tag> tag) and put it into
@@ -179,7 +191,7 @@ export const IconsMap: TIconMapEntry = {
 			Reasonable idea is to keep keys alphabetically ordered.
 		</p>
 
-		<Title nav={'icon_example'} level={3} navPadding={1}>Example</Title>
+		<Title nav={'icons_available'} level={3} navPadding={1}>Icons example</Title>
 
 		<UiIconsExample/>
 

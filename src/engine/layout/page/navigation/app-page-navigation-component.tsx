@@ -4,7 +4,7 @@ import {AppPageNavigationStore, AppStateStore} from '../../../../app/store/@stor
 import useLocationParams from '../../../hooks/use-location-params';
 import {sortAnchors} from './navigation-utils';
 
-function scrollToHash(smooth?: boolean): void {
+function scrollToHash(): void {
 	if (!window.location.hash) {
 		return;
 	}
@@ -15,15 +15,13 @@ function scrollToHash(smooth?: boolean): void {
 	}
 
 	const element = document.querySelector('[data-nav-target="' + target + '"]');
-	const offset = (element as HTMLDivElement)?.offsetTop;
-	if (typeof offset === 'undefined') {
+	if (!element) {
 		return;
 	}
 
-	window.scrollTo({
-		top: offset - 100,
-		behavior: smooth === true ? 'smooth' : 'auto'
-	});
+	element.scrollIntoView();
+	const distance = 100 + (AppStateStore._topPanelType === 'fixed' ? AppStateStore._topPanelHeight : 0);
+	window.scrollBy(0, -distance);
 }
 
 let ticking = false;
@@ -45,7 +43,7 @@ export const AppPageNavigation: React.FC = observer(() => {
 		const delayedScroll = setTimeout(() => {
 			// initial scroll
 			if (!destroying.current) {
-				scrollToHash(true);
+				scrollToHash();
 				// initial detect visible nav anchors to highlight them
 				sortAnchors(AppPageNavigationStore.items, AppStateStore._topPanelHeight);
 			}

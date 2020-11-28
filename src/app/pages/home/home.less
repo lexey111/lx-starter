@@ -1,5 +1,73 @@
 @import "../../../styles/@media.less";
 
+.home-sitemap {
+	li {
+		display: flex;
+		flex-flow: row wrap;
+		align-content: center;
+		position: relative;
+
+		a {
+			margin-right: 1em;
+			flex-grow: 0;
+			display: flex;
+			align-content: center;
+		}
+
+		&:before {
+			position: absolute;
+			content: '';
+			background-color: var(--app-accent-background);
+			display: flex;
+			align-items: center;
+			align-content: center;
+			justify-items: center;
+			width: 5px;
+			height: 5px;
+			top: .6em;
+			left: -1em;
+			border-radius: 100%;
+		}
+	}
+
+	.home-route-url {
+		color: var(--app-remark-color);
+		font-size: var(--app-small-font-size);
+		white-space: nowrap;
+	}
+
+	.home-route-auth, .home-route-not-auth {
+		font-size: var(--app-small-font-size);
+		white-space: nowrap;
+		margin-left: 1em;
+		width: 22px;
+		height: 22px;
+		display: inline-flex;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+		justify-items: center;
+		border-radius: 100%;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+	}
+
+	.home-route-auth {
+		background-color: var(--app-success-background);
+
+		.app-icon {
+			fill: var(--app-success-color);
+		}
+	}
+
+	.home-route-not-auth {
+		background-color: var(--app-danger-background);
+
+		.app-icon {
+			fill: var(--app-danger-color);
+		}
+	}
+}
+
 .home-top-panel {
 	.app-top-panel-content {
 		height: 220px;
@@ -112,6 +180,23 @@
 	display: flex;
 	width: 100%;
 
+	.home-description-left,
+	.home-description-right {
+		display: block;
+		padding: 10px 0;
+		margin: 0;
+		text-align: justify;
+		width: 50%;
+	}
+
+	.home-description-left {
+		padding-right: 20px;
+	}
+
+	.home-description-right {
+		padding-left: 20px;
+	}
+
 	.home-description-col1,
 	.home-description-col2 {
 		display: block;
@@ -194,9 +279,21 @@
 
 		.home-description-col1, .home-description-col2 {
 			padding: 10px !important;
+
 			&:before {
 				display: none;
 			}
+		}
+
+		.home-description-left,
+		.home-description-right {
+			width: 100%;
+			float: none !important;
+			clear: both;
+			margin: 0;
+			padding: 0 16px;
+			border: 1px solid transparent;
+			box-sizing: border-box;
 		}
 
 		.home-description-col1,
