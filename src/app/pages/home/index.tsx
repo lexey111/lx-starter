@@ -2,6 +2,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {AppSiteMap} from '../../../config/app-site-map';
+import {PageRelated} from '../../../engine/layout/page/related/app-page-related-component';
+import {A} from '../../../engine/ui-components/examples-related/a-component';
 import {MenuPositionSwitcher} from '../../../engine/ui-components/examples-related/menu-switcher-component';
 import {Src} from '../../../engine/ui-components/examples-related/src-component';
 import {ThemeSwitcher} from '../../../engine/ui-components/examples-related/theme-switcher-component';
@@ -21,15 +23,15 @@ export const HomePage: React.FC = () => {
 					<p>
 						This is "just another React starter kit". It turned out I create a lot of different proof-of-concepts and
 						internal technical sites during my work and hobby time, so I've decided to extract things that
-						migrates from project to project.
+						migrates from project to project all the time.
 					</p>
 					<p>
 						Of course, there are tons of generators and starters, but c'mon, who don't like to reinvent
-						the wheel all the time?
+						the wheel?
 					</p>
 					<p>
 						I don't like the scaffolding such as "create-react-app" despite they are pretty usable. But usually
-						I'm doing something weird and want to have full control, or the like.
+						I'm doing something weird and want to have full control, or the like, or at least the illusion.
 					</p>
 					<p>
 						And my the most loved area is creating libraries, components, systems and other things another people
@@ -41,9 +43,9 @@ export const HomePage: React.FC = () => {
 
 					<Title level={3}>The concept</Title>
 					<p>
-						I took different things from here and there and mix them together. I mean I analyzed top-level
+						I've taken different things from here and there and mix them together. I mean I analyzed top-level
 						requirements to the "host" applications I create, then have extracted the appropriate parts
-						from different already implemented projects, make them consistent, add some examples and
+						from different already implemented projects, made them less-or-more consistent, add some examples and
 						documentation &mdash; and that's it.
 					</p>
 					<p>
@@ -68,30 +70,39 @@ export const HomePage: React.FC = () => {
 						start that is more convenient to do on HTML level.
 					</p>
 					<p>
-						Application uses .LESS as CSS preprocessor, but it could be easily replaced with SASS or whatever,
+						Application uses <A href={'http://lesscss.org/'}>.LESS</A> as CSS preprocessor,
+						but it could be easily replaced with <A href={'https://sass-lang.com/'}>SASS</A> or whatever,
 						even plain old CSS &mdash; literally only <code>@media</code> constants need preprocessing.
 					</p>
 					<p>
-						I use Typescript as main application language and Jest as an unit-test engine.
+						I use <A href={'https://www.typescriptlang.org/'}>Typescript</A> as main application
+						language and <A href={'https://jestjs.io/'}>Jest</A> as an unit-test engine.
 					</p>
 					<p>
-						Controversial thing but I include Mobx as State Management engine to the kit. It turned out that
-						very often usage of lightweight MobX for <i>relatively</i> local state management is the fastest
+						Controversial thing but I include <A href={'https://mobx.js.org/README.html'}>Mobx</A> as
+						a State Management engine to the kit. It turned out that very often usage of lightweight
+						MobX for <i>relatively</i> local state management is the fastest
 						and the most convenient way... in one big application I'm involved in the development of we're using
-						together Redux and Mobx, even. So the local State management (App ViewModel, if you please) is based
-						on Mobx Store.
+						together <A href={'https://redux.js.org/'}>Redux</A> and Mobx, even. So the local
+						State management (App ViewModel, if you please) here is based on Mobx Store.
 					</p>
 					<p>
-						The entire structure of application is bound up with Routing. I'm using standard React router, and
-						structure of menu and available pages is defined declarative way. Due to relatively often demands to
-						support authorization, corresponding protection mechanism is also included (very reduced version).
-						Not the auth itself, for sure, but the key "end-points". The starter makes distinction between "logged
-						in" and "logged out" states and does not allow to open pages user have no access to.
+						The entire structure of application is bound up with <Link to={'/routing'}>Routing</Link>. I'm
+						using standard <A href={'https://reactrouter.com/'}>React router</A>, and structure of
+						menu and available pages is defined declarative way.
 					</p>
 					<p>
-						The Starter includes some useful UI components. I try to have "minimum minimorum" set of them because the
-						kit is often used as a playground for UI kits, libs and frameworks &mdash; like AntD adapted to
-						business specs.
+						Due to relatively often requests to support authorization, corresponding protection mechanism
+						is also <Link to={'/routing/protected-routes'}>included</Link> (very reduced version): not
+						the auth itself, for sure, but the key "end-points".
+						The starter makes distinction between "logged in" and "logged out" states and does not allow
+						to open pages user have no access to.
+					</p>
+					<p>
+						The Starter includes some useful <Link to={'/ui'}>UI components</Link>.
+						I try to have "minimum minimorum" set of them
+						because the kit is often used as a playground for UI kits, libs and frameworks &mdash;
+						like <A href={'https://ant.design/'}>Ant Design</A> adapted to business specs.
 					</p>
 					<p>
 						I spent plenty of evenings to complete this thing so I hope you'll enjoy this app.
@@ -119,14 +130,48 @@ export const HomePage: React.FC = () => {
 					<p>
 						<Link to={'/layout/main-menu'}>Read more</Link> about main menu.
 					</p>
-				</div>
 
-				<p>
-					The entire <Link to={'/layout'}>layout</Link> is pretty flexible. Most of items are customizable,
-					adaptive and responsive. E.g., <Link to={'/layout/top-panel'}>top panel</Link> can be pinned to the top
-					&mdash; or can be scrollable with the page, and appearance of it can be completely changed like
-					in <Link to={'/custom'}>this example</Link>.
-				</p>
+					<Title level={3} nav={'features'}>Other features</Title>
+
+					<p>
+						The entire <Link to={'/layout'}>layout</Link> is pretty flexible. Most of items are customizable,
+						adaptive and responsive. E.g., <Link to={'/layout/top-panel'}>top panel</Link> can be pinned to the top
+						&mdash; or can be scrollable with the page, and appearance of it can be completely customized like
+						in <Link to={'/custom'}>this example</Link>.
+					</p>
+
+					<p>
+						Some of key points:
+					</p>
+					<ul>
+						<li>
+							Automatic <Link to={'/layout/main-menu'}>Main menu</Link>, <Link to={'/layout/page-submenu'}>Page submenu</Link> and <Link
+							to={'/routing'}>Routing</Link> processing based on single configuration file.
+						</li>
+						<li>
+							<Link to={'/layout/breadcrumbs'}>Breadcrumbs</Link> with <Link to={'/layout/breadcrumbs/page-actions'}>actions</Link>.
+						</li>
+						<li>
+							Configurable <Link to={'/layout/top-panel'}>Top panel</Link>.
+						</li>
+						<li>
+							<Link to={'/layout/page-related'}>Related</Link> items and <Link to={'/layout/page-navigation'}>in-page</Link> navigation.
+						</li>
+						<li>
+							Responsive design.
+						</li>
+						<li>
+							Plenty of examples with syntax highlighting and interactivity.
+						</li>
+						<li>
+							<Link to={'/internals/testing'}>Test, coverage</Link>, dev, prod configurations.
+						</li>
+						<li>
+							Good-to-start <Link to={'/ui/display#simple_modal'}>set of UI components</Link>.
+						</li>
+
+					</ul>
+				</div>
 			</div>
 
 			<div className={'home-description-right'}>
@@ -142,6 +187,33 @@ export const HomePage: React.FC = () => {
 				</div>
 			</div>
 		</div>
+
+		<PageRelated items={[
+			{
+				url: '/getting-started',
+				title: 'Getting started'
+			},
+			{
+				url: '/ui',
+				title: 'UI Components'
+			},
+			{
+				url: '/ui/themes',
+				title: 'Themes'
+			},
+			{
+				url: '/routing',
+				title: 'Routing'
+			},
+			{
+				url: '/layout',
+				title: 'Layout parts'
+			},
+			{
+				url: '/state-management',
+				title: 'State management'
+			},
+		]}/>
 
 	</>;
 };
