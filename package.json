@@ -18,7 +18,10 @@
 	"keywords": [
 		"react",
 		"typescript",
-		"antd",
+		"jest",
+		"starter",
+		"starter kit",
+		"seed",
 		"less",
 		"webpack"
 	],

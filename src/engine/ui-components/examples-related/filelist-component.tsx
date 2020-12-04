@@ -3,14 +3,18 @@ import {Icon} from '../general/icons/icon-component';
 
 type TFileListProps = {
 	data: string
+	asCommands?: boolean
 };
 
-function prepareStrings(text: string): JSX.Element[] {
+function prepareStrings(text: string, asCommand?: boolean): JSX.Element[] {
 	return text.split('\n')
 		.filter(item => Boolean(item))
 		.map(item => {
 			const isFolder = item.indexOf('[') !== -1;
-			const icon = isFolder ? <Icon type={'folder'}/> : <Icon type={'file'}/>;
+			let icon = isFolder ? <Icon type={'folder'}/> : <Icon type={'file'}/>;
+			if (asCommand) {
+				icon = <Icon type={'arrow-right'}/>;
+			}
 			const indent = item.search(/\S|$/);
 
 			const hasComment = item.indexOf(' - ') !== -1;
@@ -40,6 +44,6 @@ function prepareStrings(text: string): JSX.Element[] {
 
 export const FileList: React.FC<TFileListProps> = (props: TFileListProps) => {
 	return <pre className={'example-filestructure'}>
-		{prepareStrings(props.data)}
+		{prepareStrings(props.data, props.asCommands)}
 	</pre>;
 };
