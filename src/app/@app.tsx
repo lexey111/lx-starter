@@ -16,7 +16,7 @@ import {RouteToStoreComponent} from '../engine/routing/route-to-store-component'
 import {ThemeToMarkupComponent} from '../engine/themes/theme-to-markup-component';
 import {AppStateStore} from './store/@stores';
 
-export const AppTitle = '1xStarter';
+export const AppTitle = 'lxStarter';
 
 const AppRoutes = RouteMapping.map((routeItem: TRouteMappingItem, idx: number) => {
 	if (!routeItem.url) {

@@ -9,7 +9,7 @@ export const HomePageTopPanel: React.FC = () => {
 	return <PageTopPanel className={'home-top-panel'}>
 		<div className={columnClassName}>
 			<Title level={1} subTitle={<>HandCrank kit <span>by Lexey111</span></>}>
-				1xStarter
+				lxStarter
 			</Title>
 			<p>
 				Just remove some code and add some other code. Not vice versa!

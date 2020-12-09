@@ -30,17 +30,17 @@
 	@app-link-color: @app-primary-background;
 	@app-link-color-active: darken(@app-link-color, 10);
 
-	@app-top-background: #b0b1b1;
+	@app-top-background: #eee;
 	@app-top-color: #51585f;
 
 	// main menu
-	@app-menu-background: #eee;
+	@app-menu-background: #fff;
 	@app-menu-color: #555;
 
 	@app-menu-separator-color: mix(@app-menu-background, #fff, 80);
 
-	@app-menu-current-background: darken(@app-menu-background, 15);
-	@app-menu-current-color: #333;
+	@app-menu-current-background: #f2f2f2;
+	@app-menu-current-color: @app-accent-background;
 
 	@app-menu-focused-background: lighten(@app-menu-background, 5);
 	@app-menu-focused-color: #13182d;
@@ -52,10 +52,21 @@
 	@app-menu-color-darken: lighten(@app-menu-background, 5);
 
 	// page submenu
-	@app-submenu-background: #ccc;
+	@app-submenu-background: #fff;
 	@app-submenu-color: #000;
-	@app-submenu-item-background: lighten(@app-menu-current-background, 10);
+	@app-submenu-item-background: #f8f8f8;
 	@app-submenu-item-color: lighten(@app-menu-current-color, 10);
+
+	&.with-top-menu {
+		.app-menu {
+			.app-main-menu {
+				.app-menu-item {
+					margin: 6px;
+					border-radius: 6px;
+				}
+			}
+		}
+	}
 
 	.page-submenu {
 		&:after {

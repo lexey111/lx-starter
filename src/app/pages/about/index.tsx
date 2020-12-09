@@ -3,58 +3,28 @@ import {Title} from '../../../engine/ui-components/general/typography/title-comp
 
 export const AboutPage: React.FC = () => {
 	return <>
-		<Title level={1}>About page</Title>
-
-		<Title level={2}>To Do</Title>
-		<ul>
-			<li><s>Radio buttons</s></li>
-			<li><s>Theme switcher</s></li>
-			<li><s>Native layouts</s></li>
-			<li><s>SVG icons</s></li>
-			<li><s>Fake log in/log out</s></li>
-			<li><s>Secondary menu for pages</s></li>
-			<li><s>Extra theme</s></li>
-			<li><s>Dark theme</s></li>
-			<li>About page</li>
-			<li>Icons for side menu</li>
-			<li><s>Main menu sub-routes for media queries</s></li>
-			<li><s>Horizontal menu</s></li>
-			<li><s>Top panel</s></li>
-			<li><s>Burger menu</s></li>
-			<li><s>Contrast menu</s></li>
-			<li>
-				<ul>
-					<li>Main</li>
-					<li>Getting started</li>
-					<li><s>App folders</s></li>
-					<li><s>Testing</s></li>
-					<li><s>Building</s></li>
-					<li><s>Routing: params</s></li>
-					<li><s>Layout: main menu</s></li>
-					<li><s>State management: app</s></li>
-					<li><s>Auth state, login/logout/guards</s></li>
-					<li><s>State management: data example</s></li>
-					<li><s>Breadcrumbs actions</s></li>
-					<li><s>Page submenu</s></li>
-					<li><s>In-Page navigation</s></li>
-					<li><s>Page</s></li>
-					<li><s>Footer</s></li>
-					<li><s>Custom page</s></li>
-				</ul>
-			</li>
-			<li><s>Delay one render on route switching</s></li>
-			<li><s>Add icons to example routing (arrow back, article, user)</s></li>
-			<li><s>Replace .Less vars with CSS vars</s></li>
-			<li><s>Order in @media files</s></li>
-			<li><s>In-page navigation with Title</s></li>
-			<li>npm run dry</li>
-			<li>Roadmap page</li>
-			<li>Reread and fix errors</li>
-			<li><s>Theme families</s></li>
-			<li><s>Fixed top panel</s></li>
-			<li><s>Fix Firefox page length</s></li>
-			<li><s>Related panel</s></li>
-		</ul>
+		<Title level={1}>About</Title>
+		<p>
+			The project is a seed, application designed to be the base for other, functional applications.
+		</p>
+		<p>
+			The main features of it are &mdash; declarative routing, state management, adaptive design and minimal set of
+			predefined components.
+		</p>
+		<p>
+			I try to do not overcomplicate, or even just "complicate" the building blocks but keep a balance
+			between functionality and complexity. It is obvious that real projects use some specific approaches,
+			or layouts, or have restrictions, or whatever, so one of the main goal taken into account during
+			development is making things flex but not too flex.
+		</p>
+		<p>
+			Some of approaches and tools used are disputable or opinionated. E.g., using MobX as a rather integrated
+			State engine, or .Less as a stylesheet processor, or pre-bundled builder pipeline. This is because I'm not
+			sure how usable the starter is for other people and how it will develop (if). Let's see.
+		</p>
+		<p>
+			Enjoy and good luck!
+		</p>
 	</>;
 };
 

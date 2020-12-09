@@ -19,7 +19,7 @@ export const HomePage: React.FC = () => {
 					<Title
 						subTitle={'Start your app with it'}
 						navTitle={'Welcome'}
-						nav={'start_with'}>1xStarter kit</Title>
+						nav={'start_with'}>lxStarter kit</Title>
 					<p>
 						This is "just another React starter kit". It turned out I create a lot of different proof-of-concepts and
 						internal technical sites during my work and hobby time, so I've decided to extract things that
@@ -30,7 +30,7 @@ export const HomePage: React.FC = () => {
 						the wheel?
 					</p>
 					<p>
-						I don't like the scaffolding such as "create-react-app" despite they are pretty usable. But usually
+						I dislike a bit the scaffolding such as "create-react-app" despite they are pretty usable. But usually
 						I'm doing something weird and want to have full control, or the like, or at least the illusion.
 					</p>
 					<p>
