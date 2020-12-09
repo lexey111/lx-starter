@@ -15,6 +15,8 @@ export const AboutPage: React.FC = () => {
 			<li><s>Secondary menu for pages</s></li>
 			<li><s>Extra theme</s></li>
 			<li>Dark theme</li>
+			<li>About page</li>
+			<li>Icons for side menu</li>
 			<li><s>Main menu sub-routes for media queries</s></li>
 			<li><s>Horizontal menu</s></li>
 			<li><s>Top panel</s></li>
@@ -24,9 +26,9 @@ export const AboutPage: React.FC = () => {
 				<ul>
 					<li>Main</li>
 					<li>Getting started</li>
-					<li>App folders</li>
+					<li><s>App folders</s></li>
 					<li><s>Testing</s></li>
-					<li>Building</li>
+					<li><s>Building</s></li>
 					<li><s>Routing: params</s></li>
 					<li><s>Layout: main menu</s></li>
 					<li><s>State management: app</s></li>

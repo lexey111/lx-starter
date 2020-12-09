@@ -9,7 +9,7 @@ type TFileListProps = {
 function prepareStrings(text: string, asCommand?: boolean): JSX.Element[] {
 	return text.split('\n')
 		.filter(item => Boolean(item))
-		.map(item => {
+		.map((item, idx) => {
 			const isFolder = item.indexOf('[') !== -1;
 			let icon = isFolder ? <Icon type={'folder'}/> : <Icon type={'file'}/>;
 			if (asCommand) {
@@ -32,7 +32,7 @@ function prepareStrings(text: string, asCommand?: boolean): JSX.Element[] {
 				.replaceAll('[', '')
 				.replaceAll(']', '');
 
-			return <div key={title} className={(isFolder ? 'folder' : '') + (importantComment ? ' highlighted' : '')}>
+			return <div key={idx} className={(isFolder ? 'folder' : '') + (importantComment ? ' highlighted' : '')}>
 				{' '.padEnd(indent * 1.5)}{icon}
 				{title}
 				{comment && comment.trim() && <span className={'comment' + (importantComment ? ' important' : '')}>
