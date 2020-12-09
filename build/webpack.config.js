@@ -68,16 +68,15 @@ module.exports = (env, args) => {
 		optimization: {
 			splitChunks: {
 				chunks: 'all',
-				// always create vendor.js
 				cacheGroups: {
-					react: {
+					react: { // always create react.js
 						test: /[\\/]node_modules[\\/]react/,
 						name: 'scripts/react',
 						chunks: 'all',
 						priority: 1,
 						enforce: true,
 					},
-					vendor: {
+					vendor: { // always create vendor.js
 						test: /[\\/]node_modules[\\/]/,
 						name: 'scripts/vendors',
 						chunks: 'all',
