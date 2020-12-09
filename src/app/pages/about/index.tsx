@@ -14,7 +14,7 @@ export const AboutPage: React.FC = () => {
 			<li><s>Fake log in/log out</s></li>
 			<li><s>Secondary menu for pages</s></li>
 			<li><s>Extra theme</s></li>
-			<li>Dark theme</li>
+			<li><s>Dark theme</s></li>
 			<li>About page</li>
 			<li>Icons for side menu</li>
 			<li><s>Main menu sub-routes for media queries</s></li>

@@ -1,7 +1,7 @@
 .application-layout-example {
 	margin: 2em auto;
 	padding: 24px;
-	background-color: #fff;
+	background-color: var(--app-background-lighten-shade-5);
 	max-width: 800px;
 	display: flex;
 	align-self: center;
@@ -47,11 +47,12 @@
 
 			i {
 				font-style: normal;
-				background-color: rgba(0, 0, 0, .1);
+				background-color: rgba(0, 0, 0, .2);
 				padding: 4px 8px;
 				border-radius: 3px;
 				margin: 0 1em;
 				transition: all .2s ease;
+				color: #fff;
 
 				&:hover {
 					background-color: rgba(0, 0, 0, .3);

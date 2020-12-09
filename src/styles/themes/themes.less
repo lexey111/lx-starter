@@ -1,4 +1,5 @@
 @import "light.less";
+@import "dark.less";
 @import "default.less";
 
 @import "mapping.less";
@@ -10,5 +11,10 @@ body.theme-default {
 
 body.theme-light {
 	.theme-light();
+	@theme-mapping();
+}
+
+body.theme-dark {
+	.theme-dark();
 	@theme-mapping();
 }
