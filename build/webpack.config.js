@@ -113,8 +113,8 @@ module.exports = (env, args) => {
 					use: [{
 						loader: 'ts-loader',
 						options: {
-							transpileOnly: true,
-							silent: true,
+							transpileOnly: false,
+							silent: false,
 							compilerOptions: {
 								module: 'es2015',
 								sourceMap: !isProduction,
@@ -179,13 +179,11 @@ module.exports = (env, args) => {
 						from: './src/static/images/*',
 						to: path.resolve('./dist/images/'),
 						toType: 'dir',
-						flatten: true,
 					},
 					{
 						from: './src/static/*',
 						to: path.resolve('./dist/'),
 						toType: 'dir',
-						flatten: true
 					},
 				]
 			}),

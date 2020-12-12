@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-assignment */
 import {observer} from 'mobx-react';
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
@@ -84,8 +83,8 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 
 					return <div key={idx} className={'breadcrumb-item'}>
 						{idx === breadcrumbs.length - 1 && item.title}
-						{idx < breadcrumbs.length - 1 && <Link to={item.url}>
-							{item.title}
+						{idx < breadcrumbs.length - 1 && <Link to={getUrl(item)}>
+							{item.title || <span>Untitled</span>}
 						</Link>
 						}
 					</div>;
@@ -95,3 +94,7 @@ export const AppBreadcrumbs: React.FC = observer(() => {
 		</div>
 	</div>;
 });
+
+function getUrl(item: TRouteMappingItem): string {
+	return item.url || HomeRoute.url || '/';
+}

@@ -160,13 +160,11 @@ runApp();
 			from: './src/static/images/*',
 			to: path.resolve('./dist/images/'),
 			toType: 'dir',
-			flatten: true,
 		},
 		{
 			from: './src/static/*',
 			to: path.resolve('./dist/'),
 			toType: 'dir',
-			flatten: true
 		},
 	]
 }),

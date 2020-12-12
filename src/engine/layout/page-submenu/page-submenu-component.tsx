@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {AppStateStore} from '../../../app/store/@stores';
 import useLocationParams from '../../hooks/use-location-params';
+import {HomeRoute} from '../../routing/route-mapping';
 import {getRouteByUrl, getRoutesByParentUrl} from '../../routing/route-mapping-utils';
 import {TMenuItem, TMenuItems} from '../main-menu/main-menu-component';
 import {filterByLoggedIn} from '../main-menu/main-menu-utils';
@@ -50,8 +51,11 @@ export const PageSubmenu: React.FC = observer(() => {
 	}, [location.url, AppStateStore.isAuthorized]);
 
 	return <div className={'page-submenu'}>
-		{listOfRoutes?.map((route: TMenuItem) => {
-			return <Link className={'page-submenu-item' + (route.isActive ? ' active' : '')} key={route.url} to={route.url}>
+		{listOfRoutes?.map((route: TMenuItem, idx) => {
+			return <Link
+				className={'page-submenu-item' + (route.isActive ? ' active' : '')}
+				key={route.url || idx.toString()}
+				to={route.url || HomeRoute.url || '/'}>
 				{route.title}
 			</Link>;
 		})}

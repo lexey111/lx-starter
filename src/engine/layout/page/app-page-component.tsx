@@ -40,11 +40,17 @@ export const AppPage: React.FC<TAppPageProps> = observer((props: TAppPageProps) 
 		if (LoginRoute && LoginRoute.url) {
 			return <Redirect to={LoginRoute.url}/>;
 		}
-		return <Redirect to={HomeRoute.url}/>;
+		if (HomeRoute && HomeRoute.url) {
+			return <Redirect to={HomeRoute.url}/>;
+		}
+		return <div>Home route is not declared!</div>;
 	}
 
 	if (AppStateStore.isAuthorized && AppStateStore.currentRoute?.onlyWhenNotAuthorized) {
-		return <Redirect to={HomeRoute.url}/>;
+		if (HomeRoute && HomeRoute.url) {
+			return <Redirect to={HomeRoute.url}/>;
+		}
+		return <div>Home route is not declared!</div>;
 	}
 
 	return <div className={'app-page' + (props.className ? ' ' + props.className : '')}>
