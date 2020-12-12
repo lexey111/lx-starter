@@ -27,7 +27,7 @@ rl.question('  Do you want to continue [y/N]? ', function (answer) {
 	console.log('');
 
 	if (result === 0) {
-		console.log('Done.');
+		console.log('Success.');
 	} else {
 		console.log('Error.');
 	}
@@ -88,11 +88,14 @@ function doDry() {
 
 function printEndBanner() {
 	console.log('');
-	console.log('Done. Please remove build/dry.js file manually,');
-	console.log('then make some cleanup in package.json:');
-	console.log(' - remove "dry" command from "scripts"');
-	console.log(' - remove "lorem-ipsum" dependency from "devDependencies"');
-	console.log('Good luck!');
+	console.log(' +------------------------------------------------------------+');
+	console.log(' |  Done. Please remove build/dry.js file manually,           |');
+	console.log(' |  then do some cleanup in package.json:                     |');
+	console.log(' |   - remove "dry" command from "scripts"                    |');
+	console.log(' |   - remove "lorem-ipsum" dependency from "devDependencies" |');
+	console.log(' |                                                            |');
+	console.log(' |  Good luck!                                                |');
+	console.log(' +------------------------------------------------------------+');
 	console.log('');
 }
 
@@ -192,7 +195,7 @@ function replaceSiteMap() {
 	const content = `import React from 'react';
 import {AboutPage} from '../app/pages/about';
 import {HomePage} from '../app/pages/home';
-// import {TRouteMappingItems} from '../engine/routing/route-mapping-interface';
+import {TRouteMappingItems} from '../engine/routing/route-mapping-interface';
 import {Icon} from '../engine/ui-components/general/icons/icon-component';
 
 // main app routing

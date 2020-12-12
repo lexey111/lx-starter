@@ -174,16 +174,18 @@ module.exports = (env, args) => {
 			// new AntdDayjsWebpackPlugin({replaceMoment: true}),
 			new CopyWebpackPlugin({
 				patterns: [
-					// static files to the site root folder (index and robots)
+					// static files to the site root folder (images, index.html and robots.txt)
 					{
 						from: './src/static/images/*',
-						to: path.resolve('./dist/images/'),
-						toType: 'dir',
+						to() {
+							return './images/[name].[ext]';
+						},
 					},
 					{
 						from: './src/static/*',
-						to: path.resolve('./dist/'),
-						toType: 'dir',
+						to() {
+							return './[name].[ext]';
+						},
 					},
 				]
 			}),
