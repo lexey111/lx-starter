@@ -45,10 +45,19 @@
 		background-color: var(--app-submenu-item-background);
 		box-shadow: 0 0 1px rgba(0, 0, 0, .2), inset 0 0 1px rgba(255, 255, 255, .9);
 
+		svg {
+			fill: var(--app-submenu-item-color);
+			transition: fill .2s ease;
+		}
+
 		&:hover, &:active, &:focus {
 			color: var(--app-menu-hover-color);
 			background-color: var(--app-menu-hover-background);
 			text-decoration: underline;
+
+			svg {
+				fill: var(--app-menu-hover-color);
+			}
 		}
 
 		&.active {
@@ -57,6 +66,10 @@
 			position: relative;
 			background-color: var(--app-accent-background);
 			box-shadow: 0 0 1px rgba(0, 0, 0, .3);
+
+			svg {
+				fill: var(--app-accent-color);
+			}
 		}
 	}
 }

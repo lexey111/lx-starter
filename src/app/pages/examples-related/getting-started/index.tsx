@@ -107,10 +107,26 @@ Starting cleanup...
 			<li>Run <code>npm i</code>, then <code>npm run start</code> to run dev server.</li>
 			<li>Explore the kit pages, read the documentation and source.</li>
 			<li>Ensure the kit is worth to be used... or not.</li>
-			<li>Copy its content to the root of your project (it has no sense to fork, but up to you).</li>
 			<li>Run <code>npm run dry</code>.</li>
+			<li>
+				Copy the result to the root of your project (it has no sense to fork, but up to you). The simplest way is:
+				<ol>
+					<li><code>npm run dry</code></li>
+					<li>remove <code>build/dry.js</code> file</li>
+					<li>
+						do grooming of <code>package.json</code>: remove <code>"lorem-ipsum"</code> dep, remove <code>"dry"</code> command,
+						change project	description, version, name, author and whatever.
+					</li>
+					<li>remove <code>.git</code> folder, if any</li>
+					<li>run <code>git init</code> etc. to start your project.</li>
+				</ol>
+			</li>
 			<li>Begin to create your pages (in <code>src/app/pages</code>), components etc. using the engine and approach.</li>
 			<li>Profit!</li>
 		</ol>
+
+		<p>
+			Don't forget to enjoy.
+		</p>
 	</>;
 };

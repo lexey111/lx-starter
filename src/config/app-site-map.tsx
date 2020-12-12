@@ -63,12 +63,14 @@ export const AppSiteMap: TRouteMappingItems = [
 		title: 'Getting started',
 		url: '/getting-started',
 		page: <GettingStartedPage/>,
+		icon: <Icon type={'compass'}/>,
 		showIconInTopMenu: false,
 	},
 	{
 		title: 'Internals',
 		url: '/internals',
 		breadcrumbs: 'sub-menu',
+		icon: <Icon type={'code'}/>,
 		page: <InternalsPage/>,
 		showIconInTopMenu: false,
 		routes: [
@@ -89,6 +91,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		url: '/state-management',
 		page: <StatePage/>,
 		breadcrumbs: 'sub-menu',
+		icon: <Icon type={'database'}/>,
 		showIconInTopMenu: false,
 		routes: [
 			{
@@ -112,6 +115,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		title: 'Routing',
 		url: '/routing',
 		page: <RoutingPage/>,
+		icon: <Icon type={'apartment'}/>,
 		showIconInTopMenu: false,
 		breadcrumbs: 'sub-menu',
 		routes: [
@@ -161,6 +165,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		url: '/layout',
 		page: <LayoutPage/>,
 		breadcrumbs: 'sub-menu',
+		icon: <Icon type={'layout'}/>,
 		showIconInTopMenu: false,
 		routes: [
 			{
@@ -218,6 +223,7 @@ export const AppSiteMap: TRouteMappingItems = [
 		url: '/ui',
 		page: <UiPage/>,
 		breadcrumbs: 'sub-menu',
+		icon: <Icon type={'desktop'}/>,
 		showIconInTopMenu: false,
 		routes: [
 			{

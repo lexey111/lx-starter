@@ -56,6 +56,7 @@ export const PageSubmenu: React.FC = observer(() => {
 				className={'page-submenu-item' + (route.isActive ? ' active' : '')}
 				key={route.url || idx.toString()}
 				to={route.url || HomeRoute.url || '/'}>
+				{idx === 0 && Boolean(route.icon) && <>{route.icon}&nbsp;</>}
 				{route.title}
 			</Link>;
 		})}

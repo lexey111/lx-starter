@@ -124,7 +124,7 @@ export const IconsMap: TIconMapEntry = {
 }
 `}/>
 		<p>
-			The <Tag>Icon</Tag> component just use data from mapping file and display the appropriate content:
+			The <Tag>Icon</Tag> component uses data from mapping file and displays the appropriate content:
 		</p>
 
 		<SyntaxHighlight

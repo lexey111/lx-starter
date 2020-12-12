@@ -181,6 +181,12 @@ export const HomePage: React.FC = () => {
 					<p>
 						<Link to={'/getting-started#dry'}>How to do that?</Link>
 					</p>
+
+					<p>
+						In short, forking the repository isn't the best option (but it up to you), and better to
+						clone the repository somewhere, explore the kit, use <code>npm run dry</code> to
+						get rid of examples and, then, copy it to your project folder.
+					</p>
 				</div>
 			</div>
 
