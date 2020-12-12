@@ -113,8 +113,8 @@ module.exports = (env, args) => {
 					use: [{
 						loader: 'ts-loader',
 						options: {
-							transpileOnly: false,
-							silent: false,
+							transpileOnly: !isProduction,
+							silent: !isProduction,
 							compilerOptions: {
 								module: 'es2015',
 								sourceMap: !isProduction,
@@ -164,7 +164,7 @@ module.exports = (env, args) => {
 			},
 			contentBase: path.resolve('./dist'),
 			historyApiFallback: true,
-			compress: true,
+			compress: false,
 			port: 3030,
 		},
 		plugins: [

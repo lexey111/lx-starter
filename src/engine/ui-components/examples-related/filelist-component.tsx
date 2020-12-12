@@ -10,6 +10,9 @@ function prepareStrings(text: string, asCommand?: boolean): JSX.Element[] {
 	return text.split('\n')
 		.filter(item => Boolean(item))
 		.map((item, idx) => {
+			if (item === '.') {
+				return <div key={idx}>&nbsp;</div>;
+			}
 			const isFolder = item.indexOf('[') !== -1;
 			let icon = isFolder ? <Icon type={'folder'}/> : <Icon type={'file'}/>;
 			if (asCommand) {

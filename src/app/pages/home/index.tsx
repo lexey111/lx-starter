@@ -171,6 +171,16 @@ export const HomePage: React.FC = () => {
 						</li>
 
 					</ul>
+
+					<Title level={3} nav={'preparation'}>Prepare to use</Title>
+					<p>
+						The kit includes special command which will remove all the examples, all these pretty clumsy pages
+						and leave only bare structure and components.
+					</p>
+
+					<p>
+						<Link to={'/getting-started#dry'}>How to do that?</Link>
+					</p>
 				</div>
 			</div>
 
@@ -178,8 +188,7 @@ export const HomePage: React.FC = () => {
 				<div className={'home-description-inner'}>
 					<Title level={3} nav={'site_map'}>Site map</Title>
 					<p>
-						This map is automatically created using site route description declared
-						in <Src src={'src/config/app-site-map.tsx'} inline/> file:
+						This map is automatically created from site route definition <Src src={'src/config/app-site-map.tsx'} inline/>:
 					</p>
 					<ul className={'home-sitemap'}>
 						{getRoutes(AppSiteMap).map(item => item)}
