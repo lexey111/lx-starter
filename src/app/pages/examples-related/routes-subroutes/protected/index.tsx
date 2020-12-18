@@ -47,7 +47,7 @@ isAuthorizationInProgress: boolean
 		</p>
 
 		<SyntaxHighlight
-			title={'src/app/@app.tsx'}
+			title={'src/app/app-utils.tsx'}
 			lines={7}
 			content={`<Route
 	exact path={routeItem.url}

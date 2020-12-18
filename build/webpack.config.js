@@ -165,6 +165,7 @@ module.exports = (env, args) => {
 			contentBase: path.resolve('./dist'),
 			historyApiFallback: true,
 			compress: false,
+
 			port: 3030,
 		},
 		plugins: [

@@ -109,7 +109,7 @@ Starting cleanup...
 			<li>Ensure the kit is worth to be used... or not.</li>
 			<li>Run <code>npm run dry</code>.</li>
 			<li>
-				Copy the result to the root of your project (it has no sense to fork, but up to you). The simplest way is:
+				Copy the result to the root of your project (it has no sense to fork, but &mdash; up to you). The simplest way is:
 				<ol>
 					<li><code>npm run dry</code></li>
 					<li>remove <code>build/dry.js</code> file</li>

@@ -122,7 +122,7 @@ export type TRouteMappingItems = Array<TRouteMappingItem> | never;`}/>
 		</p>
 
 		<SyntaxHighlight
-			title={'src/app/@app.tsx'}
+			title={'src/app/app-utils.tsx'}
 			content={`<Route
 	exact path={routeItem.url}
 	key={idx}
