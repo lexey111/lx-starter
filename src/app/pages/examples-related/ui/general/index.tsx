@@ -192,6 +192,7 @@ export const IconsMap: TIconMapEntry = {
 		</p>
 
 		<Title nav={'icons_available'} level={3} navPadding={1}>Icons example</Title>
+		<p>(random colors)</p>
 
 		<UiIconsExample/>
 

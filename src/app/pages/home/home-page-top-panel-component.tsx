@@ -18,13 +18,13 @@ export const HomePageTopPanel: React.FC = () => {
 
 		<div className={columnClassName}>
 			<p>
-				<b>Kit includes:</b>
+				<b>Includes:</b>
 			</p>
 			<ul>
 				<li>Smart adaptive layouts</li>
 				<li>Data Store & State Management</li>
-				<li>Smart UI components (minimal set)</li>
-				<li>Configurable auth-protected routing</li>
+				<li>UI components (minimal set)</li>
+				<li>Configurable auth-aware routing</li>
 				<li>Theming engine</li>
 				<li>Docs & Examples</li>
 			</ul>
@@ -37,7 +37,7 @@ export const HomePageTopPanel: React.FC = () => {
 			<ul>
 				<li>Core: React <WaitTag type={'danger'}>17</WaitTag></li>
 				<li>Build: Webpack <WaitTag type={'danger'}>5</WaitTag></li>
-				<li>Styles: LESS <WaitTag>3</WaitTag> and CSS variables</li>
+				<li>Styles: LESS <WaitTag>4</WaitTag> and CSS variables</li>
 				<li>Typescript <WaitTag type={'warning'}>4</WaitTag></li>
 				<li>State: MobX <WaitTag>6</WaitTag></li>
 				<li>Testing: Jest <WaitTag>26</WaitTag></li>

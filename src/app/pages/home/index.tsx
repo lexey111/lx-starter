@@ -22,7 +22,7 @@ export const HomePage: React.FC = () => {
 						nav={'start_with'}>lxStarter kit</Title>
 					<p>
 						This is "just another React starter kit". It turned out I create a lot of different proof-of-concepts and
-						internal technical sites during my work and hobby time, so I've decided to extract things that
+						internal technical mini-sites during my work and hobby time, so I've decided to extract things that
 						migrates from project to project all the time.
 					</p>
 					<p>
@@ -30,7 +30,7 @@ export const HomePage: React.FC = () => {
 						the wheel?
 					</p>
 					<p>
-						I dislike a bit the scaffolding such as "create-react-app" despite they are pretty usable. But usually
+						I find a bit boring the scaffolding such as "create-react-app" despite they are pretty usable. But usually
 						I'm doing something weird and want to have full control, or the like, or at least the illusion.
 					</p>
 					<p>
@@ -38,24 +38,25 @@ export const HomePage: React.FC = () => {
 						are forced to use leaving me the clean and shining high-abstraction levels of generic code.
 					</p>
 					<p>
-						It is a happiness when you don't need to think dull mundane categories, isn't it?
+						It is a happiness when you don't need to think about dull mundane matter, isn't it?
 					</p>
 
 					<Title level={3}>The concept</Title>
 					<p>
-						I've taken different things from here and there and mix them together. I mean I analyzed top-level
+						I've taken different things from here and there and mixed them together. I mean I analyzed top-level
 						requirements to the "host" applications I create, then have extracted the appropriate parts
 						from different already implemented projects, made them less-or-more consistent, add some examples and
 						documentation &mdash; and that's it.
 					</p>
 					<p>
-						In the mean time, I've tried to keep things lean and implement only the minimal core. Of course,
+						In mean time I've tried to keep things lean and implement only the minimal core. Of course,
 						for different projects "minimal" means different things, but I did my best.
 					</p>
 					<p>
 						Application is self-documented and self-demonstrating: all the features are described with app engine
-						itself. It means, 99% of application is (unnecessary and poor) examples. But I provide special
-						command to clean up all the garbage and to have "bare" application ready to extend.
+						itself. It means, 99% of this application is (unnecessary and poor) examples.
+						But I provide <Link to={'getting-started#dry'}>special command</Link> to clean up all the garbage
+						and to have "bare" application ready to extend.
 					</p>
 				</div>
 			</div>
@@ -167,7 +168,7 @@ export const HomePage: React.FC = () => {
 							<Link to={'/internals/testing'}>Test, coverage</Link>, dev, prod configurations.
 						</li>
 						<li>
-							Good-to-start <Link to={'/ui/display#simple_modal'}>set of UI components</Link>.
+							Good-to-start <Link to={'/ui'}>set of UI components</Link>.
 						</li>
 
 					</ul>
