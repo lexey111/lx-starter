@@ -1,5 +1,7 @@
 # lxStarter Kit
 
+Example page: [https://lexey111.github.io/lx-starter/dist](https://lexey111.github.io/lx-starter/dist). My apologies, the site isn't designed to be hosted as an GitHub page, so some bugs present.
+
 Another one starter kit for React-based applications. Keypoints:
 
 * Routing and configurable site structure
