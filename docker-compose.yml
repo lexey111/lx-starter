@@ -1,0 +1,10 @@
+version: '3'
+services:
+  lxstarter:
+    build: .
+    ports:
+      - 3030:3030
+    command: npm run start
+    volumes:
+      - .:/app
+    tty: true

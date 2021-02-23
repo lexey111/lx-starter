@@ -12,7 +12,7 @@
 		"dry": "npm run clean && node build/dry.js",
 		"eslint": "eslint --cache --ext .ts,.tsx src",
 		"eslint-dump": "eslint --print-config src/.eslintrc.json",
-		"start": "webpack serve --config build/webpack.config.js --mode development",
+		"start": "webpack serve --config build/webpack.config.js --mode development --host 0.0.0.0",
 		"test": "jest --config build/jest.config.js",
 		"test-watch": "jest --config build/jest.config.js --watchAll"
 	},

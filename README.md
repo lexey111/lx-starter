@@ -34,6 +34,10 @@ Or
 
 3. `npm run start` to build and run devserver on `localhost:3030`
 
+Or
+
+2. `docker-compose up` (Docker must be installed).
+
 ### To use in your project
 
 1. Download or clone the repo.
