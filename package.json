@@ -1,7 +1,7 @@
 {
 	"name": "lx-starter-kit",
 	"version": "1.0.1",
-	"description": "Boilerplate: site with navigation",
+	"description": "Boilerplate: React site with navigation",
 	"main": "index.js",
 	"scripts": {
 		"analyze": "npm run clean && webpack --config build/webpack.config.js --mode production --analyze --progress",
