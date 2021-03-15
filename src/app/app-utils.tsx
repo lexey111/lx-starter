@@ -7,7 +7,7 @@ import {AppTitle} from './@app';
 import {AppStateStore} from './store/@stores';
 
 function createRoute(routeItem: TRouteMappingItem) {
-	return function renderRoute(props: { match: { params: Record<string, string> } }) {
+	return function renderRoute(props: { match: { params: { [x: string]: string | undefined } } }): JSX.Element {
 		// actualize current page & route params in AppState Store
 		AppStateStore.setCurrentRoute(routeItem, props.match.params);
 		// set document title

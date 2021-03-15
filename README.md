@@ -27,7 +27,7 @@ Stack of technologies:
 
 1. Download or clone the repo.
 2. `npm i` to install the dependencies.
-3. Build with `npm run build` or `npm run build-dev`
+3. Build with `npm run build` or `npm run build:dev`
 4. Check the `dist` folder.
 
 Or
@@ -38,6 +38,14 @@ Or
 
 2. `docker-compose up` (Docker must be installed).
 
+### Production build with Docker
+
+Build `docker build -f Dockerfile.prod -t lx-starter:prod .`
+
+Then run `docker run -it --rm -p 1337:80 lx-starter:prod` and check it on http://localhost:1337/
+
+Or, with Composer: `docker-compose -f docker-compose.prod.yml up -d --build`
+
 ### To use in your project
 
 1. Download or clone the repo.
@@ -45,6 +53,6 @@ Or
 3. `npm run dry` to clean up all the example-related pages and code.
 4. Use it.
 
-I'd recommend to install it using the first way, then run devserver and read through the documentation and examples.
+I'd recommend installing it using the first way, then run devserver and read through the documentation and examples.
 
-&copy; 2020 Oleksii Koshkin aka Lexey111
+&copy; 2020-21 Oleksii Koshkin aka Lexey111

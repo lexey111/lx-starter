@@ -24,7 +24,7 @@ export const GettingStartedPage: React.FC = () => {
 		<FileList asCommands={true} data={`
 	analyze - runs webpack bundle analyzer
 	build - builds app in production mode 
-	build-dev - builds using dev mode, without minifications and source maps
+	build:dev - builds using dev mode, without minifications and source maps
 	start - runs console server at localhost:3030
 .
 	clean - removes all the files from ./dist folder (internal method)

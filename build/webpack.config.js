@@ -179,13 +179,13 @@ module.exports = (env, args) => {
 					{
 						from: './src/static/images/*',
 						to() {
-							return './images/[name].[ext]';
+							return './images/[name][ext]';
 						},
 					},
 					{
 						from: './src/static/*',
 						to() {
-							return './[name].[ext]';
+							return './[name][ext]';
 						},
 					},
 				]
@@ -200,7 +200,7 @@ module.exports = (env, args) => {
 	if (isProduction) {
 		config.optimization.minimize = true;
 		config.optimization.minimizer = [
-			new TerserPlugin(),
+			new TerserPlugin({extractComments: false}),
 			new OptimizeCSSAssetsPlugin({}),
 		]
 	}

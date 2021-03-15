@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  lxstarter:
+    container_name: lxstarter-prod
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - 1337:80
