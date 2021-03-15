@@ -1,5 +1,9 @@
+.git
+.idea
+*.md
+*.yml
+app.json
 node_modules
-dist
 .dockerignore
 Dockerfile
 Dockerfile.prod

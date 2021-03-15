@@ -1,0 +1,11 @@
+{
+	"name": "heroku-docker-nginx-lx-starter",
+	"description": "Boilerplate: React site with navigation",
+	"repository": "https://github.com/lexey111/lx-starter",
+	"keywords": [
+		"nginx",
+		"docker",
+		"proxy"
+	],
+	"stack": "container"
+}
