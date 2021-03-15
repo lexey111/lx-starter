@@ -2,9 +2,10 @@
 
 Another one starter kit for React-based applications.
 
-Example page: [https://lexey111.github.io/lx-starter/dist](https://lexey111.github.io/lx-starter/dist). My apologies, the site isn't designed to be hosted as an GitHub page, so some bugs present.
+Example page: [https://lexey111.github.io/lx-starter/dist](https://lexey111.github.io/lx-starter/dist). My apologies, the site isn't designed to be hosted as an
+GitHub page, so some bugs present.
 
-Keypoints:
+Key points:
 
 * Routing and configurable site structure
 * Responsive design
@@ -20,6 +21,10 @@ Stack of technologies:
 * ESLint
 * Jest
 * A built-in documentation and examples
+
+# Demo
+
+Online demo page is available [here](https://obscure-fjord-66160.herokuapp.com/home).
 
 ## Installation
 

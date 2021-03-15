@@ -1,9 +1,6 @@
 .git
 .idea
 *.md
-*.yml
 app.json
 node_modules
 .dockerignore
-Dockerfile
-Dockerfile.prod

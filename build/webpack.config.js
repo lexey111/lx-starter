@@ -162,6 +162,7 @@ module.exports = (env, args) => {
 			headers: {
 				'Access-Control-Allow-Origin': '*',
 			},
+			publicPath: '/',
 			contentBase: path.resolve('./dist'),
 			historyApiFallback: true,
 			compress: false,
